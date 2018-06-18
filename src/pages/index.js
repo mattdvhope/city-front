@@ -18,7 +18,7 @@ const IndexPage = ({data}) => (
     </ul>
 )
 
-export default IndexPage
+export default IndexPage 
 
 export const pageQuery = graphql`
   query pageQuery {
