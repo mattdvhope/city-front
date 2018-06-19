@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react';
 import Link from 'gatsby-link'
 import Carousel from '../components/Carousel'
 import WelcomeCaption from '../components/Welcome-caption'
@@ -6,45 +6,60 @@ import Features from '../components/Features'
 import Member from '../components/Member'
 import Footer from '../components/Footer'
 
-export default ({data}) => (
-    <div>
+export default class FrontPage extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      english: true,
+      thai: false
+    };
+  }
 
-      <Carousel
-        carouselImage1={data.carouselImage1}
-        carouselImage2={data.carouselImage2}
-        carouselImage3={data.carouselImage3}
-        carouselImage4={data.carouselImage4}
-      />
+  render() {
 
-      <WelcomeCaption caption={data.allContentfulWelcome.edges[0].node.welcomeContent.welcomeContent}/>
+    const { data } = this.props;
 
-      <Features
-        featureslImage1={data.featureslImage1}
-        featuresTitle1={data.allContentfulFeatures.edges[0].node.featuresTitle1}
-        featuresContent1={data.allContentfulFeaturesFeatures1TextNode.edges[0].node.features1}
+    return (
+      <div>
+        <Carousel
+          carouselImage1={data.carouselImage1}
+          carouselImage2={data.carouselImage2}
+          carouselImage3={data.carouselImage3}
+          carouselImage4={data.carouselImage4}
+        />
 
-        featureslImage2={data.featureslImage2}
-        featuresTitle2={data.allContentfulFeatures.edges[0].node.featuresTitle2}
-        featuresContent2={data.allContentfulFeaturesFeatures2TextNode.edges[0].node.features2}
+        <WelcomeCaption caption={data.allContentfulWelcome.edges[0].node.welcomeContent.welcomeContent}/>
 
-        featureslImage3={data.featureslImage3}
-        featuresTitle3={data.allContentfulFeatures.edges[0].node.featuresTitle3}
-        featuresContent3={data.allContentfulFeaturesFeatures3TextNode.edges[0].node.features3}
-      />
+        <Features
+          featureslImage1={data.featureslImage1}
+          featuresTitle1={data.allContentfulFeatures.edges[0].node.featuresTitle1}
+          featuresContent1={data.allContentfulFeaturesFeatures1TextNode.edges[0].node.features1}
 
-      <Member
-        memberlImage1={data.memberlImage1}
-        memberlImage2={data.memberlImage2}
-        memberlImage3={data.memberlImage3}
-      />
+          featureslImage2={data.featureslImage2}
+          featuresTitle2={data.allContentfulFeatures.edges[0].node.featuresTitle2}
+          featuresContent2={data.allContentfulFeaturesFeatures2TextNode.edges[0].node.features2}
 
-      <Footer
-        footerlImage={data.footerlImage}
-      />
+          featureslImage3={data.featureslImage3}
+          featuresTitle3={data.allContentfulFeatures.edges[0].node.featuresTitle3}
+          featuresContent3={data.allContentfulFeaturesFeatures3TextNode.edges[0].node.features3}
+        />
 
+        <Member
+          memberlImage1={data.memberlImage1}
+          memberlImage2={data.memberlImage2}
+          memberlImage3={data.memberlImage3}
+        />
 
-    </div>
-)
+        <Footer
+          footerlImage={data.footerlImage}
+        />
+
+      </div>
+    )
+
+  }
+
+}
 
 export const homePageQuery = graphql`
   query HomePage {
