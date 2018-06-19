@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 import Navbar from '../components/Navbar'
 import './index.css'
 
-export default class FrontPage extends Component {
+export default class Layout extends Component {
   constructor(props) {
     super(props)
     this.state = {
