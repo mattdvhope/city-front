@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Carousel from '../components/Carousel'
 import WelcomeCaption from '../components/Welcome-caption'
+import Features from '../components/Features'
 
 export default ({data}) => (
     <div>
@@ -14,6 +15,12 @@ export default ({data}) => (
       />
 
       <WelcomeCaption caption={data.allContentfulWelcome.edges[0].node.welcomeContent.welcomeContent}/>
+
+      <Features
+        featureslImage1={data.featureslImage1}
+        featureslImage2={data.featureslImage2}
+        featureslImage3={data.featureslImage3}
+      />
 
 
     </div>
