@@ -32,7 +32,6 @@ export default (props) => (
 
 
   <FeaturesContainer>
-  {console.log(props.featuresContent1)}
 		<Grid fluid>
 			<Row>
 				<TitleContainer>
