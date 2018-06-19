@@ -9,8 +9,6 @@ import welcomeWide from '../img/Welcome-wide.jpg'
 import welcomeMobile from '../img/Welcome-mobile.jpg'
 
 const WelcomeContainer = styled.div`
-  position: absolute
-
   @media (min-width: 1400px) {
     height: 700px;
   }
