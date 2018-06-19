@@ -623,3 +623,20 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+.navbar-nav > li > a {
+  background-color: none;
+}
+  
+.navbar-nav > li.active > a {
+  background-image: linear-gradient(to bottom,#2D3179 0%,#2D3179 290%) !important;
+  opacity: 0.55;
+  filter:alpha(opacity=40);
+}
+
+.navbar-nav > .dropdown.open {
+  background-color: none;
+}
+
+
+

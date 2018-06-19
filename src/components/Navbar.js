@@ -32,7 +32,7 @@ export default class NavbarOnTop extends React.Component {
     const classOne = collapsed ? 'navbar-toggle collapsed' : 'navbar-toggle show';
     const classTwo = collapsed ? 'navbar-toggler navbar-toggler-right collapsed' : 'navbar-toggler navbar-toggler-right';
     return (
-      <Navbar inverse collapseOnSelect fixedTop>
+      <Navbar inverse collapseOnSelect fixedTop style={{backgroundImage: `linear-gradient(to bottom,#2D3179 0,#2D3179 100%)`}}>
         <Navbar.Header>
           <Navbar.Brand>
             <Link to="/">
@@ -47,30 +47,30 @@ export default class NavbarOnTop extends React.Component {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav pullRight>
-            <LinkContainer to="/">
-              <NavItem eventKey={2} className="text-center">Home</NavItem>
+            <LinkContainer to="/products">
+              <NavItem eventKey={2} className="text-center">Other</NavItem>
             </LinkContainer>
             <LinkContainer to="/Tags">
               <NavItem eventKey={4} className="text-center">Tags</NavItem>
             </LinkContainer>
-            <NavDropdown eventKey={3} title="Items to Choose" id="basic-nav-dropdown" className="text-center">
+            <NavDropdown eventKey={3} className="text-center" title="Items to Choose" id="basic-nav-dropdown" >
               <MenuItem divider />
               <LinkContainer to="/about">
                 <MenuItem eventKey={3.1} className="text-center">About</MenuItem>    
               </LinkContainer>
               <MenuItem divider />
         {/* 
-              <li role="presentation" className="text-center">
-                <ModalStyler><ModalLogin getLogin="Log in" /></ModalStyler>
+              <li role="presentation" >
+                <ModalStyler className="text-center"><ModalLogin getLogin="Log in" /></ModalStyler>
               </li>
          */}
               <MenuItem divider />
               <LinkContainer to="/products">
-                <MenuItem eventKey={3.3} className="text-center">Products</MenuItem>    
+                <MenuItem eventKey={3.3} className="text-center" >Products</MenuItem>    
               </LinkContainer>      
               <MenuItem divider />
               <LinkContainer to="/blog-index">
-                <MenuItem eventKey={3.4} className="text-center">Blog List</MenuItem>    
+                <MenuItem eventKey={3.4} className="text-center" >Blog List</MenuItem>    
               </LinkContainer>
               <MenuItem divider />
             </NavDropdown>
