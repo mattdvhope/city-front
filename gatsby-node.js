@@ -23,6 +23,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           reject(result.errors)
         }
         result.data.allContentfulBlog.edges.forEach((edge) => {
+
+          console.log(edge.node.slug);
+
           createPage ({
             path: edge.node.slug,
             component: blogPostTemplate,
