@@ -29,7 +29,10 @@ const TextContainer = styled.div`
 `
 
 export default (props) => (
-	<FeaturesContainer>
+
+
+  <FeaturesContainer>
+  {console.log(props.featuresContent1)}
 		<Grid fluid>
 			<Row>
 				<TitleContainer>
@@ -44,8 +47,8 @@ export default (props) => (
             alt="You Can Speak!"
           />
 					<TextContainer>
-						<h4 className={styles.subTitle}>"You Can Speak!"  Conversational English Class</h4>
-						<p className={styles.text}>Our "You Can Speak!" conversational English, culture and worldview class is a fun and interactive way to build confidence and learn to speak English with greater clarity. We offer beginner through intermediate level classes taught by TESOL certified native English speakers. <a className="modal-initiator non-summer-university" href="#" data-toggle="modal" data-target="#applicationmodal">Click here to sign up for a class!</a></p>
+						<h4 className={styles.subTitle}>{props.featuresTitle1}</h4>
+						<p className={styles.text}>{props.featuresContent1} <a className="modal-initiator non-summer-university" href="#" data-toggle="modal" data-target="#applicationmodal">Click here to sign up for a class!</a></p>
 					</TextContainer>
 				</Col>
 				<Col xs={12} sm={4}>
@@ -55,8 +58,8 @@ export default (props) => (
             alt="English Conversation Partners!"
           />
 					<TextContainer>
-						<h4 className={styles.subTitle}>Online Conversation Partnerships with Native English Speakers</h4>
-						<p className={styles.text}>The best way to become a better English speaker is to speak with native speakers on a regular basis. Our network offers members opportunities for online, weekly, face-to-face Skype partnerships with native English speakers who can help you advance quickly. This partnership will be available to you after you complete the "You Can Speak" class.</p>
+						<h4 className={styles.subTitle}>{props.featuresTitle2}</h4>
+						<p className={styles.text}>{props.featuresContent2}</p>
 					</TextContainer>
 				</Col>
 				<Col xs={12} sm={4}>
@@ -66,8 +69,8 @@ export default (props) => (
             alt="Conversation Groups"
           />
 					<TextContainer>
-						<h4 className={styles.subTitle}>Classes &amp; Activities!</h4>
-						<p className={styles.text}>Interested in practicing your English in a casual and fun environment? We host additional classes and activities that provide opportunities for relaxed, natural conversations with native English speakers. Follow us on social media for the dates of upcoming events.</p>
+						<h4 className={styles.subTitle}>{props.featuresTitle3}</h4>
+						<p className={styles.text}>{props.featuresContent3}</p>
 					</TextContainer>
 				</Col>
 			</Row>

@@ -3,6 +3,8 @@ import Link from 'gatsby-link'
 import Carousel from '../components/Carousel'
 import WelcomeCaption from '../components/Welcome-caption'
 import Features from '../components/Features'
+import Member from '../components/Member'
+import Footer from '../components/Footer'
 
 export default ({data}) => (
     <div>
@@ -18,8 +20,26 @@ export default ({data}) => (
 
       <Features
         featureslImage1={data.featureslImage1}
+        featuresTitle1={data.allContentfulFeatures.edges[0].node.featuresTitle1}
+        featuresContent1={data.allContentfulFeaturesFeatures1TextNode.edges[0].node.features1}
+
         featureslImage2={data.featureslImage2}
+        featuresTitle2={data.allContentfulFeatures.edges[0].node.featuresTitle2}
+        featuresContent2={data.allContentfulFeaturesFeatures2TextNode.edges[0].node.features2}
+
         featureslImage3={data.featureslImage3}
+        featuresTitle3={data.allContentfulFeatures.edges[0].node.featuresTitle3}
+        featuresContent3={data.allContentfulFeaturesFeatures3TextNode.edges[0].node.features3}
+      />
+
+      <Member
+        memberlImage1={data.memberlImage1}
+        memberlImage2={data.memberlImage2}
+        memberlImage3={data.memberlImage3}
+      />
+
+      <Footer
+        footerlImage={data.footerlImage}
       />
 
 
@@ -37,6 +57,49 @@ export const homePageQuery = graphql`
         }
       }
     }
+    allContentfulFeatures {
+      edges {
+        node {
+          featuresTitle1
+        }
+      }
+    }
+    allContentfulFeaturesFeatures1TextNode {
+      edges {
+        node {
+          features1
+        }
+      }
+    }
+    allContentfulFeatures {
+      edges {
+        node {
+          featuresTitle2
+        }
+      }
+    }
+    allContentfulFeaturesFeatures2TextNode {
+      edges {
+        node {
+          features2
+        }
+      }
+    }
+    allContentfulFeatures {
+      edges {
+        node {
+          featuresTitle3
+        }
+      }
+    }
+    allContentfulFeaturesFeatures3TextNode {
+      edges {
+        node {
+          features3
+        }
+      }
+    }
+
 
     carouselImage1: imageSharp(id: { regex: "/1Home-Page-Pic/" }) {
       sizes(maxWidth: 1240 ) {
@@ -94,5 +157,6 @@ export const homePageQuery = graphql`
       }
     }
   }
+  
 `
 

@@ -203,7 +203,6 @@ export default class WelcomeCaption extends Component {
 
         <Grid fluid>
           <TextContainer>
-            {console.log(this.props.caption)}
             {this.props.caption} <span id="get-to-be-a-member">Click here</span> to learn more about us. Or, <ModalStyler><ModalApplication getApplication="click here" /></ModalStyler> to sign up for our popular "You Can Speak!" English class.
           </TextContainer>
         </Grid>
