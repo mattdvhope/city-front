@@ -1,22 +1,14 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link'
 import Carousel from '../components/Carousel'
-import WelcomeCaption from '../components/Welcome-caption'
+import Welcome from '../components/Welcome'
 import Features from '../components/Features'
 import Member from '../components/Member'
 import Footer from '../components/Footer'
 
 export default class FrontPage extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      english: true,
-      thai: false
-    };
-  }
 
   render() {
-
     const { data } = this.props;
 
     return (
@@ -28,7 +20,7 @@ export default class FrontPage extends Component {
           carouselImage4={data.carouselImage4}
         />
 
-        <WelcomeCaption caption={data.allContentfulWelcome.edges[0].node.welcomeContent.welcomeContent}/>
+        <Welcome caption={data.allContentfulWelcome.edges[0].node.welcomeContent.welcomeContent}/>
 
         <Features
           featureslImage1={data.featureslImage1}
