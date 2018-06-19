@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link'
+import Navbar from '../components/Navbar'
 import Carousel from '../components/Carousel'
 import Welcome from '../components/Welcome'
 import Features from '../components/Features'
@@ -7,12 +8,37 @@ import Member from '../components/Member'
 import Footer from '../components/Footer'
 
 export default class FrontPage extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      english: true,
+      thai: false
+    };
+  }
+
+  handleChangeToThai(event) {
+    event.preventDefault()
+    this.setState({english: false, thai: true});
+  }
+
+  handleChangeToEnglish(event) {
+    event.preventDefault()
+    this.setState({english: true, thai: false});
+  }
 
   render() {
     const { data } = this.props;
 
+    console.log(this.props);
+
     return (
       <div>
+        <Navbar
+          handleChangeToThai={e => this.handleChangeToThai(e)}
+          handleChangeToEnglish={e => this.handleChangeToEnglish(e)}
+          currentLanguage={this.state}
+        />
+
         <Carousel
           carouselImage1={data.carouselImage1}
           carouselImage2={data.carouselImage2}

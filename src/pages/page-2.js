@@ -1,10 +1,10 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Navbar from '../components/Navbar'
 
 const BlogPost = ({node}) => {
   return (
     <li key={node.id}>
-      {console.log(node.slug)}
       <Link to={`/${node.slug}`} >{node.title}</Link>
       <div>{node.content.childMarkdownRemark.excerpt}</div>
       <img src={node.featuredImage.resolutions.src} alt=""/>
@@ -12,9 +12,15 @@ const BlogPost = ({node}) => {
   )
 }
 const IndexPage = ({data}) => (
+  <div>
+
+    <Navbar />
+
     <ul>
       {data.allContentfulBlog.edges.map((edge) => <BlogPost node={edge.node} />)}
     </ul>
+    
+  </div>
 )
 
 export default IndexPage 

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Navbar from '../components/Navbar'
+import FrontPage from '../pages/index'
+
 import './index.css'
 
 export default class Layout extends Component {
@@ -35,11 +37,14 @@ export default class Layout extends Component {
           <link href="https://fonts.googleapis.com/css?family=Athiti|Chonburi|Kanit|Maitree|Prompt|Sriracha|Taviraj|Trirong|Josefin+Sans" rel="stylesheet" />
         </Helmet>
 
+{/* 
         <Navbar
           handleChangeToThai={e => this.handleChangeToThai(e)}
           handleChangeToEnglish={e => this.handleChangeToEnglish(e)}
           currentLanguage={this.state}
         />
+ */}
+
         {this.props.children()}
       </div>
     )
@@ -47,9 +52,9 @@ export default class Layout extends Component {
 }
 
 //// Fix this soon!!  Technical debt!!
-// Layout.propTypes = {
-//   children: PropTypes.func,
-// }
+Layout.propTypes = {
+  children: PropTypes.func,
+}
 
 
 export const query = graphql`

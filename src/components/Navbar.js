@@ -33,8 +33,16 @@ export default class NavbarOnTop extends React.Component {
     const classTwo = collapsed ? 'navbar-toggler navbar-toggler-right collapsed' : 'navbar-toggler navbar-toggler-right';
 
     // Thai/English switching!!!!!
-    const { english } = this.props.currentLanguage;
-    const other = english ? "Other" : "ดดดดด"
+    let other;
+
+    if (this.props.currentLanguage) {
+      const { english } = this.props.currentLanguage;
+      other = english ? "Other" : "ดดดดด"
+    } else {
+      other = "Other";
+    }
+
+    console.log(other);
 
     return (
       <Navbar inverse collapseOnSelect fixedTop style={{backgroundImage: `linear-gradient(to bottom,#2D3179 0,#2D3179 100%)`}}>
