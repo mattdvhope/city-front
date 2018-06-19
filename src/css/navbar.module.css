@@ -24,7 +24,6 @@
 .usaFlagLi {
   @media (min-width: 767px) {
 	  max-width: 305px;
-    float: right;
 		padding-right: -320px;
   }
   @media (max-width: 767px) {
