@@ -32,6 +32,7 @@ export default class FrontPage extends Component {
   }
 }
 
+//// Fix this soon!!  Technical debt!!
 // Layout.propTypes = {
 //   children: PropTypes.func,
 // }
