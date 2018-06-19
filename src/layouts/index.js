@@ -14,6 +14,16 @@ export default class FrontPage extends Component {
     };
   }
 
+  handleChangeToThai(event) {
+    event.preventDefault()
+    this.setState({english: false, thai: true});
+  }
+
+  handleChangeToEnglish(event) {
+    event.preventDefault()
+    this.setState({english: true, thai: false});
+  }
+
   render() {
     const { data } = this.props;
     return (
@@ -25,7 +35,11 @@ export default class FrontPage extends Component {
           <link href="https://fonts.googleapis.com/css?family=Athiti|Chonburi|Kanit|Maitree|Prompt|Sriracha|Taviraj|Trirong|Josefin+Sans" rel="stylesheet" />
         </Helmet>
 
-        <Navbar siteTitle={data.site.siteMetadata.title} />
+        <Navbar
+          handleChangeToThai={e => this.handleChangeToThai(e)}
+          handleChangeToEnglish={e => this.handleChangeToEnglish(e)}
+          currentLanguage={this.state}
+        />
         {this.props.children()}
       </div>
     )

@@ -31,6 +31,11 @@ export default class NavbarOnTop extends React.Component {
     const collapsed = this.state.collapsed;
     const classOne = collapsed ? 'navbar-toggle collapsed' : 'navbar-toggle show';
     const classTwo = collapsed ? 'navbar-toggler navbar-toggler-right collapsed' : 'navbar-toggler navbar-toggler-right';
+
+    // Thai/English switching!!!!!
+    const { english } = this.props.currentLanguage;
+    const other = english ? "Other" : "ดดดดด"
+
     return (
       <Navbar inverse collapseOnSelect fixedTop style={{backgroundImage: `linear-gradient(to bottom,#2D3179 0,#2D3179 100%)`}}>
         <Navbar.Header>
@@ -48,7 +53,7 @@ export default class NavbarOnTop extends React.Component {
         <Navbar.Collapse>
           <Nav pullRight>
             <LinkContainer to="/products">
-              <NavItem eventKey={2} className="text-center">Other</NavItem>
+              <NavItem eventKey={2} className="text-center">{other}</NavItem>
             </LinkContainer>
             <LinkContainer to="/Tags">
               <NavItem eventKey={4} className="text-center">Tags</NavItem>
@@ -76,12 +81,12 @@ export default class NavbarOnTop extends React.Component {
             </NavDropdown>
             <LinkContainer to="/about" className={styles.thaiFlagDLi}>
               <NavItem eventKey={2} >
-                <div className={styles.thaiImageContainer} style={{backgroundImage: `url('https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/thailand_flag_circle.png')`, backgroundSize: `48px`, backgroundRepeat: `no-repeat`}} />
+                <div className={styles.thaiImageContainer} onClick={this.props.handleChangeToThai} style={{backgroundImage: `url('https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/thailand_flag_circle.png')`, backgroundSize: `48px`, backgroundRepeat: `no-repeat`}} />
               </NavItem>
             </LinkContainer>
             <LinkContainer to="/products" className={styles.usaFlagLi}>
               <NavItem eventKey={2} >
-                <div className={styles.usaImageContainer} style={{backgroundImage: `url('https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/usa_flag_circle.png')`, backgroundSize: `48px`, backgroundRepeat: `no-repeat`}} />
+                <div className={styles.usaImageContainer} onClick={this.props.handleChangeToEnglish} style={{backgroundImage: `url('https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/usa_flag_circle.png')`, backgroundSize: `48px`, backgroundRepeat: `no-repeat`}} />
               </NavItem>
             </LinkContainer>
           </Nav>
