@@ -11,6 +11,17 @@ module.exports = {
       }
     },
     `gatsby-transformer-remark`, // will detect any text node that has markdown and then parse it (into HTML??)
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/img`,
+        name: `images`,
+      },
+    },
+
+
   ],
 }
