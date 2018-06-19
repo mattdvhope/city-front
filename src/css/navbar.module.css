@@ -179,7 +179,7 @@
     position: sticky;
 		left: 341px;
   }
-  @media (max-width: 766px) {
+  /*@media (max-width: 766px) {
 		left: 340px;
   }
   @media (max-width: 765px) {
@@ -1591,5 +1591,5 @@
   }
   @media (max-width: 305px) {
 		left: 110px;
-  }
+  }*/
 }
