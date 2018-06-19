@@ -205,7 +205,8 @@ export default class WelcomeCaption extends Component {
 
         <Grid fluid>
           <TextContainer>
-            The City English Project makes learning English convenient, affordable and fun!  And, we focus on what you need the most - conversational English skills. Our network offers classes, conversation partnerships and events to help you improve your conversational English. We also integrate culture and worldview elements in to our learning model to better equip your for building relationships within the ASEAN community and beyond.  We want to help you succeed in life and in business! <span id="get-to-be-a-member">Click here</span> to learn more about us. Or, <ModalStyler><ModalApplication getApplication="click here" /></ModalStyler> to sign up for our popular "You Can Speak!" English class.
+            {console.log(this.props.caption)}
+            {this.props.caption} <span id="get-to-be-a-member">Click here</span> to learn more about us. Or, <ModalStyler><ModalApplication getApplication="click here" /></ModalStyler> to sign up for our popular "You Can Speak!" English class.
           </TextContainer>
         </Grid>
 
