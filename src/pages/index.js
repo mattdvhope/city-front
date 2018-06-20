@@ -72,9 +72,22 @@ export default class FrontPage extends Component {
         />
 
         <Member
+          title={data.allContentfulMember.edges[0].node.title}
+          subtitle={data.allContentfulMember.edges[0].node.subtitle.subtitle}
+
           memberlImage1={data.memberlImage1}
+          firstListItem={data.allContentfulMember.edges[0].node.firstListItem}
+          secondListItem={data.allContentfulMember.edges[0].node.secondListItem}
+          thirdListItem={data.allContentfulMember.edges[0].node.thirdListItem}
+          fourthListItem={data.allContentfulMember.edges[0].node.fourthListItem}
+
           memberlImage2={data.memberlImage2}
+          firstParagraphSubtitle={data.allContentfulMember.edges[0].node.firstParagraphSubtitle}
+          firstParagraph={data.allContentfulMemberFirstParagraphTextNode.edges[0].node.firstParagraph}
+
           memberlImage3={data.memberlImage3}
+          secondParagraphSubtitle={data.allContentfulMember.edges[0].node.secondParagraphSubtitle}
+          secondParagraph={data.allContentfulMemberSecondParagraphTextNode.edges[0].node.secondParagraph}
         />
 
         <Footer
@@ -90,6 +103,28 @@ export default class FrontPage extends Component {
 
 export const homePageQuery = graphql`
   query HomePage {
+    carouselImage1: imageSharp(id: { regex: "/1Home-Page-Pic/" }) {
+      sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    carouselImage2: imageSharp(id: { regex: "/2YouCanSpeakAd/" }) {
+      sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    carouselImage3: imageSharp(id: { regex: "/3FreeClass/" }) {
+      sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    carouselImage4: imageSharp(id: { regex: "/4AtYourOffice/" }) {
+      sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
+
     allContentfulWelcome {
       edges {
         node {
@@ -99,6 +134,24 @@ export const homePageQuery = graphql`
         }
       }
     }
+
+
+    featureslImage1: imageSharp(id: { regex: "/City-Talk-Class/" }) {
+      sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    featureslImage2: imageSharp(id: { regex: "/English-Conversation-Partners/" }) {
+      sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    featureslImage3: imageSharp(id: { regex: "/Conversation-Groups/" }) {
+      sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
     allContentfulFeatures {
       edges {
         node {
@@ -143,41 +196,6 @@ export const homePageQuery = graphql`
     }
 
 
-    carouselImage1: imageSharp(id: { regex: "/1Home-Page-Pic/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    carouselImage2: imageSharp(id: { regex: "/2YouCanSpeakAd/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    carouselImage3: imageSharp(id: { regex: "/3FreeClass/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    carouselImage4: imageSharp(id: { regex: "/4AtYourOffice/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    featureslImage1: imageSharp(id: { regex: "/City-Talk-Class/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    featureslImage2: imageSharp(id: { regex: "/English-Conversation-Partners/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    featureslImage3: imageSharp(id: { regex: "/Conversation-Groups/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
     memberlImage1: imageSharp(id: { regex: "/Membership4Web/" }) {
       sizes(maxWidth: 1240 ) {
         ...GatsbyImageSharpSizes
@@ -193,6 +211,40 @@ export const homePageQuery = graphql`
         ...GatsbyImageSharpSizes
       }
     }
+
+    allContentfulMember {
+      edges {
+        node {
+          title
+          subtitle {
+            subtitle
+          }
+          firstListItem
+          secondListItem
+          thirdListItem
+          fourthListItem
+          
+          firstParagraphSubtitle
+          secondParagraphSubtitle
+        }
+      }
+    }
+    allContentfulMemberFirstParagraphTextNode {
+      edges {
+        node {
+          firstParagraph
+        }
+      }
+    }
+    allContentfulMemberSecondParagraphTextNode {
+      edges {
+        node {
+          secondParagraph
+        }
+      }
+    }
+
+
     footerlImage: imageSharp(id: { regex: "/CEP-logo/" }) {
       sizes(maxWidth: 1240 ) {
         ...GatsbyImageSharpSizes
