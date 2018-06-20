@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link'
 import Navbar from '../components/Navbar'
-import Carousel from '../components/Carousel'
+import Carousel from '../components/CarouselTwo'
 import Welcome from '../components/Welcome'
 import Features from '../components/Features'
 import Member from '../components/Member'
