@@ -5,7 +5,7 @@ import Link from 'gatsby-link'
 import styled from "styled-components";
 import styles from "../css/navbar.module.css";
 
-// import ModalLogin from './ModalLogin'
+import ModalLogin from './ModalLogin'
 import ModalApplication from './ModalApplication'
 
 const ModalStyler = styled.a`
@@ -70,11 +70,9 @@ export default class NavbarOnTop extends React.Component {
                 <MenuItem eventKey={3.1} className="text-center">About</MenuItem>    
               </LinkContainer>
               <MenuItem divider />
-        {/* 
               <li role="presentation" >
                 <ModalStyler className="text-center"><ModalLogin getLogin="Log in" /></ModalStyler>
               </li>
-         */}
               <MenuItem divider />
               <LinkContainer to="/products">
                 <MenuItem eventKey={3.3} className="text-center" >Products</MenuItem>    
