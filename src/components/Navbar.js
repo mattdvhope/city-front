@@ -42,8 +42,6 @@ export default class NavbarOnTop extends React.Component {
       other = "Other";
     }
 
-    console.log(other);
-
     return (
       <Navbar inverse collapseOnSelect fixedTop style={{backgroundImage: `linear-gradient(to bottom,#2D3179 0,#2D3179 100%)`}}>
         <Navbar.Header>

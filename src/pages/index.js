@@ -29,7 +29,16 @@ export default class FrontPage extends Component {
   render() {
     const { data } = this.props;
 
-    console.log(this.props);
+    console.log(this.state.english);
+
+    let welcomeContent;
+
+    if (this.state.english) {
+      welcomeContent = data.allContentfulWelcome.edges[0].node.welcomeContent.welcomeContent
+    } else {
+      welcomeContent = "ดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดด";
+    }
+
 
     return (
       <div>
@@ -46,7 +55,7 @@ export default class FrontPage extends Component {
           carouselImage4={data.carouselImage4}
         />
 
-        <Welcome caption={data.allContentfulWelcome.edges[0].node.welcomeContent.welcomeContent}/>
+        <Welcome caption={welcomeContent}/>
 
         <Features
           featureslImage1={data.featureslImage1}
