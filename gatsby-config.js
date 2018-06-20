@@ -10,8 +10,26 @@ module.exports = {
         accessToken: `6c53fde463ad5d48aab03eee27122a9110e69440b68ae704dd808d1286d8395f`
       }
     },
-    `gatsby-transformer-remark`, // will detect any text node that has markdown and then parse it (into HTML??)
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: "./src/favicon.ico",
+        injectHTML: true,
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          twitter: false,
+          yandex: false,
+          windows: false
+        }
+      }
+    },
+    `gatsby-transformer-remark`, // will detect any text node that has markdown and then parse it (into HTML??)
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
