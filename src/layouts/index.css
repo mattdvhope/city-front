@@ -5,7 +5,12 @@ html {
 }
 body {
   margin: 0;
-  padding-top: 59px;
+  @media (min-width: 767px) {
+    padding-top: 58px;
+  }
+  @media (max-width: 767px) {
+    padding-top: 51px;
+  }
 }
 article,
 aside,
