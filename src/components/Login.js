@@ -44,7 +44,7 @@ export default class Login extends React.Component {
       .then((res) => {
         this.setState(this.state) // to reset state once 'isLoggedIn'
       })
-      .catch((err) => {
+      .catch((err) => { 
         this.showErrorsAfterSubmission();
         document.getElementById('formControlsEmail').value=`${email || window.sessionStorage.email}`
         document.getElementById('formControlsPassword').value=`${password || window.sessionStorage.password}`
