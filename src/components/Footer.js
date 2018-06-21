@@ -82,7 +82,7 @@ export default class Footer extends Component {
     this.state = {
       imageChosen: undefined,
       SMchanger: undefined,
-      localStorage: undefined
+      language: undefined
     };
   }
 
@@ -94,7 +94,6 @@ export default class Footer extends Component {
   componentDidMount() {
     this.handleResize();
     window.addEventListener('resize', this.handleResize)
-    this.setState({ localStorage: window.localStorage })
   }
 
   componentWillUnmount() {
@@ -104,7 +103,7 @@ export default class Footer extends Component {
   render() {
     let footerItems = [];
 
-    if (this.state.localStorage.getItem("language") === "thai") {
+    if (window.localStorage.getItem("language") === "thai") {
       footerItems = ["ติดต่อเรา", "เบอร์โทรศัพท์", "ที่อยู", "66 ถนน ปั้น", "แขวงสีลม เขตบางรัก", "กรุงเทพมหานคร 10500", "(คลิกเพื่อดูเส้นทาง)", "อีเมล"]
     } else {
       footerItems = ["Contact Us", "Telephone", "Address:", "66 Pan Road", "Silom, Bangrak", "Bangkok 10500", "(click to see directions)", "Email:"];

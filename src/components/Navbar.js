@@ -17,24 +17,17 @@ const NavItemStyler = styled.div`
   font-size: 130%;
 `
 
-let footer;
-
 export default class NavbarOnTop extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      localStorage: undefined
-    };
-  }
-
-  componentDidMount() {
-    this.setState({ localStorage: window.localStorage })
   }
 
   render() {
     let navItems = [];
 
-    if (this.state.localStorage.getItem("language") === "thai") {
+    console.log("in Navbar RENDER: ", window.localStorage.getItem("language"))
+
+    if (window.localStorage.getItem("language") === "thai") {
       navItems = ["สมัครเรียน", "สมัครเรียนหลักสูตร 'You Can Speak!' (ตอนที่ 1)", "สมัครเรียนหลักสูตร 'You Can Speak!' (ตอนที่ 2)", "ชั้นเรียนในที่ทำงานของคุณ", "ติดต่อเรา"]
     } else {
       navItems = ["Register", "Register for 'You Can Speak!' (Part 1)", "Register for 'You Can Speak!' (Part 2)", "Class at your workplace", "Contact us"];

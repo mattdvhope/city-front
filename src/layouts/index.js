@@ -10,31 +10,23 @@ import './index.css'
 export default class Layout extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      english: true,
-      thai: false,
-      localStorage: undefined
-    };
-  }
-
-  componentDidMount() {
-    this.setState({ localStorage: window.localStorage })
   }
 
   handleChangeToThai(event) {
     event.preventDefault()
-    this.state.localStorage.setItem("language", "thai");
+    window.localStorage.setItem("language", "thai" );
     this.setState(this.state);
   }
 
   handleChangeToEnglish(event) {
     event.preventDefault()
-    this.state.localStorage.setItem("language", "english");
+    window.localStorage.setItem("language", "english" );
     this.setState(this.state);
   }
 
   render() {
     const { data } = this.props;
+
     return (
       <div>
         <Helmet title={data.site.siteMetadata.title} >
