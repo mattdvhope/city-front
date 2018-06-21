@@ -32,6 +32,7 @@ export default class FrontPage extends Component {
         welcomeContent = data.allContentfulWelcome.edges[0].node.welcomeContent.welcomeContent
       }
 
+console.log("FrontPage:", this.state.window.localStorage.language);
 
       return (
         <div>
