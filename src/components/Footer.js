@@ -82,7 +82,7 @@ export default class Footer extends Component {
     this.state = {
       imageChosen: undefined,
       SMchanger: undefined,
-      language: undefined
+      window: undefined
     };
   }
 
@@ -94,6 +94,7 @@ export default class Footer extends Component {
   componentDidMount() {
     this.handleResize();
     window.addEventListener('resize', this.handleResize)
+    this.setState({ window: window });
   }
 
   componentWillUnmount() {
@@ -101,74 +102,79 @@ export default class Footer extends Component {
   }
 
   render() {
-    let footerItems = [];
+    if (this.state.window) {
 
-    if (window.localStorage.getItem("language") === "thai") {
-      footerItems = ["ติดต่อเรา", "เบอร์โทรศัพท์", "ที่อยู", "66 ถนน ปั้น", "แขวงสีลม เขตบางรัก", "กรุงเทพมหานคร 10500", "(คลิกเพื่อดูเส้นทาง)", "อีเมล"]
-    } else {
-      footerItems = ["Contact Us", "Telephone", "Address:", "66 Pan Road", "Silom, Bangrak", "Bangkok 10500", "(click to see directions)", "Email:"];
-    }
+      let footerItems = [];
 
-    return (
-      <FooterContainer style={{backgroundImage: `url('${this.state.imageChosen}')`, backgroundSize: `cover`}}>
-        <Grid fluid>
-          <Row>
-            <TitleContainer>
-              <h2 className="text-center">{footerItems[0]}</h2>
-            </TitleContainer>
-          </Row>
-          <br/>
+      if (this.state.window.localStorage.language === "thai") {
+        footerItems = ["ติดต่อเรา", "เบอร์โทรศัพท์", "ที่อยู", "66 ถนน ปั้น", "แขวงสีลม เขตบางรัก", "กรุงเทพมหานคร 10500", "(คลิกเพื่อดูเส้นทาง)", "อีเมล"]
+      } else {
+        footerItems = ["Contact Us", "Telephone", "Address:", "66 Pan Road", "Silom, Bangrak", "Bangkok 10500", "(click to see directions)", "Email:"];
+      }
 
-          <Row>
-            <Col sm={3} xs={12}>
-              <Img
-                sizes={this.props.footerlImage.sizes}
-                className={styles.CEPLogoImg}
-                alt="CEP logo"
-              />
-            </Col>
+      return (
+        <FooterContainer style={{backgroundImage: `url('${this.state.imageChosen}')`, backgroundSize: `cover`}}>
+          <Grid fluid>
+            <Row>
+              <TitleContainer>
+                <h2 className="text-center">{footerItems[0]}</h2>
+              </TitleContainer>
+            </Row>
+            <br/>
 
-            <Col sm={3 + this.state.SMchanger} xs={12}>
-              <ContactInfoColumn>
-                <br />
-                <ContactInfoTitles>{footerItems[1]}</ContactInfoTitles>
-                <div>086-696-7821</div>
-                <br/>
-                <a className="modal-initiator location-pictures-modal" href="#" data-toggle="modal" data-target="#locationpicturesmodal">
-                  <ContactInfoTitles>{footerItems[2]}</ContactInfoTitles>
-                  <div>{footerItems[3]}</div>
-                  <div>{footerItems[4]}</div>
-                  <div>{footerItems[5]}</div>
-                  <div>{footerItems[6]}</div>
-                </a>
-                <br/>
-                <ContactInfoTitles>{footerItems[7]}</ContactInfoTitles>
-                <div>info@cityenglishproject.com</div>
-                <br/>
-                <div>
-                  <a href="https://www.facebook.com/City-English-Project-1745393602361714/?notif_t=page_fan&notif_id=1462353525485104" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/Icon-Facebook.jpg" className={styles.socialMediaIcon} /></a>
-                  <a href="https://www.youtube.com/channel/UCcqBmxAGOstDdFbRImmnVWg" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/Icon-Youtube.jpg" className={styles.socialMediaIcon} /></a>
-                  <a href="https://www.instagram.com/cityenglishproject/?hl=en" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/Icon-Instagram.jpg" className={styles.socialMediaIcon} /></a>
+            <Row>
+              <Col sm={3} xs={12}>
+                <Img
+                  sizes={this.props.footerlImage.sizes}
+                  className={styles.CEPLogoImg}
+                  alt="CEP logo"
+                />
+              </Col>
+
+              <Col sm={3 + this.state.SMchanger} xs={12}>
+                <ContactInfoColumn>
+                  <br />
+                  <ContactInfoTitles>{footerItems[1]}</ContactInfoTitles>
+                  <div>086-696-7821</div>
+                  <br/>
+                  <a className="modal-initiator location-pictures-modal" href="#" data-toggle="modal" data-target="#locationpicturesmodal">
+                    <ContactInfoTitles>{footerItems[2]}</ContactInfoTitles>
+                    <div>{footerItems[3]}</div>
+                    <div>{footerItems[4]}</div>
+                    <div>{footerItems[5]}</div>
+                    <div>{footerItems[6]}</div>
+                  </a>
+                  <br/>
+                  <ContactInfoTitles>{footerItems[7]}</ContactInfoTitles>
+                  <div>info@cityenglishproject.com</div>
+                  <br/>
+                  <div>
+                    <a href="https://www.facebook.com/City-English-Project-1745393602361714/?notif_t=page_fan&notif_id=1462353525485104" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/Icon-Facebook.jpg" className={styles.socialMediaIcon} /></a>
+                    <a href="https://www.youtube.com/channel/UCcqBmxAGOstDdFbRImmnVWg" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/Icon-Youtube.jpg" className={styles.socialMediaIcon} /></a>
+                    <a href="https://www.instagram.com/cityenglishproject/?hl=en" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/Icon-Instagram.jpg" className={styles.socialMediaIcon} /></a>
+                  </div>
+                  <br/>
+                </ContactInfoColumn>
+              </Col>
+
+              <Col sm={6 - this.state.SMchanger} xs={12}>
+                <div className={styles.mapBox}>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d968.986814483854!2d100.5229871!3d13.721643!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbcd972043dc4fdfc!2sCity+English+Project!5e0!3m2!1sen!2s!4v1479132826508" width="600" height="450" frameBorder="0" allowFullScreen></iframe>
                 </div>
-                <br/>
-              </ContactInfoColumn>
-            </Col>
+              </Col>
+            </Row>
 
-            <Col sm={6 - this.state.SMchanger} xs={12}>
-              <div className={styles.mapBox}>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d968.986814483854!2d100.5229871!3d13.721643!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbcd972043dc4fdfc!2sCity+English+Project!5e0!3m2!1sen!2s!4v1479132826508" width="600" height="450" frameBorder="0" allowFullScreen></iframe>
-              </div>
-            </Col>
-          </Row>
-
-          <Row>
-            <Copyright>
-              <div>Copyright &copy; City English Project 2018</div>
-              <div>All rights reserved.</div>
-            </Copyright>
-          </Row>
-        </Grid>
-      </FooterContainer>
-    )
+            <Row>
+              <Copyright>
+                <div>Copyright &copy; City English Project 2018</div>
+                <div>All rights reserved.</div>
+              </Copyright>
+            </Row>
+          </Grid>
+        </FooterContainer>
+      )
+    } else {
+      return <span />
+    }
   }
 }

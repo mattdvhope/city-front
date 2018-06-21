@@ -10,74 +10,84 @@ import Footer from '../components/Footer'
 export default class FrontPage extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      window: undefined
+    }
+  }
+
+  componentDidMount() {
+    this.setState({ window: window });
   }
 
   render() {
-    const { data } = this.props;
+    if (this.state.window) {
 
-    let welcomeContent;
+      const { data } = this.props;
 
-    if (window.localStorage.getItem("language") === "thai") {
-      welcomeContent = "ดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดด";
+      let welcomeContent;
+
+      if (this.state.window.localStorage.language === "thai") {
+        welcomeContent = "ดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดด";
+      } else {
+        welcomeContent = data.allContentfulWelcome.edges[0].node.welcomeContent.welcomeContent
+      }
+
+
+      return (
+        <div>
+
+          <Carousel
+            carouselImage1={data.carouselImage1}
+            carouselImage2={data.carouselImage2}
+            carouselImage3={data.carouselImage3}
+            carouselImage4={data.carouselImage4}
+          />
+
+          <Welcome caption={welcomeContent}/>
+
+          <Features
+            featureslImage1={data.featureslImage1}
+            featuresTitle1={data.allContentfulFeatures.edges[0].node.featuresTitle1}
+            featuresContent1={data.allContentfulFeaturesFeatures1TextNode.edges[0].node.features1}
+
+            featureslImage2={data.featureslImage2}
+            featuresTitle2={data.allContentfulFeatures.edges[0].node.featuresTitle2}
+            featuresContent2={data.allContentfulFeaturesFeatures2TextNode.edges[0].node.features2}
+
+            featureslImage3={data.featureslImage3}
+            featuresTitle3={data.allContentfulFeatures.edges[0].node.featuresTitle3}
+            featuresContent3={data.allContentfulFeaturesFeatures3TextNode.edges[0].node.features3}
+          />
+
+          <Member
+            title={data.allContentfulMember.edges[0].node.title}
+            subtitle={data.allContentfulMember.edges[0].node.subtitle.subtitle}
+
+            memberlImage1={data.memberlImage1}
+            firstListItem={data.allContentfulMember.edges[0].node.firstListItem}
+            secondListItem={data.allContentfulMember.edges[0].node.secondListItem}
+            thirdListItem={data.allContentfulMember.edges[0].node.thirdListItem}
+            fourthListItem={data.allContentfulMember.edges[0].node.fourthListItem}
+
+            memberlImage2={data.memberlImage2}
+            firstParagraphSubtitle={data.allContentfulMember.edges[0].node.firstParagraphSubtitle}
+            firstParagraph={data.allContentfulMemberFirstParagraphTextNode.edges[0].node.firstParagraph}
+
+            memberlImage3={data.memberlImage3}
+            secondParagraphSubtitle={data.allContentfulMember.edges[0].node.secondParagraphSubtitle}
+            secondParagraph={data.allContentfulMemberSecondParagraphTextNode.edges[0].node.secondParagraph}
+          />
+
+          <Footer
+            footerlImage={data.footerlImage}
+          />
+
+        </div>
+      )
     } else {
-      welcomeContent = data.allContentfulWelcome.edges[0].node.welcomeContent.welcomeContent
+      return <span />
     }
-
-
-    return (
-      <div>
-
-        <Carousel
-          carouselImage1={data.carouselImage1}
-          carouselImage2={data.carouselImage2}
-          carouselImage3={data.carouselImage3}
-          carouselImage4={data.carouselImage4}
-        />
-
-        <Welcome caption={welcomeContent}/>
-
-        <Features
-          featureslImage1={data.featureslImage1}
-          featuresTitle1={data.allContentfulFeatures.edges[0].node.featuresTitle1}
-          featuresContent1={data.allContentfulFeaturesFeatures1TextNode.edges[0].node.features1}
-
-          featureslImage2={data.featureslImage2}
-          featuresTitle2={data.allContentfulFeatures.edges[0].node.featuresTitle2}
-          featuresContent2={data.allContentfulFeaturesFeatures2TextNode.edges[0].node.features2}
-
-          featureslImage3={data.featureslImage3}
-          featuresTitle3={data.allContentfulFeatures.edges[0].node.featuresTitle3}
-          featuresContent3={data.allContentfulFeaturesFeatures3TextNode.edges[0].node.features3}
-        />
-
-        <Member
-          title={data.allContentfulMember.edges[0].node.title}
-          subtitle={data.allContentfulMember.edges[0].node.subtitle.subtitle}
-
-          memberlImage1={data.memberlImage1}
-          firstListItem={data.allContentfulMember.edges[0].node.firstListItem}
-          secondListItem={data.allContentfulMember.edges[0].node.secondListItem}
-          thirdListItem={data.allContentfulMember.edges[0].node.thirdListItem}
-          fourthListItem={data.allContentfulMember.edges[0].node.fourthListItem}
-
-          memberlImage2={data.memberlImage2}
-          firstParagraphSubtitle={data.allContentfulMember.edges[0].node.firstParagraphSubtitle}
-          firstParagraph={data.allContentfulMemberFirstParagraphTextNode.edges[0].node.firstParagraph}
-
-          memberlImage3={data.memberlImage3}
-          secondParagraphSubtitle={data.allContentfulMember.edges[0].node.secondParagraphSubtitle}
-          secondParagraph={data.allContentfulMemberSecondParagraphTextNode.edges[0].node.secondParagraph}
-        />
-
-        <Footer
-          footerlImage={data.footerlImage}
-        />
-
-      </div>
-    )
-
   }
-
 }
 
 export const homePageQuery = graphql`
