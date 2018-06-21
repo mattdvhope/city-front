@@ -26,7 +26,7 @@ const IndexPage = ({data}) => (
 export default IndexPage 
 
 export const pageQuery = graphql`
-  query pageQuery {
+  query pageQuery { 
     allContentfulBlog (
       filter: {
         node_locale: {eq: "en-US"}
