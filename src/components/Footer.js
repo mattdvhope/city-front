@@ -81,7 +81,8 @@ export default class Footer extends Component {
     super(props)
     this.state = {
       imageChosen: undefined,
-      SMchanger: undefined
+      SMchanger: undefined,
+      footerElement: undefined
     };
   }
 
@@ -92,6 +93,8 @@ export default class Footer extends Component {
 
   componentDidMount() {
     this.handleResize();
+
+    this.setState({footerElement: this.refs.footer})
     window.addEventListener('resize', this.handleResize)
   }
 
@@ -100,13 +103,22 @@ export default class Footer extends Component {
   }
 
   render() {
-    return (
-      <FooterContainer style={{backgroundImage: `url('${this.state.imageChosen}')`, backgroundSize: `cover`}}>
+    let footerItems = [];
 
+    if (localStorage.getItem("language") === "thai") {
+      footerItems = ["ติดต่อเรา", "สมัครเรียนหลักสูตร 'You Can Speak!' (ตอนที่ 1)", "สมัครเรียนหลักสูตร 'You Can Speak!' (ตอนที่ 2)", "ชั้นเรียนในที่ทำงานของคุณ", "ติดต่อเรา"]
+    } else {
+      footerItems = ["Contact Us", "Register for 'You Can Speak!' (Part 1)", "Register for 'You Can Speak!' (Part 2)", "Class at your workplace", "Contact us"];
+    }
+
+
+    return (
+      <span ref="footer">
+      <FooterContainer style={{backgroundImage: `url('${this.state.imageChosen}')`, backgroundSize: `cover`}}>
         <Grid fluid>
           <Row>
             <TitleContainer>
-              <h2 className="text-center">Contact Us</h2>
+              <h2 className="text-center">{footerItems[0]}</h2>
             </TitleContainer>
           </Row>
           <br/>
@@ -161,6 +173,7 @@ export default class Footer extends Component {
           </Row>
         </Grid>
       </FooterContainer>
+      </span>
     )
   }
 }

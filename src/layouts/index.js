@@ -18,12 +18,14 @@ export default class Layout extends Component {
 
   handleChangeToThai(event) {
     event.preventDefault()
-    this.setState({english: false, thai: true});
+    localStorage.setItem("language", "thai");
+    this.setState(this.state);
   }
 
   handleChangeToEnglish(event) {
     event.preventDefault()
-    this.setState({english: true, thai: false});
+    localStorage.setItem("language", "english");
+    this.setState(this.state);
   }
 
   render() {
@@ -37,13 +39,10 @@ export default class Layout extends Component {
           <link href="https://fonts.googleapis.com/css?family=Athiti|Chonburi|Kanit|Maitree|Prompt|Sriracha|Taviraj|Trirong|Josefin+Sans" rel="stylesheet" />
         </Helmet>
 
-{/* 
         <Navbar
           handleChangeToThai={e => this.handleChangeToThai(e)}
           handleChangeToEnglish={e => this.handleChangeToEnglish(e)}
-          currentLanguage={this.state}
         />
- */}
 
         {this.props.children()}
       </div>

@@ -42,11 +42,6 @@ export default class FrontPage extends Component {
 
     return (
       <div>
-        <Navbar
-          handleChangeToThai={e => this.handleChangeToThai(e)}
-          handleChangeToEnglish={e => this.handleChangeToEnglish(e)}
-          currentLanguage={this.state}
-        />
 
         <VolunteerTopPic/>
 

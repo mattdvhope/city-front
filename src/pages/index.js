@@ -10,43 +10,22 @@ import Footer from '../components/Footer'
 export default class FrontPage extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      english: true,
-      thai: false
-    };
-  }
-
-  handleChangeToThai(event) {
-    event.preventDefault()
-    this.setState({english: false, thai: true});
-  }
-
-  handleChangeToEnglish(event) {
-    event.preventDefault()
-    this.setState({english: true, thai: false});
   }
 
   render() {
     const { data } = this.props;
 
-    console.log(this.state.english);
-
     let welcomeContent;
 
-    if (this.state.english) {
-      welcomeContent = data.allContentfulWelcome.edges[0].node.welcomeContent.welcomeContent
-    } else {
+    if (localStorage.getItem("language") === "thai") {
       welcomeContent = "ดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดด";
+    } else {
+      welcomeContent = data.allContentfulWelcome.edges[0].node.welcomeContent.welcomeContent
     }
 
 
     return (
       <div>
-        <Navbar
-          handleChangeToThai={e => this.handleChangeToThai(e)}
-          handleChangeToEnglish={e => this.handleChangeToEnglish(e)}
-          currentLanguage={this.state}
-        />
 
         <Carousel
           carouselImage1={data.carouselImage1}

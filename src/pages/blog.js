@@ -14,8 +14,6 @@ const BlogPost = ({node}) => {
 const IndexPage = ({data}) => (
   <div>
 
-    <Navbar />
-
     <ul>
       {data.allContentfulBlog.edges.map((edge) => <BlogPost node={edge.node} />)}
     </ul>
