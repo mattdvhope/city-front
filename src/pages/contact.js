@@ -4,15 +4,9 @@ import Footer from '../components/Footer'
 
 export default (props) => {
   return (
-
-  	<div>
-
-	    <Footer
-	      footerlImage={props.data.footerlImage}
-	    />
-
-    </div>
-    
+    <Footer
+      footerlImage={props.data.footerlImage}
+    />
   );
 
 }

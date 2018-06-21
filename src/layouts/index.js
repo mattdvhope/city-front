@@ -12,19 +12,24 @@ export default class Layout extends Component {
     super(props)
     this.state = {
       english: true,
-      thai: false
+      thai: false,
+      localStorage: undefined
     };
+  }
+
+  componentDidMount() {
+    this.setState({ localStorage: window.localStorage })
   }
 
   handleChangeToThai(event) {
     event.preventDefault()
-    localStorage.setItem("language", "thai");
+    this.state.localStorage.setItem("language", "thai");
     this.setState(this.state);
   }
 
   handleChangeToEnglish(event) {
     event.preventDefault()
-    localStorage.setItem("language", "english");
+    this.state.localStorage.setItem("language", "english");
     this.setState(this.state);
   }
 

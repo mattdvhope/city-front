@@ -22,13 +22,19 @@ let footer;
 export default class NavbarOnTop extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { collapsed: true, };
+    this.state = {
+      localStorage: undefined
+    };
+  }
+
+  componentDidMount() {
+    this.setState({ localStorage: window.localStorage })
   }
 
   render() {
     let navItems = [];
 
-    if (localStorage.getItem("language") === "thai") {
+    if (this.state.localStorage.getItem("language") === "thai") {
       navItems = ["สมัครเรียน", "สมัครเรียนหลักสูตร 'You Can Speak!' (ตอนที่ 1)", "สมัครเรียนหลักสูตร 'You Can Speak!' (ตอนที่ 2)", "ชั้นเรียนในที่ทำงานของคุณ", "ติดต่อเรา"]
     } else {
       navItems = ["Register", "Register for 'You Can Speak!' (Part 1)", "Register for 'You Can Speak!' (Part 2)", "Class at your workplace", "Contact us"];

@@ -10,6 +10,13 @@ import Footer from '../components/Footer'
 export default class FrontPage extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      localStorage: undefined
+    };
+  }
+
+  componentDidMount() {
+    this.setState({ localStorage: window.localStorage })
   }
 
   render() {
@@ -17,7 +24,7 @@ export default class FrontPage extends Component {
 
     let welcomeContent;
 
-    if (localStorage.getItem("language") === "thai") {
+    if (this.state.localStorage.getItem("language") === "thai") {
       welcomeContent = "ดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดด";
     } else {
       welcomeContent = data.allContentfulWelcome.edges[0].node.welcomeContent.welcomeContent

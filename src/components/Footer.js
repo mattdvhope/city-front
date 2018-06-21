@@ -82,7 +82,7 @@ export default class Footer extends Component {
     this.state = {
       imageChosen: undefined,
       SMchanger: undefined,
-      footerElement: undefined
+      localStorage: undefined
     };
   }
 
@@ -93,9 +93,8 @@ export default class Footer extends Component {
 
   componentDidMount() {
     this.handleResize();
-
-    this.setState({footerElement: this.refs.footer})
     window.addEventListener('resize', this.handleResize)
+    this.setState({ localStorage: window.localStorage })
   }
 
   componentWillUnmount() {
@@ -105,15 +104,13 @@ export default class Footer extends Component {
   render() {
     let footerItems = [];
 
-    if (localStorage.getItem("language") === "thai") {
-      footerItems = ["ติดต่อเรา", "สมัครเรียนหลักสูตร 'You Can Speak!' (ตอนที่ 1)", "สมัครเรียนหลักสูตร 'You Can Speak!' (ตอนที่ 2)", "ชั้นเรียนในที่ทำงานของคุณ", "ติดต่อเรา"]
+    if (this.state.localStorage.getItem("language") === "thai") {
+      footerItems = ["ติดต่อเรา", "เบอร์โทรศัพท์", "ที่อยู", "66 ถนน ปั้น", "แขวงสีลม เขตบางรัก", "กรุงเทพมหานคร 10500", "(คลิกเพื่อดูเส้นทาง)", "อีเมล"]
     } else {
-      footerItems = ["Contact Us", "Register for 'You Can Speak!' (Part 1)", "Register for 'You Can Speak!' (Part 2)", "Class at your workplace", "Contact us"];
+      footerItems = ["Contact Us", "Telephone", "Address:", "66 Pan Road", "Silom, Bangrak", "Bangkok 10500", "(click to see directions)", "Email:"];
     }
 
-
     return (
-      <span ref="footer">
       <FooterContainer style={{backgroundImage: `url('${this.state.imageChosen}')`, backgroundSize: `cover`}}>
         <Grid fluid>
           <Row>
@@ -135,18 +132,18 @@ export default class Footer extends Component {
             <Col sm={3 + this.state.SMchanger} xs={12}>
               <ContactInfoColumn>
                 <br />
-                <ContactInfoTitles>Telephone</ContactInfoTitles>
+                <ContactInfoTitles>{footerItems[1]}</ContactInfoTitles>
                 <div>086-696-7821</div>
                 <br/>
                 <a className="modal-initiator location-pictures-modal" href="#" data-toggle="modal" data-target="#locationpicturesmodal">
-                  <ContactInfoTitles>Address:</ContactInfoTitles>
-                  <div>66 Pan Road</div>
-                  <div>Silom, Bangrak</div>
-                  <div>Bangkok 10500</div>
-                  <div>(click to see directions)</div>
+                  <ContactInfoTitles>{footerItems[2]}</ContactInfoTitles>
+                  <div>{footerItems[3]}</div>
+                  <div>{footerItems[4]}</div>
+                  <div>{footerItems[5]}</div>
+                  <div>{footerItems[6]}</div>
                 </a>
                 <br/>
-                <ContactInfoTitles>Email:</ContactInfoTitles>
+                <ContactInfoTitles>{footerItems[7]}</ContactInfoTitles>
                 <div>info@cityenglishproject.com</div>
                 <br/>
                 <div>
@@ -173,7 +170,6 @@ export default class Footer extends Component {
           </Row>
         </Grid>
       </FooterContainer>
-      </span>
     )
   }
 }
