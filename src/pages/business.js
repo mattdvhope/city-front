@@ -59,7 +59,11 @@ export default class BusinessApplication extends React.Component {
     }
 
     axios.post(`${process.env.GATSBY_API_URL}/businesses`, {
-      utf8: "✓",
+      business_name: this.state.business_name,
+      leader_name: this.state.leader_name,
+      email: this.state.email,
+      phone: this.state.phone,
+      line_id: this.state.line_id,
       business: business,
     })
     .then(response => {
