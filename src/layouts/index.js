@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Navbar from '../components/Navbar'
-import FrontPage from '../pages/index'
+import Welcome from '../components/Welcome'
 
 import './index.css'
 
@@ -35,7 +35,17 @@ export default class Layout extends Component {
 
   render() {
     if (this.state.window) {
+
       const { data } = this.props;
+
+      let welcomeContent;
+
+      if (this.state.window.localStorage.language === "thai") {
+        welcomeContent = "ดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดด";
+      } else {
+        welcomeContent = data.allContentfulWelcome.edges[0].node.welcomeContent.welcomeContent
+      }
+
 
       return (
         <div>
@@ -50,6 +60,9 @@ export default class Layout extends Component {
             handleChangeToThai={e => this.handleChangeToThai(e)}
             handleChangeToEnglish={e => this.handleChangeToEnglish(e)}
           />
+
+          <Welcome caption={welcomeContent}/>
+
 
           {this.props.children()}
         </div>
@@ -73,5 +86,17 @@ export const query = graphql`
         title
       }
     }
+
+
+    allContentfulWelcome {
+      edges {
+        node {
+          welcomeContent {
+            welcomeContent
+          }
+        }
+      }
+    }
+
   }
 `
