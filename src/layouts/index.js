@@ -23,6 +23,7 @@ export default class Layout extends Component {
     window.localStorage.setItem("language", "thai" );
     this.setState(this.state);
     location.reload();
+    // navigateTo('/');
   }
 
   handleChangeToEnglish(event) {
@@ -31,6 +32,7 @@ export default class Layout extends Component {
     window.localStorage.setItem("language", "english" );
     this.setState(this.state);
     location.reload();
+    // navigateTo('/');
   }
 
   render() {
