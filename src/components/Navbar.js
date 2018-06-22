@@ -34,9 +34,25 @@ export default class NavbarOnTop extends React.Component {
 
       let navItems = [];
       if (this.state.window.localStorage.language === "thai") {
-        navItems = ["สมัครเรียน", "สมัครเรียนหลักสูตร 'You Can Speak!' (ตอนที่ 1)", "สมัครเรียนหลักสูตร 'You Can Speak!' (ตอนที่ 2)", "ชั้นเรียนในที่ทำงานของคุณ", "ติดต่อเรา"]
+        navItems = ["สมัครเรียน",
+                    "สมัครเรียนหลักสูตร 'You Can Speak!' (ตอนที่ 1)",
+                    "สมัครเรียนหลักสูตร 'You Can Speak!' (ตอนที่ 2)",
+                    "ชั้นเรียนในที่ทำงานของคุณ",
+                    "ติดต่อเรา",
+                    "อาสาสมัคร",
+                    "ข้อมูลอาสาสมัคร",
+                    "ลงทะเบียนอาสาสมัครใหม่",
+                    "ล็อกอิน"]
       } else {
-        navItems = ["Register", "Register for 'You Can Speak!' (Part 1)", "Register for 'You Can Speak!' (Part 2)", "Class at your workplace", "Contact us"];
+        navItems = ["Register",
+                    "Register for 'You Can Speak!' (Part 1)",
+                    "Register for 'You Can Speak!' (Part 2)",
+                    "Class at your workplace",
+                    "Contact us",
+                    "Volunteer",
+                    "Volunteer Info",
+                    "Register New Volunteer",
+                    "Login"];
       }
 
       return (
@@ -74,23 +90,19 @@ export default class NavbarOnTop extends React.Component {
                 <NavItem eventKey={4} className="text-center"><NavItemStyler>{navItems[4]}</NavItemStyler></NavItem>
               </LinkContainer>
 
-              <NavDropdown eventKey={3} className="text-center" style={{ fontSize: '130%' }} title="Items to Choose" >
+              <NavDropdown eventKey={3} className="text-center" style={{ fontSize: '130%' }} title={navItems[5]} >
                 <MenuItem divider />
-                <LinkContainer to="/about">
-                  <MenuItem eventKey={3.1} className="text-center"><NavItemStyler>About</NavItemStyler></MenuItem>    
+                <LinkContainer to="/volunteers">
+                  <MenuItem eventKey={3.1} className="text-center"><NavItemStyler>{navItems[6]}</NavItemStyler></MenuItem>    
                 </LinkContainer>
                 <MenuItem divider />
                 <li role="presentation" >
-                  <ModalStyler className="text-center"><NavItemStyler><ModalLogin getLogin="Log in" /></NavItemStyler></ModalStyler>
+                  <ModalStyler className="text-center"><NavItemStyler><ModalApplication getApplication={navItems[7]} /></NavItemStyler></ModalStyler>
                 </li>
                 <MenuItem divider />
-                <LinkContainer to="/products">
-                  <MenuItem eventKey={3.2} className="text-center" ><NavItemStyler>Products</NavItemStyler></MenuItem>    
-                </LinkContainer>      
-                <MenuItem divider />
-                <LinkContainer to="/blog-index">
-                  <MenuItem eventKey={3.3} className="text-center" ><NavItemStyler>Blog List</NavItemStyler></MenuItem>    
-                </LinkContainer>
+                <li role="presentation" >
+                  <ModalStyler className="text-center"><NavItemStyler><ModalLogin getLogin={navItems[8]} /></NavItemStyler></ModalStyler>
+                </li>
               </NavDropdown>
 
               <Navbar.Brand>
