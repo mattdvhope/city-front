@@ -113,7 +113,7 @@ export default class Login extends React.Component {
     let passwordGroupClass = classNames('form-group', {'has-error': !password.isValid});
 
     return (
-      <View title="Log In">
+      <View>
         <Form
           handleUpdate={e => this.handleUpdate(e)}
           handleSubmit={e => this.handleSubmit(e)}

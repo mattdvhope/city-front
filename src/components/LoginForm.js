@@ -22,12 +22,6 @@ export default withRouter(({ handleSubmit, handleUpdate, emailMessage, emailValu
       // history.push(`/app/profile `)
     }}
   >
-    <p>
-      For this demo, please log in with the email <code>matt@test.tv</code> and the
-      password <code>password</code>.
-    </p>
-    <h2 className="form-signin-heading">Create Account</h2>
-
     <input type="hidden" name="utf8" value="✓" />
 
     <div className={emailGroupClass}>
@@ -42,7 +36,7 @@ export default withRouter(({ handleSubmit, handleUpdate, emailMessage, emailValu
       <span className="help-block">{passwordMessage}</span>
     </div>
 
-    <button className="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
+    <button className="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
 
   </form>
 ))

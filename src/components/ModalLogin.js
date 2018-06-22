@@ -33,7 +33,7 @@ export default class ModalLogin extends Component {
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Log in form</Modal.Title>
+            <Modal.Title className="text-center"><h1>Log In</h1></Modal.Title>
           </Modal.Header>
           <Modal.Body>
 
