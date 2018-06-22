@@ -97,8 +97,6 @@ export default class FormApplication1 extends React.Component {
         <hr/>
         <FormStyler>
         <form onSubmit={this.handleSubmit} noValidate="noValidate" encType="multipart/form-data" action="/" acceptCharset="UTF-8">
-      {/* <input type="hidden" name="utf8" value="✓" />  */}
-      {/* <input type="hidden" name="authenticity_token" value="{this.state.csrf_token}" />  */}
           <input type="hidden" name="role" value="volunteer" />
 
           <FieldGroup
