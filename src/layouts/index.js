@@ -2,15 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 // import { navigateTo } from "gatsby-link"
+
 import Navbar from '../components/Navbar'
 
-import Carousel from '../components/Carousel'
-import Welcome from '../components/Welcome'
-import Features from '../components/Features'
-import Member from '../components/Member'
-import Footer from '../components/Footer'
-
 import './index.css'
+import '../css/less/bootstrap.less'
 
 export default class Layout extends Component {
   constructor(props) {
@@ -41,8 +37,11 @@ export default class Layout extends Component {
     return (
       <div>
         <Helmet title={data.site.siteMetadata.title} >
+
+{/* 
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
+*/}    
           <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/278cd7f5-226e-4ad9-83fb-59e4a7eb4131.css" />
           <link href="https://fonts.googleapis.com/css?family=Athiti|Chonburi|Kanit|Maitree|Prompt|Sriracha|Taviraj|Trirong|Josefin+Sans" rel="stylesheet" />
         </Helmet>
