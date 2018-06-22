@@ -9,6 +9,7 @@ import styles from "../css/navbar.module.css";
 import ModalLogin from './ModalLogin'
 import ModalApplication1 from './ModalApplication1'
 import ModalApplication2 from './ModalApplication2'
+import ModalVolAppl from './ModalVolAppl'
 
 const ModalStyler = styled.a`
   cursor: pointer;
@@ -98,7 +99,7 @@ export default class NavbarOnTop extends React.Component {
                 </LinkContainer>
                 <MenuItem divider />
                 <li role="presentation" >
-                  <ModalStyler className="text-center"><NavItemStyler><ModalApplication1 getApplication={navItems[7]} /></NavItemStyler></ModalStyler>
+                  <ModalStyler className="text-center"><NavItemStyler><ModalVolAppl getApplication={navItems[7]} /></NavItemStyler></ModalStyler>
                 </li>
                 <MenuItem divider />
                 <li role="presentation" >

@@ -10,7 +10,7 @@ const TitleStyler = styled.span`
   font-size: 150%;
 `
 
-export default class ModalApplication1 extends Component {
+export default class ModalVolAppl extends Component {
   constructor(props, context) {
     super(props, context);
 
@@ -38,7 +38,7 @@ export default class ModalApplication1 extends Component {
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title><TitleStyler>Registration for "You Can Speak!" (Part 1)</TitleStyler></Modal.Title>
+            <Modal.Title><TitleStyler>Register to become a CEP Skype-partner</TitleStyler></Modal.Title>
           </Modal.Header>
           <Modal.Body>
 

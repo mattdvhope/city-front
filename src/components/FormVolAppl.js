@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Link from 'gatsby-link';
 import axios from 'axios'
 import styled from "styled-components";
-import { FormGroup, ControlLabel, FormControl, HelpBlock, Checkbox, Radio, Button } from 'react-bootstrap';
-import ApplicationExplanation from './ApplicationExplanation';
+import { FormGroup, ControlLabel, FormControl, HelpBlock, Button } from 'react-bootstrap';
+import ApplicationExplVol from './ApplicationExplVol';
 
 const FormStyler = styled.span`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
@@ -27,40 +27,19 @@ export default class FormApplication1 extends React.Component {
     this.handleChange = this.handleChange.bind(this);
 
     this.state = {
-      class_times: [],
-      guest: true,
-      nickname: '',
+      pin: '',
       first_name: '',
       last_name: '',
-      gender: 'ผู้ชาย',
-      phone_number: '',
       email: '',
-      class_time_scheduled_1: '',
-      class_time_scheduled_2: 'select_option'
+      skype_name: '',
+      facebook: '',
+      gender: '',
+      age: '',
+      organization: '',
+      password: '',
+      password_confirmation: '',
+      phone_number: '',
     };
-  }
-
-  componentDidMount() {
-    axios.get(`${process.env.GATSBY_API_URL}/class_times.json`)
-      .then((response) => {
-        const class_times = this.filterSortClassTimes(response.data);
-        console.log(class_times); // ex.: { user: 'Your User'}
-        this.setState({ class_times });
-      });
-  }
-
-  filterSortClassTimes(class_times) {
-    var class_times_part_1 = [];
-    class_times.forEach(function(class_time) {
-      class_time.part === "one" ? class_times_part_1.push(class_time) : null;
-    });
-
-    var off_site = class_times.filter( function(item){return (item.part=="off-site");} );
-    class_times_part_1.unshift(off_site[0]);
-
-    return class_times_part_1.sort(function(a, b) {
-      return a.order_no - b.order_no;
-    });
   }
 
   handleChange = e => {
@@ -72,19 +51,37 @@ export default class FormApplication1 extends React.Component {
     e.preventDefault();
 
     const user = {
-      guest: true,
-      nickname: this.state.nickname,
+      pin: this.state.pin,
       first_name: this.state.first_name,
       last_name: this.state.last_name,
-      gender: this.state.gender,
-      phone_number: this.state.phone_number,
       email: this.state.email,
+      skype_name: this.state.skype_name,
+      facebook: this.state.facebook,
+      gender: this.state.gender,
+      age: this.state.age,
+      organization: this.state.organization,
+      password: this.state.password,
+      password_confirmation: this.state.password_confirmation,
+      phone_number: this.state.phone_number,
+      role: "volunteer"
     }
 
+console.log(user)
     axios.post(`${process.env.GATSBY_API_URL}/users`, {
       utf8: "✓",
-      class_time_scheduled_1: this.state.class_time_scheduled_1,
-      class_time_scheduled_2: "select_option",
+      pin: this.state.pin,
+      first_name: this.state.first_name,
+      last_name: this.state.last_name,
+      email: this.state.email,
+      skype_name: this.state.skype_name,
+      facebook: this.state.facebook,
+      gender: this.state.gender,
+      age: this.state.age,
+      organization: this.state.organization,
+      password: this.state.password,
+      password_confirmation: this.state.password_confirmation,
+      phone_number: this.state.phone_number,
+      role: "volunteer",
       user: user,
     })
     .then(response => {
@@ -97,83 +94,119 @@ export default class FormApplication1 extends React.Component {
   render() {
     return (
       <div>
-        <ApplicationExplanation />
-        <br/>
+        <ApplicationExplVol />
         <hr/>
         <FormStyler>
         <form onSubmit={this.handleSubmit} noValidate="noValidate" encType="multipart/form-data" action="/" acceptCharset="UTF-8">
-          <input type="hidden" name="utf8" value="✓" />
+      {/* <input type="hidden" name="utf8" value="✓" />  */}
       {/* <input type="hidden" name="authenticity_token" value="{this.state.csrf_token}" />  */}
-          <input type="hidden" name="guest" value="true" />
+          <input type="hidden" name="role" value="volunteer" />
 
           <FieldGroup
-            id="formControlsText"
-            label="Nickname (in English)"
-            name="nickname"
+            id="formControlsText1"
+            label="PIN"
+            name="pin"
             type="text"
             onChange={this.handleChange}
-            placeholder="ชื่อเล่น (ภาษาอังกฤษ)"
+            placeholder="PIN"
           />
           <FieldGroup
-            id="formControlsText"
-            label="First Name (in English)"
+            id="formControlsText2"
+            label="First Name"
             name="first_name"
             type="text"
             onChange={this.handleChange}
-            placeholder="ชื่อจริง (ภาษาอังกฤษ)"
+            placeholder="First Name"
+            key="first_name_vol"
           />
           <FieldGroup
-            id="formControlsText"
-            label="Last Name (in English)"
+            id="formControlsText3"
+            label="Last Name"
             name="last_name"
             type="text"
             onChange={this.handleChange}
-            placeholder="นามสกุล (ภาษาอังกฤษ)"
-          />
-
-          <FormGroup controlId="formControlsSelect">
-            <ControlLabel>Gender</ControlLabel>
-            <FormControl
-              componentClass="select"
-              onChange={this.handleChange}
-              placeholder="select gender"
-              name="gender">
-              <option value="ผู้ชาย">ผู้ชาย</option>
-              <option value="ผู้หญิง">ผู้หญิง</option>
-            </FormControl>
-          </FormGroup>
-
-          <FieldGroup
-            id="formControlsText"
-            label="Phone Number (จำเป็น/required)"
-            name="phone_number"
-            type="text"
-            onChange={this.handleChange}
-            placeholder="เบอร์โทรศัพท์"
+            placeholder="Last Name"
           />
           <FieldGroup
-            id="formControlsEmail"
+            id="formControlsEmail4"
             label="Email Address (ไม่จำเป็น/optional)"
             name="email"
             type="email"
             onChange={this.handleChange}
             placeholder="อีเมล"
           />
-          <FormGroup controlId="formControlsSelect">
-            <ControlLabel>Choose your schedule option (rotate your mobile screen for a wider view).</ControlLabel>
+          <FieldGroup
+            id="formControlsText5"
+            label="Skype Name (Please set your Skype app's notifications to 'on' so that you can receive instant messages from your partner.)"
+            name="skype_name"
+            type="text"
+            onChange={this.handleChange}
+            placeholder="Skype Name"
+          />
+          <FieldGroup
+            id="formControlsText6"
+            label="Facebook Name (Why do we ask for your Facebook name? Because we want you to have the ability to communicate immediately with your Online Conversation Partner using Facebook’s instant messenger about canceling appointments, etc.)"
+            name="facebook"
+            type="text"
+            onChange={this.handleChange}
+            placeholder="Facebook Name"
+          />
+
+          <FormGroup controlId="formControlsSelect7">
+            <ControlLabel>Gender</ControlLabel>
             <FormControl
               componentClass="select"
               onChange={this.handleChange}
-              placeholder="select class time"
-              name="class_time_scheduled_1">
-              <option value="select">-- Choice --</option>
-              {this.state.class_times.map((e, key) => {
-                return <option key={e.period} value={e.period}>{e.period}</option>;
-              })}
+              placeholder="select gender"
+              name="gender">
+              <option value="ผู้ชาย">Male</option>
+              <option value="ผู้หญิง">Female</option>
             </FormControl>
           </FormGroup>
 
-          <button className="btn btn-success" type="submit">Submit</button>
+          <FieldGroup
+            id="formControlsText8"
+            label="Age"
+            name="age"
+            type="text"
+            onChange={this.handleChange}
+            placeholder="Age"
+          />
+          <FieldGroup
+            id="formControlsText9"
+            label="Church, Business or Organization Name"
+            name="organization"
+            type="text"
+            onChange={this.handleChange}
+            placeholder="Organization"
+          />
+          <FieldGroup
+            id="formControlsText10"
+            label="Password"
+            name="password"
+            type="password"
+            onChange={this.handleChange}
+            placeholder="Password"
+          />
+          <FieldGroup
+            id="formControlsText11"
+            label="Password Confirmation"
+            name="password_confirmation"
+            type="password"
+            onChange={this.handleChange}
+            placeholder="Password Confirmation"
+          />
+
+          <FieldGroup
+            id="formControlsText12"
+            label="Phone Number"
+            name="phone_number"
+            type="text"
+            onChange={this.handleChange}
+            placeholder="Phone Number"
+          />
+
+          <Button className="btn btn-success" type="submit">Become a Skype Partner!</Button>
         </form>
         </FormStyler>
       </div>
