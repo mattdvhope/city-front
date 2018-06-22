@@ -20,7 +20,7 @@ function FieldGroup({ id, label, help, ...props }) {
   );
 }
 
-export default class FormApplication1 extends React.Component {
+export default class FormVolAppl extends React.Component {
   constructor(props, context) {
     super(props, context);
 
