@@ -66,7 +66,6 @@ export default class FormApplication1 extends React.Component {
       role: "volunteer"
     }
 
-console.log(user)
     axios.post(`${process.env.GATSBY_API_URL}/users`, {
       utf8: "✓",
       pin: this.state.pin,
@@ -159,6 +158,7 @@ console.log(user)
               onChange={this.handleChange}
               placeholder="select gender"
               name="gender">
+              <option value="select">-- Gender --</option>
               <option value="ผู้ชาย">Male</option>
               <option value="ผู้หญิง">Female</option>
             </FormControl>
