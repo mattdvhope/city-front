@@ -112,8 +112,6 @@ export default class Footer extends Component {
         footerItems = ["Contact Us", "Telephone", "Address:", "66 Pan Road", "Silom, Bangrak", "Bangkok 10500", "(click to see directions)", "Email:"];
       }
 
-console.log("Footer:", this.state.window.localStorage.language);
-
       return (
         <FooterContainer style={{backgroundImage: `url('${this.state.imageChosen}')`, backgroundSize: `cover`}}>
           <Grid fluid>
