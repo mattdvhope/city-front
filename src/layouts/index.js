@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { navigateTo } from "gatsby-link"
 
 import Navbar from '../components/Navbar'
 import FrontPage from '../pages/index'
@@ -25,7 +24,6 @@ export default class Layout extends Component {
     event.preventDefault();
     window.localStorage.setItem("language", "thai" );
     this.setState(this.state);
-    navigateTo(`/contact`)
   }
 
   handleChangeToEnglish(event) {
@@ -33,7 +31,6 @@ export default class Layout extends Component {
     event.preventDefault();
     window.localStorage.setItem("language", "english" );
     this.setState(this.state);
-    navigateTo(`/contact`)
   }
 
   render() {
