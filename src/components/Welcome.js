@@ -3,7 +3,7 @@ import Link from 'gatsby-link';
 import styled from "styled-components";
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import ModalApplication from './ModalApplication'
+import ModalApplication1 from './ModalApplication1'
 
 import welcomeWide from '../img/Welcome-wide.jpg'
 import welcomeMobile from '../img/Welcome-mobile.jpg'
@@ -203,7 +203,7 @@ export default class WelcomeCaption extends Component {
 
         <Grid fluid>
           <TextContainer>
-            {this.props.caption} <span id="get-to-be-a-member">Click here</span> to learn more about us. Or, <ModalStyler><ModalApplication getApplication="click here" /></ModalStyler> to sign up for our popular "You Can Speak!" English class.
+            {this.props.caption} <span id="get-to-be-a-member">Click here</span> to learn more about us. Or, <ModalStyler><ModalApplication1 getApplication="click here" /></ModalStyler> to sign up for our popular "You Can Speak!" English class.
           </TextContainer>
         </Grid>
 

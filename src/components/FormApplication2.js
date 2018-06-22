@@ -20,7 +20,7 @@ function FieldGroup({ id, label, help, ...props }) {
   );
 }
 
-export default class FormApplication extends React.Component {
+export default class FormApplication2 extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -43,12 +43,24 @@ export default class FormApplication extends React.Component {
   componentDidMount() {
     axios.get(`${process.env.GATSBY_API_URL}/class_times.json`)
       .then((response) => {
-        console.log(response.data); // ex.: { user: 'Your User'}
-        console.log(response.status); // ex.: 200
-
-        const class_times = response.data;
+        const class_times = this.filterSortClassTimes(response.data);
+        console.log(class_times); // ex.: { user: 'Your User'}
         this.setState({ class_times });
       });
+  }
+
+  filterSortClassTimes(class_times) {
+    var class_times_part_2 = [];
+    class_times.forEach(function(class_time) {
+      class_time.part === "two" ? class_times_part_2.push(class_time) : null;
+    });
+
+    var off_site = class_times.filter( function(item){return (item.part=="off-site");} );
+    class_times_part_2.unshift(off_site[0]);
+
+    return class_times_part_2.sort(function(a, b) {
+      return a.order_no - b.order_no;
+    });
   }
 
   handleChange = e => {
@@ -71,7 +83,7 @@ export default class FormApplication extends React.Component {
 
     axios.post(`${process.env.GATSBY_API_URL}/users`, {
       utf8: "✓",
-      class_time_scheduled_1: this.state.class_time_scheduled_1,
+      class_time_scheduled_1: "select_option",
       class_time_scheduled_2: this.state.class_time_scheduled_2,
       user: user,
     })
@@ -96,43 +108,6 @@ export default class FormApplication extends React.Component {
 
           <FieldGroup
             id="formControlsText"
-            label="Nickname (in English)"
-            name="nickname"
-            type="text"
-            onChange={this.handleChange}
-            placeholder="ชื่อเล่น (ภาษาอังกฤษ)"
-          />
-          <FieldGroup
-            id="formControlsText"
-            label="First Name (in English)"
-            name="first_name"
-            type="text"
-            onChange={this.handleChange}
-            placeholder="ชื่อจริง (ภาษาอังกฤษ)"
-          />
-          <FieldGroup
-            id="formControlsText"
-            label="Last Name (in English)"
-            name="last_name"
-            type="text"
-            onChange={this.handleChange}
-            placeholder="นามสกุล (ภาษาอังกฤษ)"
-          />
-
-          <FormGroup controlId="formControlsSelect">
-            <ControlLabel>Gender</ControlLabel>
-            <FormControl
-              componentClass="select"
-              onChange={this.handleChange}
-              placeholder="select gender"
-              name="gender">
-              <option value="ผู้ชาย">ผู้ชาย</option>
-              <option value="ผู้หญิง">ผู้หญิง</option>
-            </FormControl>
-          </FormGroup>
-
-          <FieldGroup
-            id="formControlsText"
             label="Phone Number (จำเป็น/required)"
             name="phone_number"
             type="text"
@@ -153,10 +128,10 @@ export default class FormApplication extends React.Component {
               componentClass="select"
               onChange={this.handleChange}
               placeholder="select class time"
-              name="class_time_scheduled_1">
+              name="class_time_scheduled_2">
               <option value="select">-- Choice --</option>
               {this.state.class_times.map((e, key) => {
-                return <option key={e.period} value={e.period}>{e.period_thai}</option>;
+                return <option key={e.period} value={e.period}>{e.period}</option>;
               })}
             </FormControl>
           </FormGroup>

@@ -7,7 +7,8 @@ import styled from "styled-components";
 import styles from "../css/navbar.module.css";
 
 import ModalLogin from './ModalLogin'
-import ModalApplication from './ModalApplication'
+import ModalApplication1 from './ModalApplication1'
+import ModalApplication2 from './ModalApplication2'
 
 const ModalStyler = styled.a`
   cursor: pointer;
@@ -74,11 +75,11 @@ export default class NavbarOnTop extends React.Component {
               <NavDropdown eventKey={3} className="text-center" style={{ fontSize: '130%' }} title={navItems[0]} >
                 <MenuItem divider />
                 <li role="presentation" >
-                  <ModalStyler className="text-center"><NavItemStyler><ModalApplication getApplication={navItems[1]} /></NavItemStyler></ModalStyler>
+                  <ModalStyler className="text-center"><NavItemStyler><ModalApplication1 getApplication={navItems[1]} /></NavItemStyler></ModalStyler>
                 </li>
                 <MenuItem divider />
                 <li role="presentation" >
-                  <ModalStyler className="text-center"><NavItemStyler><ModalApplication getApplication={navItems[2]} /></NavItemStyler></ModalStyler>
+                  <ModalStyler className="text-center"><NavItemStyler><ModalApplication2 getApplication={navItems[2]} /></NavItemStyler></ModalStyler>
                 </li>
                 <MenuItem divider />
                 <LinkContainer to="/blog">
@@ -97,7 +98,7 @@ export default class NavbarOnTop extends React.Component {
                 </LinkContainer>
                 <MenuItem divider />
                 <li role="presentation" >
-                  <ModalStyler className="text-center"><NavItemStyler><ModalApplication getApplication={navItems[7]} /></NavItemStyler></ModalStyler>
+                  <ModalStyler className="text-center"><NavItemStyler><ModalApplication1 getApplication={navItems[7]} /></NavItemStyler></ModalStyler>
                 </li>
                 <MenuItem divider />
                 <li role="presentation" >
