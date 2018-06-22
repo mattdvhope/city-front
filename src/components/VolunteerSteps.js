@@ -5,6 +5,8 @@ import Img from "gatsby-image";
 import styled from "styled-components";
 import styles from "../css/volunteerSteps.module.css";
 
+import ModalVolAppl from './ModalVolAppl'
+import ModalAdminAppl from './ModalAdminAppl'
 import cityTalkClass from '../img/City-Talk-Class.jpg'
 import engConvParnters from '../img/English-Conversation-Partners.jpg'
 import convGroups from '../img/Conversation-Groups.jpg'
@@ -48,19 +50,19 @@ export default (props) => (
 					<TextContainer>
 						<h4 className={styles.subTitle}>{props.step1Title}</h4>
 						<p className={styles.text}>{props.step1Text} </p>
-						<Button bsStyle="success">Success</Button>
-					</TextContainer>
-				</Col>
-				<Col xs={12} sm={4}>
+            <Button bsStyle="success"><ModalAdminAppl getApplication="Register Your Organization" /></Button>
+          </TextContainer>
+        </Col>
+        <Col xs={12} sm={4}>
           <Img
             sizes={props.stepTwoImage2.sizes}
-			    	className={styles.avatar}
+            className={styles.avatar}
             alt="English Conversation Partners!"
           />
-					<TextContainer>
-						<h4 className={styles.subTitle}>{props.step2Title}</h4>
-						<p className={styles.text}>{props.step2Text}</p>
-						<Button bsStyle="success">Success</Button>
+          <TextContainer>
+            <h4 className={styles.subTitle}>{props.step2Title}</h4>
+            <p className={styles.text}>{props.step2Text}</p>
+            <Button bsStyle="success"><ModalVolAppl getApplication="Register New Volunteer" /></Button>
 					</TextContainer>
 				</Col>
 				<Col xs={12} sm={4}>
