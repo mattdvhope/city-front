@@ -39,8 +39,6 @@ export default class NavbarOnTop extends React.Component {
         navItems = ["Register", "Register for 'You Can Speak!' (Part 1)", "Register for 'You Can Speak!' (Part 2)", "Class at your workplace", "Contact us"];
       }
 
-console.log("Navbar:", this.state.window.localStorage.language);
-
       return (
         <Navbar inverse collapseOnSelect fixedTop style={{backgroundImage: `linear-gradient(to bottom,#2D3179 0,#373FAE 80%)`, paddingTop: `0px`}}>
           <Navbar.Header>
