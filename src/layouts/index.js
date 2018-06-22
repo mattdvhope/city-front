@@ -3,8 +3,12 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Navbar from '../components/Navbar'
+
 import Carousel from '../components/Carousel'
-import Welcome from '../components/Welcome'
+
+// import Welcome from '../components/Welcome'
+import Welcome from './welcome'
+
 import Features from '../components/Features'
 import Member from '../components/Member'
 import Footer from '../components/Footer'
@@ -72,8 +76,10 @@ export default class Layout extends Component {
             carouselImage4={data.carouselImage4}
           />
 
+          <Welcome />
+{/* 
           <Welcome caption={welcomeContent}/>
-
+ */}
           <Features
             featureslImage1={data.featureslImage1}
             featuresTitle1={data.allContentfulFeatures.edges[0].node.featuresTitle1}
