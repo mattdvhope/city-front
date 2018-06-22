@@ -82,7 +82,7 @@ export default class NavbarOnTop extends React.Component {
                   <ModalStyler className="text-center"><NavItemStyler><ModalApplication2 getApplication={navItems[2]} /></NavItemStyler></ModalStyler>
                 </li>
                 <MenuItem divider />
-                <LinkContainer to="/blog">
+                <LinkContainer to="/business">
                   <MenuItem eventKey={3.3} className="text-center" ><NavItemStyler>{navItems[3]}</NavItemStyler></MenuItem>    
                 </LinkContainer>
               </NavDropdown>
