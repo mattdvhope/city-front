@@ -3,8 +3,10 @@ import Link from 'gatsby-link';
 import axios from 'axios'
 import styled from "styled-components";
 import { FormGroup, ControlLabel, FormControl, HelpBlock, Checkbox, Radio, Button } from 'react-bootstrap';
+import ApplicationExplanation from './ApplicationExplanation';
 
 const FormStyler = styled.span`
+  font-family: "Neue Frutiger W31 Modern Light", "Athiti";
   font-size: 150%;
 `
 
@@ -82,82 +84,87 @@ export default class FormApplication extends React.Component {
 
   render() {
     return (
-      <FormStyler>
-      <form onSubmit={this.handleSubmit} noValidate="noValidate" encType="multipart/form-data" action="/" acceptCharset="UTF-8">
-        <input type="hidden" name="utf8" value="✓" />
-    {/* <input type="hidden" name="authenticity_token" value="{this.state.csrf_token}" />  */}
-        <input type="hidden" name="guest" value="true" />
+      <div>
+        <ApplicationExplanation />
+        <br/>
+        <hr/>
+        <FormStyler>
+        <form onSubmit={this.handleSubmit} noValidate="noValidate" encType="multipart/form-data" action="/" acceptCharset="UTF-8">
+          <input type="hidden" name="utf8" value="✓" />
+      {/* <input type="hidden" name="authenticity_token" value="{this.state.csrf_token}" />  */}
+          <input type="hidden" name="guest" value="true" />
 
-        <FieldGroup
-          id="formControlsText"
-          label="Nickname"
-          name="nickname"
-          type="text"
-          onChange={this.handleChange}
-          placeholder="Enter nickname"
-        />
-        <FieldGroup
-          id="formControlsText"
-          label="First Name"
-          name="first_name"
-          type="text"
-          onChange={this.handleChange}
-          placeholder="Enter first name"
-        />
-        <FieldGroup
-          id="formControlsText"
-          label="Last Name"
-          name="last_name"
-          type="text"
-          onChange={this.handleChange}
-          placeholder="Enter last name"
-        />
-
-        <FormGroup controlId="formControlsSelect">
-          <ControlLabel>Select Gender</ControlLabel>
-          <FormControl
-            componentClass="select"
+          <FieldGroup
+            id="formControlsText"
+            label="Nickname (in English)"
+            name="nickname"
+            type="text"
             onChange={this.handleChange}
-            placeholder="select gender"
-            name="gender">
-            <option value="ผู้ชาย">ผู้ชาย</option>
-            <option value="ผู้หญิง">ผู้หญิง</option>
-          </FormControl>
-        </FormGroup>
-
-        <FieldGroup
-          id="formControlsText"
-          label="Phone Number"
-          name="phone_number"
-          type="text"
-          onChange={this.handleChange}
-          placeholder="Enter phone number"
-        />
-        <FieldGroup
-          id="formControlsEmail"
-          label="Email address"
-          name="email"
-          type="email"
-          onChange={this.handleChange}
-          placeholder="Enter email"
-        />
-        <FormGroup controlId="formControlsSelect">
-          <ControlLabel>Select</ControlLabel>
-          <FormControl
-            componentClass="select"
+            placeholder="ชื่อเล่น (ภาษาอังกฤษ)"
+          />
+          <FieldGroup
+            id="formControlsText"
+            label="First Name (in English)"
+            name="first_name"
+            type="text"
             onChange={this.handleChange}
-            placeholder="select class time"
-            name="class_time_scheduled_1">
-            <option value="select">select</option>
-            {this.state.class_times.map((e, key) => {
-              return <option key={e.period} value={e.period}>{e.period}</option>;
-            })}
-          </FormControl>
-        </FormGroup>
+            placeholder="ชื่อจริง (ภาษาอังกฤษ)"
+          />
+          <FieldGroup
+            id="formControlsText"
+            label="Last Name (in English)"
+            name="last_name"
+            type="text"
+            onChange={this.handleChange}
+            placeholder="นามสกุล (ภาษาอังกฤษ)"
+          />
 
-        <button className="btn btn-success" type="submit">Submit</button>
-      </form>
-      </FormStyler>
+          <FormGroup controlId="formControlsSelect">
+            <ControlLabel>Gender</ControlLabel>
+            <FormControl
+              componentClass="select"
+              onChange={this.handleChange}
+              placeholder="select gender"
+              name="gender">
+              <option value="ผู้ชาย">ผู้ชาย</option>
+              <option value="ผู้หญิง">ผู้หญิง</option>
+            </FormControl>
+          </FormGroup>
+
+          <FieldGroup
+            id="formControlsText"
+            label="Phone Number (จำเป็น/required)"
+            name="phone_number"
+            type="text"
+            onChange={this.handleChange}
+            placeholder="เบอร์โทรศัพท์"
+          />
+          <FieldGroup
+            id="formControlsEmail"
+            label="Email Address (ไม่จำเป็น/optional)"
+            name="email"
+            type="email"
+            onChange={this.handleChange}
+            placeholder="อีเมล"
+          />
+          <FormGroup controlId="formControlsSelect">
+            <ControlLabel>Choose your schedule option (rotate your mobile screen for a wider view).</ControlLabel>
+            <FormControl
+              componentClass="select"
+              onChange={this.handleChange}
+              placeholder="select class time"
+              name="class_time_scheduled_1">
+              <option value="select">-- Choice --</option>
+              {this.state.class_times.map((e, key) => {
+                return <option key={e.period} value={e.period}>{e.period_thai}</option>;
+              })}
+            </FormControl>
+          </FormGroup>
+
+          <button className="btn btn-success" type="submit">Submit</button>
+        </form>
+        </FormStyler>
+      </div>
     );
   }
 }

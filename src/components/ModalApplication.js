@@ -5,6 +5,11 @@ import { Modal, Popover, Tooltip, Button, OverlayTrigger } from 'react-bootstrap
 
 import FormApplication from './FormApplication'
 
+const TitleStyler = styled.span`
+  font-family: "Neue Frutiger W31 Modern Light", "Athiti";
+  font-size: 150%;
+`
+
 export default class ModalApplication extends Component {
   constructor(props, context) {
     super(props, context);
@@ -33,10 +38,9 @@ export default class ModalApplication extends Component {
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title><TitleStyler>Registration for "You Can Speak!" (Part 1)</TitleStyler></Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h4>Text in a modal</h4>
 
             <FormApplication handleClose={this.handleClose}/>
 
