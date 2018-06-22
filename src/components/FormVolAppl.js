@@ -126,7 +126,7 @@ export default class FormVolAppl extends React.Component {
           />
           <FieldGroup
             id="formControlsEmail4"
-            label="Email Address (ไม่จำเป็น/optional)"
+            label="Email Address"
             name="email"
             type="email"
             onChange={this.handleChange}
