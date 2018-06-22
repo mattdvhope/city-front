@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { navigateTo } from "gatsby-link"
+// import { navigateTo } from "gatsby-link"
 import Navbar from '../components/Navbar'
 
 import Carousel from '../components/Carousel'
