@@ -28,7 +28,6 @@ export default class ClassesAtCenter extends React.Component {
     this.state = {
       class_times1: [],
       class_times2: [],
-      offsite: [],
       order_no: "",
       period: "",
       period_thai: "",
@@ -41,8 +40,7 @@ export default class ClassesAtCenter extends React.Component {
       .then((response) => {
         const class_times1 = this.filterSortPart1(response.data);
         const class_times2 = this.filterSortPart2(response.data);
-        const class_times_off = this.filterSortOff(response.data);
-        this.setState({ class_times1: class_times1, class_times2: class_times2, offsite: class_times_off });
+        this.setState({ class_times1: class_times1, class_times2: class_times2 });
       });
   }
 
@@ -61,13 +59,6 @@ export default class ClassesAtCenter extends React.Component {
     });
 
     return class_times_arr.sort(function(a, b) {
-      return a.order_no - b.order_no;
-    });
-  }
-
-  filterSortOff(class_times) {
-    var offsite = class_times.filter( function(item){return (item.part=="off-site");} );
-    return offsite.sort(function(a, b) {
       return a.order_no - b.order_no;
     });
   }
@@ -143,17 +134,7 @@ export default class ClassesAtCenter extends React.Component {
           )
         })}
 
-        <br/>
-        <h2>Off site</h2>
-        {this.state.offsite.map((time, timeKey) => {
-          return (
-          	<div key={timeKey}>
-          		<h3>Order Number:  {time.order_no}</h3>
-          		<h4>{time.period}</h4>
-            </div>
-          )
-        })}
-
+        <hr/>
         <hr/>
         <h2>You can create new class times below....</h2>
         <h4>(please use formats like these)</h4>
