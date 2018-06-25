@@ -4,7 +4,6 @@ import Carousel from '../components/Carousel'
 import Welcome from '../components/Welcome'
 import Features from '../components/Features'
 import Member from '../components/Member'
-import Footer from '../components/Footer'
 
 export default class FrontPage extends Component {
   constructor(props) {
@@ -74,9 +73,6 @@ export default class FrontPage extends Component {
             secondParagraph={data.allContentfulMemberSecondParagraphTextNode.edges[0].node.secondParagraph}
           />
 
-          <Footer
-            footerlImage={data.footerlImage}
-          />
         </div>
       )
     } else {
@@ -228,12 +224,6 @@ export const homePageQuery = graphql`
       }
     }
 
-
-    footerlImage: imageSharp(id: { regex: "/CEP-logo/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
   }
   
 `
