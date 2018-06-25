@@ -79,9 +79,9 @@ export default class ViewClassTimes extends React.Component {
                   {time.users.map((student, key) => {
                     return (
                       <tr key={key}>
-                        <td key={student.nickname}><TCell>{student.nickname}</TCell></td>
-                        <td key={student.first_name}><TCell>{student.first_name}</TCell></td>
-                        <td key={student.last_name}><TCell>{student.last_name}</TCell></td>
+                        <td key={student.nickname+"nick"}><TCell>{student.nickname}</TCell></td>
+                        <td key={student.first_name+"first"}><TCell>{student.first_name}</TCell></td>
+                        <td key={student.last_name+"last"}><TCell>{student.last_name}</TCell></td>
                         <td key={student.gender}><TCell>{student.gender}</TCell></td>
                         <td key={student.phone_number}><TCell>{student.phone_number}</TCell></td>
                         <td key={student.email}><TCell>{student.email}</TCell></td>
