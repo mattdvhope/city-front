@@ -30,15 +30,14 @@ export default () => {
           </Col>
           <Col sm={6} md={3}>
             <br />
-            <Link to="/app/create-or-delete">Create or Delete class times (at CEP center)</Link>
+            <Link to="/app/classes-at-center">CEP center - Create or Delete class times</Link>
           </Col>
           <Col sm={6} md={3}>
             <br />
-            <Link to="/app/off-site-locations">Create or Archive class times (at off-site location)</Link>
+            <Link to="/app/off-site-locations">Offsite locations - Create or Archive class times</Link>
           </Col>
           <Col sm={6} md={3}>
             <br />
-            <Link to="/app/former-students">Click here to see a list of former CEP students.</Link>
           </Col>
         </Row>
       </Grid>
