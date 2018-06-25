@@ -125,7 +125,7 @@ export default class ClassesAtCenter extends React.Component {
         <hr/>
         {this.state.class_times1.map((time, timeKey) => {
           return (
-          	<div>
+          	<div key={timeKey}>
           		<h3>Order Number:  {time.order_no}</h3>
           		<h4>{time.period}</h4>
             </div>
@@ -136,7 +136,7 @@ export default class ClassesAtCenter extends React.Component {
         <h2>Part 2 Classes</h2>
         {this.state.class_times2.map((time, timeKey) => {
           return (
-          	<div>
+          	<div key={timeKey}>
           		<h3>Order Number:  {time.order_no}</h3>
           		<h4>{time.period}</h4>
             </div>
@@ -147,7 +147,7 @@ export default class ClassesAtCenter extends React.Component {
         <h2>Off site</h2>
         {this.state.offsite.map((time, timeKey) => {
           return (
-          	<div>
+          	<div key={timeKey}>
           		<h3>Order Number:  {time.order_no}</h3>
           		<h4>{time.period}</h4>
             </div>
