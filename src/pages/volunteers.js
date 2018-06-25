@@ -5,7 +5,6 @@ import VolunteerTopPic from '../components/VolunteerTopPic'
 import VolunteerProjectOveriew from '../components/VolunteerProjectOveriew'
 import VolunteerSteps from '../components/VolunteerSteps'
 import Member from '../components/Member'
-import Footer from '../components/Footer'
 
 export default class FrontPage extends Component {
   constructor(props) {
@@ -59,10 +58,6 @@ export default class FrontPage extends Component {
           stepThreeImage3={data.stepThreeImage3}
           step3Title={data.allContentfulVolunteerSteps.edges[0].node.step3Title}
           step3Text={data.allContentfulVolunteerStepsStep3TextTextNode.edges[0].node.step3Text}
-        />
-
-        <Footer
-          footerlImage={data.footerlImage}
         />
 
       </div>
@@ -138,12 +133,6 @@ export const homePageQuery = graphql`
 
 
 
-
-    footerlImage: imageSharp(id: { regex: "/CEP-logo/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
   }
   
 `
