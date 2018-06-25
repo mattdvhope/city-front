@@ -73,15 +73,15 @@ export default class NavbarOnTop extends React.Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav pullRight>
-              <NavDropdown eventKey={3} className="text-center" style={{ fontSize: '130%' }} title={navItems[0]} >
+              <NavDropdown eventKey={3} className="text-center" style={{ fontSize: '130%' }} title={navItems[0]} id={1} >
                 <MenuItem divider />
-                <li role="presentation" >
-                  <ModalStyler className="text-center"><NavItemStyler><ModalApplication1 getApplication={navItems[1]} /></NavItemStyler></ModalStyler>
-                </li>
+                <LinkContainer to="#">
+                  <MenuItem eventKey={3.3} className="text-center" ><NavItemStyler><ModalApplication1 getApplication={navItems[1]} /></NavItemStyler></MenuItem>    
+                </LinkContainer>
                 <MenuItem divider />
-                <li role="presentation" >
-                  <ModalStyler className="text-center"><NavItemStyler><ModalApplication2 getApplication={navItems[2]} /></NavItemStyler></ModalStyler>
-                </li>
+                <LinkContainer to="#">
+                  <MenuItem eventKey={3.3} className="text-center" ><NavItemStyler><ModalApplication2 getApplication={navItems[2]} /></NavItemStyler></MenuItem>    
+                </LinkContainer>
                 <MenuItem divider />
                 <LinkContainer to="/business">
                   <MenuItem eventKey={3.3} className="text-center" ><NavItemStyler>{navItems[3]}</NavItemStyler></MenuItem>    
@@ -92,19 +92,21 @@ export default class NavbarOnTop extends React.Component {
                 <NavItem eventKey={4} className="text-center"><NavItemStyler>{navItems[4]}</NavItemStyler></NavItem>
               </LinkContainer>
 
-              <NavDropdown eventKey={3} className="text-center" style={{ fontSize: '130%' }} title={navItems[5]} >
+              <NavDropdown eventKey={3} className="text-center" style={{ fontSize: '130%' }} title={navItems[5]} id={2} >
                 <MenuItem divider />
                 <LinkContainer to="/volunteers">
                   <MenuItem eventKey={3.1} className="text-center"><NavItemStyler>{navItems[6]}</NavItemStyler></MenuItem>    
                 </LinkContainer>
                 <MenuItem divider />
-                <li role="presentation" >
-                  <ModalStyler className="text-center"><NavItemStyler><ModalVolAppl getApplication={navItems[7]} /></NavItemStyler></ModalStyler>
-                </li>
+                <LinkContainer to="#">
+                  <MenuItem eventKey={3.3} className="text-center" ><NavItemStyler><ModalVolAppl getApplication={navItems[7]} /></NavItemStyler></MenuItem>    
+                </LinkContainer>
                 <MenuItem divider />
-                <li role="presentation" >
-                  <ModalStyler className="text-center"><NavItemStyler><ModalLogin getLogin={navItems[8]} /></NavItemStyler></ModalStyler>
-                </li>
+                <LinkContainer to="#">
+                  <MenuItem eventKey={3.3} className="text-center" ><NavItemStyler><ModalLogin getLogin={navItems[8]} /></NavItemStyler></MenuItem>    
+                </LinkContainer>
+{/* 
+ */}
               </NavDropdown>
 
               <Navbar.Brand>
