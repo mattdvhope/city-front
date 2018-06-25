@@ -29,8 +29,6 @@ export default class FrontPage extends Component {
   render() {
     const { data } = this.props;
 
-    console.log(this.state.english);
-
     let welcomeContent;
 
     if (this.state.english) {
