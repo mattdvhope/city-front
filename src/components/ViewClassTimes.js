@@ -8,7 +8,7 @@ import View from "./View"
 import { getCurrentUser } from "../utils/auth"
 import styled from "styled-components";
 
-const DashStyler = styled.div`
+const CTStyler = styled.div`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
   font-size: 90%;
 `
@@ -52,16 +52,14 @@ export default class ViewClassTimes extends React.Component {
 
   render() {
     return (
-      <DashStyler className="container">
-
+      <CTStyler className="container">
         <h2><Link to="/app/dashboard">Back to Dashboard</Link></h2>
-
         <hr/>
         <h1>View Class Times</h1>
 
-        {this.state.class_times.map((time, key) => {
+        {this.state.class_times.map((time, timeKey) => {
           return (
-            <div>
+            <div key={timeKey}>
               <h3 key={time.period} value={time.period}>{time.period}</h3>
               <Table striped bordered condensed hover>
                 <thead>
@@ -76,9 +74,9 @@ export default class ViewClassTimes extends React.Component {
                   </tr>
                 </thead>
                 <tbody key={time.period}>
-                  {time.users.map((student, key) => {
+                  {time.users.map((student, stuKey) => {
                     return (
-                      <tr key={key}>
+                      <tr key={stuKey}>
                         <td key={student.nickname+"nick"}><TCell>{student.nickname}</TCell></td>
                         <td key={student.first_name+"first"}><TCell>{student.first_name}</TCell></td>
                         <td key={student.last_name+"last"}><TCell>{student.last_name}</TCell></td>
@@ -99,7 +97,7 @@ export default class ViewClassTimes extends React.Component {
       <br/>
       <br/>
       <br/>
-      </DashStyler>
+      </CTStyler>
     )
   }
 }
