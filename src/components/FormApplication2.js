@@ -28,6 +28,9 @@ export default class FormApplication2 extends React.Component {
 
     this.state = {
       class_times: [],
+      off_site_locations: [],
+      off_site_shown: false,
+      off_site_location_id: '',
       guest: true,
       nickname: '',
       first_name: '',
@@ -47,6 +50,12 @@ export default class FormApplication2 extends React.Component {
         console.log(class_times); // ex.: { user: 'Your User'}
         this.setState({ class_times });
       });
+
+    axios.get(`${process.env.GATSBY_API_URL}/off_site_locations.json`)
+      .then((response) => {
+        const off_site_locations = this.filterOffsiteLocations(response.data);
+        this.setState({ off_site_locations });
+      });
   }
 
   filterSortClassTimes(class_times) {
@@ -63,9 +72,23 @@ export default class FormApplication2 extends React.Component {
     });
   }
 
+  filterOffsiteLocations(off_site_locations) {
+    var locs = [];
+    off_site_locations.forEach(function(loc) {
+      loc.completed ? null : locs.push(loc);
+    });
+    return locs;
+  }
+
   handleChange = e => {
     console.log(e.target.value)
     this.setState({[e.target.name]: e.target.value});
+    e.target.value === "Off-site class (not at our center)" ? this.addOffsiteLocations(e) : this.removeOffsiteLocations(e);
+  }
+
+  handleOffsiteChoice = e => {
+    console.log(e.target.value)
+    this.setState({off_site_location_id: e.target.value});
   }
 
   handleSubmit = e => {
@@ -79,6 +102,7 @@ export default class FormApplication2 extends React.Component {
       gender: this.state.gender,
       phone_number: this.state.phone_number,
       email: this.state.email,
+      off_site_location_id: this.state.off_site_location_id
     }
 
     axios.post(`${process.env.GATSBY_API_URL}/users`, {
@@ -94,7 +118,18 @@ export default class FormApplication2 extends React.Component {
     .catch(error => console.log(error))
   }
 
+  addOffsiteLocations(e) {
+    this.setState({ off_site_shown: true });
+  }
+
+  removeOffsiteLocations(e) {
+    console.log("in removeOffsiteLocations")
+    this.setState({ off_site_shown: false, off_site_location_id: '' });
+  }
+
   render() {
+    console.log(this.state.off_site_location_id)
+
     return (
       <div>
         <ApplicationExplanation />
@@ -135,6 +170,25 @@ export default class FormApplication2 extends React.Component {
               })}
             </FormControl>
           </FormGroup>
+
+
+          {this.state.off_site_shown ? (
+            <FormGroup controlId="formControlsSelectOffsite">
+              <ControlLabel>Choose your schedule option (rotate your mobile screen for a wider view).</ControlLabel>
+              <FormControl
+                componentClass="select"
+                onChange={this.handleOffsiteChoice}
+                placeholder="select class time"
+                name="off_site_location">
+                <option value="select">-- Choice --</option>
+                {this.state.off_site_locations.map((e, key) => {
+                  return <option key={e.location_english} value={e.id}>{e.location_english} </option>;
+                })}
+              </FormControl>
+            </FormGroup>
+          ) : (
+            <span />
+          )}
 
           <button className="btn btn-success" type="submit">Submit</button>
         </form>

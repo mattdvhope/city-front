@@ -120,6 +120,7 @@ export default class OffsiteLocations extends React.Component {
         <h2>Here are the currently scheduled CEP off-site (not at the CEP center) class locations....</h2>
         <hr/>
         {this.state.not_completed_locs.map((loc, key) => {
+          console.log(loc);
           return (
             <div key={key}>
               <h3>{loc.location_english}</h3>
