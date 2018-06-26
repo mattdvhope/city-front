@@ -3,10 +3,11 @@ import Link from "gatsby-link";
 import { Carousel } from 'react-bootstrap';
 import Img from "gatsby-image";
 
+import ModalApplication1 from './ModalApplication1';
 import '../css/carousel.css'
 import pic1 from '../img/1Home-Page-Pic.jpg'
 import pic2 from '../img/2YouCanSpeakAd.jpg'
-import pic3 from '../img/3FreeClass.jpg'
+// import pic3 from '../img/3FreeClass.jpg'
 import pic4 from '../img/4AtYourOffice.jpg'
 
 export default class ControlledCarousel extends React.Component {
@@ -39,37 +40,33 @@ export default class ControlledCarousel extends React.Component {
         interval={7000}
       >
         <Carousel.Item>
-          <Link to="/about">
+          <ModalApplication1 getApplication={
             <Img
               alt="Home page picture"
               sizes={this.props.carouselImage1.sizes}
+              style={{cursor: `pointer`}}
             />
-          </Link>
+          }>
+          </ModalApplication1>
           <Carousel.Caption>
           </Carousel.Caption>
         </Carousel.Item>
+
         <Carousel.Item>
-          <Link to="/products">
+          <ModalApplication1 getApplication={
             <Img
               alt="Home page picture"
               sizes={this.props.carouselImage2.sizes}
+              style={{cursor: `pointer`}}
             />
-          </Link>
+          }>
+          </ModalApplication1>
           <Carousel.Caption>
           </Carousel.Caption>
         </Carousel.Item>
+
         <Carousel.Item>
-          <Link to="/about">
-            <Img
-              alt="Home page picture"
-              sizes={this.props.carouselImage3.sizes}
-            />
-          </Link>
-          <Carousel.Caption>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <Link to="/products">
+          <Link to="/business">
             <Img
               alt="Home page picture"
               sizes={this.props.carouselImage4.sizes}
