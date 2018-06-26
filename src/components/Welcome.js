@@ -164,7 +164,7 @@ const TextContainer = styled.div`
   }
 `
 
-const ModalStyler = styled.span`
+const LinkStyler = styled.span`
   color: #8BC34A;
   cursor: pointer;
   font-weight: bolder;
@@ -203,7 +203,7 @@ export default class WelcomeCaption extends Component {
 
         <Grid fluid>
           <TextContainer>
-            {this.props.caption} <span id="get-to-be-a-member">Click here</span> to learn more about us. Or, <ModalStyler><ModalApplication1 getApplication="click here" /></ModalStyler> to sign up for our popular "You Can Speak!" English class.
+            {this.props.caption} <Link to="/more_info"><LinkStyler>Click here</LinkStyler></Link> to learn more about us. Or, <LinkStyler><ModalApplication1 getApplication="click here" /></LinkStyler> to sign up for our popular "You Can Speak!" English class.
           </TextContainer>
         </Grid>
 
