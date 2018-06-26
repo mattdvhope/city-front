@@ -91,9 +91,8 @@ export default class ClassesAtCenter extends React.Component {
     .catch(error => console.log(error))
   }
 
-  handleDelete(e, time_id) {
+  handleDelete(e, id) {
     e.preventDefault();
-    let id = time_id.toString();
     axios.delete(`${process.env.GATSBY_API_URL}/class_times/${id}`)
     .then(response => {
       console.log(response)
@@ -166,9 +165,6 @@ export default class ClassesAtCenter extends React.Component {
         <h3><u>Order Number</u> (If your new class time here will be later than all those listed above, make sure its "Order Number" is at least 10 greater than the last "Order Number" above. For example, if the last class time has an "Order Number" of 53, your new Class Time here should use 63. If your new class time must be inserted [time-wise] between two Class Times above, then make sure your "Order Number" here is as perfectly between them as possible. For example if the class time before your new class time has an "Order Number" of 80 and the one after that is 90, then your new Class Time should have an order number of 85.)...</h3>
 
         <form onSubmit={this.handleSubmit} noValidate="noValidate" encType="multipart/form-data" action="/class_times" acceptCharset="UTF-8">
-	        <input type="hidden" name="utf8" value="✓" />
-	        <input type="hidden" name="guest" value="true" />
-
 	        <FieldGroup
 	          id="formControlsText1"
 	          name="order_no"
@@ -193,7 +189,6 @@ export default class ClassesAtCenter extends React.Component {
 	          onChange={this.handleChange}
 	          placeholder="Class Time, in Thai:"
 	        />
-
 	        <FormGroup controlId="formControlsSelect">
 	          <ControlLabel>Select whether this a "Part 1" class or a "Part 2" class (Default "Part 1"):</ControlLabel>
 	          <FormControl
@@ -207,7 +202,6 @@ export default class ClassesAtCenter extends React.Component {
 	            <option value="two">Part 2</option>
 	          </FormControl>
 	        </FormGroup>
-
 	        <Button className="btn btn-success" type="submit">Create</Button>
 	      </form>
       
@@ -219,7 +213,7 @@ export default class ClassesAtCenter extends React.Component {
         <hr/>
         {this.state.class_times1.map((time, timeKey) => {
           return (
-          	<div>
+          	<div key={timeKey}>
     		      <h3>{time.period}<a href="" onClick={e => this.handleDelete(e, time.id)}> Delete</a></h3>
             </div>
           )
@@ -229,7 +223,7 @@ export default class ClassesAtCenter extends React.Component {
         <h2>Part 2 Classes</h2>
         {this.state.class_times2.map((time, timeKey) => {
           return (
-          	<div>
+            <div key={timeKey}>
     		      <h3>{time.period}<a href="" onClick={e => this.handleDelete(e, time.id)}> Delete</a></h3>
             </div>
           )
