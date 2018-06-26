@@ -58,7 +58,7 @@ export default class NavbarOnTop extends React.Component {
       }
 
       return (
-        <Navbar inverse collapseOnSelect fixedTop style={{backgroundImage: `linear-gradient(to bottom,#2D3179 0,#373FAE 80%)`, paddingTop: `0px`}}>
+        <Navbar inverse collapseOnSelect fixedTop style={{backgroundImage: `linear-gradient(to bottom,#2D3179 0,#373FAE 80%)`, fontFamily: `Neue Frutiger W31 Modern Light`, fontFamily: `Athiti`}}>
           <Navbar.Header>
             <Navbar.Brand>
               <Link to="/">
