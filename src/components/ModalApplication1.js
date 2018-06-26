@@ -18,8 +18,13 @@ export default class ModalApplication1 extends Component {
     this.handleClose = this.handleClose.bind(this);
 
     this.state = {
-      show: false
+      show: false,
+      window: undefined
     };
+  }
+
+  componentDidMount() {
+    this.setState({ window: window });
   }
 
   handleClose() {
@@ -31,6 +36,15 @@ export default class ModalApplication1 extends Component {
   }
 
   render() {
+    let reg = '';
+    if (this.state.window) {
+      if (this.state.window.localStorage.language === "thai") {
+        reg = "สมัครเรียนหลักสูตร \"You Can Speak!\" (ตอนที่ 1)";
+      } else {
+        reg = "Registration for \"You Can Speak!\" (Part 1)";
+      }
+    }
+
     return (
       <span>
 
@@ -38,7 +52,7 @@ export default class ModalApplication1 extends Component {
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title><TitleStyler>Registration for "You Can Speak!" (Part 1)</TitleStyler></Modal.Title>
+            <Modal.Title><TitleStyler>{reg}</TitleStyler></Modal.Title>
           </Modal.Header>
           <Modal.Body>
 

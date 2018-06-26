@@ -39,7 +39,8 @@ export default class FormApplication2 extends React.Component {
       phone_number: '',
       email: '',
       class_time_scheduled_1: '',
-      class_time_scheduled_2: 'select_option'
+      class_time_scheduled_2: 'select_option',
+      window: undefined
     };
   }
 
@@ -56,6 +57,7 @@ export default class FormApplication2 extends React.Component {
         const off_site_locations = this.filterOffsiteLocations(response.data);
         this.setState({ off_site_locations });
       });
+    this.setState({ window: window });
   }
 
   filterSortClassTimes(class_times) {
@@ -128,7 +130,31 @@ export default class FormApplication2 extends React.Component {
   }
 
   render() {
-    console.log(this.state.off_site_location_id)
+    let labelItems = [];
+    if (this.state.window) {
+
+      console.log(this.state.window.localStorage.language)
+
+      if (this.state.window.localStorage.language === "thai") {
+        labelItems = ["ชื่อเล่น (ภาษาอังกฤษ)",
+                    "ชื่อจริง (ภาษาอังกฤษ)",
+                    "นามสกุล (ภาษาอังกฤษ)",
+                    "ชายหรือหญิง",
+                    "เบอร์โทรศัพท์ (จำเป็น)",
+                    "อีเมล (ไม่จำเป็น)",
+                    "เลือกตารางเวลาเรียนของคุณ (หมุนหน้าจอโทรศัพท์ของคุณเพื่อดูภาพที่กว้างขึ้น)",
+                    "เลือกนอกสถานที่ของคุณ (หมุนหน้าจอโทรศัพท์ของคุณเพื่อดูภาพที่กว้างขึ้น)"]
+      } else {
+        labelItems = ['Nickname (in English)',
+                      'First Name (in English)',
+                      'Last Name (in English)',
+                      'Gender',
+                      'Phone Number (required)',
+                      'Email Address (optional)',
+                      'Choose your schedule option (rotate your mobile screen for a wider view).',
+                      'Choose your offsite location (rotate your mobile screen for a wider view).'];
+      }
+    }
 
     return (
       <div>
@@ -143,7 +169,7 @@ export default class FormApplication2 extends React.Component {
 
           <FieldGroup
             id="formControlsText"
-            label="Phone Number (จำเป็น/required)"
+            label={labelItems[4]}
             name="phone_number"
             type="text"
             onChange={this.handleChange}
@@ -151,14 +177,14 @@ export default class FormApplication2 extends React.Component {
           />
           <FieldGroup
             id="formControlsEmail"
-            label="Email Address (ไม่จำเป็น/optional)"
+            label={labelItems[5]}
             name="email"
             type="email"
             onChange={this.handleChange}
             placeholder="อีเมล"
           />
           <FormGroup controlId="formControlsSelect">
-            <ControlLabel>Choose your schedule option (rotate your mobile screen for a wider view).</ControlLabel>
+            <ControlLabel>{labelItems[6]}</ControlLabel>
             <FormControl
               componentClass="select"
               onChange={this.handleChange}
@@ -174,7 +200,7 @@ export default class FormApplication2 extends React.Component {
 
           {this.state.off_site_shown ? (
             <FormGroup controlId="formControlsSelectOffsite">
-              <ControlLabel>Choose your schedule option (rotate your mobile screen for a wider view).</ControlLabel>
+              <ControlLabel>{labelItems[7]}</ControlLabel>
               <FormControl
                 componentClass="select"
                 onChange={this.handleOffsiteChoice}
