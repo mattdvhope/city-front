@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled from "styled-components";
 import { Modal, Button } from 'react-bootstrap';
 
 import Login from './Login'
