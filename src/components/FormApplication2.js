@@ -133,8 +133,6 @@ export default class FormApplication2 extends React.Component {
     let labelItems = [];
     if (this.state.window) {
 
-      console.log(this.state.window.localStorage.language)
-
       if (this.state.window.localStorage.language === "thai") {
         labelItems = ["ชื่อเล่น (ภาษาอังกฤษ)",
                     "ชื่อจริง (ภาษาอังกฤษ)",
