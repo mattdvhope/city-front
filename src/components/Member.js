@@ -6,9 +6,7 @@ import Img from "gatsby-image";
 import styled from "styled-components";
 import styles from "../css/member.module.css";
 
-import membership4Web from '../img/Membership4Web.jpg'
-import holisticModel from '../img/Holistic-Model.png'
-import friendsHelpingFriends from '../img/Friends-helping-friends.png'
+import ModalThaiHist from './ModalThaiHist';
 
 const MemberContainer = styled.div`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
@@ -28,11 +26,6 @@ const SubTitleContainer = styled.div`
 	margin-left: 8%;
 `;
 
-const YouCanSpeakLink = styled(Link)`
-  color: #8BC34A;
-  font-weight: bold;
-`; 
-
 const ListContainer = styled.div`
 	width: 95%;
 	color: #2d3179;
@@ -46,6 +39,12 @@ const TextContainer = styled.div`
 
 const TextContent = styled.div`
 	font-size: 20px;
+`
+
+const ModalStyler = styled.span`
+  color: #8BC34A;
+  cursor: pointer;
+  font-weight: bolder;
 `
 
 export default (props) => (
@@ -110,7 +109,7 @@ export default (props) => (
 				<Col sm={6} xs={12}>
 					<TextContainer>
 						<h3>{props.secondParagraphSubtitle}</h3>
-            <TextContent>{props.secondParagraph} They come from a <YouCanSpeakLink to="/products">long history of Christian volunteers</YouCanSpeakLink> who have loved and served Thai people.</TextContent>
+            <TextContent>{props.secondParagraph} They come from a <ModalStyler><ModalThaiHist getHist="long history of Christian volunteers" /></ModalStyler> who have loved and served Thai people.</TextContent>
 					</TextContainer>
 				</Col>
 			</Row>
