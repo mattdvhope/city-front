@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FormGroup, ControlLabel, FormControl, HelpBlock, Button } from 'react-bootstrap';
+import { FormGroup, ControlLabel, FormControl, HelpBlock, Button, Table, Collapse } from 'react-bootstrap';
 import Link from 'gatsby-link'
 import axios from 'axios'
 import { navigateTo } from "gatsby-link"
@@ -8,10 +8,19 @@ import styled from "styled-components";
 import View from "./View"
 import { getCurrentUser } from "../utils/auth"
 
-const CDStyler = styled.div`
+const OsStyler = styled.div`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
   font-size: 90%;
 `
+
+const HeadEl = styled.div`
+  font-size: 150%;
+`
+
+const TCell = styled.div`
+  font-size: 120%;
+`
+
 function FieldGroup({ id, label, help, ...props }) {
   return (
     <FormGroup controlId={id}>
@@ -22,54 +31,42 @@ function FieldGroup({ id, label, help, ...props }) {
   );
 }
 
-export default class ViewClassTimes extends React.Component {
+export default class OffsiteLocations extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      class_times1: [],
-      class_times2: [],
-      offsite: [],
-      order_no: "",
-      period: "",
-      period_thai: "",
-      part: ""
+      completed_locs: [],
+      not_completed_locs: [],
+      location_english: "",
+      location_thai: "",
+      detailed: false
     };
+    this.toggle = this.toggle.bind(this)
   }
 
   componentDidMount() {
-    axios.get(`${process.env.GATSBY_API_URL}/class_times.json`)
+    axios.get(`${process.env.GATSBY_API_URL}/off_site_locations.json`)
       .then((response) => {
-        const class_times1 = this.filterSortPart1(response.data);
-        const class_times2 = this.filterSortPart2(response.data);
-        const class_times_off = this.filterSortOff(response.data);
-        this.setState({ class_times1: class_times1, class_times2: class_times2, offsite: class_times_off });
+        const completed_locs = this.completedLocs(response.data);
+        const not_completed_locs = this.notCompletedLocs(response.data);
+        this.setState({ completed_locs: completed_locs, not_completed_locs: not_completed_locs });
       });
   }
 
-  filterSortPart1(class_times, part="one") {
-    return this.filterSortPart(class_times, part)
+  completedLocs(locs) {
+    var off_site_locations_arr = [];
+    locs.forEach(function(loc) {
+      loc.completed ? off_site_locations_arr.push(loc) : null;
+    });
+    return off_site_locations_arr;
   }
 
-  filterSortPart2(class_times, part="two") {
-    return this.filterSortPart(class_times, part)
-  }
-
-  filterSortPart(class_times, part) {
-    var class_times_arr = [];
-    class_times.forEach(function(class_time) {
-      class_time.part === part ? class_times_arr.push(class_time) : null;
+  notCompletedLocs(locs) {
+    var off_site_locations_arr = [];
+    locs.forEach(function(loc) {
+      loc.completed ? null : off_site_locations_arr.push(loc);
     });
-
-    return class_times_arr.sort(function(a, b) {
-      return a.order_no - b.order_no;
-    });
-  }
-
-  filterSortOff(class_times) {
-    var offsite = class_times.filter( function(item){return (item.part=="off-site");} );
-    return offsite.sort(function(a, b) {
-      return a.order_no - b.order_no;
-    });
+    return off_site_locations_arr;
   }
 
   handleChange = e => {
@@ -79,19 +76,17 @@ export default class ViewClassTimes extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const class_time = {
-      order_no: this.state.order_no,
-      period: this.state.period,
-      period_thai: this.state.period_thai,
-      part: this.state.part,
+    const off_site_location = {
+      location_english: this.state.location_english,
+      location_thai: this.state.location_thai,
+      completed: false
     }
 
-    axios.post(`${process.env.GATSBY_API_URL}/class_times`, {
-      order_no: this.state.order_no,
-      period: this.state.period,
-      period_thai: this.state.period_thai,
-      part: this.state.part,
-      class_time: class_time,
+    axios.post(`${process.env.GATSBY_API_URL}/off_site_locations`, {
+      location_english: this.state.location_english,
+      location_thai: this.state.location_thai,
+      completed: false,
+      off_site_location: off_site_location,
     })
     .then(response => {
       console.log(response)
@@ -100,165 +95,134 @@ export default class ViewClassTimes extends React.Component {
     .catch(error => console.log(error))
   }
 
-  handleDelete(e, time_id) {
+  handleArchive(e, id) {
     e.preventDefault();
-    let id = time_id.toString();
-    axios.delete(`${process.env.GATSBY_API_URL}/class_times/${id}`)
+    axios.patch(`${process.env.GATSBY_API_URL}/off_site_locations/${id}`)
     .then(response => {
       console.log(response)
       navigateTo('/app/dashboard')
     })
     .catch(error => console.log(error))
+  }
+
+  toggle() {
+    console.log(this.state.detailed)
+    this.setState({detailed: !this.state.detailed})
   }
 
   render() {
     return (
-      <CDStyler className="container">
+      <OsStyler className="container">
         <h3><Link to="/app/dashboard">Back to Dashboard</Link></h3>
         <hr/>
-        <h2>Create or Delete class times on this page...</h2>
+        <h2>Create or Archive off-site locations on this page...</h2>
         <hr/>
-        <h2>Here are the currently scheduled CEP class times with their "Order Number" above each of them (not including off-site classes on this list).</h2>
-        <h2>This is the order (usually chronological) in which they will be shown upon various places throughout the website. You'll notice that there are some big gaps between these "Order Numbers." More explanation on that below....</h2>
-
-        <h2>Part 1 Classes</h2>
+        <h2>Here are the currently scheduled CEP off-site (not at the CEP center) class locations....</h2>
         <hr/>
-        {this.state.class_times1.map((time, timeKey) => {
+        {this.state.not_completed_locs.map((loc, key) => {
           return (
-            <div>
-              <h3>Order Number:  {time.order_no}</h3>
-              <h4>{time.period}</h4>
+            <div key={key}>
+              <h3>{loc.location_english}</h3>
+              <Table striped bordered condensed hover>
+                <thead>
+                  <tr>
+                    <th><HeadEl>Nickname</HeadEl></th>
+                    <th><HeadEl>First Name</HeadEl></th>
+                    <th><HeadEl>Last Name</HeadEl></th>
+                    <th><HeadEl>Gender</HeadEl></th>
+                    <th><HeadEl>Phone Number</HeadEl></th>
+                    <th><HeadEl>Email</HeadEl></th>
+                    <th><HeadEl>Date Registered</HeadEl></th>
+                  </tr>
+                </thead>
+                <tbody key={key}>
+                  {loc.users.map((student, stuKey) => {
+                    return (
+                      <tr key={stuKey}>
+                        <td key={student.nickname+"nick"}><TCell>{student.nickname}</TCell></td>
+                        <td key={student.first_name+"first"}><TCell>{student.first_name}</TCell></td>
+                        <td key={student.last_name+"last"}><TCell>{student.last_name}</TCell></td>
+                        <td key={student.gender}><TCell>{student.gender}</TCell></td>
+                        <td key={student.phone_number}><TCell>{student.phone_number}</TCell></td>
+                        <td key={student.email}><TCell>{student.email}</TCell></td>
+                        <td key={student.date_format}><TCell>{student.date_format}</TCell></td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </Table>
             </div>
           )
         })}
-
-        <br/>
-        <h2>Part 2 Classes</h2>
-        {this.state.class_times2.map((time, timeKey) => {
-          return (
-            <div>
-              <h3>Order Number:  {time.order_no}</h3>
-              <h4>{time.period}</h4>
-            </div>
-          )
-        })}
-
-        <br/>
-        <h2>Off site</h2>
-        {this.state.offsite.map((time, timeKey) => {
-          return (
-            <div>
-              <h3>Order Number:  {time.order_no}</h3>
-              <h4>{time.period}</h4>
-            </div>
-          )
-        })}
-
         <hr/>
-        <h2>You can create new class times below....</h2>
-        <h4>(please use formats like these)</h4>
-
-        <h2>20-24 June, 6:30-8:00pm</h2>
+        <hr/>
+        <h2>You can create new off-site locations below....</h2>
+        <h4>Use differing characteristics [like floor numbers, etc] and a chronologically ordered number [#3, etc] for classes taught in succession at the same location. Also write in the time period (plus days if not a M-F class). <u>The bottom line is that you want to distinguish every class from every other class</u>!</h4>
+        <h3>Wat Tam Sua (3rd floor, #1), 10:00am-12:00pm</h3>
         <h4>...and...</h4>
-        <h2>20-24 มิถุนายน, 18:30-20:00น.</h2>
+        <h3>วัดถ้ำเสือ (ชั้น 3, #1), 10:30-12:00น.</h3>
         <h4>..............or.............</h4>
-        <h2>27 Febrary - 3 March, 6:30-8:00pm</h2>
+        <h3>Fusion Sales team (#2), 6:00-7:30pm</h3>
         <h4>...and...</h4>
-        <h2>27 กุมภาพันธ์ - 3 มีนาคม, 18:30-20:00น.</h2>
+        <h3>ทีมขาย Fusion (#2), 18:00-19:30น.</h3>
         <h4>..............or.............</h4>
-        <h2>18,19,20,25,27 April (5 times), 6:30-8:00pm</h2>
+        <h3>Fusion Sales team (#3), T-Th, 6:00-7:30pm</h3>
         <h4>...and...</h4>
-        <h2>18,19,20,25,27 เมษายน (5 ครัง), 18:30-20:00น.</h2>
-        <h4>..............or.............</h4>
-        <h2>9-23 May, Tuesdays/Thursdays (5 times), 6:30-8:00pm</h2>
-        <h4>...and...</h4>
-        <h2>9-23 พฤษภาคม, อังคาร/พฤหัสบดี (5 ครั้ง), 18:30-20:00น.</h2>
+        <h3>ทีมขาย Fusion (#3), อังคาร-พฤหัส, 18:00-19:30น.</h3>
         <h4>...etc...(try not make them too long and avoid typos!!)....</h4>
 
         <hr/>
         <hr/>
-
-        <h2>Below here you can (1) Create a new class time, (2) Delete a class time</h2>
+        <h2>Below here you can (1) Create a new off-site location, (2) Archive an off-site location</h2>
         <hr/>
-        <h2>(1) Create a new class time</h2>
+        <h2>(1) Create a new off-site locations</h2>
         <hr/>
-        <h3><u>Order Number</u> (If your new class time here will be later than all those listed above, make sure its "Order Number" is at least 10 greater than the last "Order Number" above. For example, if the last class time has an "Order Number" of 53, your new Class Time here should use 63. If your new class time must be inserted [time-wise] between two Class Times above, then make sure your "Order Number" here is as perfectly between them as possible. For example if the class time before your new class time has an "Order Number" of 80 and the one after that is 90, then your new Class Time should have an order number of 85.)...</h3>
 
-        <form onSubmit={this.handleSubmit} noValidate="noValidate" encType="multipart/form-data" action="/class_times" acceptCharset="UTF-8">
-          <input type="hidden" name="utf8" value="✓" />
-          <input type="hidden" name="guest" value="true" />
-
+        <form onSubmit={this.handleSubmit} noValidate="noValidate" encType="multipart/form-data" action="/off_site_locations" acceptCharset="UTF-8">
           <FieldGroup
             id="formControlsText1"
-            name="order_no"
+            label="Location in English:"
+            name="location_english"
             type="text"
             onChange={this.handleChange}
-            placeholder="Order Number"
-            style={{width: `20em`}}
+            placeholder="Location in English"
           />
           <FieldGroup
             id="formControlsText2"
-            label="Class Time, in English:"
-            name="period"
+            label="Location in Thai:"
+            name="location_thai"
             type="text"
             onChange={this.handleChange}
-            placeholder="Class Time, in English:"
+            placeholder="Location in Thai"
           />
-          <FieldGroup
-            id="formControlsText3"
-            label="Class Time, in English:"
-            name="period_thai"
-            type="text"
-            onChange={this.handleChange}
-            placeholder="Class Time, in Thai:"
-          />
-
-          <FormGroup controlId="formControlsSelect">
-            <ControlLabel>Select whether this a "Part 1" class or a "Part 2" class (Default "Part 1"):</ControlLabel>
-            <FormControl
-              componentClass="select"
-              onChange={this.handleChange}
-              style={{width: `10em`}}
-              type="select"
-              name="part">
-              <option value="one">--Select Part--</option>
-              <option value="one">Part 1</option>
-              <option value="two">Part 2</option>
-            </FormControl>
-          </FormGroup>
-
           <Button className="btn btn-success" type="submit">Create</Button>
         </form>
-      
+
         <hr/>
-        <h2>(2) Delete a class time</h2>
+        <h2>(2) Mark/Archive off-site location as 'complete'</h2>
+        <hr/>
+        <ul>
+          {this.state.not_completed_locs.map((loc, key) => {
+            return (
+              <li key={key}><h3>{loc.location_english} <a href="" onClick={e => this.handleArchive(e, loc.id)}>Archive</a></h3></li>
+            )
+          })}
+        </ul>
         <hr/>
 
-        <h2>Part 1 Classes</h2>
-        <hr/>
-        {this.state.class_times1.map((time, timeKey) => {
-          return (
-            <div>
-              <h3>{time.period}<a href="" onClick={e => this.handleDelete(e, time.id)}> Delete</a></h3>
-            </div>
-          )
-        })}
-
-        <br/>
-        <h2>Part 2 Classes</h2>
-        {this.state.class_times2.map((time, timeKey) => {
-          return (
-            <div>
-              <h3>{time.period}<a href="" onClick={e => this.handleDelete(e, time.id)}> Delete</a></h3>
-            </div>
-          )
-        })}
+        <h2><span onClick={this.toggle} style={{color: `#337ab7`, cursor: `pointer`}}>Click here to see an Archived List of 'completed' off-site locations.</span></h2>
+        <Collapse in={this.state.detailed}>
+          <ul>
+            {this.state.completed_locs.map((loc, key) => {
+              return (
+                <li key={key}><h3>{loc.location_english}</h3></li>
+              )
+            })}
+          </ul>
+        </Collapse>
         <br/>
         <br/>
-        <br/>
-        <br/>
-        <br/>
-      </CDStyler>
+      </OsStyler>
     )
   }
 }
