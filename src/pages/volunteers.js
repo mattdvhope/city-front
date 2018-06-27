@@ -6,54 +6,84 @@ import VolunteerProjectOveriew from '../components/VolunteerProjectOveriew'
 import VolunteerSteps from '../components/VolunteerSteps'
 import Member from '../components/Member'
 
-export default class FrontPage extends Component {
+export default class Volunteers extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      english: true,
-      thai: false,
+      window: undefined
     };
   }
 
-  handleChangeToThai(event) {
-    event.preventDefault()
-    this.setState({english: false, thai: true});
-  }
-
-  handleChangeToEnglish(event) {
-    event.preventDefault()
-    this.setState({english: true, thai: false});
+  componentDidMount() {
+    this.setState({ window: window });
   }
 
   render() {
-    const { data } = this.props;
+    let num1 = []; let num2 = []; let title, step1Title, step1Text, step2Title, step2Text, step3Title, step3Text;
 
-    return (
-      <div>
+    if (this.state.window) {
+      const { data } = this.props;
 
-        <VolunteerTopPic/>
+      if (process.env.GATSBY_API_URL === "http://localhost:3000") {
+        num1.unshift(1); num2.unshift(0);
+        } else {
+        num1.unshift(0); num2.unshift(1);
+      }
 
-        <VolunteerProjectOveriew />
+      if (this.state.window.localStorage.language === "thai") {
+        title=data.allContentfulVolunteerSteps.edges[num1[0]].node.title
+        step1Title=data.allContentfulVolunteerSteps.edges[num1[0]].node.step1Title
+        step1Text=data.allContentfulVolunteerStepsStep1TextTextNode.edges[num1[0]].node.step1Text
 
-        <VolunteerSteps
-        	title={data.allContentfulVolunteerSteps.edges[0].node.title}
+        step2Title=data.allContentfulVolunteerSteps.edges[num1[0]].node.step2Title
+        step2Text=data.allContentfulVolunteerStepsStep2TextTextNode.edges[num1[0]].node.step2Text
 
-          stepOneImage1={data.stepOneImage1}
-          step1Title={data.allContentfulVolunteerSteps.edges[0].node.step1Title}
-          step1Text={data.allContentfulVolunteerStepsStep1TextTextNode.edges[0].node.step1Text}
+        step3Title=data.allContentfulVolunteerSteps.edges[num1[0]].node.step3Title
+        step3Text=data.allContentfulVolunteerStepsStep3TextTextNode.edges[num1[0]].node.step3Text
 
-          stepTwoImage2={data.stepTwoImage2}
-          step2Title={data.allContentfulVolunteerSteps.edges[0].node.step2Title}
-          step2Text={data.allContentfulVolunteerStepsStep2TextTextNode.edges[0].node.step2Text}
+      } else {
+        title=data.allContentfulVolunteerSteps.edges[num2[0]].node.title
+        step1Title=data.allContentfulVolunteerSteps.edges[num2[0]].node.step1Title
+        step1Text=data.allContentfulVolunteerStepsStep1TextTextNode.edges[num2[0]].node.step1Text
 
-          stepThreeImage3={data.stepThreeImage3}
-          step3Title={data.allContentfulVolunteerSteps.edges[0].node.step3Title}
-          step3Text={data.allContentfulVolunteerStepsStep3TextTextNode.edges[0].node.step3Text}
-        />
+        step2Title=data.allContentfulVolunteerSteps.edges[num2[0]].node.step2Title
+        step2Text=data.allContentfulVolunteerStepsStep2TextTextNode.edges[num2[0]].node.step2Text
 
-      </div>
-    )
+        step3Title=data.allContentfulVolunteerSteps.edges[num2[0]].node.step3Title
+        step3Text=data.allContentfulVolunteerStepsStep3TextTextNode.edges[num2[0]].node.step3Text
 
+      }
+
+      return (
+        <div>
+
+          <VolunteerTopPic window={this.state.window}/>
+
+          <VolunteerProjectOveriew />
+
+          <VolunteerSteps
+            stepOneImage1={data.stepOneImage1}
+            stepTwoImage2={data.stepTwoImage2}
+            stepThreeImage3={data.stepThreeImage3}
+
+            title={title}
+
+            step1Title={step1Title}
+            step1Text={step1Text}
+
+            step2Title={step2Title}
+            step2Text={step2Text}
+
+            step3Title={step3Title}
+            step3Text={step3Text}
+          />
+
+        </div>
+      )
+
+    } else {
+      return <span />
+    }
   }
 
 }

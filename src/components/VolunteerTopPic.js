@@ -168,14 +168,13 @@ const ModalStyler = styled.span`
   font-weight: bolder;
 `
 
-export default class WelcomeCaption extends Component {
+export default class VolunteerTopPic extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
       imageChosen: undefined
     };
-    // this.chooseImage = this.chooseImage.bind(this);
   }
 
   handleResize = () => this.setState({
@@ -192,17 +191,25 @@ export default class WelcomeCaption extends Component {
   }
 
   render() {
+    let textItems = [];
+
+console.log(this.props.window.localStorage.language === "thai")
+
+      if (this.props.window.localStorage.language === "thai") {
+        textItems = ["ยินดีต้อนรับคนอาสาสมัคร! นี่คือภาพรวมของ CEP สำหรับคุณลองมาดูด้านล่าง!"];
+      } else {
+        textItems = ["Welcome Volunteers! Want to partner with City English Project?"];
+      }
+ 
     return (
       <CoffeeTablePicContainer style={{backgroundImage: `url('${this.state.imageChosen}')`, backgroundSize: `cover`}}>
-
         <Grid fluid>
           <TextContainer>
-            Welcome Volunteers! Want to partner with City English Project?
+            {textItems[0]}
           </TextContainer>
         </Grid>
 
       </CoffeeTablePicContainer>
-
     )
   }
 }
