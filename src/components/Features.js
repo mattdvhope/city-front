@@ -45,12 +45,14 @@ export default class Features extends Component {
   }
 
   render() {
-    let featuresTitle = '';
+    let textItems = [];
     if (this.state.window) {
       if (this.state.window.localStorage.language === "thai") {
-        featuresTitle = "บริการของเรา";
+        textItems = ["บริการของเรา",
+                     "คลิกที่นี่เพื่อลงทะเบียนเรียน!"];
       } else {
-        featuresTitle = "Features";
+        textItems = ["Features",
+                     "Click here to sign up for a class!"];
       }
 
     }
@@ -60,7 +62,7 @@ export default class Features extends Component {
     		<Grid fluid>
     			<Row>
     				<TitleContainer>
-    					<h1 className="text-center">{featuresTitle}</h1>
+    					<h1 className="text-center">{textItems[0]}</h1>
     				</TitleContainer>
     			</Row>
     			<Row>
@@ -72,7 +74,7 @@ export default class Features extends Component {
               />
     					<TextContainer>
     						<h4 className={styles.subTitle}>{this.props.featuresTitle1}</h4>
-    						<p className={styles.text}>{this.props.featuresContent1} <ModalStyler><ModalApplication1 getApplication="Click here to sign up for a class!" /></ModalStyler></p>
+    						<p className={styles.text}>{this.props.featuresContent1} <ModalStyler><ModalApplication1 getApplication={textItems[1]} /></ModalStyler></p>
     					</TextContainer>
     				</Col>
     				<Col xs={12} sm={4}>
