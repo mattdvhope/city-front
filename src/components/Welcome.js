@@ -177,7 +177,8 @@ export default class WelcomeCaption extends Component {
     this.state = {
       windowHeight: undefined,
       windowWidth: undefined,
-      imageChosen: undefined
+      imageChosen: undefined,
+      window: undefined
     };
     // this.chooseImage = this.chooseImage.bind(this);
   }
@@ -191,6 +192,7 @@ export default class WelcomeCaption extends Component {
   componentDidMount() {
     this.handleResize();
     window.addEventListener('resize', this.handleResize)
+    this.setState({ window: window });
   }
 
   componentWillUnmount() {
@@ -198,12 +200,29 @@ export default class WelcomeCaption extends Component {
   }
 
   render() {
+    let textItems = [];
+    if (this.state.window) {
+
+      if (this.state.window.localStorage.language === "thai") {
+        textItems = ["คลิกที่นี่ ",
+                    " เพื่อเรียนรู้เพิ่มเติมเกี่ยวกับเรา หรือ ",
+                    "คลิกที่นี่ ",
+                    " เพื่อลงทะเบียนสำหรับชั้นเรียนภาษาอังกฤษ \"You Can Speak!\" ที่เป็นที่นิยมของเรา"];
+      } else {
+        textItems = ['Click here',
+                      ' to learn more about us. Or, ',
+                      'click here',
+                      ' to sign up for our popular "You Can Speak!" English class.'];
+      }
+
+    }
+
     return (
       <WelcomeContainer style={{backgroundImage: `url('${this.state.imageChosen}')`, backgroundSize: `cover`}}>
 
         <Grid fluid>
           <TextContainer>
-            {this.props.caption} <Link to="/more_info"><LinkStyler>Click here</LinkStyler></Link> to learn more about us. Or, <LinkStyler><ModalApplication1 getApplication="click here" /></LinkStyler> to sign up for our popular "You Can Speak!" English class.
+            {this.props.caption} <Link to="/more_info"><LinkStyler>{textItems[0]}</LinkStyler></Link>{textItems[1]}<LinkStyler><ModalApplication1 getApplication={textItems[2]} /></LinkStyler>{textItems[3]}
           </TextContainer>
         </Grid>
 

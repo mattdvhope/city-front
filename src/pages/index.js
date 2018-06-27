@@ -24,7 +24,7 @@ export default class FrontPage extends Component {
       let welcomeContent;
 
       if (this.state.window.localStorage.language === "thai") {
-        welcomeContent = "ดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดด";
+        welcomeContent = data.allContentfulWelcome.edges[1].node.welcomeContent.welcomeContent
       } else {
         welcomeContent = data.allContentfulWelcome.edges[0].node.welcomeContent.welcomeContent
       }
