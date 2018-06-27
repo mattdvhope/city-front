@@ -21,15 +21,18 @@ export default class FrontPage extends Component {
     if (this.state.window) {
       const { data } = this.props;
 
-      let welcomeContent;
-      let lang = [];
+      if (process.env.GATSBY_API_URL === "http://localhost:3000") {
+        const num1 = 1;
+        const num2 = 0;
+        } else {
+        const num1 = 0;
+        const num2 = 1;
+      }
 
-      process.env.GATSBY_API_URL === "http://localhost:3000" ? lang.unshift("thai") : lang.unshift("english");
-
-      if (this.state.window.localStorage.language === lang[0]) {
-        welcomeContent = data.allContentfulWelcome.edges[1].node.welcomeContent.welcomeContent
+      if (this.state.window.localStorage.language === "thai") {
+        const welcomeContent = data.allContentfulWelcome.edges[num1].node.welcomeContent.welcomeContent;
       } else {
-        welcomeContent = data.allContentfulWelcome.edges[0].node.welcomeContent.welcomeContent
+        const welcomeContent = data.allContentfulWelcome.edges[num2].node.welcomeContent.welcomeContent;
       }
 
       return (
