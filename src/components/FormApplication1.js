@@ -131,16 +131,18 @@ export default class FormApplication1 extends React.Component {
   render() {
     let labelItems = [];
     if (this.state.window) {
+      const { language } = this.state.window.localStorage;
 
-      if (this.state.window.localStorage.language === "thai") {
+      if (language === "thai") {
         labelItems = ["ชื่อเล่น (ภาษาอังกฤษ)",
-                    "ชื่อจริง (ภาษาอังกฤษ)",
-                    "นามสกุล (ภาษาอังกฤษ)",
-                    "ชายหรือหญิง",
-                    "เบอร์โทรศัพท์ (จำเป็น)",
-                    "อีเมล (ไม่จำเป็น)",
-                    "เลือกตารางเวลาเรียนของคุณ (หมุนหน้าจอโทรศัพท์ของคุณเพื่อดูภาพที่กว้างขึ้น)",
-                    "เลือกนอกสถานที่ของคุณ (หมุนหน้าจอโทรศัพท์ของคุณเพื่อดูภาพที่กว้างขึ้น)"]
+                      "ชื่อจริง (ภาษาอังกฤษ)",
+                      "นามสกุล (ภาษาอังกฤษ)",
+                      "ชายหรือหญิง",
+                      "เบอร์โทรศัพท์ (จำเป็น)",
+                      "อีเมล (ไม่จำเป็น)",
+                      "เลือกตารางเวลาเรียนของคุณ (หมุนหน้าจอโทรศัพท์ของคุณเพื่อดูภาพที่กว้างขึ้น)",
+                      "เลือกนอกสถานที่ของคุณ (หมุนหน้าจอโทรศัพท์ของคุณเพื่อดูภาพที่กว้างขึ้น)",
+                      "ทางเลือก"]
       } else {
         labelItems = ['Nickname (in English)',
                       'First Name (in English)',
@@ -149,111 +151,127 @@ export default class FormApplication1 extends React.Component {
                       'Phone Number (required)',
                       'Email Address (optional)',
                       'Choose your schedule option (rotate your mobile screen for a wider view).',
-                      'Choose your offsite location (rotate your mobile screen for a wider view).'];
+                      'Choose your offsite location (rotate your mobile screen for a wider view).',
+                      'Choice'];
       }
-    }
 
-    return (
-      <div>
-        <ApplicationExplanation />
-        <br/>
-        <hr/>
-        <FormStyler>
-        <form onSubmit={this.handleSubmit} noValidate="noValidate" encType="multipart/form-data" action="/" acceptCharset="UTF-8">
-          <input type="hidden" name="utf8" value="✓" />
-      {/* <input type="hidden" name="authenticity_token" value="{this.state.csrf_token}" />  */}
-          <input type="hidden" name="guest" value="true" />
+      return (
+        <div>
+          <ApplicationExplanation />
+          <br/>
+          <hr/>
+          <FormStyler>
+          <form onSubmit={this.handleSubmit} noValidate="noValidate" encType="multipart/form-data" action="/" acceptCharset="UTF-8">
+            <input type="hidden" name="utf8" value="✓" />
+        {/* <input type="hidden" name="authenticity_token" value="{this.state.csrf_token}" />  */}
+            <input type="hidden" name="guest" value="true" />
 
-          <FieldGroup
-            id="formControlsText"
-            label={labelItems[0]}
-            name="nickname"
-            type="text"
-            onChange={this.handleChange}
-            placeholder="ชื่อเล่น (ภาษาอังกฤษ)"
-          />
-          <FieldGroup
-            id="formControlsText"
-            label={labelItems[1]}
-            name="first_name"
-            type="text"
-            onChange={this.handleChange}
-            placeholder="ชื่อจริง (ภาษาอังกฤษ)"
-          />
-          <FieldGroup
-            id="formControlsText"
-            label={labelItems[2]}
-            name="last_name"
-            type="text"
-            onChange={this.handleChange}
-            placeholder="นามสกุล (ภาษาอังกฤษ)"
-          />
-
-          <FormGroup controlId="formControlsSelect">
-            <ControlLabel>{labelItems[3]}</ControlLabel>
-            <FormControl
-              componentClass="select"
+            <FieldGroup
+              id="formControlsText"
+              label={labelItems[0]}
+              name="nickname"
+              type="text"
               onChange={this.handleChange}
-              placeholder="select gender"
-              name="gender">
-              <option value="ผู้ชาย">ผู้ชาย</option>
-              <option value="ผู้หญิง">ผู้หญิง</option>
-            </FormControl>
-          </FormGroup>
-
-          <FieldGroup
-            id="formControlsText"
-            label={labelItems[4]}
-            name="phone_number"
-            type="text"
-            onChange={this.handleChange}
-            placeholder="เบอร์โทรศัพท์"
-          />
-          <FieldGroup
-            id="formControlsEmail"
-            label={labelItems[5]}
-            name="email"
-            type="email"
-            onChange={this.handleChange}
-            placeholder="อีเมล"
-          />
-          <FormGroup controlId="formControlsSelect">
-            <ControlLabel>{labelItems[6]}</ControlLabel>
-            <FormControl
-              componentClass="select"
+              placeholder="ชื่อเล่น (ภาษาอังกฤษ)"
+            />
+            <FieldGroup
+              id="formControlsText"
+              label={labelItems[1]}
+              name="first_name"
+              type="text"
               onChange={this.handleChange}
-              placeholder="select class time"
-              name="class_time_scheduled_1">
-              <option value="select">-- Choice --</option>
-              {this.state.class_times.map((e, key) => {
-                return <option key={e.period} value={e.period}>{e.period} </option>;
-              })}
-            </FormControl>
-          </FormGroup>
+              placeholder="ชื่อจริง (ภาษาอังกฤษ)"
+            />
+            <FieldGroup
+              id="formControlsText"
+              label={labelItems[2]}
+              name="last_name"
+              type="text"
+              onChange={this.handleChange}
+              placeholder="นามสกุล (ภาษาอังกฤษ)"
+            />
 
-
-          {this.state.off_site_shown ? (
-            <FormGroup controlId="formControlsSelectOffsite">
-              <ControlLabel>{labelItems[7]}</ControlLabel>
+            <FormGroup controlId="formControlsSelect">
+              <ControlLabel>{labelItems[3]}</ControlLabel>
               <FormControl
                 componentClass="select"
-                onChange={this.handleOffsiteChoice}
-                placeholder="select class time"
-                name="off_site_location">
-                <option value="select">-- Choice --</option>
-                {this.state.off_site_locations.map((e, key) => {
-                  return <option key={e.location_english} value={e.id}>{e.location_english} </option>;
-                })}
+                onChange={this.handleChange}
+                placeholder="select gender"
+                name="gender">
+                <option value="ผู้ชาย">ผู้ชาย</option>
+                <option value="ผู้หญิง">ผู้หญิง</option>
               </FormControl>
             </FormGroup>
-          ) : (
-            <span />
-          )}
 
-          <button className="btn btn-success" type="submit">Submit</button>
-        </form>
-        </FormStyler>
-      </div>
-    );
+            <FieldGroup
+              id="formControlsText"
+              label={labelItems[4]}
+              name="phone_number"
+              type="text"
+              onChange={this.handleChange}
+              placeholder="เบอร์โทรศัพท์"
+            />
+            <FieldGroup
+              id="formControlsEmail"
+              label={labelItems[5]}
+              name="email"
+              type="email"
+              onChange={this.handleChange}
+              placeholder="อีเมล"
+            />
+            <FormGroup controlId="formControlsSelect">
+              <ControlLabel>{labelItems[6]}</ControlLabel>
+              <FormControl
+                componentClass="select"
+                onChange={this.handleChange}
+                placeholder="select class time"
+                name="class_time_scheduled_1">
+                <option value="select">-- {labelItems[8]} --</option>
+                {(language === "thai") ? (
+                    this.state.class_times.map((e, key) => {
+                      return <option key={e.period} value={e.period}>{e.period_thai} </option>;
+                    })
+                  ) : (
+                    this.state.class_times.map((e, key) => {
+                      return <option key={e.period} value={e.period}>{e.period} </option>;
+                    })
+                  )
+                }
+              </FormControl>
+            </FormGroup>
+
+
+            {this.state.off_site_shown ? (
+              <FormGroup controlId="formControlsSelectOffsite">
+                <ControlLabel>{labelItems[7]}</ControlLabel>
+                <FormControl
+                  componentClass="select"
+                  onChange={this.handleOffsiteChoice}
+                  placeholder="select class time"
+                  name="off_site_location">
+                  <option value="select">-- {labelItems[8]} --</option>
+                  {(language === "thai") ? (
+                      this.state.off_site_locations.map((e, key) => {
+                        return <option key={e.location_thai} value={e.id}>{e.location_thai} </option>;
+                      })
+                    ) : (
+                      this.state.off_site_locations.map((e, key) => {
+                        return <option key={e.location_english} value={e.id}>{e.location_english} </option>;
+                      })
+                    )
+                  }
+                </FormControl>
+              </FormGroup>
+            ) : (
+              <span />
+            )}
+
+            <button className="btn btn-success" type="submit">Submit</button>
+          </form>
+          </FormStyler>
+        </div>
+      );
+    }
+    return <span />;
   }
 }
