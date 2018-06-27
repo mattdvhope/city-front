@@ -25,6 +25,8 @@ export default class FrontPage extends Component {
       let lang;
 
       process.env.GATSBY_API_URL === "http://localhost:3000" ? lang = "thai" : "english"
+console.log("dev env: ", process.env.GATSBY_API_URL)
+console.log("language: ", lang)
 
       if (this.state.window.localStorage.language === lang) {
         welcomeContent = data.allContentfulWelcome.edges[1].node.welcomeContent.welcomeContent

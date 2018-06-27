@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import Img from "gatsby-image";
 
@@ -32,53 +32,76 @@ const ModalStyler = styled.span`
   font-weight: bolder;
 `
 
-export default (props) => (
-  <FeaturesContainer>
-		<Grid fluid>
-			<Row>
-				<TitleContainer>
-					<h1 className="text-center">Features</h1>
-				</TitleContainer>
-			</Row>
-			<Row>
-				<Col xs={12} sm={4}>
-          <Img
-            sizes={props.featureslImage1.sizes}
-			    	className={styles.firstAvatar}
-            alt="You Can Speak!"
-          />
-					<TextContainer>
-						<h4 className={styles.subTitle}>{props.featuresTitle1}</h4>
-						<p className={styles.text}>{props.featuresContent1} <ModalStyler><ModalApplication1 getApplication="Click here to sign up for a class!" /></ModalStyler></p>
-					</TextContainer>
-				</Col>
-				<Col xs={12} sm={4}>
-          <Img
-            sizes={props.featureslImage2.sizes}
-			    	className={styles.avatar}
-            alt="English Conversation Partners!"
-          />
-					<TextContainer>
-						<h4 className={styles.subTitle}>{props.featuresTitle2}</h4>
-						<p className={styles.text}>{props.featuresContent2}</p>
-					</TextContainer>
-				</Col>
-				<Col xs={12} sm={4}>
-          <Img
-            sizes={props.featureslImage3.sizes}
-			    	className={styles.avatar}
-            alt="Conversation Groups"
-          />
-					<TextContainer>
-						<h4 className={styles.subTitle}>{props.featuresTitle3}</h4>
-						<p className={styles.text}>{props.featuresContent3}</p>
-					</TextContainer>
-				</Col>
-			</Row>
-		</Grid>
-	</FeaturesContainer>
-);
+export default class Features extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      window: undefined
+    };
+  }
 
+  componentDidMount() {
+    this.setState({ window: window });
+  }
 
+  render() {
+    let featuresTitle = '';
+    if (this.state.window) {
+      if (this.state.window.localStorage.language === "thai") {
+        featuresTitle = "บริการของเรา";
+      } else {
+        featuresTitle = "Features";
+      }
+
+    }
+
+    return (
+      <FeaturesContainer>
+    		<Grid fluid>
+    			<Row>
+    				<TitleContainer>
+    					<h1 className="text-center">{featuresTitle}</h1>
+    				</TitleContainer>
+    			</Row>
+    			<Row>
+    				<Col xs={12} sm={4}>
+              <Img
+                sizes={this.props.featureslImage1.sizes}
+    			    	className={styles.firstAvatar}
+                alt="You Can Speak!"
+              />
+    					<TextContainer>
+    						<h4 className={styles.subTitle}>{this.props.featuresTitle1}</h4>
+    						<p className={styles.text}>{this.props.featuresContent1} <ModalStyler><ModalApplication1 getApplication="Click here to sign up for a class!" /></ModalStyler></p>
+    					</TextContainer>
+    				</Col>
+    				<Col xs={12} sm={4}>
+              <Img
+                sizes={this.props.featureslImage2.sizes}
+    			    	className={styles.avatar}
+                alt="English Conversation Partners!"
+              />
+    					<TextContainer>
+    						<h4 className={styles.subTitle}>{this.props.featuresTitle2}</h4>
+    						<p className={styles.text}>{this.props.featuresContent2}</p>
+    					</TextContainer>
+    				</Col>
+    				<Col xs={12} sm={4}>
+              <Img
+                sizes={this.props.featureslImage3.sizes}
+    			    	className={styles.avatar}
+                alt="Conversation Groups"
+              />
+    					<TextContainer>
+    						<h4 className={styles.subTitle}>{this.props.featuresTitle3}</h4>
+    						<p className={styles.text}>{this.props.featuresContent3}</p>
+    					</TextContainer>
+    				</Col>
+    			</Row>
+    		</Grid>
+    	</FeaturesContainer>
+    )
+  }
+}
 
 
