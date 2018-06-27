@@ -25,11 +25,13 @@ export default class FrontPage extends Component {
       let lang = [];
 
       if (process.env.GATSBY_API_URL === "http://localhost:3000") {
-        lang.push("thai");
+        lang.unshift("thai");
 console.log("Thai language?: ", lang[0])
+console.log(lang);
       } else {
-        lang.push("english");
+        lang.unshift("english");
 console.log("Eng language?: ", lang[0])
+console.log(lang);
       }
 
       if (this.state.window.localStorage.language === lang[0]) {
