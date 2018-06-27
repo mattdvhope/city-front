@@ -23,6 +23,8 @@ export default class FrontPage extends Component {
 
       let welcomeContent;
 
+console.log("state's localStorage: ", this.state.window.localStorage.language)
+
       if (this.state.window.localStorage.language === "thai") {
         welcomeContent = data.allContentfulWelcome.edges[1].node.welcomeContent.welcomeContent
       } else {

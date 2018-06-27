@@ -202,9 +202,6 @@ export default class WelcomeCaption extends Component {
   render() {
     let textItems = [];
     if (this.state.window) {
-
-console.log("state's language: ", this.state.window.localStorage.language)
-
       if (this.state.window.localStorage.language === "thai") {
         textItems = ["คลิกที่นี่ ",
                     " เพื่อเรียนรู้เพิ่มเติมเกี่ยวกับเรา หรือ ",
