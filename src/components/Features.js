@@ -63,7 +63,6 @@ export default class Features extends Component {
                      "Click here to sign up for a class!",
                      "We look forward to having you join us!"];
       }
-
     }
 
     return (
