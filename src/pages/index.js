@@ -21,54 +21,54 @@ export default class FrontPage extends Component {
     if (this.state.window) {
       const { data } = this.props;
 
-      let num1 = 1; let num2 = 0; let welcomeContent, featuresTitle1, featuresContent1, featuresTitle2, featuresContent2, featuresTitle3, featuresContent3, title, subtitle, firstListItem, secondListItem, thirdListItem, fourthListItem, firstParagraphSubtitle, firstParagraph, secondParagraphSubtitle, secondParagraph;
+      let num1 = []; let num2 = []; let welcomeContent, featuresTitle1, featuresContent1, featuresTitle2, featuresContent2, featuresTitle3, featuresContent3, title, subtitle, firstListItem, secondListItem, thirdListItem, fourthListItem, firstParagraphSubtitle, firstParagraph, secondParagraphSubtitle, secondParagraph;
 
       if (process.env.GATSBY_API_URL === "http://localhost:3000") {
-        let num1 = 1; let num2 = 0;
+        num1.unshift(1); num2.unshift(0);
         } else {
-        let num1 = 0; let num2 = 1;
+        num1.unshift(0); num2.unshift(1);
       }
 
       if (this.state.window.localStorage.language === "thai") {
-        welcomeContent = data.allContentfulWelcome.edges[num1].node.welcomeContent.welcomeContent;
+        welcomeContent = data.allContentfulWelcome.edges[num1[0]].node.welcomeContent.welcomeContent;
 
-        featuresTitle1 = data.allContentfulFeatures.edges[num1].node.featuresTitle1
-        featuresContent1 = data.allContentfulFeaturesFeatures1TextNode.edges[num1].node.features1
-        featuresTitle2 = data.allContentfulFeatures.edges[num1].node.featuresTitle2
-        featuresContent2 = data.allContentfulFeaturesFeatures2TextNode.edges[num1].node.features2
-        featuresTitle3 = data.allContentfulFeatures.edges[num1].node.featuresTitle3
-        featuresContent3 = data.allContentfulFeaturesFeatures3TextNode.edges[num1].node.features3
+        featuresTitle1 = data.allContentfulFeatures.edges[num1[0]].node.featuresTitle1
+        featuresContent1 = data.allContentfulFeaturesFeatures1TextNode.edges[num1[0]].node.features1
+        featuresTitle2 = data.allContentfulFeatures.edges[num1[0]].node.featuresTitle2
+        featuresContent2 = data.allContentfulFeaturesFeatures2TextNode.edges[num1[0]].node.features2
+        featuresTitle3 = data.allContentfulFeatures.edges[num1[0]].node.featuresTitle3
+        featuresContent3 = data.allContentfulFeaturesFeatures3TextNode.edges[num1[0]].node.features3
 
-        title = data.allContentfulMember.edges[num1].node.title
-        subtitle = data.allContentfulMember.edges[num1].node.subtitle.subtitle
-        firstListItem = data.allContentfulMember.edges[num1].node.firstListItem
-        secondListItem = data.allContentfulMember.edges[num1].node.secondListItem
-        thirdListItem = data.allContentfulMember.edges[num1].node.thirdListItem
-        fourthListItem = data.allContentfulMember.edges[num1].node.fourthListItem
-        firstParagraphSubtitle = data.allContentfulMember.edges[num1].node.firstParagraphSubtitle
-        firstParagraph=data.allContentfulMemberFirstParagraphTextNode.edges[num1].node.firstParagraph
-        secondParagraphSubtitle=data.allContentfulMember.edges[num1].node.secondParagraphSubtitle
-        secondParagraph=data.allContentfulMemberSecondParagraphTextNode.edges[num1].node.secondParagraph
+        title = data.allContentfulMember.edges[num1[0]].node.title
+        subtitle = data.allContentfulMember.edges[num1[0]].node.subtitle.subtitle
+        firstListItem = data.allContentfulMember.edges[num1[0]].node.firstListItem
+        secondListItem = data.allContentfulMember.edges[num1[0]].node.secondListItem
+        thirdListItem = data.allContentfulMember.edges[num1[0]].node.thirdListItem
+        fourthListItem = data.allContentfulMember.edges[num1[0]].node.fourthListItem
+        firstParagraphSubtitle = data.allContentfulMember.edges[num1[0]].node.firstParagraphSubtitle
+        firstParagraph=data.allContentfulMemberFirstParagraphTextNode.edges[num1[0]].node.firstParagraph
+        secondParagraphSubtitle=data.allContentfulMember.edges[num1[0]].node.secondParagraphSubtitle
+        secondParagraph=data.allContentfulMemberSecondParagraphTextNode.edges[num1[0]].node.secondParagraph
       } else {
-        welcomeContent = data.allContentfulWelcome.edges[num2].node.welcomeContent.welcomeContent;
+        welcomeContent = data.allContentfulWelcome.edges[num2[0]].node.welcomeContent.welcomeContent;
 
-        featuresTitle1 = data.allContentfulFeatures.edges[num2].node.featuresTitle1
-        featuresContent1 = data.allContentfulFeaturesFeatures1TextNode.edges[num2].node.features1
-        featuresTitle2 = data.allContentfulFeatures.edges[num2].node.featuresTitle2
-        featuresContent2 = data.allContentfulFeaturesFeatures2TextNode.edges[num2].node.features2
-        featuresTitle3 = data.allContentfulFeatures.edges[num2].node.featuresTitle3
-        featuresContent3 = data.allContentfulFeaturesFeatures3TextNode.edges[num2].node.features3
+        featuresTitle1 = data.allContentfulFeatures.edges[num2[0]].node.featuresTitle1
+        featuresContent1 = data.allContentfulFeaturesFeatures1TextNode.edges[num2[0]].node.features1
+        featuresTitle2 = data.allContentfulFeatures.edges[num2[0]].node.featuresTitle2
+        featuresContent2 = data.allContentfulFeaturesFeatures2TextNode.edges[num2[0]].node.features2
+        featuresTitle3 = data.allContentfulFeatures.edges[num2[0]].node.featuresTitle3
+        featuresContent3 = data.allContentfulFeaturesFeatures3TextNode.edges[num2[0]].node.features3
 
-        title = data.allContentfulMember.edges[num2].node.title
-        subtitle = data.allContentfulMember.edges[num2].node.subtitle.subtitle
-        firstListItem = data.allContentfulMember.edges[num2].node.firstListItem
-        secondListItem = data.allContentfulMember.edges[num2].node.secondListItem
-        thirdListItem = data.allContentfulMember.edges[num2].node.thirdListItem
-        fourthListItem = data.allContentfulMember.edges[num2].node.fourthListItem
-        firstParagraphSubtitle = data.allContentfulMember.edges[num2].node.firstParagraphSubtitle
-        firstParagraph=data.allContentfulMemberFirstParagraphTextNode.edges[num2].node.firstParagraph
-        secondParagraphSubtitle=data.allContentfulMember.edges[num2].node.secondParagraphSubtitle
-        secondParagraph=data.allContentfulMemberSecondParagraphTextNode.edges[num2].node.secondParagraph
+        title = data.allContentfulMember.edges[num2[0]].node.title
+        subtitle = data.allContentfulMember.edges[num2[0]].node.subtitle.subtitle
+        firstListItem = data.allContentfulMember.edges[num2[0]].node.firstListItem
+        secondListItem = data.allContentfulMember.edges[num2[0]].node.secondListItem
+        thirdListItem = data.allContentfulMember.edges[num2[0]].node.thirdListItem
+        fourthListItem = data.allContentfulMember.edges[num2[0]].node.fourthListItem
+        firstParagraphSubtitle = data.allContentfulMember.edges[num2[0]].node.firstParagraphSubtitle
+        firstParagraph=data.allContentfulMemberFirstParagraphTextNode.edges[num2[0]].node.firstParagraph
+        secondParagraphSubtitle=data.allContentfulMember.edges[num2[0]].node.secondParagraphSubtitle
+        secondParagraph=data.allContentfulMemberSecondParagraphTextNode.edges[num2[0]].node.secondParagraph
       }
 
       return (
