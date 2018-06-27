@@ -21,7 +21,7 @@ export default () => {
     <DashStyler className="container">
       <hr/>
       <Grid>
-      <p>Welcome to the "City English Project," Alex. You are here in leader status.</p>
+      <p>Welcome to the "City English Project." You are here in leader status.</p>
       <hr/>
         <Row className="show-grid">
           <Col sm={6} md={3}>

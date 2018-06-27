@@ -7,18 +7,14 @@ const getUser = () =>
 
 const setUser = user => (window.localStorage.gatsbyUser = JSON.stringify(user))
 
-export const handleLogin = ({ email, password }) => {
+export const handleLogin = ({ first_name, last_name, email }) => {
   if (!isBrowser) return false
-  if (email === `matt@test.tv` && password === `password`) {
-    console.log(`Credentials match! Setting the active user.`)
-    return setUser({
-      name: `Jim`,
-      legalName: `James K. User`,
-      email: `${email}`,
-    })
-  }
 
-  return false
+  return setUser({
+    first_name: first_name,
+    last_name: last_name,
+    email: email,
+  })
 }
 
 export const isLoggedIn = () => {

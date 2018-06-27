@@ -38,8 +38,9 @@ export default class Login extends React.Component {
       });
       promise
       .then((res) => {
+        const { first_name, last_name, email } = res.data;
         this.setState(this.state) // to reset state once 'isLoggedIn'
-        handleLogin({email, password});
+        handleLogin({first_name, last_name, email});
       })
       .then((res) => {
         this.props.handleClose(); //..of modal

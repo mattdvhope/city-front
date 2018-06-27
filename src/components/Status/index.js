@@ -13,11 +13,11 @@ export default withRouter(({ history }) => {
       </p>
     )
   } else {
-    const { name, email } = getCurrentUser()
+    const { first_name, last_name, email } = getCurrentUser()
 
     details = (
       <p className={styles[`status__text`]}>
-        Logged in as {name} ({email})!{` `}
+        Logged in as {first_name} {last_name} ({email})!{` `}
         <a
           href="/"
           onClick={event => {
