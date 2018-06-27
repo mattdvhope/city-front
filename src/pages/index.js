@@ -21,7 +21,7 @@ export default class FrontPage extends Component {
     if (this.state.window) {
       const { data } = this.props;
 
-      let num1 = 1; let num2 = 0; let welcomeContent, featuresTitle1, featuresContent1, featuresTitle2, featuresContent2, featuresTitle3, featuresContent3;
+      let num1 = 1; let num2 = 0; let welcomeContent, featuresTitle1, featuresContent1, featuresTitle2, featuresContent2, featuresTitle3, featuresContent3, title, subtitle, firstListItem, secondListItem, thirdListItem, fourthListItem, firstParagraphSubtitle, firstParagraph, secondParagraphSubtitle, secondParagraph;
 
       if (process.env.GATSBY_API_URL === "http://localhost:3000") {
         let num1 = 1; let num2 = 0;
@@ -38,6 +38,17 @@ export default class FrontPage extends Component {
         featuresContent2 = data.allContentfulFeaturesFeatures2TextNode.edges[1].node.features2
         featuresTitle3 = data.allContentfulFeatures.edges[1].node.featuresTitle3
         featuresContent3 = data.allContentfulFeaturesFeatures3TextNode.edges[1].node.features3
+
+        title = data.allContentfulMember.edges[1].node.title
+        subtitle = data.allContentfulMember.edges[1].node.subtitle.subtitle
+        firstListItem = data.allContentfulMember.edges[1].node.firstListItem
+        secondListItem = data.allContentfulMember.edges[1].node.secondListItem
+        thirdListItem = data.allContentfulMember.edges[1].node.thirdListItem
+        fourthListItem = data.allContentfulMember.edges[1].node.fourthListItem
+        firstParagraphSubtitle = data.allContentfulMember.edges[1].node.firstParagraphSubtitle
+        firstParagraph=data.allContentfulMemberFirstParagraphTextNode.edges[1].node.firstParagraph
+        secondParagraphSubtitle=data.allContentfulMember.edges[1].node.secondParagraphSubtitle
+        secondParagraph=data.allContentfulMemberSecondParagraphTextNode.edges[1].node.secondParagraph
       } else {
         welcomeContent = data.allContentfulWelcome.edges[0].node.welcomeContent.welcomeContent;
 
@@ -47,6 +58,17 @@ export default class FrontPage extends Component {
         featuresContent2 = data.allContentfulFeaturesFeatures2TextNode.edges[0].node.features2
         featuresTitle3 = data.allContentfulFeatures.edges[0].node.featuresTitle3
         featuresContent3 = data.allContentfulFeaturesFeatures3TextNode.edges[0].node.features3
+
+        title = data.allContentfulMember.edges[0].node.title
+        subtitle = data.allContentfulMember.edges[0].node.subtitle.subtitle
+        firstListItem = data.allContentfulMember.edges[0].node.firstListItem
+        secondListItem = data.allContentfulMember.edges[0].node.secondListItem
+        thirdListItem = data.allContentfulMember.edges[0].node.thirdListItem
+        fourthListItem = data.allContentfulMember.edges[0].node.fourthListItem
+        firstParagraphSubtitle = data.allContentfulMember.edges[0].node.firstParagraphSubtitle
+        firstParagraph=data.allContentfulMemberFirstParagraphTextNode.edges[0].node.firstParagraph
+        secondParagraphSubtitle=data.allContentfulMember.edges[0].node.secondParagraphSubtitle
+        secondParagraph=data.allContentfulMemberSecondParagraphTextNode.edges[0].node.secondParagraph
       }
 
       return (
@@ -77,22 +99,23 @@ export default class FrontPage extends Component {
           />
 
           <Member
-            title={data.allContentfulMember.edges[0].node.title}
-            subtitle={data.allContentfulMember.edges[0].node.subtitle.subtitle}
-
             memberlImage1={data.memberlImage1}
-            firstListItem={data.allContentfulMember.edges[0].node.firstListItem}
-            secondListItem={data.allContentfulMember.edges[0].node.secondListItem}
-            thirdListItem={data.allContentfulMember.edges[0].node.thirdListItem}
-            fourthListItem={data.allContentfulMember.edges[0].node.fourthListItem}
-
             memberlImage2={data.memberlImage2}
-            firstParagraphSubtitle={data.allContentfulMember.edges[0].node.firstParagraphSubtitle}
-            firstParagraph={data.allContentfulMemberFirstParagraphTextNode.edges[0].node.firstParagraph}
-
             memberlImage3={data.memberlImage3}
-            secondParagraphSubtitle={data.allContentfulMember.edges[0].node.secondParagraphSubtitle}
-            secondParagraph={data.allContentfulMemberSecondParagraphTextNode.edges[0].node.secondParagraph}
+            
+            title={title}
+            subtitle={subtitle}
+
+            firstListItem={firstListItem}
+            secondListItem={secondListItem}
+            thirdListItem={thirdListItem}
+            fourthListItem={fourthListItem}
+
+            firstParagraphSubtitle={firstParagraphSubtitle}
+            firstParagraph={firstParagraph}
+
+            secondParagraphSubtitle={secondParagraphSubtitle}
+            secondParagraph={secondParagraph}
           />
 
         </div>

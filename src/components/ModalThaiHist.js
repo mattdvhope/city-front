@@ -19,8 +19,13 @@ export default class ModalThaiHist extends Component {
     this.handleClose = this.handleClose.bind(this);
 
     this.state = {
-      show: false
+      show: false,
+      window: undefined
     };
+  }
+
+  componentDidMount() {
+    this.setState({ window: window });
   }
 
   handleClose() {
@@ -32,6 +37,23 @@ export default class ModalThaiHist extends Component {
   }
 
   render() {
+    let textItems = [];
+    if (this.state.window) {
+      if (this.state.window.localStorage.language === "thai") {
+        textItems = ["ประวัติศาสตร์",
+                     "คริสเตียนในประเทศไทยมีประวัติศาสตร์การรับใช้และการช่วยเหลือคนไทยที่ยาวนาน อย่างเช่น \"แดน บีช บรัดเลย์\" (Dan Beach Bradley) ซึ่งเป็นผู้ที่มีชื่อเสียงว่าเผ็นผู้นำและริเริ่มการฉีดวัคซีนและการผ่าตัดสมัยใหม่เข้ามาในประเทศไทย รวมถึงริเริ่มการตีพิมพ์หนังสือพิมพ์ภาษาไทยเป็นครั้งแรก",
+                     "โครงการซิตี้ อิงลิช ได้ทำตามแบบอย่างของ \"แดน บีช บรัดเลย์\" (Dan Beach Bradley) โดยการช่วยเหลือคนไทยสมัยใหม่ให้ได้รับการพัฒนาศักยภาพด้านภาษาอังกฤษและความรู้ความเข้าใจในวัฒนธรรมของกลุ่มอื่นๆ",
+                     "https://th.wikipedia.org/wiki/แดน_บีช_บรัดเลย์",
+                     "คลิกที่นี่เพื่อเรียนรู้เพิ่มเติมเกี่ยวกับ 'แดน บีช บรัดเลย์'"];
+      } else {
+        textItems = ["History",
+                     "Christians in Thailand have a long history of serving and helping the Thai people. For example, Dan Beach Bradley is famous for introducing modern vaccination and surgery to Thailand as well as publishing the first Thai language newspaper.",
+                     "The City English Project follows in the tradition of Dan Beach Bradley by helping modern Thai people grow in their ability with English and in their knowledge of other cultures.",
+                     "https://en.wikipedia.org/wiki/Dan_Beach_Bradley",
+                     "Click here to learn more about Dan Beach Bradley"];
+      }
+    }
+
     return (
       <span>
 
@@ -39,14 +61,17 @@ export default class ModalThaiHist extends Component {
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title className="text-center"><FontStyler><h1>History...</h1></FontStyler></Modal.Title>
+            <Modal.Title className="text-center"><FontStyler><h1>{textItems[0]}</h1></FontStyler></Modal.Title>
           </Modal.Header>
           <Modal.Body>
  	          <FontStyler>
               <h3>
-                Christians in Thailand have a long history of serving and helping the Thai people. For example, Dan Beach Bradley is famous for introducing modern vaccination and surgery to Thailand as well as publishing the first Thai language newspaper.  The City English Project follows in the tradition of Dan Beach Bradley by helping modern Thai people grow in their ability with English and in their knowledge of other cultures.
+                {textItems[1]}
               </h3>
-              <h3><a target="_blank" href="https://en.wikipedia.org/wiki/Dan_Beach_Bradley"><LinkStyler>Click here to learn more about Dan Beach Bradley</LinkStyler></a></h3>
+              <h3>
+                {textItems[2]}
+              </h3>
+              <h3><a target="_blank" href={textItems[3]}><LinkStyler>{textItems[4]}</LinkStyler></a></h3>
                 
             </FontStyler>
           </Modal.Body>
