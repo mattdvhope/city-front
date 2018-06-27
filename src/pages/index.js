@@ -24,7 +24,7 @@ export default class FrontPage extends Component {
       const { data } = this.props;
 
 
-      if process.env.GATSBY_API_URL === "http://localhost:3000" ? lang = "thai" : "english"
+      process.env.GATSBY_API_URL === "http://localhost:3000" ? lang = "thai" : "english"
 console.log("dev env local?: ", process.env.GATSBY_API_URL == "http://localhost:3000");
 console.log("language: ", lang)
 
