@@ -32,6 +32,13 @@ const ModalStyler = styled.span`
   font-weight: bolder;
 `
 
+const BottomContainer = styled.h1`
+    margin-top: -10px;
+    margin-right: 2em;
+    margin-left: 2em;
+    color: #fff;
+`;
+
 export default class Features extends Component {
   constructor(props) {
     super(props)
@@ -49,10 +56,12 @@ export default class Features extends Component {
     if (this.state.window) {
       if (this.state.window.localStorage.language === "thai") {
         textItems = ["บริการของเรา",
-                     "คลิกที่นี่เพื่อลงทะเบียนเรียน!"];
+                     "คลิกที่นี่เพื่อลงทะเบียนเรียน!",
+                     "เราตื่นเต้นและรอคอยที่จะให้คุณมาเรียนรู้และฝึกฝนกับเรา"];
       } else {
         textItems = ["Features",
-                     "Click here to sign up for a class!"];
+                     "Click here to sign up for a class!",
+                     "We look forward to having you join us!"];
       }
 
     }
@@ -101,6 +110,9 @@ export default class Features extends Component {
     				</Col>
     			</Row>
     		</Grid>
+        <hr/>
+        <BottomContainer className="text-center">{textItems[2]}</BottomContainer>
+        <hr/>
     	</FeaturesContainer>
     )
   }

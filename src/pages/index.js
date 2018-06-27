@@ -21,7 +21,7 @@ export default class FrontPage extends Component {
     if (this.state.window) {
       const { data } = this.props;
 
-      let num1 = 1; let num2 = 0; let welcomeContent;
+      let num1 = 1; let num2 = 0; let welcomeContent, featuresTitle1, featuresContent1, featuresTitle2, featuresContent2, featuresTitle3, featuresContent3;
 
       if (process.env.GATSBY_API_URL === "http://localhost:3000") {
         let num1 = 1; let num2 = 0;
@@ -31,8 +31,22 @@ export default class FrontPage extends Component {
 
       if (this.state.window.localStorage.language === "thai") {
         welcomeContent = data.allContentfulWelcome.edges[num1].node.welcomeContent.welcomeContent;
+
+        featuresTitle1 = data.allContentfulFeatures.edges[num1].node.featuresTitle1
+        featuresContent1 = data.allContentfulFeaturesFeatures1TextNode.edges[num1].node.features1
+        featuresTitle2 = data.allContentfulFeatures.edges[num1].node.featuresTitle2
+        featuresContent2 = data.allContentfulFeaturesFeatures2TextNode.edges[num1].node.features2
+        featuresTitle3 = data.allContentfulFeatures.edges[num1].node.featuresTitle3
+        featuresContent3 = data.allContentfulFeaturesFeatures3TextNode.edges[num1].node.features3
       } else {
         welcomeContent = data.allContentfulWelcome.edges[num2].node.welcomeContent.welcomeContent;
+
+        featuresTitle1 = data.allContentfulFeatures.edges[num2].node.featuresTitle1
+        featuresContent1 = data.allContentfulFeaturesFeatures1TextNode.edges[num2].node.features1
+        featuresTitle2 = data.allContentfulFeatures.edges[num2].node.featuresTitle2
+        featuresContent2 = data.allContentfulFeaturesFeatures2TextNode.edges[num2].node.features2
+        featuresTitle3 = data.allContentfulFeatures.edges[num2].node.featuresTitle3
+        featuresContent3 = data.allContentfulFeaturesFeatures3TextNode.edges[num2].node.features3
       }
 
       return (
@@ -52,14 +66,14 @@ export default class FrontPage extends Component {
             featureslImage3={data.featureslImage3}
 
 
-            featuresTitle1={data.allContentfulFeatures.edges[0].node.featuresTitle1}
-            featuresContent1={data.allContentfulFeaturesFeatures1TextNode.edges[0].node.features1}
+            featuresTitle1={featuresTitle1}
+            featuresContent1={featuresContent1}
 
-            featuresTitle2={data.allContentfulFeatures.edges[0].node.featuresTitle2}
-            featuresContent2={data.allContentfulFeaturesFeatures2TextNode.edges[0].node.features2}
+            featuresTitle2={featuresTitle2}
+            featuresContent2={featuresContent2}
 
-            featuresTitle3={data.allContentfulFeatures.edges[0].node.featuresTitle3}
-            featuresContent3={data.allContentfulFeaturesFeatures3TextNode.edges[0].node.features3}
+            featuresTitle3={featuresTitle3}
+            featuresContent3={featuresContent3}
           />
 
           <Member
