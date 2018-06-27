@@ -162,6 +162,10 @@ const TextContainer = styled.div`
   }
 `
 
+// const TextContainer = styled.div`
+//   fo
+// `
+
 export default class WelcomeCaption extends Component {
 
   constructor(props) {
@@ -169,8 +173,15 @@ export default class WelcomeCaption extends Component {
     this.state = {
       windowHeight: undefined,
       windowWidth: undefined,
-      imageChosen: undefined
+      imageChosen: undefined,
+      window: undefined
     };
+  }
+
+  componentDidMount() {
+    this.setState({ window: window });
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize)
   }
 
   handleResize = () => this.setState({
@@ -179,27 +190,38 @@ export default class WelcomeCaption extends Component {
     imageChosen: window.innerWidth > 750 ? ProjectOverviewWide : ProjectOverviewMobile
   });
 
-  componentDidMount() {
-    this.handleResize();
-    window.addEventListener('resize', this.handleResize)
-  }
-
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize)
   }
 
   render() {
-    return (
-      <ProjectOverviewContainer style={{backgroundImage: `url('${this.state.imageChosen}')`, backgroundSize: `cover`}}>
+    let textItems = [];
+    if (this.state.window) {
+      if (this.state.window.localStorage.language === "thai") {
+        textItems = ["การสมัครเข้าเป็นอาสาสมัครเพื่อร่วมงานกับโครงการซิตี้ อิงลิช มี 2 ช่องทาง อาสาสมัครสามารถทำงานรับใช้ในพื้นที่กรุงเทพมหานครด้วยการเป็นผู้สอนหลักสูตร \"You Can Speak!\" ซึ่งเป็นชั้นเรียนภาษาอังกฤษ วัฒนธรรมและโลกทัศน์ หรือในกรณีที่อาสาสมัครมีความสนใจที่จะร่วมทำงานรับใช้กับโครงการของเราแต่ไม่สามารถเดินทางมาที่กรุงเทพมหานครได้ พวกเขาสามารถสมัครเพื่อเป็นคู่สนทนาภาษาอังกฤษออนไลน์ของโครงการได้ หากคุณมีความสนใจเข้าร่วมเป็นอาสาสมัครของโครงการในช่องทางใดช่องทางหนึ่งใน 2 ช่องทางดังกล่าว กรุณาดูรายละเอียดด้านล่างเพื่อศึกษาขั้นตอนในการเข้าเป็นอาสาสมัครของโครงการซิตี้ อิงลิช (CEP)"];
+      } else {
+        textItems = ["There are two ways for volunteers to get involved with City English Project. Volunteers can serve locally in the Bangkok area through teaching our \"You Can Speak!\" English culture and worldview class. If volunteers are interested in serving, but cannot make the trip to Bangkok, they can become an online conversation partner. If you are interested in any of the two volunteer options, please look at the details below to find steps on how to become a City English Project (CEP) volunteer."];
+      }
 
-        <Grid fluid>
-          <TextContainer>
-            There are two ways for volunteers to get involved with City English Project. Volunteers can serve locally in the Bangkok area through teaching our "You Can Speak!" English culture and worldview class. If volunteers are interested in serving, but cannot make the trip to Bangkok, they can become an online conversation partner. If you are interested in any of the two volunteer options, please look at the details below to find steps on how to become a City English Project (CEP) volunteer.
-          </TextContainer>
-        </Grid>
-
-      </ProjectOverviewContainer>
-
-    )
+      return (
+        <ProjectOverviewContainer style={{backgroundImage: `url('${this.state.imageChosen}')`, backgroundSize: `cover`}}>
+          <Grid fluid>
+            {this.state.window.localStorage.language === "thai" ? (
+              <TextContainer>
+                <span style={{fontSize: `smaller`}}>
+                  {textItems[0]}
+                </span>
+              </TextContainer>
+            ) : (
+              <TextContainer>
+                {textItems[0]}
+              </TextContainer>
+            )}
+          </Grid>
+        </ProjectOverviewContainer>
+      )
+    } else {
+      return <span />
+    }
   }
 }

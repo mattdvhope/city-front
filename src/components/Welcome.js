@@ -214,19 +214,26 @@ export default class WelcomeCaption extends Component {
                       ' to sign up for our popular "You Can Speak!" English class.'];
       }
 
+      return (
+        <WelcomeContainer style={{backgroundImage: `url('${this.state.imageChosen}')`, backgroundSize: `cover`}}>
+          <Grid fluid>
+            {this.state.window.localStorage.language === "thai" ? (
+              <TextContainer>
+                <span style={{fontSize: `smaller`}}>
+                  {this.props.caption} <Link to="/more_info"><LinkStyler>{textItems[0]}</LinkStyler></Link>{textItems[1]}<LinkStyler><ModalApplication1 getApplication={textItems[2]} /></LinkStyler>{textItems[3]}
+                </span>
+              </TextContainer>
+            ) : (
+              <TextContainer>
+                {this.props.caption} <Link to="/more_info"><LinkStyler>{textItems[0]}</LinkStyler></Link>{textItems[1]}<LinkStyler><ModalApplication1 getApplication={textItems[2]} /></LinkStyler>{textItems[3]}
+              </TextContainer>
+            )}
+          </Grid>
+        </WelcomeContainer>
+      )
+
+    } else {
+      return <span />
     }
-
-    return (
-      <WelcomeContainer style={{backgroundImage: `url('${this.state.imageChosen}')`, backgroundSize: `cover`}}>
-
-        <Grid fluid>
-          <TextContainer>
-            {this.props.caption} <Link to="/more_info"><LinkStyler>{textItems[0]}</LinkStyler></Link>{textItems[1]}<LinkStyler><ModalApplication1 getApplication={textItems[2]} /></LinkStyler>{textItems[3]}
-          </TextContainer>
-        </Grid>
-
-      </WelcomeContainer>
-
-    )
   }
 }

@@ -11,7 +11,7 @@ export default class FrontPage extends Component {
     super(props)
     this.state = {
       english: true,
-      thai: false
+      thai: false,
     };
   }
 
@@ -27,15 +27,6 @@ export default class FrontPage extends Component {
 
   render() {
     const { data } = this.props;
-
-    let welcomeContent;
-
-    if (this.state.english) {
-      welcomeContent = data.allContentfulWelcome.edges[0].node.welcomeContent.welcomeContent
-    } else {
-      welcomeContent = "ดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดด";
-    }
-
 
     return (
       <div>
@@ -69,17 +60,6 @@ export default class FrontPage extends Component {
 
 export const homePageQuery = graphql`
   query VolunteerPage { 
-
-    allContentfulWelcome {
-      edges {
-        node {
-          welcomeContent {
-            welcomeContent
-          }
-        }
-      }
-    }
-
 
 		allContentfulVolunteerSteps {
 	    edges {
