@@ -24,15 +24,7 @@ export default class FrontPage extends Component {
       let welcomeContent;
       let lang = [];
 
-      if (process.env.GATSBY_API_URL === "http://localhost:3000") {
-        lang.unshift("thai");
-console.log("Thai language?: ", lang[0])
-console.log(lang);
-      } else {
-        lang.unshift("english");
-console.log("Eng language?: ", lang[0])
-console.log(lang);
-      }
+      process.env.GATSBY_API_URL === "http://localhost:3000" ? lang.unshift("thai") : lang.unshift("english");
 
       if (this.state.window.localStorage.language === lang[0]) {
         welcomeContent = data.allContentfulWelcome.edges[1].node.welcomeContent.welcomeContent
@@ -53,14 +45,16 @@ console.log(lang);
 
           <Features
             featureslImage1={data.featureslImage1}
+            featureslImage2={data.featureslImage2}
+            featureslImage3={data.featureslImage3}
+
+
             featuresTitle1={data.allContentfulFeatures.edges[0].node.featuresTitle1}
             featuresContent1={data.allContentfulFeaturesFeatures1TextNode.edges[0].node.features1}
 
-            featureslImage2={data.featureslImage2}
             featuresTitle2={data.allContentfulFeatures.edges[0].node.featuresTitle2}
             featuresContent2={data.allContentfulFeaturesFeatures2TextNode.edges[0].node.features2}
 
-            featureslImage3={data.featureslImage3}
             featuresTitle3={data.allContentfulFeatures.edges[0].node.featuresTitle3}
             featuresContent3={data.allContentfulFeaturesFeatures3TextNode.edges[0].node.features3}
           />
