@@ -22,11 +22,11 @@ export default class FrontPage extends Component {
       const { data } = this.props;
 
       let welcomeContent;
+      let lang;
 
-console.log("allContentfulWelcome.edges[0]...", data.allContentfulWelcome.edges[0])
-console.log("allContentfulWelcome.edges[1]...", data.allContentfulWelcome.edges[1])
+      process.env.GATSBY_API_URL === "http://localhost:3000" ? lang = "thai" : "english"
 
-      if (this.state.window.localStorage.language === "thai") {
+      if (this.state.window.localStorage.language === lang) {
         welcomeContent = data.allContentfulWelcome.edges[1].node.welcomeContent.welcomeContent
       } else {
         welcomeContent = data.allContentfulWelcome.edges[0].node.welcomeContent.welcomeContent
