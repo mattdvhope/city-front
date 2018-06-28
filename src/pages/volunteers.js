@@ -24,33 +24,33 @@ export default class Volunteers extends Component {
     if (this.state.window) {
       const { data } = this.props;
 
-      if (process.env.GATSBY_API_URL === "http://localhost:3000") {
-        num1.unshift(1); num2.unshift(0);
-        } else {
-        num1.unshift(0); num2.unshift(1);
-      }
+      // if (process.env.GATSBY_API_URL === "http://localhost:3000") {
+      //   num1.unshift(1); num2.unshift(0);
+      //   } else {
+      //   num1.unshift(0); num2.unshift(1);
+      // }
 
       if (this.state.window.localStorage.language === "thai") {
-        title=data.allContentfulVolunteerSteps.edges[num1[0]].node.title
-        step1Title=data.allContentfulVolunteerSteps.edges[num1[0]].node.step1Title
-        step1Text=data.allContentfulVolunteerStepsStep1TextTextNode.edges[num1[0]].node.step1Text
+        title=data.allContentfulVolunteerSteps.edges[1].node.title
+        step1Title=data.allContentfulVolunteerSteps.edges[1].node.step1Title
+        step1Text=data.allContentfulVolunteerStepsStep1TextTextNode.edges[1].node.step1Text
 
-        step2Title=data.allContentfulVolunteerSteps.edges[num1[0]].node.step2Title
-        step2Text=data.allContentfulVolunteerStepsStep2TextTextNode.edges[num1[0]].node.step2Text
+        step2Title=data.allContentfulVolunteerSteps.edges[1].node.step2Title
+        step2Text=data.allContentfulVolunteerStepsStep2TextTextNode.edges[1].node.step2Text
 
-        step3Title=data.allContentfulVolunteerSteps.edges[num1[0]].node.step3Title
-        step3Text=data.allContentfulVolunteerStepsStep3TextTextNode.edges[num1[0]].node.step3Text
+        step3Title=data.allContentfulVolunteerSteps.edges[1].node.step3Title
+        step3Text=data.allContentfulVolunteerStepsStep3TextTextNode.edges[1].node.step3Text
 
       } else {
-        title=data.allContentfulVolunteerSteps.edges[num2[0]].node.title
-        step1Title=data.allContentfulVolunteerSteps.edges[num2[0]].node.step1Title
-        step1Text=data.allContentfulVolunteerStepsStep1TextTextNode.edges[num2[0]].node.step1Text
+        title=data.allContentfulVolunteerSteps.edges[0].node.title
+        step1Title=data.allContentfulVolunteerSteps.edges[0].node.step1Title
+        step1Text=data.allContentfulVolunteerStepsStep1TextTextNode.edges[0].node.step1Text
 
-        step2Title=data.allContentfulVolunteerSteps.edges[num2[0]].node.step2Title
-        step2Text=data.allContentfulVolunteerStepsStep2TextTextNode.edges[num2[0]].node.step2Text
+        step2Title=data.allContentfulVolunteerSteps.edges[0].node.step2Title
+        step2Text=data.allContentfulVolunteerStepsStep2TextTextNode.edges[0].node.step2Text
 
-        step3Title=data.allContentfulVolunteerSteps.edges[num2[0]].node.step3Title
-        step3Text=data.allContentfulVolunteerStepsStep3TextTextNode.edges[num2[0]].node.step3Text
+        step3Title=data.allContentfulVolunteerSteps.edges[0].node.step3Title
+        step3Text=data.allContentfulVolunteerStepsStep3TextTextNode.edges[0].node.step3Text
 
       }
 
