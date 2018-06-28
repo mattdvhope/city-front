@@ -46,6 +46,7 @@ export default class Login extends React.Component {
         this.props.handleClose(); //..of modal
       })
       .catch((err) => { 
+        console.log(err);
         this.showErrorsAfterSubmission();
         document.getElementById('formControlsEmail').value=`${email || window.sessionStorage.email}`
         document.getElementById('formControlsPassword').value=`${password || window.sessionStorage.password}`
