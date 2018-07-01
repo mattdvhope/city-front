@@ -193,8 +193,6 @@ export default class VolunteerTopPic extends Component {
   render() {
     let textItems = [];
 
-console.log(this.props.window.localStorage.language === "thai")
-
       if (this.props.window.localStorage.language === "thai") {
         textItems = ["ยินดีต้อนรับคนอาสาสมัคร! นี่คือภาพรวมของ CEP สำหรับคุณลองมาดูด้านล่าง!"];
       } else {
