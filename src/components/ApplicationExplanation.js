@@ -23,15 +23,12 @@ export default class Example extends Component {
   }
   
   toggle() {
-  	console.log(this.state.detailed)
   	this.setState({detailed: !this.state.detailed})
   }
 
 	render() {
     let textItems = [];
     if (this.state.window) {
-
-      console.log(this.state.window.localStorage.language)
 
       if (this.state.window.localStorage.language === "thai") {
         textItems = ['You Can Speak! เป็นหลักสูตรการสนทนาภาษาอังกฤษ ซึ่งประกอบไปด้วย 2 ส่วน ที่ออกแบบมาเพื่อช่วยให้คนไทยพัฒนาการพูดภาษาอังกฤษได้อย่างชัดเจนและมีความมั่นใจ หลักสูตรนี้ยังจะช่วยให้คนไทยมีโอกาสในการพัฒนาทักษะการสร้างความสัมพันธ์ข้ามวัฒนธรรมทั้งในระดับส่วนตัวและความสัมพันธ์ทางธุรกิจควบคู่กันไปด้วย',
