@@ -11,7 +11,7 @@ import '../css/less/bootstrap.less'
 
 export default class Layout extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   handleChangeToThai(event) {
@@ -63,7 +63,6 @@ export default class Layout extends Component {
           fromSatorn9={data.fromSatorn9}
           fromSatorn10={data.fromSatorn10}
         />
-
       </div>
     )
   }
@@ -73,7 +72,6 @@ export default class Layout extends Component {
 Layout.propTypes = {
   children: PropTypes.func,
 }
-
 
 export const query = graphql`
   query SiteTitleQuery {
