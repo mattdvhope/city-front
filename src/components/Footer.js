@@ -6,6 +6,8 @@ import Img from "gatsby-image";
 import styled from "styled-components";
 import styles from "../css/footer.module.css";
 
+import ModalSatornDirections from "./ModalSatornDirections"
+
 import cityScape from '../img/City-scape.jpg'
 import cityScapeMedium from '../img/City-scape-medium.jpg'
 import cityScapeSmaller from '../img/City-scape-smaller.jpg'
@@ -57,6 +59,12 @@ const Copyright = styled.div`
     margin-left: 40px
 `
 
+const CenterAddress = styled.a`
+  color: #8BC34A;
+  font-weight: bold;
+  cursor: pointer;
+`
+
 function imageAccordingToWindowWidth(width) {
   if (width > 1070) {
     return cityScape;
@@ -84,6 +92,7 @@ export default class Footer extends Component {
       SMchanger: undefined,
       window: undefined
     };
+    this.renderAddress = this.renderAddress.bind(this);
   }
 
   handleResize = () => this.setState({
@@ -99,6 +108,18 @@ export default class Footer extends Component {
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize)
+  }
+
+  renderAddress(title, number, district, city, note) {
+    return (
+      <CenterAddress>
+        <ContactInfoTitles>{title}</ContactInfoTitles>
+        <div>{number}</div>
+        <div>{district}</div>
+        <div>{city}</div>
+        <div>{note}</div>
+      </CenterAddress>
+    );
   }
 
   render() {
@@ -137,13 +158,26 @@ export default class Footer extends Component {
                   <ContactInfoTitles>{footerItems[1]}</ContactInfoTitles>
                   <div>086-696-7821</div>
                   <br/>
-                  <a className="modal-initiator location-pictures-modal" href="#" data-toggle="modal" data-target="#locationpicturesmodal">
-                    <ContactInfoTitles>{footerItems[2]}</ContactInfoTitles>
-                    <div>{footerItems[3]}</div>
-                    <div>{footerItems[4]}</div>
-                    <div>{footerItems[5]}</div>
-                    <div>{footerItems[6]}</div>
-                  </a>
+
+                  <ModalSatornDirections getSatorn={
+                    this.renderAddress(
+                      footerItems[2],
+                      footerItems[3],
+                      footerItems[4],
+                      footerItems[5],
+                      footerItems[6]
+                    )}
+                    fromSatorn1={this.props.fromSatorn1}
+                    fromSatorn2={this.props.fromSatorn2}
+                    fromSatorn3={this.props.fromSatorn3}
+                    fromSatorn4={this.props.fromSatorn4}
+                    fromSatorn5={this.props.fromSatorn5}
+                    fromSatorn6={this.props.fromSatorn6}
+                    fromSatorn7={this.props.fromSatorn7}
+                    fromSatorn8={this.props.fromSatorn8}
+                    fromSatorn9={this.props.fromSatorn9}
+                    fromSatorn10={this.props.fromSatorn10}
+                  />
                   <br/>
                   <ContactInfoTitles>{footerItems[7]}</ContactInfoTitles>
                   <div>info@cityenglishproject.com</div>
