@@ -12,6 +12,9 @@ import '../css/less/bootstrap.less'
 export default class Layout extends Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
     if (!window.localStorage.language) {
       window.localStorage.setItem("language", "thai" );
     }
