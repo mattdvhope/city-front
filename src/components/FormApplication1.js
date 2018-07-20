@@ -4,6 +4,7 @@ import axios from 'axios'
 import styled from "styled-components";
 import { FormGroup, ControlLabel, FormControl, HelpBlock, Checkbox, Radio, Button } from 'react-bootstrap';
 import ApplicationExplanation from './ApplicationExplanation';
+import PaymentInfo from './PaymentInfo';
 
 const FormStyler = styled.span`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
@@ -265,8 +266,9 @@ export default class FormApplication1 extends React.Component {
             ) : (
               <span />
             )}
-
-            <button className="btn btn-success" type="submit">Submit</button>
+  
+            <PaymentInfo />
+            <Button className="btn btn-success" bsSize="large" type="submit">Submit</Button>
           </form>
           </FormStyler>
         </div>
