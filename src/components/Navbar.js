@@ -92,6 +92,12 @@ export default class NavbarOnTop extends React.Component {
                 <NavItem eventKey={4} className="text-center"><NavItemStyler>{navItems[4]}</NavItemStyler></NavItem>
               </LinkContainer>
 
+              <LinkContainer to="#">
+                <MenuItem eventKey={3.3} className="text-center" ><NavItemStyler><ModalLogin getLogin={navItems[8]} /></NavItemStyler></MenuItem>    
+              </LinkContainer>
+
+
+{/* 
               <NavDropdown eventKey={3} className="text-center" style={{ fontSize: '130%' }} title={navItems[5]} id={2} >
                 <MenuItem divider />
                 <LinkContainer to="/volunteers">
@@ -105,9 +111,8 @@ export default class NavbarOnTop extends React.Component {
                 <LinkContainer to="#">
                   <MenuItem eventKey={3.3} className="text-center" ><NavItemStyler><ModalLogin getLogin={navItems[8]} /></NavItemStyler></MenuItem>    
                 </LinkContainer>
-{/* 
- */}
               </NavDropdown>
+ */}
 
               <Navbar.Brand>
                 <a>
