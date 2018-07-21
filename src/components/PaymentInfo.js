@@ -3,13 +3,16 @@ import Link from 'gatsby-link';
 import styled from "styled-components";
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import ModalApplication1 from './ModalApplication1'
-
-import welcomeWide from '../img/Welcome-wide.jpg'
-import welcomeMobile from '../img/Welcome-mobile.jpg'
+import ModalPrices from './ModalPrices'
 
 const TextContainer = styled.div`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
+`
+
+const ModalStyle = styled.div`
+  color: #8BC34A;
+  font-weight: bold;
+  cursor: pointer;
 `
 
 export default class PaymentInfo extends Component {
@@ -31,6 +34,7 @@ export default class PaymentInfo extends Component {
       if (this.state.window.localStorage.language === "thai") {
         textItems = ["ข้อมูลสำหรับการโอนเงินโครงการซิตี้ อิงลิช",
                      "(กรุณาชำระค่าสมัครเรียนภายใน 7 วัน และกรุณานำหลักฐานการโอนเงินมายืนยันในชั้นเรียน)",
+                     'คลิกที่นี่เพื่อดูข้อมูลราคา',
                      "ธนาคาร: ธนาคารไทยพาณิชย์",
                      "บุคคลที่ติดต่อ: \"Mrs. Erin Alayne Malone\"",
                      "หมายเลขบัญชี: 227-210027-2",
@@ -38,6 +42,7 @@ export default class PaymentInfo extends Component {
       } else {
         textItems = ['CEP bank transfer information',
                      '(Please pay within 7 days. Please bring bank tranfer slip to class as proof of payment)',
+                     'Click here for price information',
                      'Bank: Siam Commercial Bank',
                      'Contact Person: "Mrs. Erin Alayne Malone"',
                      'Acct Number: 227-210027-2',
@@ -49,11 +54,12 @@ export default class PaymentInfo extends Component {
           <hr/>
           <h2><u>{textItems[0]}</u></h2>
           <h4>{textItems[1]}</h4>
-          <h4>{textItems[2]}</h4>
+          <h4><ModalStyle><ModalPrices getPrices={textItems[2]} /></ModalStyle></h4>
           <h4>{textItems[3]}</h4>
           <h4>{textItems[4]}</h4>
+          <h4>{textItems[5]}</h4>
           <hr/>
-          <h5>{textItems[5]}</h5>
+          <h5>{textItems[6]}</h5>
           <br/>
         </TextContainer>
       )
