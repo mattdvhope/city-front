@@ -122,7 +122,7 @@ export default class NavbarOnTop extends React.Component {
                     className={styles.thaiFlag}
                     onClick={this.props.handleChangeToThai}
                   />
-                </a>
+                </a>``
               </Navbar.Brand>
               <Navbar.Brand>
                 <a>
