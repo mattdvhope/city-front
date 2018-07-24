@@ -56,7 +56,7 @@ export default class ModalPrices extends Component {
         textItems = ['ข้อมูลราคา',
                      'ราคาปกติ 699 บาท',
                      'ราคาโปรโมชั่นพิเศษ 599 บาท!!',
-                     'ราคา 999 บาทถ้าท่านลงทะเบียนตอนนี้สำหรับตอนที่ 1 และตอนที่ 2 ด้วยกัน!!'];
+                     'ราคา 999 บาท สำหรับการลงทะเบียนเล่ม 1 และเล่ม 2 พร้อมกันในตอนนี้!!'];
       } else {
         textItems = ['Price Information',
                      'Normal price: 699 baht',
