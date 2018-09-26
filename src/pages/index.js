@@ -15,6 +15,10 @@ export default class FrontPage extends Component {
 
   componentDidMount() {
     this.setState({ window: window });
+
+    if (!window.localStorage.language) {
+      window.localStorage.setItem("language", "thai");
+    }
   }
 
   render() {
