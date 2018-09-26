@@ -32,7 +32,7 @@ export default class Layout extends Component {
   handleChangeToEnglish(event) {
     console.log("in handleChangeToEnglish");
     event.preventDefault();
-    window.localStorage.setItem("language", "english" );
+    window.localStorage.setItem("language", "englll" );
     this.setState(this.state);
     location.reload();
     // navigateTo('/');
