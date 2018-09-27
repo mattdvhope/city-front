@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link'
 import Carousel from '../components/Carousel'
+import Top from '../components/Top'
 import Welcome from '../components/Welcome'
 import Features from '../components/Features'
 import Member from '../components/Member'
@@ -77,7 +78,17 @@ export default class FrontPage extends Component {
 
       return (
         <div>
+
+          {/* 
           <Carousel
+            carouselImage1={data.carouselImage1}
+            carouselImage2={data.carouselImage2}
+            carouselImage3={data.carouselImage3}
+            carouselImage4={data.carouselImage4}
+          />
+           */}
+
+          <Top
             carouselImage1={data.carouselImage1}
             carouselImage2={data.carouselImage2}
             carouselImage3={data.carouselImage3}

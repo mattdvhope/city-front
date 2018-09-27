@@ -3,6 +3,11 @@ import Link from 'gatsby-link';
 import styled from "styled-components";
 import { Grid, Row, Col } from 'react-bootstrap';
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee, faFighterJet } from '@fortawesome/free-solid-svg-icons'
+
+
 import ModalApplication1 from './ModalApplication1'
 
 import welcomeWide from '../img/Welcome-wide.jpg'
@@ -170,6 +175,10 @@ const LinkStyler = styled.span`
   font-weight: bolder;
 `
 
+const IconContainer = styled.div`
+  color: #C0C0C0;
+  font-size: 200%;
+`
 export default class WelcomeCaption extends Component {
 
   constructor(props) {
@@ -226,8 +235,16 @@ export default class WelcomeCaption extends Component {
             ) : (
               <TextContainer>
                 {this.props.caption} <Link to="/more_info"><LinkStyler>{textItems[0]}</LinkStyler></Link>{textItems[1]}<LinkStyler><ModalApplication1 getApplication={textItems[2]} /></LinkStyler>{textItems[3]}
+
+                {/* 
+                <IconContainer>
+                  <FontAwesomeIcon icon={faCoffee} />
+                </IconContainer>
+                 */}
+
               </TextContainer>
             )}
+
           </Grid>
         </WelcomeContainer>
       )
