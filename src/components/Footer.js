@@ -28,8 +28,8 @@ const FooterContainer = styled.div`
 
 const TitleContainer = styled.div`
   color: #2d3179;
-  margin-right: 4%;
-  margin-left: 4%;
+  margin-right: auto;
+  margin-left: auto;
   margin-bottom: 12px;
 `;
 

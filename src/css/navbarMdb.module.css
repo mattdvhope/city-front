@@ -1,0 +1,62 @@
+/* CEP icon on top left*/
+.logo {
+  border-radius: 50%;
+  @media (min-width: 767px) {
+    margin-top: -12px;
+    margin-bottom: -10px;
+    width: 47px;
+  }
+  @media (max-width: 767px) {
+    margin-top: -11px;
+    margin-bottom: -11px;
+    width: 49px;
+  }
+}
+
+.thaiFlag {
+  cursor: pointer;
+  @media (min-width: 767px) {
+    display: block;
+    margin-left: 20px;
+    margin-right: auto;
+    height: 100%;
+    width: 100%;
+  }
+  @media (max-width: 767px) {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 7%;
+  }
+  @media (max-width: 414px) {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 11%;
+  }
+}
+
+.usaFlag {
+  cursor: pointer;
+  @media (min-width: 767px) {
+    display: block;
+    margin-left: 20px;
+    margin-right: auto;
+    height: 100%;
+    width: 100%;
+  }
+  @media (max-width: 767px) {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 7%;
+    margin-bottom: 10px;
+  }
+  @media (max-width: 414px) {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 11%;
+    margin-bottom: 10px;
+  }
+}

@@ -4,26 +4,32 @@ import Helmet from 'react-helmet'
 // import { navigateTo } from "gatsby-link"
 
 import Navbar from '../components/Navbar'
+import NavbarMdb from '../components/NavbarMdb'
 import Footer from '../components/Footer'
 
-import './index.css'
-import '../css/less/bootstrap.less'
+// import './index.css'
+// import '../css/less/bootstrap.less'
 
 export default class Layout extends Component {
   constructor(props) {
     super(props);
+      this.state = {
+        window: undefined
+      };
   }
 
   componentDidMount() {
     if (!window.localStorage.language) {
       window.localStorage.setItem("language", "thai" );
     }
+
+    this.setState({ window: window });
   }
 
   handleChangeToThai(event) {
     console.log("in handleChangeToThai");
     event.preventDefault();
-    window.localStorage.setItem("language", "thai" );
+    this.state.window.localStorage.setItem("language", "thai" );
     this.setState(this.state);
     location.reload();
     // navigateTo('/');
@@ -32,7 +38,7 @@ export default class Layout extends Component {
   handleChangeToEnglish(event) {
     console.log("in handleChangeToEnglish");
     event.preventDefault();
-    window.localStorage.setItem("language", "englll" );
+    this.state.window.localStorage.setItem("language", "englll" );
     this.setState(this.state);
     location.reload();
     // navigateTo('/');
@@ -44,15 +50,29 @@ export default class Layout extends Component {
     return (
       <div>
         <Helmet title={data.site.siteMetadata.title} >
+
+          {/* 
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+         */}
+
+
           <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/278cd7f5-226e-4ad9-83fb-59e4a7eb4131.css" />
           <link href="https://fonts.googleapis.com/css?family=Athiti|Chonburi|Kanit|Maitree|Prompt|Sriracha|Taviraj|Trirong|Josefin+Sans" rel="stylesheet" />
         </Helmet>
+
+        <NavbarMdb
+          handleChangeToThai={e => this.handleChangeToThai(e)}
+          handleChangeToEnglish={e => this.handleChangeToEnglish(e)}
+        />
+
+        {/* 
 
         <Navbar
           handleChangeToThai={e => this.handleChangeToThai(e)}
           handleChangeToEnglish={e => this.handleChangeToEnglish(e)}
         />
+
+         */}
 
         {this.props.children()}
 

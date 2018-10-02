@@ -16,8 +16,8 @@ const MemberContainer = styled.div`
 
 const TitleContainer = styled.div`
 	color: #8BC34A;
-	margin-right: 4%;
-	margin-left: 4%;
+	margin-right: auto;
+	margin-left: auto;
 `;
 
 const SubTitleContainer = styled.div`
@@ -78,7 +78,7 @@ export default class Member extends Component {
     		<Grid fluid>
     			<Row>
     				<TitleContainer>
-    					<h1 className="text-center">{this.props.title}</h1>
+    					<h1>{this.props.title}</h1>
     				</TitleContainer>
     				<SubTitleContainer>
     					<h3>{this.props.subtitle}</h3>

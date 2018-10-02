@@ -4,11 +4,10 @@
   border-radius: 50%;
   @media (min-width: 767px) {
 	  margin-top: -12px;
+    margin-bottom: -10px;
 	  width: 52px;
-	  position: relative;
 	}
   @media (max-width: 767px) {
-	  margin-top: -14px;
 	  width: 48px;
 	}
 }

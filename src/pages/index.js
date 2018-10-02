@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import Carousel from '../components/Carousel'
 import Top from '../components/Top'
 import Welcome from '../components/Welcome'
+import TrainingSessions from '../components/TrainingSessions'
 import Features from '../components/Features'
 import Member from '../components/Member'
 
@@ -34,7 +35,7 @@ export default class FrontPage extends Component {
         num1.unshift(0); num2.unshift(1);
       }
 
-      if (this.state.window.localStorage.language === "thai") {
+      if (this.state.window.localStorage.language !== "thai") {
         welcomeContent = data.allContentfulWelcome.edges[num1[0]].node.welcomeContent.welcomeContent;
 
         featuresTitle1 = data.allContentfulFeatures.edges[num1[0]].node.featuresTitle1
@@ -89,13 +90,14 @@ export default class FrontPage extends Component {
            */}
 
           <Top
-            carouselImage1={data.carouselImage1}
-            carouselImage2={data.carouselImage2}
-            carouselImage3={data.carouselImage3}
-            carouselImage4={data.carouselImage4}
+            topImage={data.topImage}
           />
 
+          <TrainingSessions />
+
+          {/* 
           <Welcome caption={welcomeContent}/>
+           */}
 
           <Features
             featureslImage1={data.featureslImage1}
@@ -143,6 +145,13 @@ export default class FrontPage extends Component {
 
 export const homePageQuery = graphql`
   query HomePage {
+    topImage: imageSharp(id: { regex: "/Welcome-left/" }) {
+      sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
+
     carouselImage1: imageSharp(id: { regex: "/1Home-Page-Pic/" }) {
       sizes(maxWidth: 1240 ) {
         ...GatsbyImageSharpSizes
