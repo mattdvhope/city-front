@@ -35,7 +35,7 @@ export default class FrontPage extends Component {
         num1.unshift(0); num2.unshift(1);
       }
 
-      if (this.state.window.localStorage.language !== "thai") {
+      if (this.state.window.localStorage.language === "thai") {
         welcomeContent = data.allContentfulWelcome.edges[num1[0]].node.welcomeContent.welcomeContent;
 
         featuresTitle1 = data.allContentfulFeatures.edges[num1[0]].node.featuresTitle1
