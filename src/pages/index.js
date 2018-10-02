@@ -145,7 +145,7 @@ export default class FrontPage extends Component {
 
 export const homePageQuery = graphql`
   query HomePage {
-    topImage: imageSharp(id: { regex: "/Welcome-left/" }) {
+    topImage: imageSharp(id: { regex: "/Top-front/" }) {
       sizes(maxWidth: 1240 ) {
         ...GatsbyImageSharpSizes
       }
