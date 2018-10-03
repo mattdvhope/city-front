@@ -158,15 +158,17 @@ export default class Top extends React.Component {
     let textItems = [];
     if (this.state.window) {
       if (this.state.window.localStorage.language === "thai") {
-        textItems = [];
+        textItems = ['ช่วงของการฝึกอบรม',
+                     'คลิกด้านล่างเพื่อเลือกเวลา'];
       } else {
-        textItems = [];
+        textItems = ['Schedule of training sessions',
+                     'Click below to choose a time'];
       }
 
       return (
         <TrainingContainer className="container">
-          <TitleText className="text-center">ช่วงของการฝึกอบรม</TitleText>
-          <SubtitleText className="text-center">(คลิกด้านล่างเพื่อเลือกเวลา)</SubtitleText>
+          <TitleText className="text-center">{textItems[0]}</TitleText>
+          <SubtitleText className="text-center">({textItems[1]})</SubtitleText>
           <div className="row">
             <div className="col">
               <NoBulletsInList>
