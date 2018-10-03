@@ -54,7 +54,10 @@ const TitleText = styled.p`
     font-size: 270%;
   }
   @media (max-width: 375px) {
-    font-size: 240%;
+    font-size: 220%;
+  }
+  @media (max-width: 330px) {
+    font-size: 200%;
   }
 `
 
@@ -122,6 +125,9 @@ const SpacedListItem = styled.li`
   }
   @media (max-width: 375px) {
     font-size: 90%;
+  }
+  @media (max-width: 340px) {
+    font-size: 110%;
   }
 `
 
