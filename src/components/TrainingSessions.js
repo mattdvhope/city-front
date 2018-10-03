@@ -156,8 +156,10 @@ export default class Top extends React.Component {
 
   render() {
     let textItems = [];
+    let period;
     if (this.state.window) {
-      if (this.state.window.localStorage.language === "thai") {
+      const language = this.state.window.localStorage.language;
+      if (language === "thai") {
         textItems = ['ช่วงของการฝึกอบรม',
                      'คลิกที่นี่เพื่อลงทะเบียนสำหรับเซสชั่น'];
       } else {
@@ -174,8 +176,9 @@ export default class Top extends React.Component {
               <NoBulletsInList>
                 {
                   this.state.class_times.map((e, key) => {
+                    language === "thai" ? period = e.period_thai : period = e.period;
                     return  <SpacedListItem className="text-center" key={e.period} value={e.id}>
-                              <ModalMdb trainingPeriodId={e.id.toString()} trainingPeriod={e.period_thai} />
+                              <ModalMdb trainingPeriodId={e.id.toString()} trainingPeriod={period} />
                             </SpacedListItem>;
                   })
                 }
