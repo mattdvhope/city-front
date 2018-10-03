@@ -34,7 +34,7 @@ export default class PaymentInfo extends Component {
       if (this.state.window.localStorage.language === "thai") {
         textItems = ["ข้อมูลสำหรับการโอนเงินโครงการซิตี้ อิงลิช",
                      "(กรุณาชำระค่าสมัครเรียนภายใน 7 วัน และกรุณานำหลักฐานการโอนเงินมายืนยันในชั้นเรียน)",
-                     'คลิกที่นี่เพื่อดูข้อมูลราคา',
+                     '699 บาท',
                      "ธนาคาร: ธนาคารไทยพาณิชย์",
                      "บุคคลที่ติดต่อ: \"Mrs. Erin Alayne Malone\"",
                      "หมายเลขบัญชี: 227-210027-2",
@@ -42,7 +42,7 @@ export default class PaymentInfo extends Component {
       } else {
         textItems = ['CEP bank transfer information',
                      '(Please pay within 7 days. Please bring bank tranfer slip to class as proof of payment)',
-                     'Click here for price information',
+                     '699 baht',
                      'Bank: Siam Commercial Bank',
                      'Contact Person: "Mrs. Erin Alayne Malone"',
                      'Acct Number: 227-210027-2',
@@ -54,7 +54,7 @@ export default class PaymentInfo extends Component {
           <hr/>
           <h2><u>{textItems[0]}</u></h2>
           <h4>{textItems[1]}</h4>
-          <h4><ModalStyle><ModalPrices getPrices={textItems[2]} /></ModalStyle></h4>
+          <h4>{textItems[2]}</h4>
           <h4>{textItems[3]}</h4>
           <h4>{textItems[4]}</h4>
           <h4>{textItems[5]}</h4>
