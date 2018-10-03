@@ -167,7 +167,7 @@ export default class Top extends React.Component {
       const language = this.state.window.localStorage.language;
       if (language === "thai") {
         textItems = ['ช่วงของการฝึกอบรม',
-                     'คลิกที่นี่เพื่อลงทะเบียนสำหรับเซสชั่น'];
+                     'คลิกที่นี่เพื่อลงทะเบียนเซสชั่น'];
       } else {
         textItems = ['Schedule of training sessions',
                      'click here to register for a session'];
