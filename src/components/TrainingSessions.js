@@ -81,6 +81,25 @@ const SubtitleText = styled.p`
   }
 `
 
+const SubtitleTextTwo = styled.p`
+  margin-bottom: -0.3em;
+  @media (min-width: 1180px) {
+    font-size: 170%;
+  }
+  @media (max-width: 1180px) {
+    font-size: 160%;
+  }
+  @media (max-width: 1100px) {
+    font-size: 150%;
+  }
+  @media (max-width: 990px) {
+    font-size: 140%;
+  }
+  @media (max-width: 767px) {
+    font-size: 100%;
+  }
+`
+
 const NoBulletsInList = styled.ul`
   list-style: none;
   margin-left: -50px;
@@ -166,17 +185,20 @@ export default class Top extends React.Component {
     if (this.state.window) {
       const language = this.state.window.localStorage.language;
       if (language === "thai") {
-        textItems = ['ช่วงของการฝึกอบรม',
-                     'คลิกที่นี่เพื่อลงทะเบียนเซสชั่น'];
+        textItems = ['ตารางเวลาของสัมมนา',
+                     'คลิกด้านล่างเพื่อเลือกสัมมนาห้าวัน',
+                     '(สัมมนาห้าวันราคา 999 บาท)'];
       } else {
-        textItems = ['Schedule of training sessions',
-                     'click here to register for a session'];
+        textItems = ['Schedule of seminars',
+                     'click below to choose a 5-day seminar',
+                     '(a 5-day seminar costs 999 baht)'];
       }
 
       return (
         <TrainingContainer className="container">
           <TitleText className="text-center">{textItems[0]}</TitleText>
-          <SubtitleText className="text-center">({textItems[1]})</SubtitleText>
+          <SubtitleText className="text-center">{textItems[1]}</SubtitleText>
+          <SubtitleTextTwo className="text-center">{textItems[2]}</SubtitleTextTwo>
           <div className="row">
             <div className="col">
               <NoBulletsInList>
