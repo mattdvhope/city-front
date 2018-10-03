@@ -28,7 +28,9 @@ export default class FrontPage extends Component {
     if (this.state.window) {
       const { data } = this.props;
 
-      let num1 = []; let num2 = []; let welcomeContent, featuresTitle1, featuresContent1, featuresTitle2, featuresContent2, featuresTitle3, featuresContent3, title, subtitle, firstListItem, secondListItem, thirdListItem, fourthListItem, firstParagraphSubtitle, firstParagraph, secondParagraphSubtitle, secondParagraph;
+      let num1 = []; let num2 = [];
+      let paragraphContent1, paragraphContent2, paragraphContent3, paragraphContentThai1, paragraphContentThai2, paragraphContentThai3;
+      // let welcomeContent, featuresTitle1, featuresContent1, featuresTitle2, featuresContent2, featuresTitle3, featuresContent3, title, subtitle, firstListItem, secondListItem, thirdListItem, fourthListItem, firstParagraphSubtitle, firstParagraph, secondParagraphSubtitle, secondParagraph;
 
       // if (process.env.GATSBY_API_URL === "http://localhost:3000") {
       //   num1.unshift(1); num2.unshift(0);
@@ -44,45 +46,57 @@ export default class FrontPage extends Component {
       
 
       if (this.state.window.localStorage.language === "thai") {
-        welcomeContent = data.allContentfulWelcome.edges[num1[0]].node.welcomeContent.welcomeContent;
+        paragraphContent1 = data.allContentfulWhatIsCepParagraphOneThaiTextNode.edges[0].node.paragraphOneThai
+        paragraphContent2 = data.allContentfulWhatIsCepParagraphTwoThaiTextNode.edges[0].node.paragraphTwoThai
+        paragraphContent3 = data.allContentfulWhatIsCepParagraphThreeThaiTextNode.edges[0].node.paragraphThreeThai
 
-        featuresTitle1 = data.allContentfulFeatures.edges[num1[0]].node.featuresTitle1
-        featuresContent1 = data.allContentfulFeaturesFeatures1TextNode.edges[num1[0]].node.features1
-        featuresTitle2 = data.allContentfulFeatures.edges[num1[0]].node.featuresTitle2
-        featuresContent2 = data.allContentfulFeaturesFeatures2TextNode.edges[num1[0]].node.features2
-        featuresTitle3 = data.allContentfulFeatures.edges[num1[0]].node.featuresTitle3
-        featuresContent3 = data.allContentfulFeaturesFeatures3TextNode.edges[num1[0]].node.features3
+        console.log("thai chosen", paragraphContent1)
 
-        title = data.allContentfulMember.edges[num1[0]].node.title
-        subtitle = data.allContentfulMember.edges[num1[0]].node.subtitle.subtitle
-        firstListItem = data.allContentfulMember.edges[num1[0]].node.firstListItem
-        secondListItem = data.allContentfulMember.edges[num1[0]].node.secondListItem
-        thirdListItem = data.allContentfulMember.edges[num1[0]].node.thirdListItem
-        fourthListItem = data.allContentfulMember.edges[num1[0]].node.fourthListItem
-        firstParagraphSubtitle = data.allContentfulMember.edges[num1[0]].node.firstParagraphSubtitle
-        firstParagraph=data.allContentfulMemberFirstParagraphTextNode.edges[num1[0]].node.firstParagraph
-        secondParagraphSubtitle=data.allContentfulMember.edges[num1[0]].node.secondParagraphSubtitle
-        secondParagraph=data.allContentfulMemberSecondParagraphTextNode.edges[num1[0]].node.secondParagraph
+        // welcomeContent = data.allContentfulWelcome.edges[num1[0]].node.welcomeContent.welcomeContent;
+
+        // featuresTitle1 = data.allContentfulFeatures.edges[num1[0]].node.featuresTitle1
+        // featuresContent1 = data.allContentfulFeaturesFeatures1TextNode.edges[num1[0]].node.features1
+        // featuresTitle2 = data.allContentfulFeatures.edges[num1[0]].node.featuresTitle2
+        // featuresContent2 = data.allContentfulFeaturesFeatures2TextNode.edges[num1[0]].node.features2
+        // featuresTitle3 = data.allContentfulFeatures.edges[num1[0]].node.featuresTitle3
+        // featuresContent3 = data.allContentfulFeaturesFeatures3TextNode.edges[num1[0]].node.features3
+
+        // title = data.allContentfulMember.edges[num1[0]].node.title
+        // subtitle = data.allContentfulMember.edges[num1[0]].node.subtitle.subtitle
+        // firstListItem = data.allContentfulMember.edges[num1[0]].node.firstListItem
+        // secondListItem = data.allContentfulMember.edges[num1[0]].node.secondListItem
+        // thirdListItem = data.allContentfulMember.edges[num1[0]].node.thirdListItem
+        // fourthListItem = data.allContentfulMember.edges[num1[0]].node.fourthListItem
+        // firstParagraphSubtitle = data.allContentfulMember.edges[num1[0]].node.firstParagraphSubtitle
+        // firstParagraph=data.allContentfulMemberFirstParagraphTextNode.edges[num1[0]].node.firstParagraph
+        // secondParagraphSubtitle=data.allContentfulMember.edges[num1[0]].node.secondParagraphSubtitle
+        // secondParagraph=data.allContentfulMemberSecondParagraphTextNode.edges[num1[0]].node.secondParagraph
       } else {
-        welcomeContent = data.allContentfulWelcome.edges[num2[0]].node.welcomeContent.welcomeContent;
+        paragraphContent1 = data.allContentfulWhatIsCepParagraphOneTextNode.edges[num1[0]].node.paragraphOne
+        paragraphContent2 = data.allContentfulWhatIsCepParagraphTwoTextNode.edges[num1[0]].node.paragraphTwo
+        paragraphContent3 = data.allContentfulWhatIsCepParagraphThreeTextNode.edges[num1[0]].node.paragraphThree
 
-        featuresTitle1 = data.allContentfulFeatures.edges[num2[0]].node.featuresTitle1
-        featuresContent1 = data.allContentfulFeaturesFeatures1TextNode.edges[num2[0]].node.features1
-        featuresTitle2 = data.allContentfulFeatures.edges[num2[0]].node.featuresTitle2
-        featuresContent2 = data.allContentfulFeaturesFeatures2TextNode.edges[num2[0]].node.features2
-        featuresTitle3 = data.allContentfulFeatures.edges[num2[0]].node.featuresTitle3
-        featuresContent3 = data.allContentfulFeaturesFeatures3TextNode.edges[num2[0]].node.features3
+        console.log("english chosen", paragraphContent1)
 
-        title = data.allContentfulMember.edges[num2[0]].node.title
-        subtitle = data.allContentfulMember.edges[num2[0]].node.subtitle.subtitle
-        firstListItem = data.allContentfulMember.edges[num2[0]].node.firstListItem
-        secondListItem = data.allContentfulMember.edges[num2[0]].node.secondListItem
-        thirdListItem = data.allContentfulMember.edges[num2[0]].node.thirdListItem
-        fourthListItem = data.allContentfulMember.edges[num2[0]].node.fourthListItem
-        firstParagraphSubtitle = data.allContentfulMember.edges[num2[0]].node.firstParagraphSubtitle
-        firstParagraph=data.allContentfulMemberFirstParagraphTextNode.edges[num2[0]].node.firstParagraph
-        secondParagraphSubtitle=data.allContentfulMember.edges[num2[0]].node.secondParagraphSubtitle
-        secondParagraph=data.allContentfulMemberSecondParagraphTextNode.edges[num2[0]].node.secondParagraph
+        // welcomeContent = data.allContentfulWelcome.edges[num2[0]].node.welcomeContent.welcomeContent;
+
+        // featuresTitle1 = data.allContentfulFeatures.edges[num2[0]].node.featuresTitle1
+        // featuresContent1 = data.allContentfulFeaturesFeatures1TextNode.edges[num2[0]].node.features1
+        // featuresTitle2 = data.allContentfulFeatures.edges[num2[0]].node.featuresTitle2
+        // featuresContent2 = data.allContentfulFeaturesFeatures2TextNode.edges[num2[0]].node.features2
+        // featuresTitle3 = data.allContentfulFeatures.edges[num2[0]].node.featuresTitle3
+        // featuresContent3 = data.allContentfulFeaturesFeatures3TextNode.edges[num2[0]].node.features3
+
+        // title = data.allContentfulMember.edges[num2[0]].node.title
+        // subtitle = data.allContentfulMember.edges[num2[0]].node.subtitle.subtitle
+        // firstListItem = data.allContentfulMember.edges[num2[0]].node.firstListItem
+        // secondListItem = data.allContentfulMember.edges[num2[0]].node.secondListItem
+        // thirdListItem = data.allContentfulMember.edges[num2[0]].node.thirdListItem
+        // fourthListItem = data.allContentfulMember.edges[num2[0]].node.fourthListItem
+        // firstParagraphSubtitle = data.allContentfulMember.edges[num2[0]].node.firstParagraphSubtitle
+        // firstParagraph=data.allContentfulMemberFirstParagraphTextNode.edges[num2[0]].node.firstParagraph
+        // secondParagraphSubtitle=data.allContentfulMember.edges[num2[0]].node.secondParagraphSubtitle
+        // secondParagraph=data.allContentfulMemberSecondParagraphTextNode.edges[num2[0]].node.secondParagraph
       }
 
       return (
@@ -105,8 +119,11 @@ export default class FrontPage extends Component {
 
           <WhatIsCep
             whatIsCepImg1={data.whatIsCepImg1}
+            paragraphContent1={paragraphContent1}
             whatIsCepImg2={data.whatIsCepImg2}
+            paragraphContent2={paragraphContent2}
             whatIsCepImg3={data.whatIsCepImg3}
+            paragraphContent3={paragraphContent3}
           />
  
           {/* 
@@ -170,14 +187,58 @@ export const homePageQuery = graphql`
         ...GatsbyImageSharpSizes
       }
     }
+    allContentfulWhatIsCepParagraphOneTextNode {
+      edges {
+        node {
+          paragraphOne
+        }
+      }
+    }
+    allContentfulWhatIsCepParagraphOneThaiTextNode {
+      edges {
+        node {
+          paragraphOneThai
+        }
+      }
+    }
+
     whatIsCepImg2: imageSharp(id: { regex: "/WhatIsCep2/" }) {
       sizes(maxWidth: 1240 ) {
         ...GatsbyImageSharpSizes
       }
     }
+    allContentfulWhatIsCepParagraphTwoTextNode {
+      edges {
+        node {
+          paragraphTwo
+        }
+      }
+    }
+    allContentfulWhatIsCepParagraphTwoThaiTextNode {
+      edges {
+        node {
+          paragraphTwoThai
+        }
+      }
+    }
+
     whatIsCepImg3: imageSharp(id: { regex: "/WhatIsCep3/" }) {
       sizes(maxWidth: 1240 ) {
         ...GatsbyImageSharpSizes
+      }
+    }
+    allContentfulWhatIsCepParagraphThreeTextNode {
+      edges {
+        node {
+          paragraphThree
+        }
+      }
+    }
+    allContentfulWhatIsCepParagraphThreeThaiTextNode {
+      edges {
+        node {
+          paragraphThreeThai
+        }
       }
     }
 

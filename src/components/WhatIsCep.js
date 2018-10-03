@@ -202,7 +202,8 @@ export default class Top extends React.Component {
   render() {
     let textItems = [];
     if (this.state.window) {
-      if (this.state.window.localStorage.language === "thai") {
+      let language = this.state.window.localStorage.language;
+      if (language === "thai") {
         textItems = ['โครงการซิตี้ อิงลิช (City English Project) คืออะไร?'];
       } else {
         textItems = ['What is the "City English Project?"'];
@@ -229,7 +230,7 @@ export default class Top extends React.Component {
           <div className="row">
             <ContentContainer>
               <ContentText>
-                The City English Project (CEP) is a team of Americans and Thais in Bangkok who provide five-day seminars for Thai adults in English and culture.  We provide 7.5 hours of content per seminar.  All levels of English ability are welcome.
+                {this.props.paragraphContent1}
               </ContentText>
             </ContentContainer>
           </div>
@@ -248,7 +249,7 @@ export default class Top extends React.Component {
           <div className="row">
             <ContentContainer>
               <ContentText>
-                We are a non-profit organization with the goal of helping Thai people to relate more comfortably with people of other cultures.
+                {this.props.paragraphContent2}
               </ContentText>
             </ContentContainer>
           </div>
@@ -267,7 +268,7 @@ export default class Top extends React.Component {
           <div className="row">
             <ContentContainer>
               <ContentText>
-                Some of our American team members live and work in Bangkok long-term.  Other American team members come to Bangkok for short periods of time to lead our seminars.
+                {this.props.paragraphContent3}
               </ContentText>
             </ContentContainer>
           </div>
