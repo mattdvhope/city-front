@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import Carousel from '../components/Carousel'
 import Top from '../components/Top'
 import Welcome from '../components/Welcome'
+import WhatIsCep from '../components/WhatIsCep'
 import TrainingSessions from '../components/TrainingSessions'
 import Features from '../components/Features'
 import Member from '../components/Member'
@@ -102,9 +103,14 @@ export default class FrontPage extends Component {
 
           <TrainingSessions />
 
+          <WhatIsCep
+            whatIsCepImg1={data.whatIsCepImg1}
+            whatIsCepImg2={data.whatIsCepImg2}
+            whatIsCepImg3={data.whatIsCepImg3}
+          />
+
           {/* 
           <Welcome caption={welcomeContent}/>
-           */}
 
           <Features
             featureslImage1={data.featureslImage1}
@@ -141,6 +147,7 @@ export default class FrontPage extends Component {
             secondParagraphSubtitle={secondParagraphSubtitle}
             secondParagraph={secondParagraph}
           />
+         */}
 
         </div>
       )
@@ -158,6 +165,21 @@ export const homePageQuery = graphql`
       }
     }
 
+    whatIsCepImg1: imageSharp(id: { regex: "/WhatIsCep1/" }) {
+      sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    whatIsCepImg2: imageSharp(id: { regex: "/WhatIsCep2/" }) {
+      sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    whatIsCepImg3: imageSharp(id: { regex: "/WhatIsCep3/" }) {
+      sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes
+      }
+    }
 
     carouselImage1: imageSharp(id: { regex: "/1Home-Page-Pic/" }) {
       sizes(maxWidth: 1240 ) {
