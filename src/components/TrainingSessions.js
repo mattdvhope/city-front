@@ -159,10 +159,10 @@ export default class Top extends React.Component {
     if (this.state.window) {
       if (this.state.window.localStorage.language === "thai") {
         textItems = ['ช่วงของการฝึกอบรม',
-                     'คลิกด้านล่างเพื่อเลือกเวลา'];
+                     'คลิกที่นี่เพื่อลงทะเบียนสำหรับเซสชั่น'];
       } else {
         textItems = ['Schedule of training sessions',
-                     'Click below to choose a time'];
+                     'click here to register for a session'];
       }
 
       return (
