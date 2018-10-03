@@ -7,10 +7,10 @@ var MaleStyler = styled.span`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
   font-size: 180%;
   @media (min-width: 320px) {
-    margin-right: 1.5em;
+    margin-right: 1.2em;
   }
   @media (max-width: 320px) {
-    margin-right: 1.3em;
+    margin-right: 1em;
   }
 `
 
@@ -66,10 +66,10 @@ export default class FormsPage extends React.Component  {
       font-family: "Neue Frutiger W31 Modern Light", "Athiti";
       font-size: 220%;
       @media (min-width: 320px) {
-        margin-right: 1.5em;
+        margin-right: 1.2em;
       }
       @media (max-width: 320px) {
-        margin-right: 1.3em;
+        margin-right: 1em;
       }
       color: #2D3179
     `
@@ -86,10 +86,10 @@ export default class FormsPage extends React.Component  {
       font-family: "Neue Frutiger W31 Modern Light", "Athiti";
       font-size: 140%;
       @media (min-width: 320px) {
-        margin-right: 1.5em;
+        margin-right: 1.2em;
       }
       @media (max-width: 320px) {
-        margin-right: 1.3em;
+        margin-right: 1em;
       }
       text-decoration: line-through;
     `
