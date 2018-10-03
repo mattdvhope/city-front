@@ -248,7 +248,7 @@ export default class Top extends React.Component {
           <div className="row">
             <ContentContainer>
               <ContentText>
-                We are non-profit organization with the goal of helping Thai people to relate more comfortably with people of other cultures.
+                We are a non-profit organization with the goal of helping Thai people to relate more comfortably with people of other cultures.
               </ContentText>
             </ContentContainer>
           </div>
