@@ -29,11 +29,18 @@ export default class FrontPage extends Component {
 
       let num1 = []; let num2 = []; let welcomeContent, featuresTitle1, featuresContent1, featuresTitle2, featuresContent2, featuresTitle3, featuresContent3, title, subtitle, firstListItem, secondListItem, thirdListItem, fourthListItem, firstParagraphSubtitle, firstParagraph, secondParagraphSubtitle, secondParagraph;
 
-      if (process.env.GATSBY_API_URL === "http://localhost:3000") {
-        num1.unshift(1); num2.unshift(0);
-        } else {
-        num1.unshift(0); num2.unshift(1);
-      }
+      // if (process.env.GATSBY_API_URL === "http://localhost:3000") {
+      //   num1.unshift(1); num2.unshift(0);
+      //   console.log('num1:', num1);
+      //   console.log('num2:', num2);
+      //   } else {
+      //   num1.unshift(0); num2.unshift(1);
+      //   console.log('num1:', num1);
+      //   console.log('num2:', num2);
+      // }
+
+      num1.unshift(0); num2.unshift(1);
+      
 
       if (this.state.window.localStorage.language === "thai") {
         welcomeContent = data.allContentfulWelcome.edges[num1[0]].node.welcomeContent.welcomeContent;
