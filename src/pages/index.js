@@ -108,7 +108,7 @@ export default class FrontPage extends Component {
             whatIsCepImg2={data.whatIsCepImg2}
             whatIsCepImg3={data.whatIsCepImg3}
           />
-
+ 
           {/* 
           <Welcome caption={welcomeContent}/>
 
