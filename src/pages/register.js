@@ -13,7 +13,15 @@ export default class Register extends React.Component {
   }
   render() {
     return (
-      <FormMdb />
+      <div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <FormMdb />
+        <br/>
+        <br/>
+      </div>
     );
   }
 }

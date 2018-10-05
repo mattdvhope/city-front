@@ -1,7 +1,12 @@
 import React from 'react';
 import axios from 'axios'
 import styled from "styled-components";
+import { navigateTo } from "gatsby-link"
 import PaymentInfo from './PaymentInfo';
+
+var FormTitle = styled.p`
+  font-size: 180%;
+`
 
 var MaleStyler = styled.span`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
@@ -174,7 +179,8 @@ export default class FormsPage extends React.Component  {
     .then(message => {
       if (message === "Successful creation of new user!!") {
         console.log("SUCCESS!!!");
-        this.props.toggle();
+        // this.props.toggle();
+        navigateTo('/');
       } else {
         console.log("STILL ERRORS");
       }
@@ -203,7 +209,7 @@ export default class FormsPage extends React.Component  {
             <Col md="12">
 
               <form onSubmit={this.handleSubmit} className='needs-validation' noValidate>
-                <p className="h5 text-center mb-4">ลงทะเบียน</p>
+                <FormTitle className="text-center mb-4">ลงทะเบียน</FormTitle>
                 <div className="grey-text">
 
                   {console.log(this.state.gender)}
@@ -222,19 +228,19 @@ export default class FormsPage extends React.Component  {
                   <Input onChange={this.handleChange} label="นามสกุล (ภาษาอังกฤษ)" icon="user" name="last_name" group type="text" validate error="wrong" success="right" required/>
                   <div id="invalidLastname" style={{marginBottom: `25px`, marginTop: `-33px`, display: `none`, color: `red`}}>Please provide a last name.</div>
                   
-                  <div>คลิกเพศที่ถูกต้อง</div>
-                  <div>
-                    <MaleStyler onClick={this.dealWithMaleClick}><i className="fa fa-male prefix"></i> ผู้ชาย</MaleStyler>
-                    <FemaleStyler onClick={this.dealWithFemaleClick}><i className="fa fa-female prefix"></i> ผู้หญิง</FemaleStyler>
-                  </div>
-                  <div id="invalidGender" style={{marginBottom: `25px`, marginTop: `0px`, display: `none`, color: `red`}}>Please provide a gender.</div>
-
                   <Input onChange={this.handleChange} label="เบอร์โทรศัพท์ (จำเป็น)" icon="phone" name="phone_number" group type="text" validate error="wrong" success="right" required/>
                   <div id="invalidPhone" style={{marginBottom: `25px`, marginTop: `-33px`, display: `none`, color: `red`}}>Please provide a phone number.</div>
                   <div id="takenPhone" style={{marginBottom: `25px`, marginTop: `-33px`, display: `none`, color: `red`}}>This phone number is already used by someone who registered with CEP.</div>
 
                   <Input onChange={this.handleChange} label="อีเมล (ไม่จำเป็น)" icon="envelope" name="email" group type="email" validate error="wrong" success="right" required/>
                   <div id="takenEmail" style={{marginBottom: `25px`, marginTop: `-33px`, display: `none`, color: `red`}}>This email address is already used by someone who registered with CEP.</div>
+
+                  <div>คลิกเพศที่ถูกต้อง</div>
+                  <div>
+                    <MaleStyler onClick={this.dealWithMaleClick}><i className="fa fa-male prefix"></i> ผู้ชาย</MaleStyler>
+                    <FemaleStyler onClick={this.dealWithFemaleClick}><i className="fa fa-female prefix"></i> ผู้หญิง</FemaleStyler>
+                  </div>
+                  <div id="invalidGender" style={{marginBottom: `25px`, marginTop: `0px`, display: `none`, color: `red`}}>Please provide a gender.</div>
 
                   <PaymentInfo />
 

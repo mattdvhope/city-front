@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'gatsby-link';
 import axios from 'axios'
 import styled from "styled-components";
 import 'font-awesome/css/font-awesome.min.css';
@@ -107,9 +108,7 @@ const NoBulletsInList = styled.ul`
 
 const SpacedListItem = styled.li`
   margin-top: 8px;
-  color: #8BC34A;
   margin-bottom: 19px;
-  cursor: pointer;
   text-decoration: underline;
 
   @media (min-width: 1200px) {
@@ -205,8 +204,9 @@ export default class Top extends React.Component {
                 {
                   this.state.class_times.map((e, key) => {
                     language === "thai" ? period = e.period_thai : period = e.period;
-                    return  <SpacedListItem className="text-center" key={e.period} value={e.id}>
-                              <ModalMdb trainingPeriodId={e.id.toString()} trainingPeriod={period} />
+                    return  <SpacedListItem className="text-center" key={e.period} value={e.id} >
+                            {/* <ModalMdb trainingPeriodId={e.id.toString()} trainingPeriod={period} />  */}
+                              <Link style={{color: `#8BC34A`}} to="register">{period}</Link>
                             </SpacedListItem>;
                   })
                 }
