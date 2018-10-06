@@ -10,6 +10,7 @@ var FormTitle = styled.p`
 
 var MaleStyler = styled.span`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
+  cursor: pointer;
   font-size: 180%;
   @media (min-width: 320px) {
     margin-right: 1.2em;
@@ -21,6 +22,7 @@ var MaleStyler = styled.span`
 
 var FemaleStyler = styled.span`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
+  cursor: pointer;
   font-size: 180%;
 `
 
@@ -69,6 +71,7 @@ export default class FormsPage extends React.Component  {
     this.setState({ gender: 'ผู้ชาย' });
     MaleStyler = styled.span`
       font-family: "Neue Frutiger W31 Modern Light", "Athiti";
+      cursor: pointer;
       font-size: 220%;
       @media (min-width: 320px) {
         margin-right: 1.2em;
@@ -80,6 +83,7 @@ export default class FormsPage extends React.Component  {
     `
     FemaleStyler = styled.span`
       font-family: "Neue Frutiger W31 Modern Light", "Athiti";
+      cursor: pointer;
       font-size: 140%;
       text-decoration: line-through;
     `
@@ -89,6 +93,7 @@ export default class FormsPage extends React.Component  {
     this.setState({ gender: 'ผู้หญิง' });
     MaleStyler = styled.span`
       font-family: "Neue Frutiger W31 Modern Light", "Athiti";
+      cursor: pointer;
       font-size: 140%;
       @media (min-width: 320px) {
         margin-right: 1.2em;
@@ -100,6 +105,7 @@ export default class FormsPage extends React.Component  {
     `
     FemaleStyler = styled.span`
       font-family: "Neue Frutiger W31 Modern Light", "Athiti";
+      cursor: pointer;
       font-size: 220%;
       color: #2D3179
     `
@@ -180,7 +186,7 @@ export default class FormsPage extends React.Component  {
       if (message === "Successful creation of new user!!") {
         console.log("SUCCESS!!!");
         // this.props.toggle();
-        navigateTo('/');
+        navigateTo('/social-media');
       } else {
         console.log("STILL ERRORS");
       }
@@ -209,7 +215,7 @@ export default class FormsPage extends React.Component  {
             <Col md="12">
 
               <form onSubmit={this.handleSubmit} className='needs-validation' noValidate>
-                <FormTitle className="text-center mb-4">ลงทะเบียน</FormTitle>
+                <FormTitle className="text-center mb-4">{this.props.title}</FormTitle>
                 <div className="grey-text">
 
                   {console.log(this.state.gender)}

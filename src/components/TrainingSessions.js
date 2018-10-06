@@ -6,8 +6,6 @@ import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css'; 
 import 'mdbreact/dist/css/mdb.css';
 
-import ModalMdb from './ModalMdb';
-
 const TrainingContainer = styled.div`
   margin-bottom: 40px;
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
@@ -205,8 +203,7 @@ export default class Top extends React.Component {
                   this.state.class_times.map((e, key) => {
                     language === "thai" ? period = e.period_thai : period = e.period;
                     return  <SpacedListItem className="text-center" key={e.period} value={e.id} >
-                            {/* <ModalMdb trainingPeriodId={e.id.toString()} trainingPeriod={period} />  */}
-                              <Link style={{color: `#8BC34A`}} to="register">{period}</Link>
+                              <Link style={{color: `#8BC34A`}} to={`/app/register/${e.id}`}>{period}</Link>
                             </SpacedListItem>;
                   })
                 }
