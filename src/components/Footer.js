@@ -145,11 +145,13 @@ export default class Footer extends Component {
 
             <Row>
               <Col sm={3} xs={12}>
-                <Img
-                  sizes={this.props.footerlImage.sizes}
-                  className={styles.CEPLogoImg}
-                  alt="CEP logo"
-                />
+                <Link to="/">
+                  <Img
+                    sizes={this.props.footerlImage.sizes}
+                    className={styles.CEPLogoImg}
+                    alt="CEP logo"
+                  />
+                </Link>
               </Col>
 
               <Col sm={3 + this.state.SMchanger} xs={12}>
