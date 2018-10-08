@@ -5,6 +5,7 @@ import Top from '../components/Top'
 import Welcome from '../components/Welcome'
 import WhatIsCep from '../components/WhatIsCep'
 import TrainingSessions from '../components/TrainingSessions'
+import Icons from '../components/Icons'
 import Features from '../components/Features'
 import Member from '../components/Member'
 
@@ -116,6 +117,8 @@ export default class FrontPage extends Component {
           />
 
           <TrainingSessions />
+
+          <Icons />
 
           <WhatIsCep
             whatIsCepImg1={data.whatIsCepImg1}
