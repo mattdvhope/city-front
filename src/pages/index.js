@@ -119,7 +119,7 @@ export default class FrontPage extends Component {
           <TrainingSessions />
 
           <Icons />
-
+     
           <WhatIsCep
             whatIsCepImg1={data.whatIsCepImg1}
             paragraphContent1={paragraphContent1}

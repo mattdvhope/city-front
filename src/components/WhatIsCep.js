@@ -1,11 +1,24 @@
 import React from "react";
 import Img from "gatsby-image";
 import styled from "styled-components";
-import styles from "../css/whatiscep.module.css";
+import styles from "../css/icons.module.css";
+// import styles from "../css/whatiscep.module.css";
 
-import 'font-awesome/css/font-awesome.min.css';
-import 'bootstrap-css-only/css/bootstrap.min.css'; 
-import 'mdbreact/dist/css/mdb.css';
+// import 'font-awesome/css/font-awesome.min.css';
+// import 'bootstrap-css-only/css/bootstrap.min.css'; 
+// import 'mdbreact/dist/css/mdb.css';
+
+var IconStyler = styled.div`
+  font-family: "Neue Frutiger W31 Modern Light", "Athiti";
+  color: #CECECE;
+  font-size: 230%;
+  @media (min-width: 320px) {
+    margin-right: 1.2em;
+  }
+  @media (max-width: 320px) {
+    margin-right: 1em;
+  }
+`
 
 const WhatIsCepContainer = styled.div`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
@@ -19,6 +32,10 @@ const TitleContainer = styled.div`
 `;
 
 const TitleText = styled.p`
+  font-family: "Neue Frutiger W31 Modern Light", "Athiti";
+  margin-right: 5px;
+  margin-left: 5px;
+
   @media (min-width: 1400px) {
     font-size: 280%;
     margin-bottom: 10px;
@@ -117,7 +134,10 @@ const ContentContainer = styled.div`
 `;
 
 const ContentText = styled.p`
+  font-family: "Neue Frutiger W31 Modern Light", "Athiti";
   margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 40px;
   @media (min-width: 1400px) {
     font-size: 180%;
   }
@@ -197,11 +217,20 @@ export default class Top extends React.Component {
 
   componentDidMount() {
     this.setState({ window: window });
+    try {
+      const mdbreact = require("mdbreact");
+      this.setState({ mdbreact: mdbreact });
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   render() {
     let textItems = [];
     if (this.state.window) {
+
+      const { Container, Row, Col, Input, Button } = this.state.mdbreact;
+
       let language = this.state.window.localStorage.language;
       if (language === "thai") {
         textItems = ['โครงการซิตี้ อิงลิช (City English Project) คืออะไร?'];
@@ -210,69 +239,78 @@ export default class Top extends React.Component {
       }
 
       return (
-        <WhatIsCepContainer className="container">
-          <div className="row">
+        <Container>
+          <Row>
+            <Col md="4">
+              <IconStyler className={styles.avatarHolder}>
+                <div><i className="fa fa-map prefix"></i></div>
+                <div>About</div>
+              </IconStyler>
+            </Col>
+          </Row>
+
+          <Row>
             <TitleContainer>
               <TitleText className="text-center">{textItems[0]}</TitleText>
             </TitleContainer>
-          </div>
+          </Row>
           <br/>
-          <div className="row">
-            <div className="col">
+          <Row>
+            <Col>
               <Img
                 alt="Top picture"
                 className={styles.avatar}
                 sizes={this.props.whatIsCepImg1.sizes}
               />
-            </div>
-          </div>
+            </Col>
+          </Row>
           <br/>
-          <div className="row">
+          <Row>
             <ContentContainer>
               <ContentText>
                 {this.props.paragraphContent1}
               </ContentText>
             </ContentContainer>
-          </div>
+          </Row>
           <br/>
           <br/>
-          <div className="row">
-            <div className="col">
+          <Row>
+            <Col>
               <Img
                 alt="Top picture"
                 className={styles.avatar}
                 sizes={this.props.whatIsCepImg2.sizes}
               />
-            </div>
-          </div>
+            </Col>
+          </Row>
           <br/>
-          <div className="row">
+          <Row>
             <ContentContainer>
               <ContentText>
                 {this.props.paragraphContent2}
               </ContentText>
             </ContentContainer>
-          </div>
+          </Row>
           <br/>
           <br/>
-          <div className="row">
-            <div className="col">
+          <Row>
+            <Col>
               <Img
                 alt="Top picture"
                 className={styles.avatar}
                 sizes={this.props.whatIsCepImg3.sizes}
               />
-            </div>
-          </div>
+            </Col>
+          </Row>
           <br/>
-          <div className="row">
+          <Row>
             <ContentContainer>
               <ContentText>
                 {this.props.paragraphContent3}
               </ContentText>
             </ContentContainer>
-          </div>
-        </WhatIsCepContainer>
+          </Row>
+        </Container>
       );
     } else {
       return <span />
