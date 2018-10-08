@@ -77,7 +77,7 @@ export default class NavbarMdb extends React.Component {
         }
         return (
           <Container>
-            <Navbar expand="md" dark fixed="top" style={{ backgroundImage: `linear-gradient(to bottom,#2D3179 0,#373FAE 80%)` }}>
+            <Navbar expand="md" dark fixed="top" style={{ backgroundColor: `#2D3179` }}>
               <NavbarNav left>
                 <Link to="/">
                   <img
