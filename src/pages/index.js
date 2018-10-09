@@ -31,7 +31,7 @@ export default class FrontPage extends Component {
       const { data } = this.props;
 
       let num1 = []; let num2 = [];
-      let paragraphContent1, paragraphContent2, paragraphContent3, paragraphContentThai1, paragraphContentThai2, paragraphContentThai3, davidCrook, cheriCrook, kellyCooper, kelliJohnson, mattMalone;
+      let paragraphContent1, paragraphContent2, paragraphContent3, paragraphContentThai1, paragraphContentThai2, paragraphContentThai3, davidCrook, cheriCrook, kellyCooper, kelliJohnson, mattMalone, volunteerTeachers;
 
       num1.unshift(0); num2.unshift(1);
       
@@ -40,23 +40,26 @@ export default class FrontPage extends Component {
         paragraphContent2 = data.allContentfulWhatIsCepParagraphTwoThaiTextNode.edges[0].node.paragraphTwoThai
         paragraphContent3 = data.allContentfulWhatIsCepParagraphThreeThaiTextNode.edges[0].node.paragraphThreeThai
 
-        davidCrook = data.allContentfulTeamDavidCrookTextNode.edges[0].node.davidCrook
-        cheriCrook = data.allContentfulTeamCheriCrookTextNode.edges[0].node.cheriCrook
-        kellyCooper = data.allContentfulTeamKellyCooperTextNode.edges[0].node.kellyCooper
-        kelliJohnson = data.allContentfulTeamKelliJohnsonTextNode.edges[0].node.kelliJohnson
-        mattMalone = data.allContentfulTeamMattMaloneTextNode.edges[0].node.mattMalone
+        davidCrook = data.allContentfulTeamThaiDavidCrookTextNode.edges[0].node.davidCrook
+        cheriCrook = data.allContentfulTeamThaiCheriCrookTextNode.edges[0].node.cheriCrook
+        kellyCooper = data.allContentfulTeamThaiKellyCooperTextNode.edges[0].node.kellyCooper
+        kelliJohnson = data.allContentfulTeamThaiKelliJohnsonTextNode.edges[0].node.kelliJohnson
+        mattMalone = data.allContentfulTeamThaiMattMaloneTextNode.edges[0].node.mattMalone
+
+        volunteerTeachers = data.allContentfulTeamThaiVolunteerTeachersTextNode.edges[0].node.volunteerTeachers
 
       } else {
         paragraphContent1 = data.allContentfulWhatIsCepParagraphOneTextNode.edges[num1[0]].node.paragraphOne
         paragraphContent2 = data.allContentfulWhatIsCepParagraphTwoTextNode.edges[num1[0]].node.paragraphTwo
         paragraphContent3 = data.allContentfulWhatIsCepParagraphThreeTextNode.edges[num1[0]].node.paragraphThree
 
-        davidCrook = data.allContentfulTeamDavidCrookTextNode.edges[0].node.davidCrook
-        cheriCrook = data.allContentfulTeamCheriCrookTextNode.edges[0].node.cheriCrook
-        kellyCooper = data.allContentfulTeamKellyCooperTextNode.edges[0].node.kellyCooper
-        kelliJohnson = data.allContentfulTeamKelliJohnsonTextNode.edges[0].node.kelliJohnson
-        mattMalone = data.allContentfulTeamMattMaloneTextNode.edges[0].node.mattMalone
+        davidCrook = data.allContentfulTeamDavidCrookTextNode.edges[num1[0]].node.davidCrook
+        cheriCrook = data.allContentfulTeamCheriCrookTextNode.edges[num1[0]].node.cheriCrook
+        kellyCooper = data.allContentfulTeamKellyCooperTextNode.edges[num1[0]].node.kellyCooper
+        kelliJohnson = data.allContentfulTeamKelliJohnsonTextNode.edges[num1[0]].node.kelliJohnson
+        mattMalone = data.allContentfulTeamMattMaloneTextNode.edges[num1[0]].node.mattMalone
 
+        volunteerTeachers = data.allContentfulTeamVolunteerTeachersTextNode.edges[0].node.volunteerTeachers
       }
 
       return (
@@ -68,7 +71,9 @@ export default class FrontPage extends Component {
 
           <TrainingSessions />
 
+      {/* 
           <Icons />
+       */}
 
           <WhatIsCep
             whatIsCepImg1={data.whatIsCepImg1}
@@ -90,6 +95,7 @@ export default class FrontPage extends Component {
             kelliJohnson={kelliJohnson}
             mattMaloneImg={data.mattMaloneImg}
             mattMalone={mattMalone}
+            volunteerTeachers={volunteerTeachers}
             volunteerTeachersImg1={data.volunteerTeachersImg1}
             volunteerTeachersImg2={data.volunteerTeachersImg2}
             volunteerTeachersImg3={data.volunteerTeachersImg3}
@@ -186,6 +192,14 @@ export const homePageQuery = graphql`
       }
     }
 
+    allContentfulTeamThaiDavidCrookTextNode {
+      edges {
+        node {
+          davidCrook
+        }
+      }
+    }
+
     cheriCrookImg: imageSharp(id: { regex: "/cheri-crook/" }) {
       sizes(maxWidth: 1240 ) {
         ...GatsbyImageSharpSizes
@@ -193,6 +207,14 @@ export const homePageQuery = graphql`
     }
 
     allContentfulTeamCheriCrookTextNode {
+      edges {
+        node {
+          cheriCrook
+        }
+      }
+    }
+
+    allContentfulTeamThaiCheriCrookTextNode {
       edges {
         node {
           cheriCrook
@@ -214,6 +236,14 @@ export const homePageQuery = graphql`
       }
     }
 
+    allContentfulTeamThaiKellyCooperTextNode {
+      edges {
+        node {
+          kellyCooper
+        }
+      }
+    }
+
     kelliJohnsonImg: imageSharp(id: { regex: "/kelli-johnson/" }) {
       sizes(maxWidth: 1240 ) {
         ...GatsbyImageSharpSizes
@@ -221,6 +251,14 @@ export const homePageQuery = graphql`
     }
 
     allContentfulTeamKelliJohnsonTextNode {
+      edges {
+        node {
+          kelliJohnson
+        }
+      }
+    }
+
+    allContentfulTeamThaiKelliJohnsonTextNode {
       edges {
         node {
           kelliJohnson
@@ -238,6 +276,30 @@ export const homePageQuery = graphql`
       edges {
         node {
           mattMalone
+        }
+      }
+    }
+
+    allContentfulTeamThaiMattMaloneTextNode {
+      edges {
+        node {
+          mattMalone
+        }
+      }
+    }
+
+    allContentfulTeamVolunteerTeachersTextNode {
+      edges {
+        node {
+          volunteerTeachers
+        }
+      }
+    }
+
+    allContentfulTeamThaiVolunteerTeachersTextNode {
+      edges {
+        node {
+          volunteerTeachers
         }
       }
     }

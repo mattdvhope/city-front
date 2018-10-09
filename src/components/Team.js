@@ -3,10 +3,6 @@ import Img from "gatsby-image";
 import styled from "styled-components";
 import styles from "../css/team.module.css";
 
-// import 'font-awesome/css/font-awesome.min.css';
-// import 'bootstrap-css-only/css/bootstrap.min.css'; 
-// import 'mdbreact/dist/css/mdb.css';
-
 var IconStyler = styled.div`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
   color: #CECECE;
@@ -25,7 +21,6 @@ const WhatIsCepContainer = styled.div`
 `
 
 const TitleContainer = styled.div`
-  color: #2d3179;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 30px;
@@ -33,6 +28,7 @@ const TitleContainer = styled.div`
 
 const TitleText = styled.p`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
+  color: #2d3179;
   margin-right: 5px;
   margin-left: 5px;
 
@@ -233,9 +229,9 @@ export default class Team extends React.Component {
 
       let language = this.state.window.localStorage.language;
       if (language === "thai") {
-        textItems = ['สมาชิกทีมอเมริกันอยู่ที่กรุงเทพฯระยะยาว'];
+        textItems = ['สมาชิกทีมอเมริกันอยู่ที่กรุงเทพฯระยะยาว', 'ครูอาสาสมัคร'];
       } else {
-        textItems = ['Our long-term American team members'];
+        textItems = ['Our long-term American team members', 'Volunteer Teachers'];
       }
 
       return (
@@ -337,13 +333,13 @@ export default class Team extends React.Component {
           <br/>
           <Row>
             <TitleContainer>
-              <TitleText className="text-center">Volunteer Teachers</TitleText>
+              <TitleText className="text-center">{textItems[1]}</TitleText>
             </TitleContainer>
           </Row>
           <Row>
             <Col md="12">
                 <ContentText>
-                  We also have many short-term volunteer trainers who will also lead our seminars.  Our long-term American members train and support these volunteers as they teach English to Thai people.  We also provide Thai speakers to translate for them.
+                  {this.props.volunteerTeachers}
                 </ContentText>
             </Col>
           </Row>
@@ -380,6 +376,8 @@ export default class Team extends React.Component {
               />
             </Col>
           </Row>
+          <br/>
+          <br/>
         </Container>
       );
     } else {
