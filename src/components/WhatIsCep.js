@@ -1,8 +1,7 @@
 import React from "react";
 import Img from "gatsby-image";
 import styled from "styled-components";
-import styles from "../css/icons.module.css";
-// import styles from "../css/whatiscep.module.css";
+import styles from "../css/whatiscep.module.css";
 
 // import 'font-awesome/css/font-awesome.min.css';
 // import 'bootstrap-css-only/css/bootstrap.min.css'; 
@@ -241,7 +240,7 @@ export default class Top extends React.Component {
       return (
         <Container>
           <Row>
-            <Col md="4">
+            <Col md="12">
               <IconStyler className={styles.avatarHolder}>
                 <div><i className="fa fa-map prefix"></i></div>
                 <div>About</div>
