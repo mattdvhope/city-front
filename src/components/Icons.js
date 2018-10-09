@@ -62,7 +62,7 @@ export default class Icons extends React.Component {
             </Col>
             <Col md="4">
               <IconStyler className={styles.avatarHolder}>
-                <div><i className="fa fa-coffee prefix"></i></div>
+                <div><i className="fa fa-users prefix"></i></div>
                 <div>Team</div>
               </IconStyler>
             </Col>
