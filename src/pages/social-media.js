@@ -17,7 +17,7 @@ const TrainingContainer = styled.div`
   }
 `
 
-export default class Register extends React.Component {
+export default class SocialMedia extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
