@@ -4,6 +4,7 @@ import Carousel from '../components/Carousel'
 import Top from '../components/Top'
 import Welcome from '../components/Welcome'
 import WhatIsCep from '../components/WhatIsCep'
+import Team from '../components/Team'
 import TrainingSessions from '../components/TrainingSessions'
 import Icons from '../components/Icons'
 import Features from '../components/Features'
@@ -30,87 +31,36 @@ export default class FrontPage extends Component {
       const { data } = this.props;
 
       let num1 = []; let num2 = [];
-      let paragraphContent1, paragraphContent2, paragraphContent3, paragraphContentThai1, paragraphContentThai2, paragraphContentThai3;
-      // let welcomeContent, featuresTitle1, featuresContent1, featuresTitle2, featuresContent2, featuresTitle3, featuresContent3, title, subtitle, firstListItem, secondListItem, thirdListItem, fourthListItem, firstParagraphSubtitle, firstParagraph, secondParagraphSubtitle, secondParagraph;
-
-      // if (process.env.GATSBY_API_URL === "http://localhost:3000") {
-      //   num1.unshift(1); num2.unshift(0);
-      //   console.log('num1:', num1);
-      //   console.log('num2:', num2);
-      //   } else {
-      //   num1.unshift(0); num2.unshift(1);
-      //   console.log('num1:', num1);
-      //   console.log('num2:', num2);
-      // }
+      let paragraphContent1, paragraphContent2, paragraphContent3, paragraphContentThai1, paragraphContentThai2, paragraphContentThai3, davidCrook, cheriCrook, kellyCooper, kelliJohnson, mattMalone;
 
       num1.unshift(0); num2.unshift(1);
       
-
       if (this.state.window.localStorage.language === "thai") {
         paragraphContent1 = data.allContentfulWhatIsCepParagraphOneThaiTextNode.edges[0].node.paragraphOneThai
         paragraphContent2 = data.allContentfulWhatIsCepParagraphTwoThaiTextNode.edges[0].node.paragraphTwoThai
         paragraphContent3 = data.allContentfulWhatIsCepParagraphThreeThaiTextNode.edges[0].node.paragraphThreeThai
 
-        console.log("thai chosen", paragraphContent1)
+        davidCrook = data.allContentfulTeamDavidCrookTextNode.edges[0].node.davidCrook
+        cheriCrook = data.allContentfulTeamCheriCrookTextNode.edges[0].node.cheriCrook
+        kellyCooper = data.allContentfulTeamKellyCooperTextNode.edges[0].node.kellyCooper
+        kelliJohnson = data.allContentfulTeamKelliJohnsonTextNode.edges[0].node.kelliJohnson
+        mattMalone = data.allContentfulTeamMattMaloneTextNode.edges[0].node.mattMalone
 
-        // welcomeContent = data.allContentfulWelcome.edges[num1[0]].node.welcomeContent.welcomeContent;
-
-        // featuresTitle1 = data.allContentfulFeatures.edges[num1[0]].node.featuresTitle1
-        // featuresContent1 = data.allContentfulFeaturesFeatures1TextNode.edges[num1[0]].node.features1
-        // featuresTitle2 = data.allContentfulFeatures.edges[num1[0]].node.featuresTitle2
-        // featuresContent2 = data.allContentfulFeaturesFeatures2TextNode.edges[num1[0]].node.features2
-        // featuresTitle3 = data.allContentfulFeatures.edges[num1[0]].node.featuresTitle3
-        // featuresContent3 = data.allContentfulFeaturesFeatures3TextNode.edges[num1[0]].node.features3
-
-        // title = data.allContentfulMember.edges[num1[0]].node.title
-        // subtitle = data.allContentfulMember.edges[num1[0]].node.subtitle.subtitle
-        // firstListItem = data.allContentfulMember.edges[num1[0]].node.firstListItem
-        // secondListItem = data.allContentfulMember.edges[num1[0]].node.secondListItem
-        // thirdListItem = data.allContentfulMember.edges[num1[0]].node.thirdListItem
-        // fourthListItem = data.allContentfulMember.edges[num1[0]].node.fourthListItem
-        // firstParagraphSubtitle = data.allContentfulMember.edges[num1[0]].node.firstParagraphSubtitle
-        // firstParagraph=data.allContentfulMemberFirstParagraphTextNode.edges[num1[0]].node.firstParagraph
-        // secondParagraphSubtitle=data.allContentfulMember.edges[num1[0]].node.secondParagraphSubtitle
-        // secondParagraph=data.allContentfulMemberSecondParagraphTextNode.edges[num1[0]].node.secondParagraph
       } else {
         paragraphContent1 = data.allContentfulWhatIsCepParagraphOneTextNode.edges[num1[0]].node.paragraphOne
         paragraphContent2 = data.allContentfulWhatIsCepParagraphTwoTextNode.edges[num1[0]].node.paragraphTwo
         paragraphContent3 = data.allContentfulWhatIsCepParagraphThreeTextNode.edges[num1[0]].node.paragraphThree
 
-        console.log("english chosen", paragraphContent1)
+        davidCrook = data.allContentfulTeamDavidCrookTextNode.edges[0].node.davidCrook
+        cheriCrook = data.allContentfulTeamCheriCrookTextNode.edges[0].node.cheriCrook
+        kellyCooper = data.allContentfulTeamKellyCooperTextNode.edges[0].node.kellyCooper
+        kelliJohnson = data.allContentfulTeamKelliJohnsonTextNode.edges[0].node.kelliJohnson
+        mattMalone = data.allContentfulTeamMattMaloneTextNode.edges[0].node.mattMalone
 
-        // welcomeContent = data.allContentfulWelcome.edges[num2[0]].node.welcomeContent.welcomeContent;
-
-        // featuresTitle1 = data.allContentfulFeatures.edges[num2[0]].node.featuresTitle1
-        // featuresContent1 = data.allContentfulFeaturesFeatures1TextNode.edges[num2[0]].node.features1
-        // featuresTitle2 = data.allContentfulFeatures.edges[num2[0]].node.featuresTitle2
-        // featuresContent2 = data.allContentfulFeaturesFeatures2TextNode.edges[num2[0]].node.features2
-        // featuresTitle3 = data.allContentfulFeatures.edges[num2[0]].node.featuresTitle3
-        // featuresContent3 = data.allContentfulFeaturesFeatures3TextNode.edges[num2[0]].node.features3
-
-        // title = data.allContentfulMember.edges[num2[0]].node.title
-        // subtitle = data.allContentfulMember.edges[num2[0]].node.subtitle.subtitle
-        // firstListItem = data.allContentfulMember.edges[num2[0]].node.firstListItem
-        // secondListItem = data.allContentfulMember.edges[num2[0]].node.secondListItem
-        // thirdListItem = data.allContentfulMember.edges[num2[0]].node.thirdListItem
-        // fourthListItem = data.allContentfulMember.edges[num2[0]].node.fourthListItem
-        // firstParagraphSubtitle = data.allContentfulMember.edges[num2[0]].node.firstParagraphSubtitle
-        // firstParagraph=data.allContentfulMemberFirstParagraphTextNode.edges[num2[0]].node.firstParagraph
-        // secondParagraphSubtitle=data.allContentfulMember.edges[num2[0]].node.secondParagraphSubtitle
-        // secondParagraph=data.allContentfulMemberSecondParagraphTextNode.edges[num2[0]].node.secondParagraph
       }
 
       return (
         <div>
-
-          {/* 
-          <Carousel
-            carouselImage1={data.carouselImage1}
-            carouselImage2={data.carouselImage2}
-            carouselImage3={data.carouselImage3}
-            carouselImage4={data.carouselImage4}
-          />
-           */}
 
           <Top
             topImage={data.topImage}
@@ -119,7 +69,7 @@ export default class FrontPage extends Component {
           <TrainingSessions />
 
           <Icons />
-     
+
           <WhatIsCep
             whatIsCepImg1={data.whatIsCepImg1}
             paragraphContent1={paragraphContent1}
@@ -129,46 +79,23 @@ export default class FrontPage extends Component {
             paragraphContent3={paragraphContent3}
           />
  
-          {/* 
-          <Welcome caption={welcomeContent}/>
-
-          <Features
-            featureslImage1={data.featureslImage1}
-            featureslImage2={data.featureslImage2}
-            featureslImage3={data.featureslImage3}
-
-
-            featuresTitle1={featuresTitle1}
-            featuresContent1={featuresContent1}
-
-            featuresTitle2={featuresTitle2}
-            featuresContent2={featuresContent2}
-
-            featuresTitle3={featuresTitle3}
-            featuresContent3={featuresContent3}
+          <Team
+            davidCrookImg={data.davidCrookImg}
+            davidCrook={davidCrook}
+            cheriCrookImg={data.cheriCrookImg}
+            cheriCrook={cheriCrook}
+            kellyCooperImg={data.kellyCooperImg}
+            kellyCooper={kellyCooper}
+            kelliJohnsonImg={data.kelliJohnsonImg}
+            kelliJohnson={kelliJohnson}
+            mattMaloneImg={data.mattMaloneImg}
+            mattMalone={mattMalone}
+            volunteerTeachersImg1={data.volunteerTeachersImg1}
+            volunteerTeachersImg2={data.volunteerTeachersImg2}
+            volunteerTeachersImg3={data.volunteerTeachersImg3}
+            volunteerTeachersImg4={data.volunteerTeachersImg4}
           />
-
-          <Member
-            memberlImage1={data.memberlImage1}
-            memberlImage2={data.memberlImage2}
-            memberlImage3={data.memberlImage3}
-            
-            title={title}
-            subtitle={subtitle}
-
-            firstListItem={firstListItem}
-            secondListItem={secondListItem}
-            thirdListItem={thirdListItem}
-            fourthListItem={fourthListItem}
-
-            firstParagraphSubtitle={firstParagraphSubtitle}
-            firstParagraph={firstParagraph}
-
-            secondParagraphSubtitle={secondParagraphSubtitle}
-            secondParagraph={secondParagraph}
-          />
-         */}
-
+ 
         </div>
       )
     } else {
@@ -245,148 +172,100 @@ export const homePageQuery = graphql`
       }
     }
 
-    carouselImage1: imageSharp(id: { regex: "/1Home-Page-Pic/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    carouselImage2: imageSharp(id: { regex: "/2YouCanSpeakAd/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    carouselImage3: imageSharp(id: { regex: "/3FreeClass/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    carouselImage4: imageSharp(id: { regex: "/4AtYourOffice/" }) {
+    davidCrookImg: imageSharp(id: { regex: "/david-crook/" }) {
       sizes(maxWidth: 1240 ) {
         ...GatsbyImageSharpSizes
       }
     }
 
-
-    allContentfulWelcome {
+    allContentfulTeamDavidCrookTextNode {
       edges {
         node {
-          welcomeContent {
-            welcomeContent
-          }
+          davidCrook
         }
       }
     }
 
-
-    featureslImage1: imageSharp(id: { regex: "/City-Talk-Class/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    featureslImage2: imageSharp(id: { regex: "/English-Conversation-Partners/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    featureslImage3: imageSharp(id: { regex: "/Conversation-Groups/" }) {
+    cheriCrookImg: imageSharp(id: { regex: "/cheri-crook/" }) {
       sizes(maxWidth: 1240 ) {
         ...GatsbyImageSharpSizes
       }
     }
 
-    allContentfulFeatures {
+    allContentfulTeamCheriCrookTextNode {
       edges {
         node {
-          featuresTitle1
-        }
-      }
-    }
-    allContentfulFeaturesFeatures1TextNode {
-      edges {
-        node {
-          features1
-        }
-      }
-    }
-    allContentfulFeatures {
-      edges {
-        node {
-          featuresTitle2
-        }
-      }
-    }
-    allContentfulFeaturesFeatures2TextNode {
-      edges {
-        node {
-          features2
-        }
-      }
-    }
-    allContentfulFeatures {
-      edges {
-        node {
-          featuresTitle3
-        }
-      }
-    }
-    allContentfulFeaturesFeatures3TextNode {
-      edges {
-        node {
-          features3
+          cheriCrook
         }
       }
     }
 
-
-    memberlImage1: imageSharp(id: { regex: "/Membership4Web/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    memberlImage2: imageSharp(id: { regex: "/Holistic-Model/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    memberlImage3: imageSharp(id: { regex: "/Friends-helping-friends/" }) {
+    kellyCooperImg: imageSharp(id: { regex: "/kelly-cooper/" }) {
       sizes(maxWidth: 1240 ) {
         ...GatsbyImageSharpSizes
       }
     }
 
-    allContentfulMember {
+    allContentfulTeamKellyCooperTextNode {
       edges {
         node {
-          title
-          subtitle {
-            subtitle
-          }
-          firstListItem
-          secondListItem
-          thirdListItem
-          fourthListItem
-          
-          firstParagraphSubtitle
-          secondParagraphSubtitle
+          kellyCooper
         }
       }
     }
-    allContentfulMemberFirstParagraphTextNode {
+
+    kelliJohnsonImg: imageSharp(id: { regex: "/kelli-johnson/" }) {
+      sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
+    allContentfulTeamKelliJohnsonTextNode {
       edges {
         node {
-          firstParagraph
+          kelliJohnson
         }
       }
     }
-    allContentfulMemberSecondParagraphTextNode {
+
+    mattMaloneImg: imageSharp(id: { regex: "/matt-malone/" }) {
+      sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
+    allContentfulTeamMattMaloneTextNode {
       edges {
         node {
-          secondParagraph
+          mattMalone
         }
+      }
+    }
+
+    volunteerTeachersImg1: imageSharp(id: { regex: "/volunteer-teachers1/" }) {
+      sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
+    volunteerTeachersImg2: imageSharp(id: { regex: "/volunteer-teachers2/" }) {
+      sizes(maxWidth: 640 ) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
+    volunteerTeachersImg3: imageSharp(id: { regex: "/volunteer-teachers3/" }) {
+      sizes(maxWidth: 640 ) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
+    volunteerTeachersImg4: imageSharp(id: { regex: "/volunteer-teachers4/" }) {
+      sizes(maxWidth: 640 ) {
+        ...GatsbyImageSharpSizes
       }
     }
 
   }
-  
 `
 
