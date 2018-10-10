@@ -1,5 +1,6 @@
 import React from "react";
 import Img from "gatsby-image";
+import Link from "gatsby-link";
 import styled from "styled-components";
 import styles from "../css/whatiscep.module.css";
 
@@ -228,13 +229,13 @@ export default class Top extends React.Component {
     let textItems = [];
     if (this.state.window) {
 
-      const { Container, Row, Col, Input, Button } = this.state.mdbreact;
+      const { Container, Row, Col, Input, Button, MDBDatePicker } = this.state.mdbreact;
 
       let language = this.state.window.localStorage.language;
       if (language === "thai") {
-        textItems = ['โครงการซิตี้ อิงลิช (City English Project) คืออะไร?'];
+        textItems = ['โครงการซิตี้ อิงลิช (City English Project) คืออะไร?', 'คลิกที่นี่เพื่อดูคำอธิบายเกี่ยวกับ "โลกทัศน์คริสเตียน"'];
       } else {
-        textItems = ['What is the "City English Project?"'];
+        textItems = ['What is the "City English Project?"', 'Click here for an explanation of the "Christian Worldview."'];
       }
 
       return (
@@ -247,7 +248,7 @@ export default class Top extends React.Component {
               </IconStyler>
             </Col>
           </Row>
-
+          
           <Row>
             <TitleContainer>
               <TitleText className="text-center">{textItems[0]}</TitleText>
@@ -286,7 +287,7 @@ export default class Top extends React.Component {
           <Row>
             <ContentContainer>
               <ContentText>
-                {this.props.paragraphContent2}
+                {this.props.paragraphContent2} <Link to="christian-worldview">{textItems[1]}</Link>
               </ContentText>
             </ContentContainer>
           </Row>
