@@ -54,7 +54,7 @@ export default class PaymentInfo extends Component {
           <hr/>
           <h2><u>{textItems[0]}</u></h2>
           <h4>{textItems[1]}</h4>
-          <h4>{textItems[2]}</h4>
+          <h4 style={{color: `#8BC34A`, fontSize: `190%`}}>{textItems[2]}</h4>
           <h4>{textItems[3]}</h4>
           <h4>{textItems[4]}</h4>
           <h4>{textItems[5]}</h4>
