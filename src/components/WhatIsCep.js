@@ -206,6 +206,9 @@ const ContentText = styled.p`
   }
 `;
 
+const LinkStyler = styled.span`
+  color: #8BC34A;
+`
 
 export default class Top extends React.Component {
   constructor(props, context) {
@@ -236,10 +239,13 @@ export default class Top extends React.Component {
       const { Container, Row, Col, Input, Button, MDBDatePicker } = this.state.mdbreact;
 
       let language = this.state.window.localStorage.language;
+
       if (language === "thai") {
-        textItems = ['โครงการซิตี้ อิงลิช (City English Project) คืออะไร?', 'คลิกที่นี่เพื่อดูคำอธิบายเกี่ยวกับ "โลกทัศน์คริสเตียน"'];
+        textItems = ['โครงการซิตี้ อิงลิช (City English Project) คืออะไร?',
+                     'คลิกที่นี่เพื่อดูคำอธิบายเกี่ยวกับ "โลกทัศน์คริสเตียน"'];
       } else {
-        textItems = ['What is the "City English Project?"', 'Click here for an explanation of the "Christian Worldview."'];
+        textItems = ['What is the "City English Project?"',
+                     'Click here for an explanation of the "Christian Worldview."'];
       }
 
       return (
@@ -290,7 +296,7 @@ export default class Top extends React.Component {
           <Row>
             <ContentContainer>
               <ContentText>
-                {this.props.paragraphContent2} <Link to="christian-worldview">{textItems[1]}</Link>
+                {this.props.paragraphContent2} <Link to="christian-worldview"><LinkStyler>{textItems[1]}</LinkStyler></Link>
               </ContentText>
             </ContentContainer>
           </Row>

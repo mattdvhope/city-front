@@ -3,6 +3,8 @@ import Img from "gatsby-image";
 import styled from "styled-components";
 import styles from "../css/team.module.css";
 
+import CarouselMdb from './CarouselMdb';
+
 var IconStyler = styled.div`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
   color: #CECECE;
@@ -344,38 +346,14 @@ export default class Team extends React.Component {
             </Col>
           </Row>
           <Row>
-            <Col md="6">
-              <Img
-                alt="Vol picture 1"
-                className={styles.volunteerAvatars}
-                sizes={this.props.volunteerTeachersImg1.sizes}
-              />
-            </Col>
-            <Col md="6">
-              <Img
-                alt="Vol picture 2"
-                className={styles.volunteerAvatars}
-                sizes={this.props.volunteerTeachersImg2.sizes}
-              />
-            </Col>
+            <CarouselMdb
+              picture1={this.props.volunteerTeachersImg1.sizes}
+              picture2={this.props.volunteerTeachersImg2.sizes}
+              picture3={this.props.volunteerTeachersImg3.sizes}
+              picture4={this.props.volunteerTeachersImg4.sizes}
+            />
           </Row>
-          <br/>
-          <Row>
-            <Col md="6">
-              <Img
-                alt="Vol picture 3"
-                className={styles.volunteerAvatars}
-                sizes={this.props.volunteerTeachersImg3.sizes}
-              />
-            </Col>
-            <Col md="6">
-              <Img
-                alt="Vol picture 4"
-                className={styles.volunteerAvatars}
-                sizes={this.props.volunteerTeachersImg4.sizes}
-              />
-            </Col>
-          </Row>
+
           <br/>
           <br/>
         </Container>
