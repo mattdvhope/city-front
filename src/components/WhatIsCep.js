@@ -225,6 +225,10 @@ export default class Top extends React.Component {
     }
   }
 
+  getPickerValue = (value) => {
+    console.log(value);
+  }
+
   render() {
     let textItems = [];
     if (this.state.window) {
@@ -247,8 +251,7 @@ export default class Top extends React.Component {
                 <div>About</div>
               </IconStyler>
             </Col>
-          </Row>
-          
+          </Row>         
           <Row>
             <TitleContainer>
               <TitleText className="text-center">{textItems[0]}</TitleText>
