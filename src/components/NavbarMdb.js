@@ -14,8 +14,11 @@ import ModalMdb from './ModalMdb'
 import ModalApplication2 from './ModalApplication2'
 import ModalVolAppl from './ModalVolAppl'
 
-const ModalStyler = styled.a`
-  cursor: pointer;
+const TitleStyler = styled.span`
+  position: fixed;
+  font-family: "Neue Frutiger W31 Modern Light", "Athiti";
+  font-size: 160%;
+  margin-top: -19px;
 `
 
 export default class NavbarMdb extends React.Component {
@@ -55,7 +58,8 @@ export default class NavbarMdb extends React.Component {
 
         let navItems = [];
         if (this.state.window.localStorage.language === "thai") {
-          navItems = ["สมัครเรียน",
+          navItems = ["โครงการซิตี้ อิงลิช",
+                      "สมัครเรียน",
                       "สมัครเรียนหลักสูตร 'You Can Speak!' (ตอนที่ 1)",
                       "สมัครเรียนหลักสูตร 'You Can Speak!' (ตอนที่ 2)",
                       "ชั้นเรียนในที่ทำงานของคุณ",
@@ -65,7 +69,8 @@ export default class NavbarMdb extends React.Component {
                       "ลงทะเบียนอาสาสมัครใหม่",
                       "ล็อกอิน"]
         } else {
-          navItems = ["Register",
+          navItems = ["City English Project",
+                      "Register",
                       "Register for 'You Can Speak!' (Part 1)",
                       "Register for 'You Can Speak!' (Part 2)",
                       "Class at your workplace",
@@ -79,13 +84,19 @@ export default class NavbarMdb extends React.Component {
           <Container>
             <Navbar expand="md" dark fixed="top" style={{ backgroundColor: `#2D3179` }}>
               <NavbarNav left>
-                <Link to="/">
+
+                  <NavItem>
+                    <NavLink className="nav-link text-center" to="/"><TitleStyler>{navItems[0]}</TitleStyler></NavLink>
+                  </NavItem>
+
+                  {/* 
                   <img
                     src="https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/CEP+logo+small.jpg"
                     alt="CEP logo"
                     className={styles.logo}
                   />
-                </Link>
+                  */}
+
               </NavbarNav>
 
               { !this.state.isWideEnough && <NavbarToggler onClick = { this.onClick }/>}
