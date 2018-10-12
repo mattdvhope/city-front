@@ -257,7 +257,7 @@ export default class Top extends React.Component {
                 <div>About</div>
               </IconStyler>
             </Col>
-          </Row>         
+          </Row>
           <Row>
             <TitleContainer>
               <TitleText className="text-center">{textItems[0]}</TitleText>
