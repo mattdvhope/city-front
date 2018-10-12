@@ -6591,9 +6591,9 @@ mdast-util-toc@^2.0.1:
     mdast-util-to-string "^1.0.2"
     unist-util-visit "^1.1.0"
 
-mdbreact@^4.8.0:
-  version "4.8.0"
-  resolved "https://registry.yarnpkg.com/mdbreact/-/mdbreact-4.8.0.tgz#9027e439c75c0a6a7ea246d5f6e51b997f476bb8"
+mdbreact@^4.8.1:
+  version "4.8.1"
+  resolved "https://registry.yarnpkg.com/mdbreact/-/mdbreact-4.8.1.tgz#bf1cb39244d0cb18f6e4021cae566b762389ec23"
   dependencies:
     "@material-ui/core" "^1.4.2"
     bootstrap-css-only "^4.1.1"
