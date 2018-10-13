@@ -7,6 +7,7 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 
 const TrainingContainer = styled.div`
+  color: #2D3179;
   margin-bottom: 40px;
 
   @media (min-width: 990px) {
