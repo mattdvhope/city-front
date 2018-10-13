@@ -9,7 +9,6 @@ import 'mdbreact/dist/css/mdb.css';
 
 const TopContainer = styled.div`
   margin-bottom: 40px;
-  font-family: "Neue Frutiger W31 Modern Light", "Athiti";
 
   @media (min-width: 480px) {
     padding-top: 100px;

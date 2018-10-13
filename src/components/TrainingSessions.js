@@ -8,7 +8,6 @@ import 'mdbreact/dist/css/mdb.css';
 
 const TrainingContainer = styled.div`
   margin-bottom: 40px;
-  font-family: "Neue Frutiger W31 Modern Light", "Athiti";
 
   @media (min-width: 990px) {
     padding-top: 40px;
@@ -28,6 +27,7 @@ const TrainingContainer = styled.div`
 `
 
 const TitleText = styled.p`
+  font-family: "Neue Frutiger W31 Modern Light", "Athiti";
   @media (min-width: 1180px) {
     font-size: 470%;
   }

@@ -6,9 +6,11 @@ import Helmet from 'react-helmet'
 import Navbar from '../components/Navbar'
 import NavbarMdb from '../components/NavbarMdb'
 import Footer from '../components/Footer'
+import styled from "styled-components";
 
-// import './index.css'
-// import '../css/less/bootstrap.less'
+const FontStyler = styled.div`
+  font-family:'Neue Frutiger W31 Trad Light', Trirong;
+`
 
 export default class Layout extends Component {
   constructor(props) {
@@ -48,7 +50,7 @@ export default class Layout extends Component {
     const { data } = this.props;
 
     return (
-      <div>
+      <FontStyler>
         <Helmet title={data.site.siteMetadata.title} >
 
           {/* 
@@ -56,7 +58,12 @@ export default class Layout extends Component {
          */}
 
 
-          <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/278cd7f5-226e-4ad9-83fb-59e4a7eb4131.css" />
+          {/* 
+          <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/278cd7f5-226e-4ad9-83fb-59e4a7eb4131.css"/>
+         */}
+
+          <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/50070ebd-d81b-4d29-acc0-f8abd9040636.css"/>
+
           <link href="https://fonts.googleapis.com/css?family=Athiti|Chonburi|Kanit|Maitree|Prompt|Sriracha|Taviraj|Trirong|Josefin+Sans" rel="stylesheet" />
         </Helmet>
 
@@ -89,7 +96,7 @@ export default class Layout extends Component {
           fromSatorn9={data.fromSatorn9}
           fromSatorn10={data.fromSatorn10}
         />
-      </div>
+      </FontStyler>
     )
   }
 }
