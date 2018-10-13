@@ -6,7 +6,6 @@ import styles from "../css/team.module.css";
 import CarouselMdb from './CarouselMdb';
 
 var IconStyler = styled.div`
-  font-family: "Neue Frutiger W31 Modern Light", "Athiti";
   color: #CECECE;
   font-size: 230%;
   @media (min-width: 320px) {
@@ -18,7 +17,6 @@ var IconStyler = styled.div`
 `
 
 const WhatIsCepContainer = styled.div`
-  font-family: "Neue Frutiger W31 Modern Light", "Athiti";
   margin-bottom: 50px;
 `
 
@@ -125,7 +123,6 @@ const TitleText = styled.p`
 `;
 
 const ContentText = styled.div`
-  font-family: "Neue Frutiger W31 Modern Light", "Athiti";
   color: #2d3179;
   margin-left: 8px;
   margin-right: 8px;
