@@ -89,29 +89,11 @@ export default class NavbarMdb extends React.Component {
                     <NavLink className="nav-link text-center" to="/"><TitleStyler>{navItems[0]}</TitleStyler></NavLink>
                   </NavItem>
 
-                  {/* 
-                  <img
-                    src="https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/CEP+logo+small.jpg"
-                    alt="CEP logo"
-                    className={styles.logo}
-                  />
-                  */}
-
               </NavbarNav>
 
               { !this.state.isWideEnough && <NavbarToggler onClick = { this.onClick }/>}
               <Collapse isOpen = { this.state.collapse } navbar>
                 <NavbarNav right>
-
-                {/* 
-                  <NavItem>
-                    <NavLink className="nav-link text-center" to="/contact">Contact</NavLink>
-                  </NavItem>
-
-                  <NavItem>
-                    <NavLink className="nav-link text-center" to="/more_info" >More Information</NavLink>
-                  </NavItem>
-                 */}
 
                   <br/>
 
