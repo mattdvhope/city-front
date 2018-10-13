@@ -6591,9 +6591,9 @@ mdast-util-toc@^2.0.1:
     mdast-util-to-string "^1.0.2"
     unist-util-visit "^1.1.0"
 
-mdbreact@^4.8.1:
+"mdbreact@git+https://oauth2:ZyaNVTqizZzsrp4QVCER@git.mdbootstrap.com/mdb/react/re-pro.git":
   version "4.8.1"
-  resolved "https://registry.yarnpkg.com/mdbreact/-/mdbreact-4.8.1.tgz#bf1cb39244d0cb18f6e4021cae566b762389ec23"
+  resolved "git+https://oauth2:ZyaNVTqizZzsrp4QVCER@git.mdbootstrap.com/mdb/react/re-pro.git#2afc60138c87402287a79f90aef02d1503548437"
   dependencies:
     "@material-ui/core" "^1.4.2"
     bootstrap-css-only "^4.1.1"
