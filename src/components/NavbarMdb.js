@@ -17,8 +17,13 @@ import ModalVolAppl from './ModalVolAppl'
 const TitleStyler = styled.span`
   position: fixed;
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
+  color: #2D3179;
   font-size: 160%;
   margin-top: -19px;
+`
+
+const TogglerColor = styled.span`
+  background-color: #2D3179;
 `
 
 export default class NavbarMdb extends React.Component {
@@ -82,7 +87,8 @@ export default class NavbarMdb extends React.Component {
         }
         return (
           <Container>
-            <Navbar expand="md" dark fixed="top" style={{ backgroundColor: `#2D3179` }}>
+    {/*     <Navbar expand="md" dark fixed="top" style={{ backgroundColor: `#2D3179` }}> */}
+            <Navbar expand="md" dark fixed="top" style={{ backgroundColor: `#EFEFEF` }}>
               <NavbarNav left>
 
                   <NavItem>
@@ -91,7 +97,7 @@ export default class NavbarMdb extends React.Component {
 
               </NavbarNav>
 
-              { !this.state.isWideEnough && <NavbarToggler onClick = { this.onClick }/>}
+              { !this.state.isWideEnough && <TogglerColor><NavbarToggler onClick = { this.onClick }/></TogglerColor>}
               <Collapse isOpen = { this.state.collapse } navbar>
                 <NavbarNav right>
 
