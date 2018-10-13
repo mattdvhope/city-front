@@ -9,7 +9,6 @@ import styles from "../css/whatiscep.module.css";
 // import 'mdbreact/dist/css/mdb.css';
 
 var IconStyler = styled.div`
-  font-family: "Neue Frutiger W31 Modern Light", "Athiti";
   color: #CECECE;
   font-size: 230%;
   @media (min-width: 320px) {
@@ -21,7 +20,6 @@ var IconStyler = styled.div`
 `
 
 const WhatIsCepContainer = styled.div`
-  font-family: "Neue Frutiger W31 Modern Light", "Athiti";
   margin-bottom: 50px;
 `
 
@@ -134,7 +132,6 @@ const ContentContainer = styled.div`
 `;
 
 const ContentText = styled.p`
-  font-family: "Neue Frutiger W31 Modern Light", "Athiti";
   margin-left: 8px;
   margin-right: 8px;
   margin-bottom: 40px;
