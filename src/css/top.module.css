@@ -1,6 +1,6 @@
 .avatar {
   /*border-radius: 8%;*/
-  box-shadow: 15px 15px #E8E7E7;
+  box-shadow: 20px 20px #EFEFEF;
   @media (min-width: 1180px) {
     margin-top: -20px;
   }
@@ -21,6 +21,5 @@
   }
   @media (max-width: 767px) {
     margin-top: -20px;
-    box-shadow: 5px 5px #E8E7E7;
   }
 }

@@ -87,7 +87,6 @@ export default class NavbarMdb extends React.Component {
         }
         return (
           <Container>
-    {/*     <Navbar expand="md" dark fixed="top" style={{ backgroundColor: `#2D3179` }}> */}
             <Navbar expand="md" dark fixed="top" style={{ backgroundColor: `#EFEFEF` }}>
               <NavbarNav left>
 
