@@ -26,39 +26,41 @@ const TopContainer = styled.div`
 
 const TextContainer = styled.div`
   @media (min-width: 1180px) {
-    font-size: 500%;
-    margin-top: -30px;
+    font-size: 480%;
+    margin-top: -35px;
   }
   @media (max-width: 1180px) {
     font-size: 450%;
-    margin-top: 0px;
   }
   @media (max-width: 1100px) {
+    margin-top: 60px;
     font-size: 380%;
-    margin-top: 0px;
   }
-  @media (max-width: 990px) {
-    font-size: 365%;
-    margin-top: -20px;
-  }
-  @media (max-width: 990px) {
-    font-size: 350%;
+  @media (max-width: 995px) {
+    margin-top: 20px;
+    font-size: 310%;
   }
   @media (max-width: 767px) {
+    margin-top: -19px;
     font-size: 220%;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 520px) {
     font-size: 200%;
   }
   @media (max-width: 480px) {
-    font-size: 180%;
+    font-size: 190%;
     margin-top: -30px;
   }
   @media (max-width: 430px) {
-    font-size: 160%;
+    font-size: 180%;
   }
   @media (max-width: 375px) {
+    margin-top: -25px;
     font-size: 140%;
+  }
+  @media (max-width: 325px) {
+    margin-top: -28px;
+    font-size: 130%;
   }
 `
 
