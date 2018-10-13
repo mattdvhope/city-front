@@ -25,6 +25,7 @@ const TopContainer = styled.div`
 `
 
 const TextContainer = styled.div`
+  color: #2D3179;
   @media (min-width: 1180px) {
     font-size: 480%;
     margin-top: -35px;
