@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import Link from 'gatsby-link'
 import { BrowserRouter as Router } from 'react-router-dom';
 import styled from "styled-components";
-import styles from "../css/navbarMdb.module.css";
 
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css'; 
 import 'mdbreact/dist/css/mdb.css';
+
+import SideNavPage from './SideNavPage';
 
 import ModalLogin from './ModalLogin'
 import ModalApplication1 from './ModalApplication1'
@@ -19,7 +20,68 @@ const TitleStyler = styled.span`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
   color: #2D3179;
   font-size: 160%;
-  margin-top: -19px;
+  margin-top: -17px;
+
+  @media (min-width: 1700px) {
+    margin-left: -1000px;
+  }
+  @media (max-width: 1700px) {
+    margin-left: -900px;
+  }
+  @media (max-width: 1600px) {
+    margin-left: -850px;
+  }
+  @media (max-width: 1500px) {
+    margin-left: -800px;
+  }
+  @media (max-width: 1400px) {
+    margin-left: -750px;
+  }
+  @media (max-width: 1300px) {
+    margin-left: -700px;
+  }
+  @media (max-width: 1200px) {
+    margin-left: -650px;
+  }
+  @media (max-width: 1100px) {
+    margin-left: -600px;
+  }
+  @media (max-width: 1000px) {
+    margin-left: -550px;
+  }
+  @media (max-width: 900px) {
+    margin-left: -500px;
+  }
+  @media (max-width: 800px) {
+    margin-left: -450px;
+  }
+  @media (max-width: 750px) {
+    margin-left: -425px;
+  }
+  @media (max-width: 700px) {
+    margin-left: -400px;
+  }
+  @media (max-width: 650px) {
+    margin-left: -375px;
+  }
+  @media (max-width: 600px) {
+    margin-left: -350px;
+  }
+  @media (max-width: 550px) {
+    margin-left: -325px;
+  }
+  @media (max-width: 500px) {
+    margin-left: -300px;
+  }
+  @media (max-width: 450px) {
+    margin-left: -275px;
+  }
+  @media (max-width: 400px) {
+    margin-left: -250px;
+  }
+  @media (max-width: 350px) {
+    margin-left: -225px;
+  }
 `
 
 const TogglerColor = styled.span`
@@ -88,42 +150,16 @@ export default class NavbarMdb extends React.Component {
         return (
           <Container>
             <Navbar expand="md" dark fixed="top" style={{ backgroundColor: `#EFEFEF` }}>
+
               <NavbarNav left>
-
-                  <NavItem>
-                    <NavLink className="nav-link text-center" to="/"><TitleStyler>{navItems[0]}</TitleStyler></NavLink>
-                  </NavItem>
-
+                <SideNavPage handleChangeToThai={this.props.handleChangeToThai} handleChangeToEnglish={this.props.handleChangeToEnglish} />
               </NavbarNav>
 
-              { !this.state.isWideEnough && <TogglerColor><NavbarToggler onClick = { this.onClick }/></TogglerColor>}
-              <Collapse isOpen = { this.state.collapse } navbar>
-                <NavbarNav right>
-
-                  <br/>
-
-                  <NavbarNav className="text-center">
-                    <img
-                      src="https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/thailand_flag_circle.png"
-                      alt="thai flag"
-                      className={styles.thaiFlag}
-                      onClick={this.props.handleChangeToThai}
-                    />
-                  </NavbarNav>
-
-                  <br/>
-
-                  <NavbarNav className="text-center">
-                    <img
-                      src="https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/usa_flag_circle.png"
-                      alt="usa flag"
-                      className={styles.usaFlag}
-                      onClick={this.props.handleChangeToEnglish}
-                    />
-                  </NavbarNav>
-
-                </NavbarNav>
-              </Collapse>
+              <NavbarNav right>
+                <NavItem>
+                  <NavLink className="nav-link" to="/"><TitleStyler>{navItems[0]}</TitleStyler></NavLink>
+                </NavItem>
+              </NavbarNav>
 
             </Navbar>
           </Container>
