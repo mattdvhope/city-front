@@ -38,7 +38,7 @@ export default class SideNavContainer extends React.Component {
     // Because the toggling buttons are nearly identical, we create a function to render them:
     const createButton = (onClick, side) => {
       return <div style={{width: "50%", textAlign: "center"}}>
-              <a href="#!" onClick={onClick} key={'toggleThe'+side+'SideNav'}><Fa style={{color: `#2D3179`}} icon="bars" size="2x"></Fa></a>
+              <a onClick={onClick} key={'toggleThe'+side+'SideNav'}><Fa style={{color: `#2D3179`}} icon="bars" size="2x"></Fa></a>
               </div>
     }
 
