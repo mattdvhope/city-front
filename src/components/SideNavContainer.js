@@ -28,7 +28,7 @@ export default class SideNavContainer extends React.Component {
   }
 
   clickedItem() {
-    console.log("item clicked");
+    location.reload();
   }
 
   render() {
@@ -97,7 +97,7 @@ export default class SideNavContainer extends React.Component {
           </li>
           <SideNavNav>
             <SideNavCat id="submit-blog-cat" name="Information" icon="chevron-right" >
-              <SideNavLink to="christian-worldview">Christian Worldview</SideNavLink>
+              <SideNavLink to="christian-worldview" onClick={this.clickedItem}>Christian Worldview</SideNavLink>
             </SideNavCat>
 
         {/* 
