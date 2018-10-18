@@ -99,22 +99,6 @@ export default class SideNavContainer extends React.Component {
             <SideNavCat id="submit-blog-cat" name="Information" icon="chevron-right" >
               <SideNavLink to="christian-worldview" onClick={this.clickedItem}>Christian Worldview</SideNavLink>
             </SideNavCat>
-
-        {/* 
-
-            <SideNavCat id="instruction-cat" name="Instruction" icon="hand-pointer-o">
-              <SideNavLink>For bloggers</SideNavLink>
-              <SideNavLink>For authors</SideNavLink>
-            </SideNavCat>
-            <SideNavCat id="about-cat" name="About" icon="eye">
-              <SideNavLink to="christian-worldview">Christian Worldview</SideNavLink>
-              <SideNavLink>FAQ</SideNavLink>
-            </SideNavCat>
-            <SideNavCat id="contact-me-cat" name="Contact me" icon="envelope-o">
-              <SideNavLink>Write a message</SideNavLink>
-            </SideNavCat>
-         */}
-
           </SideNavNav>
         </SideNav>
       </Container>
