@@ -57,7 +57,7 @@ export default class SideNavContainer extends React.Component {
 
         {console.log("SideNavContainer isOpen:", this.props.isOpen)}
 
-        <SideNav hidden triggerOpening={this.props.isOpen} className="side-nav-light">
+        <SideNav hidden triggerOpening={this.props.isOpen} className="side-nav-light" breakWidth={1300}>
 
           <li>
             <div className="logo-wrapper">
@@ -96,8 +96,14 @@ export default class SideNavContainer extends React.Component {
           </li>
           <SideNavNav>
             <SideNavCat id="submit-blog-cat" name="Information" icon="chevron-right" >
+              <a className="Ripple-parent" href="/christian-worldview">Christian Worldview<div className="Ripple " style={{top: `0px`, left: `0px`, width: `0px`, height: `0px`}}></div></a>
+              <a className="Ripple-parent" href="/business">Business<div className="Ripple " style={{top: `0px`, left: `0px`, width: `0px`, height: `0px`}}></div></a>
+
+        {/* 
               <SideNavLink to="christian-worldview" onClick={this.props.handleToggleClick}>Christian Worldview</SideNavLink>
               <SideNavLink to="business" onClick={this.props.handleToggleClick}>Business</SideNavLink>
+         */}
+
             </SideNavCat>
           </SideNavNav>
         </SideNav>

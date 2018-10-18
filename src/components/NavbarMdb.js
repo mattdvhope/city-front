@@ -125,27 +125,9 @@ export default class NavbarMdb extends React.Component {
 
         let navItems = [];
         if (this.state.window.localStorage.language === "thai") {
-          navItems = ["โครงการซิตี้ อิงลิช",
-                      "สมัครเรียน",
-                      "สมัครเรียนหลักสูตร 'You Can Speak!' (ตอนที่ 1)",
-                      "สมัครเรียนหลักสูตร 'You Can Speak!' (ตอนที่ 2)",
-                      "ชั้นเรียนในที่ทำงานของคุณ",
-                      "ติดต่อเรา",
-                      "อาสาสมัคร",
-                      "ข้อมูลอาสาสมัคร",
-                      "ลงทะเบียนอาสาสมัครใหม่",
-                      "ล็อกอิน"]
+          navItems = ["โครงการซิตี้ อิงลิช"]
         } else {
-          navItems = ["City English Project",
-                      "Register",
-                      "Register for 'You Can Speak!' (Part 1)",
-                      "Register for 'You Can Speak!' (Part 2)",
-                      "Class at your workplace",
-                      "Contact us",
-                      "Volunteer",
-                      "Volunteer Info",
-                      "Register New Volunteer",
-                      "Login"];
+          navItems = ["City English Project"];
         }
         return (
           <Container>
