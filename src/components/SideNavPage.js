@@ -27,6 +27,7 @@ export default class SideNavPage extends React.Component {
     this.setState({
       isOpen: !this.state.isOpen,
     })
+console.log("isOpen:", this.state.isOpen);
   }
 
   render() {

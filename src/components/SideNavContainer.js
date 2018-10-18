@@ -27,10 +27,6 @@ export default class SideNavContainer extends React.Component {
     }
   }
 
-  clickedItem() {
-    location.reload();
-  }
-
   render() {
 
     const { Fa, SideNavItem, SideNavCat, SideNavNav, SideNav, SideNavLink, Container, Row } = this.props.mdbreact;
@@ -53,12 +49,15 @@ export default class SideNavContainer extends React.Component {
       <Container>
 
         {/* the buttons toggling visibility of SideNavs: */}
-        <Row style={{height: "4vh", alignItems: "center"}} >
+        <Row style={{height: "5vh", alignItems: "center"}} >
             {createButton(this.props.handleToggleClick, "Side")}
         </Row>
 
         {/* the left SideNav: */}
-        <SideNav hidden triggerOpening={this.props.isOpen} className="side-nav-light" breakWidth={1300}>
+
+        {console.log("SideNavContainer isOpen:", this.props.isOpen)}
+
+        <SideNav hidden triggerOpening={this.props.isOpen} className="side-nav-light">
 
           <li>
             <div className="logo-wrapper">
@@ -97,7 +96,8 @@ export default class SideNavContainer extends React.Component {
           </li>
           <SideNavNav>
             <SideNavCat id="submit-blog-cat" name="Information" icon="chevron-right" >
-              <SideNavLink to="christian-worldview" onClick={this.clickedItem}>Christian Worldview</SideNavLink>
+              <SideNavLink to="christian-worldview" onClick={this.props.handleToggleClick}>Christian Worldview</SideNavLink>
+              <SideNavLink to="business" onClick={this.props.handleToggleClick}>Business</SideNavLink>
             </SideNavCat>
           </SideNavNav>
         </SideNav>
