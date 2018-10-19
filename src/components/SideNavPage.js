@@ -7,7 +7,6 @@ export default class SideNavPage extends React.Component {
   constructor(props) {
     super(props);
     this.state ={
-      isOpen: false,
       window: undefined,
       mdbreact: undefined
     };
@@ -23,13 +22,6 @@ export default class SideNavPage extends React.Component {
     }
   }
 
-  handleToggleClick = () => {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    })
-console.log("isOpen (below setState):", this.state.isOpen);
-  }
-
   render() {
     if (this.state.window) {
 
@@ -39,8 +31,6 @@ console.log("isOpen (below setState):", this.state.isOpen);
           mdbreact={this.state.mdbreact}
           handleChangeToThai={this.props.handleChangeToThai}
           handleChangeToEnglish={this.props.handleChangeToEnglish}
-          handleToggleClick={this.state.handleToggleClick}
-          isOpen={this.state.isOpen}
         />
       );
 
