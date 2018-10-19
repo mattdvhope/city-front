@@ -25,9 +25,6 @@ export default class Register extends React.Component {
     return (
       <div>
         <br/>
-        <br/>
-        <br/>
-        <br/>
         <FormMdb trainingPeriodId={id} title={title} />
         <br/>
         <br/>
