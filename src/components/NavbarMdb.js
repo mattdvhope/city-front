@@ -8,7 +8,6 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 
 import SideNavPage from './SideNavPage';
-
 import ModalLogin from './ModalLogin'
 import ModalApplication1 from './ModalApplication1'
 import ModalMdb from './ModalMdb'
@@ -20,7 +19,7 @@ const TitleStyler = styled.span`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
   color: #2D3179;
   font-size: 160%;
-  margin-top: -17px;
+  margin-top: -19px;
 
   @media (min-width: 1700px) {
     margin-left: -1000px;
