@@ -235,7 +235,7 @@ export default class Team extends React.Component {
       }
 
       return (
-        <Container style={{ backgroundColor: `#F5FBEE`}}>
+        <Container style={{ backgroundColor: `#F5FBEE`, paddingLeft: `8%`, paddingRight: `8%`}}>
           <Row>
             <Col md="12">
               <IconStyler className={styles.avatarHolder}>
