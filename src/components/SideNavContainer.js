@@ -41,7 +41,6 @@ export default class SideNavContainer extends React.Component {
     const overlay = document.getElementById("sidenav-overlay");
     sidenav ? sidenav.style.display = 'block' : null
     overlay ? overlay.style.display = 'block' : null
-
     this.setState({
       isOpen: !this.state.isOpen,
     })
@@ -50,18 +49,12 @@ export default class SideNavContainer extends React.Component {
   removeSideNav() {
     const sidenav = this.state.document.getElementById("sidenavig");
     const overlay = this.state.document.getElementById("sidenav-overlay");
-
     sidenav.style.display = 'none';
     overlay.style.display = 'none';
   }
 
   render() {
     const { Fa, SideNavItem, SideNavCat, SideNavNav, SideNav, SideNavLink, Container, Row } = this.props.mdbreact;
-
-    const sidenav = document.getElementById("sidenavig");
-    const overlay = document.getElementById("sidenav-overlay");
-
-
     let navItems = [];
     if (this.props.window.localStorage.language === "thai") {
       navItems = ["โปรดเลือกภาษา"]
