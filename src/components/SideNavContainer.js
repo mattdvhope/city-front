@@ -112,24 +112,8 @@ export default class SideNavContainer extends React.Component {
           </li>
           <SideNavNav>
             <SideNavCat id="submit-blog-cat" name="Information" icon="chevron-right" >
-
               <SideNavLink to="/christian-worldview" onClick={this.removeSideNav}>Christian Worldview</SideNavLink>
               <SideNavLink to="/business" onClick={this.removeSideNav}>Business</SideNavLink>
-
-        {/* 
-              <Link className="Ripple-parent" to="/christian-worldview" onClick={this.removeSideNav}>
-                Christian Worldview
-                <div className="Ripple " style={{top: `0px`, left: `0px`, width: `0px`, height: `0px`}}>
-                </div>
-              </Link>
-
-              <Link className="Ripple-parent" to="/business" onClick={this.removeSideNav}>
-                Business
-                <div className="Ripple " style={{top: `0px`, left: `0px`, width: `0px`, height: `0px`}}>
-                </div>
-              </Link>
-         */}
-
             </SideNavCat>
           </SideNavNav>
         </SideNav>
