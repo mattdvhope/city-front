@@ -15,7 +15,7 @@ const TitleStyler = styled.span`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
   color: #2D3179;
   font-size: 160%;
-  margin-top: -19px;
+  margin-top: -18px;
 
   @media (min-width: 1700px) {
     margin-left: -1000px;
