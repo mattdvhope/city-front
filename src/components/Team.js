@@ -8,6 +8,7 @@ import CarouselMdb from './CarouselMdb';
 var IconStyler = styled.div`
   color: #CECECE;
   font-size: 230%;
+  padding-top: 40px;
   @media (min-width: 320px) {
     margin-right: 1.2em;
   }
@@ -28,7 +29,7 @@ const TitleContainer = styled.div`
 
 const TitleText = styled.p`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
-  color: #2d3179;
+  color: #555;
   margin-right: 5px;
   margin-left: 5px;
 
@@ -123,9 +124,9 @@ const TitleText = styled.p`
 `;
 
 const ContentText = styled.div`
-  color: #2d3179;
-  margin-left: 8px;
-  margin-right: 8px;
+  color: #555;
+  margin-left: 1.5%;
+  margin-right: 1.5%;
   margin-top: 15px;
   margin-bottom: 40px;
   @media (min-width: 1400px) {
@@ -234,7 +235,7 @@ export default class Team extends React.Component {
       }
 
       return (
-        <Container>
+        <Container style={{ backgroundColor: `#F5FBEE`}}>
           <Row>
             <Col md="12">
               <IconStyler className={styles.avatarHolder}>
