@@ -25,42 +25,56 @@ const TopContainer = styled.div`
 `
 
 const TextContainer = styled.div`
-  color: #2D3179;
-  @media (min-width: 1180px) {
+  color: #555;
+  @media (min-width: 1199px) {
+    margin-top: -10px;
     font-size: 480%;
-    margin-top: -35px;
   }
-  @media (max-width: 1180px) {
-    font-size: 450%;
+  @media (max-width: 1199px) {
+    margin-top: 20px;
+    font-size: 420%;
   }
   @media (max-width: 1100px) {
-    margin-top: 60px;
-    font-size: 380%;
+    margin-top: 30px;
+    font-size: 400%;
   }
   @media (max-width: 995px) {
-    margin-top: 20px;
+    margin-top: 40px;
+    font-size: 390%;
+  }
+  @media (max-width: 991px) {
+    margin-top: 10px;
     font-size: 310%;
   }
   @media (max-width: 767px) {
-    margin-top: -19px;
+    margin-top: 5px;
     font-size: 220%;
   }
-  @media (max-width: 520px) {
+  @media (max-width: 575px) {
+    margin-top: -20px;
+    font-size: 225%;
+  }
+  @media (max-width: 535px) {
+    font-size: 205%;
+  }
+  @media (max-width: 530px) {
     font-size: 200%;
   }
-  @media (max-width: 480px) {
+  @media (max-width: 500px) {
     font-size: 190%;
-    margin-top: -30px;
   }
-  @media (max-width: 430px) {
+  @media (max-width: 480px) {
     font-size: 180%;
   }
+  @media (max-width: 430px) {
+    margin-top: -30px;
+    font-size: 170%;
+  }
   @media (max-width: 375px) {
-    margin-top: -25px;
     font-size: 140%;
   }
   @media (max-width: 325px) {
-    margin-top: -28px;
+    margin-top: -40px;
     font-size: 130%;
   }
 `
