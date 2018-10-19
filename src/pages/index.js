@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link'
-import Carousel from '../components/Carousel'
 import Top from '../components/Top'
-import Welcome from '../components/Welcome'
 import WhatIsCep from '../components/WhatIsCep'
 import Team from '../components/Team'
 import TrainingSessions from '../components/TrainingSessions'
 import Icons from '../components/Icons'
-import Features from '../components/Features'
 import Member from '../components/Member'
 
 export default class FrontPage extends Component {

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 // import { navigateTo } from "gatsby-link"
 
-import Navbar from '../components/Navbar'
 import NavbarMdb from '../components/NavbarMdb'
 import Footer from '../components/Footer'
 import styled from "styled-components";
@@ -75,15 +74,6 @@ export default class Layout extends Component {
           handleChangeToThai={e => this.handleChangeToThai(e)}
           handleChangeToEnglish={e => this.handleChangeToEnglish(e)}
         />
-
-        {/* 
-
-        <Navbar
-          handleChangeToThai={e => this.handleChangeToThai(e)}
-          handleChangeToEnglish={e => this.handleChangeToEnglish(e)}
-        />
-
-         */}
 
         {this.props.children()}
 

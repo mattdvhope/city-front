@@ -4,7 +4,6 @@ import Dashboard from "../components/Dashboard"
 import ViewClassTimes from "../components/ViewClassTimes"
 import ClassesAtCenter from "../components/ClassesAtCenter"
 import OffSiteLocations from "../components/OffSiteLocations"
-import FormerStudents from "../components/FormerStudents"
 import Register from "../components/Register"
 import Login from "../components/Login"
 import PrivateRoute from "../components/PrivateRoute"
@@ -18,7 +17,6 @@ const App = (word) => (
     <PrivateRoute path="/app/view-class-times" component={ViewClassTimes} />
     <PrivateRoute path="/app/classes-at-center" component={ClassesAtCenter} />
     <PrivateRoute path="/app/off-site-locations" component={OffSiteLocations} />
-		<PrivateRoute path="/app/former-students" component={FormerStudents} />
 
     <Route exact path={`/app/register/:id`} component={(id) => <Register id={id} />}/>
 

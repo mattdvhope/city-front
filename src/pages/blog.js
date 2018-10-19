@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Navbar from '../components/Navbar'
 
 const BlogPost = ({node}) => {
   return (
