@@ -9,7 +9,6 @@ import 'mdbreact/dist/css/mdb.css';
 
 import SideNavPage from './SideNavPage';
 import ModalLogin from './ModalLogin'
-import ModalMdb from './ModalMdb'
 
 const TitleStyler = styled.span`
   position: fixed;
