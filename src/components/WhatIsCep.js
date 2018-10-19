@@ -4,10 +4,6 @@ import Link from "gatsby-link";
 import styled from "styled-components";
 import styles from "../css/whatiscep.module.css";
 
-// import 'font-awesome/css/font-awesome.min.css';
-// import 'bootstrap-css-only/css/bootstrap.min.css'; 
-// import 'mdbreact/dist/css/mdb.css';
-
 var IconStyler = styled.div`
   color: #CECECE;
   font-size: 230%;
@@ -24,7 +20,7 @@ const WhatIsCepContainer = styled.div`
 `
 
 const TitleContainer = styled.div`
-  color: #2d3179;
+  color: #555;
   margin-right: auto;
   margin-left: auto;
 `;
@@ -125,10 +121,10 @@ const TitleText = styled.p`
 `;
 
 const ContentContainer = styled.div`
-  color: #2d3179;
-  margin-top: -15px;
-  margin-right: auto;
-  margin-left: auto;
+  color: #555;
+  margin-top: -12px;
+  margin-right: 3%;
+  margin-left: 3%;
 `;
 
 const ContentText = styled.p`

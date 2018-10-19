@@ -2,9 +2,6 @@ import React from "react";
 import Link from 'gatsby-link';
 import axios from 'axios'
 import styled from "styled-components";
-import 'font-awesome/css/font-awesome.min.css';
-import 'bootstrap-css-only/css/bootstrap.min.css'; 
-import 'mdbreact/dist/css/mdb.css';
 
 const TrainingContainer = styled.div`
   color: #555;
