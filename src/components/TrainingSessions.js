@@ -7,7 +7,9 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 
 const TrainingContainer = styled.div`
-  color: #2D3179;
+  color: #555;
+  background-color: #EFEFEF;
+  padding-bottom: 25px;
   margin-bottom: 40px;
 
   @media (min-width: 990px) {
@@ -29,6 +31,8 @@ const TrainingContainer = styled.div`
 
 const TitleText = styled.p`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
+  margin-top: 25px;
+
   @media (min-width: 1180px) {
     font-size: 470%;
   }
@@ -106,9 +110,8 @@ const NoBulletsInList = styled.ul`
 `
 
 const SpacedListItem = styled.li`
-  margin-top: 8px;
-  margin-bottom: 19px;
-  text-decoration: underline;
+  margin-top: 20px;
+  margin-bottom: 25px;
 
   @media (min-width: 1200px) {
     font-size: 330%;
