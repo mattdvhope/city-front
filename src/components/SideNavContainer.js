@@ -56,12 +56,14 @@ export default class SideNavContainer extends React.Component {
     let navItems = [];
     if (this.props.window.localStorage.language === "thai") {
       navItems = ["โปรดเลือกภาษา",
-                  "โลกทัศน์คริสเตียน",
-                  "คำอธิบายเกี่ยวกับโลกทัศน์"]
+                  "รายละเอียดของการสัมมนา",
+                  "คำอธิบายหลักสูตร",
+                  "โลกทัศน์คริสเตียน"]
     } else {
       navItems = ["Choose a language",
-                  "Christian Worldview",
-                  "Explanation of Worldview"];
+                  "Seminar Description",
+                  "Course Description",
+                  "Christian Worldview"];
     }
 
     return (
@@ -116,7 +118,8 @@ export default class SideNavContainer extends React.Component {
           </li>
           <SideNavNav>
             <SideNavCat id="submit-blog-cat" name={navItems[1]} icon="chevron-right" >
-              <SideNavLink to="/christian-worldview" onClick={this.removeSideNav}>{navItems[2]}</SideNavLink>
+              <SideNavLink to="/course-description" onClick={this.removeSideNav}>{navItems[2]}</SideNavLink>
+              <SideNavLink to="/christian-worldview" onClick={this.removeSideNav}>{navItems[3]}</SideNavLink>
             </SideNavCat>
           </SideNavNav>
         </SideNav>
