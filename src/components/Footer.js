@@ -186,8 +186,12 @@ export default class Footer extends Component {
                   <br/>
                   <div>
                     <a href="https://www.facebook.com/City-English-Project-1745393602361714/?notif_t=page_fan&notif_id=1462353525485104" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/Icon-Facebook.jpg" className={styles.socialMediaIcon} /></a>
-                    <a href="https://www.youtube.com/channel/UCcqBmxAGOstDdFbRImmnVWg" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/Icon-Youtube.jpg" className={styles.socialMediaIcon} /></a>
                     <a href="https://www.instagram.com/cityenglishproject/?hl=en" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/Icon-Instagram.jpg" className={styles.socialMediaIcon} /></a>
+
+                {/* 
+                    <a href="https://www.youtube.com/channel/UCcqBmxAGOstDdFbRImmnVWg" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/Icon-Youtube.jpg" className={styles.socialMediaIcon} /></a>
+                */}
+
                   </div>
                   <br/>
                 </ContactInfoColumn>
