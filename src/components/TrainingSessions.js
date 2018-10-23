@@ -6,29 +6,14 @@ import styled from "styled-components";
 const TrainingContainer = styled.div`
   color: #555;
   background-color: #EFEFEF;
-  padding-bottom: 25px;
+  margin-top: 35px;
   margin-bottom: 40px;
 
-  @media (min-width: 990px) {
-    padding-top: 40px;
-  }
-  @media (max-width: 990px) {
-    padding-top: 15px;
-  }
-  @media (max-width: 480px) {
-    padding-top: 10px;
-  }
-  @media (max-width: 430px) {
-    padding-top: 8px;
-  }
-  @media (max-width: 375px) {
-    padding-top: 5px;
-  }
+  padding-bottom: 25px;
 `
 
 const TitleText = styled.p`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
-  margin-top: 25px;
 
   @media (min-width: 1180px) {
     font-size: 470%;
