@@ -114,13 +114,13 @@ export default class CourseDescription extends React.Component {
 export const christianWorldviewQuery = graphql`
   query CourseDescription {
 
-    christianWorldview1Img: imageSharp(id: { regex: "/christian-worldview1/" }) {
+    christianWorldview1Img: imageSharp(id: { regex: "/course-description1/" }) {
       sizes(maxWidth: 1240 ) {
         ...GatsbyImageSharpSizes
       }
     }
 
-    christianWorldview2Img: imageSharp(id: { regex: "/christian-worldview2/" }) {
+    christianWorldview2Img: imageSharp(id: { regex: "/course-description2/" }) {
       sizes(maxWidth: 1240 ) {
         ...GatsbyImageSharpSizes
       }
