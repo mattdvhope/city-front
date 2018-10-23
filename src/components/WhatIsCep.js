@@ -15,10 +15,6 @@ var IconStyler = styled.div`
   }
 `
 
-const WhatIsCepContainer = styled.div`
-  margin-bottom: 50px;
-`
-
 const TitleContainer = styled.div`
   color: #555;
   margin-right: auto;
@@ -34,153 +30,81 @@ const TitleText = styled.p`
     font-size: 280%;
     margin-bottom: 10px;
   }
-  @media (max-width: 1400px) {
-    font-size: 280%;
-    margin-bottom: 10px;
-  }
-  @media (max-width: 1300px) {
-    font-size: 280%;
-    margin-bottom: 10px;
-  }
-  @media (max-width: 1200px) {
-    font-size: 280%;
-    margin-bottom: 10px;
-  }
   @media (max-width: 1180px) {
-    font-size: 280%;
-    margin-bottom: -40px;
-  }
-  @media (max-width: 1100px) {
-    font-size: 280%;
-    margin-bottom: -40px;
-  }
-  @media (max-width: 1000px) {
-    font-size: 280%;
     margin-bottom: -40px;
   }
   @media (max-width: 990px) {
     font-size: 210%;
-    margin-bottom: -40px;
-  }
-  @media (max-width: 900px) {
-    font-size: 210%;
-    margin-bottom: -40px;
-  }
-  @media (max-width: 800px) {
-    font-size: 210%;
-    margin-bottom: -40px;
-  }
-  @media (max-width: 767px) {
-    font-size: 210%;
-    margin-bottom: 0px;
-  }
-  @media (max-width: 750px) {
-    font-size: 210%;
-    margin-bottom: 0px;
-  }
-  @media (max-width: 700px) {
-    font-size: 210%;
-    margin-bottom: 0px;
-  }
-  @media (max-width: 650px) {
-    font-size: 210%;
-    margin-bottom: 0px;
-  }
-  @media (max-width: 600px) {
-    font-size: 210%;
-    margin-bottom: 0px;
-  }
-  @media (max-width: 550px) {
-    font-size: 210%;
-    margin-bottom: 0px;
-  }
-  @media (max-width: 500px) {
-    font-size: 210%;
-    margin-bottom: 0px;
   }
   @media (max-width: 480px) {
-    font-size: 210%;
-    margin-bottom: 0px;
-  }
-  @media (max-width: 450px) {
-    font-size: 210%;
-    margin-bottom: 0px;
+    margin-bottom: -30px;
   }
   @media (max-width: 400px) {
     font-size: 205%;
-    margin-bottom: 0px;
   }
   @media (max-width: 350px) {
     font-size: 200%;
-    margin-bottom: 0px;
   }
   @media (max-width: 320px) {
     font-size: 180%;
-    margin-bottom: 0px;
   }
 `;
 
-const ContentContainer = styled.div`
+const ContentText = styled.div`
   color: #555;
-  margin-top: -12px;
-  margin-right: 3%;
-  margin-left: 3%;
-`;
-
-const ContentText = styled.p`
-  margin-left: 8px;
-  margin-right: 8px;
-  margin-bottom: 40px;
-  @media (min-width: 1400px) {
-    font-size: 180%;
+  margin-left: 2%;
+  margin-right: 2%;
+  @media (min-width: 1199px) {
+    font-size: 220%;
+    margin-top: 1%;
   }
-  @media (max-width: 1400px) {
+  @media (max-width: 1199px) {
     font-size: 180%;
+    margin-top: 6%;
   }
-  @media (max-width: 1300px) {
-    font-size: 180%;
-  }
-  @media (max-width: 1200px) {
-    font-size: 180%;
-  }
-  @media (max-width: 1180px) {
-    font-size: 180%;
-  }
-  @media (max-width: 1100px) {
-    font-size: 180%;
-  }
-  @media (max-width: 1000px) {
-    font-size: 180%;
-  }
-  @media (max-width: 990px) {
+  @media (max-width: 991px) {
     font-size: 170%;
+    margin-top: 13%;
+    margin-right: -30%;
   }
   @media (max-width: 900px) {
-    font-size: 160%;
+    font-size: 150%;
+    margin-right: -20%;
   }
-  @media (max-width: 800px) {
-    font-size: 155%;
+  @media (max-width: 840px) {
+    font-size: 135%;
+    margin-right: -10%;
+  }
+  @media (max-width: 830px) {
+    font-size: 125%;
+    margin-right: 0%;
   }
   @media (max-width: 767px) {
     font-size: 150%;
-  }
-  @media (max-width: 750px) {
-    font-size: 145%;
+    margin-top: 4%;
+    margin-left: -10%;
+    margin-right: -10%;
+    margin-bottom: -5%;
   }
   @media (max-width: 700px) {
     font-size: 140%;
+    margin-left: -5%;
+    margin-right: -5%;
   }
   @media (max-width: 650px) {
     font-size: 135%;
+    margin-top: 5%;
   }
   @media (max-width: 600px) {
     font-size: 130%;
+    margin-top: 4%;
+    margin-left: 0%;
+    margin-right: 0%;
   }
-  @media (max-width: 550px) {
-    font-size: 125%;
-  }
-  @media (max-width: 500px) {
-    font-size: 120%;
+  @media (max-width: 575px) {
+    font-size: 115%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   @media (max-width: 480px) {
     font-size: 115%;
@@ -192,9 +116,6 @@ const ContentText = styled.p`
     font-size: 105%;
   }
   @media (max-width: 350px) {
-    font-size: 100%;
-  }
-  @media (max-width: 320px) {
     font-size: 100%;
   }
 `;
@@ -245,7 +166,7 @@ export default class Top extends React.Component {
         <Container>
           <Row>
             <Col md="12">
-              <IconStyler className={styles.avatarHolder}>
+              <IconStyler className={styles.iconStyles}>
                 <div><i className="fa fa-map prefix"></i></div>
                 <div>About</div>
               </IconStyler>
@@ -258,60 +179,52 @@ export default class Top extends React.Component {
           </Row>
           <br/>
           <Row>
-            <Col>
+            <Col md="6">
               <Img
                 alt="Top picture"
                 className={styles.avatar}
                 sizes={this.props.whatIsCepImg1.sizes}
               />
             </Col>
-          </Row>
-          <br/>
-          <Row>
-            <ContentContainer>
+            <Col md="6">
               <ContentText>
                 {this.props.paragraphContent1}
               </ContentText>
-            </ContentContainer>
+            </Col>
           </Row>
           <br/>
           <br/>
           <Row>
-            <Col>
+            <Col md="6">
               <Img
                 alt="Top picture"
                 className={styles.avatar}
                 sizes={this.props.whatIsCepImg2.sizes}
               />
             </Col>
-          </Row>
-          <br/>
-          <Row>
-            <ContentContainer>
+            <Col md="6">
               <ContentText>
                 {this.props.paragraphContent2} <Link to="christian-worldview"><LinkStyler>{textItems[1]}</LinkStyler></Link>
               </ContentText>
-            </ContentContainer>
+            </Col>
           </Row>
           <br/>
           <br/>
           <Row>
-            <Col>
+            <Col md="6">
               <Img
                 alt="Top picture"
                 className={styles.avatar}
                 sizes={this.props.whatIsCepImg3.sizes}
               />
             </Col>
-          </Row>
-          <br/>
-          <Row>
-            <ContentContainer>
+            <Col md="6">
               <ContentText>
                 {this.props.paragraphContent3}
               </ContentText>
-            </ContentContainer>
+            </Col>
           </Row>
+          <br/>
         </Container>
       );
     } else {
