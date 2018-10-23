@@ -58,14 +58,12 @@ export default class ChristianWorldview extends React.Component {
 
       const language = this.state.window.localStorage.language;
       if (language === "thai") {
-        textItems = ['คำอธิบายเกี่ยวกับ "โลกทัศน์คริสเตียน"',
-                     'หากคุณต้องการติดต่อเราโปรดใช้ข้อมูลด้านล่างนี้'];
+        textItems = ['คำอธิบายเกี่ยวกับ "โลกทัศน์คริสเตียน"'];
         explanationOne = data.allContentfulChristianWorldviewExplanationOneThaiTextNode.edges[0].node.explanationOneThai;
         explanationTwo = data.allContentfulChristianWorldviewExplanationTwoThaiTextNode.edges[0].node.explanationTwoThai;
         explanationThree = data.allContentfulChristianWorldviewExplanationThreeThaiTextNode.edges[0].node.explanationThreeThai;
       } else {
-        textItems = ['Explanation of the "Christian Worldview"',
-                     'If you would like to contact us, please use the information below.'];
+        textItems = ['Explanation of the "Christian Worldview"'];
         explanationOne = data.allContentfulChristianWorldviewExplanationOneTextNode.edges[0].node.explanationOne;
         explanationTwo = data.allContentfulChristianWorldviewExplanationTwoTextNode.edges[0].node.explanationTwo;
         explanationThree = data.allContentfulChristianWorldviewExplanationThreeTextNode.edges[0].node.explanationThree;
@@ -123,12 +121,6 @@ export const christianWorldviewQuery = graphql`
     }
 
     christianWorldview2Img: imageSharp(id: { regex: "/christian-worldview2/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-
-    topImage: imageSharp(id: { regex: "/Top-front/" }) {
       sizes(maxWidth: 1240 ) {
         ...GatsbyImageSharpSizes
       }
