@@ -8,7 +8,10 @@ class BlogPost extends Component {
 			content
 		} = this.props.data.contentfulBlog
 		return (
-			<div>
+			<div className="container">
+        <br/>
+        <br/>
+        <br/>
 				<h1>{title}</h1>
 			{/* use dangerouslySetInnerHTML b/c 'gatsby-transformer-remark' has transformed the markdown to html; now we're putting the <p> tag inside of a <div> tag. */}
 			{/* React treats the 'content' in graphql as a string, so dangerouslySetInnerHTML tells react to treat it has html rather than as a string. */}
