@@ -84,7 +84,7 @@ export default class CourseDescription extends React.Component {
               <Img
                 alt="Top picture"
                 className={styles.avatar}
-                sizes={data.christianWorldview1Img.sizes}
+                sizes={data.courseDescription1Img.sizes}
               />
             </Col>
             <Col md="4">
@@ -98,7 +98,7 @@ export default class CourseDescription extends React.Component {
               <Img
                 alt="Bottom picture"
                 className={styles.avatar}
-                sizes={data.christianWorldview2Img.sizes}
+                sizes={data.courseDescription3Img.sizes}
               />
             </Col>
           </Row>
@@ -114,13 +114,13 @@ export default class CourseDescription extends React.Component {
 export const christianWorldviewQuery = graphql`
   query CourseDescription {
 
-    christianWorldview1Img: imageSharp(id: { regex: "/course-description1/" }) {
+    courseDescription1Img: imageSharp(id: { regex: "/course-description1/" }) {
       sizes(maxWidth: 1240 ) {
         ...GatsbyImageSharpSizes
       }
     }
 
-    christianWorldview2Img: imageSharp(id: { regex: "/course-description2/" }) {
+    courseDescription3Img: imageSharp(id: { regex: "/course-description3/" }) {
       sizes(maxWidth: 1240 ) {
         ...GatsbyImageSharpSizes
       }
@@ -169,7 +169,6 @@ export const christianWorldviewQuery = graphql`
         }
       }
     }
-
 
   }
 `
