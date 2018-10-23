@@ -17,10 +17,10 @@
   margin-left: auto;
   margin-right: auto;
 
-  @media (min-width: 1199px) {
+  @media (min-width: 1430px) {
     margin-top: 12%;
   }
-  @media (max-width: 1199px) {
+  @media (max-width: 1430px) {
     margin-top: 12%;
   }
   @media (max-width: 991px) {

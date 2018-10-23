@@ -26,15 +26,30 @@ const TitleText = styled.p`
   margin-right: 5px;
   margin-left: 5px;
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1430px) {
     font-size: 280%;
-    margin-bottom: 10px;
+    margin-bottom: -6%;
   }
-  @media (max-width: 1180px) {
-    margin-bottom: -40px;
+  @media (max-width: 1430px) {
+    font-size: 280%;
+    margin-bottom: -6%;
   }
-  @media (max-width: 990px) {
+  @media (max-width: 991px) {
     font-size: 210%;
+  }
+  @media (max-width: 767px) {
+    font-size: 180%;
+    margin-right: -5%;
+    margin-left: -5%;
+    margin-bottom: -10%;
+  }
+  @media (max-width: 610px) {
+    font-size: 160%;
+  }
+  @media (max-width: 545px) {
+    margin-right: 5%;
+    margin-left: 5%;
+    font-size: 200%;
   }
   @media (max-width: 480px) {
     margin-bottom: -30px;
@@ -42,11 +57,17 @@ const TitleText = styled.p`
   @media (max-width: 400px) {
     font-size: 205%;
   }
-  @media (max-width: 350px) {
-    font-size: 200%;
+  @media (max-width: 375px) {
+    font-size: 195%;
+  }
+  @media (max-width: 360px) {
+    font-size: 190%;
+  }
+  @media (max-width: 340px) {
+    font-size: 180%;
   }
   @media (max-width: 320px) {
-    font-size: 180%;
+    font-size: 170%;
   }
 `;
 
@@ -54,13 +75,14 @@ const ContentText = styled.div`
   color: #555;
   margin-left: 2%;
   margin-right: 2%;
-  @media (min-width: 1199px) {
+
+  @media (min-width: 1430px) {
     font-size: 220%;
-    margin-top: 1%;
+    margin-top: 12%;
   }
-  @media (max-width: 1199px) {
-    font-size: 180%;
-    margin-top: 6%;
+  @media (max-width: 1430px) {
+    font-size: 190%;
+    margin-top: 12%;
   }
   @media (max-width: 991px) {
     font-size: 170%;
