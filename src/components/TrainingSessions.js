@@ -178,7 +178,7 @@ export default class Top extends React.Component {
       }
 
       return (
-        <TrainingContainer className="container">
+        <TrainingContainer className="container-fluid">
           <TitleText className="text-center">{textItems[0]}</TitleText>
           <SubtitleText className="text-center">{textItems[1]}</SubtitleText>
           <SubtitleTextTwo className="text-center">{textItems[2]}</SubtitleTextTwo>
