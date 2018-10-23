@@ -5,6 +5,7 @@ class BlogPost extends Component {
 	render() {
 		const {
 			title,
+      featuredImage,
 			content
 		} = this.props.data.contentfulBlog
 		return (
@@ -15,6 +16,7 @@ class BlogPost extends Component {
 				<h1>{title}</h1>
 			{/* use dangerouslySetInnerHTML b/c 'gatsby-transformer-remark' has transformed the markdown to html; now we're putting the <p> tag inside of a <div> tag. */}
 			{/* React treats the 'content' in graphql as a string, so dangerouslySetInnerHTML tells react to treat it has html rather than as a string. */}
+        <img src={featuredImage.resolutions.src} alt=""/>
 				<div dangerouslySetInnerHTML={{__html: content.childMarkdownRemark.html}} />
 			</div>
 		);
@@ -38,6 +40,14 @@ export const pageQuery = graphql`
           html
         }
       }
+
+      featuredImage {
+        resolutions {
+          src
+          srcSet
+        }
+      }
+
 		}
 	}
 `
