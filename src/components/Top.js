@@ -2,10 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import styles from "../css/top.module.css";
 
-import 'font-awesome/css/font-awesome.min.css';
-import 'bootstrap-css-only/css/bootstrap.min.css'; 
-import 'mdbreact/dist/css/mdb.css';
-
 const TopContainer = styled.div`
   color: #555;
 `
