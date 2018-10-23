@@ -65,6 +65,9 @@ export default class Layout extends Component {
           <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/278cd7f5-226e-4ad9-83fb-59e4a7eb4131.css"/>
          */}
 
+          <script src="https://mattagape.wistia.com/medias/98jbnzwejf" async></script>
+          <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+
           <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/50070ebd-d81b-4d29-acc0-f8abd9040636.css"/>
 
           <link href="https://fonts.googleapis.com/css?family=Athiti|Chonburi|Kanit|Maitree|Prompt|Sriracha|Taviraj|Trirong|Josefin+Sans" rel="stylesheet" />
