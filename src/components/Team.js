@@ -17,21 +17,11 @@ var IconStyler = styled.div`
   }
 `
 
-const WhatIsCepContainer = styled.div`
-  margin-bottom: 50px;
-`
-
-const TitleContainer = styled.div`
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 30px;
-`;
-
-const TitleText = styled.p`
+const TitleText = styled.div`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
   color: #555;
-  margin-right: 5px;
-  margin-left: 5px;
+  margin-right: auto;
+  margin-left: auto;
 
   @media (min-width: 1400px) {
     font-size: 280%;
@@ -55,23 +45,18 @@ const TitleText = styled.p`
   }
   @media (max-width: 1100px) {
     font-size: 280%;
-    margin-bottom: -40px;
   }
   @media (max-width: 1000px) {
     font-size: 280%;
-    margin-bottom: -40px;
   }
-  @media (max-width: 990px) {
-    font-size: 210%;
-    margin-bottom: -40px;
+  @media (max-width: 991px) {
+    font-size: 270%;
   }
   @media (max-width: 900px) {
     font-size: 210%;
-    margin-bottom: -40px;
   }
   @media (max-width: 800px) {
     font-size: 210%;
-    margin-bottom: -40px;
   }
   @media (max-width: 767px) {
     font-size: 210%;
@@ -79,47 +64,36 @@ const TitleText = styled.p`
   }
   @media (max-width: 750px) {
     font-size: 210%;
-    margin-bottom: 0px;
   }
   @media (max-width: 700px) {
     font-size: 210%;
-    margin-bottom: 0px;
   }
   @media (max-width: 650px) {
     font-size: 210%;
-    margin-bottom: 0px;
   }
   @media (max-width: 600px) {
     font-size: 210%;
-    margin-bottom: 0px;
   }
   @media (max-width: 550px) {
     font-size: 210%;
-    margin-bottom: 0px;
   }
   @media (max-width: 500px) {
     font-size: 210%;
-    margin-bottom: 0px;
   }
   @media (max-width: 480px) {
     font-size: 210%;
-    margin-bottom: 0px;
   }
   @media (max-width: 450px) {
     font-size: 210%;
-    margin-bottom: 0px;
   }
   @media (max-width: 400px) {
     font-size: 205%;
-    margin-bottom: 0px;
   }
   @media (max-width: 350px) {
     font-size: 200%;
-    margin-bottom: 0px;
   }
   @media (max-width: 320px) {
     font-size: 180%;
-    margin-bottom: 0px;
   }
 `;
 
@@ -127,39 +101,45 @@ const ContentText = styled.div`
   color: #555;
   margin-left: 1.5%;
   margin-right: 1.5%;
-  margin-top: 15px;
+  margin-top: -1%;
   margin-bottom: 40px;
-  @media (min-width: 1400px) {
-    font-size: 180%;
+  @media (min-width: 1430px) {
+    font-size: 220%;
   }
-  @media (max-width: 1400px) {
-    font-size: 180%;
+  @media (max-width: 1430px) {
+    font-size: 220%;
   }
   @media (max-width: 1300px) {
-    font-size: 180%;
+    font-size: 205%;
+    margin-top: -2%;
   }
   @media (max-width: 1200px) {
-    font-size: 180%;
+    font-size: 190%;
   }
   @media (max-width: 1180px) {
     font-size: 180%;
+    margin-top: 3%;
   }
   @media (max-width: 1140px) {
-    margin-top: 20px;
     font-size: 180%;
   }
-  @media (max-width: 1100px) {
+  @media (max-width: 1110px) {
     font-size: 180%;
+    margin-top: 4%;
   }
   @media (max-width: 1000px) {
-    font-size: 140%;
+    font-size: 170%;
   }
-  @media (max-width: 990px) {
-    margin-top: 15px;
-    font-size: 140%;
+  @media (max-width: 991px) {
+    font-size: 160%;
+    margin-top: 6%;
   }
   @media (max-width: 900px) {
+    font-size: 150%;
+  }
+  @media (max-width: 850px) {
     font-size: 140%;
+    margin-top: 7%;
   }
   @media (max-width: 800px) {
     font-size: 140%;
@@ -225,7 +205,7 @@ export default class Team extends React.Component {
     let textItems = [];
     if (this.state.window) {
 
-      const { Container, Row, Col, Input, Button } = this.state.mdbreact;
+      const { Row, Col, Input, Button } = this.state.mdbreact;
 
       let language = this.state.window.localStorage.language;
       if (language === "thai") {
@@ -235,10 +215,10 @@ export default class Team extends React.Component {
       }
 
       return (
-        <Container style={{ backgroundColor: `#F5FBEE`, paddingLeft: `8%`, paddingRight: `8%`}}>
+        <div className="container-fluid" style={{ backgroundColor: `#F5FBEE`, marginTop: `5%`, paddingLeft: `5%`, paddingRight: `5%`}}>
           <Row>
             <Col md="12">
-              <IconStyler className={styles.avatarHolder}>
+              <IconStyler className={styles.iconStyles}>
                 <div><i className="fa fa-users prefix"></i></div>
                 <div>Team</div>
               </IconStyler>
@@ -246,9 +226,7 @@ export default class Team extends React.Component {
           </Row>
 
           <Row>
-            <TitleContainer>
-              <TitleText className="text-center">{textItems[0]}</TitleText>
-            </TitleContainer>
+            <TitleText className="text-center">{textItems[0]}</TitleText>
           </Row>
           <br/>
           <Row>
@@ -260,9 +238,9 @@ export default class Team extends React.Component {
               />
             </Col>
             <Col md="8">
-                <ContentText>
-                  {this.props.davidCrook}
-                </ContentText>
+              <ContentText>
+                {this.props.davidCrook}
+              </ContentText>
             </Col>
           </Row>
           <br/>
@@ -276,9 +254,9 @@ export default class Team extends React.Component {
               />
             </Col>
             <Col md="8">
-                <ContentText>
-                  {this.props.cheriCrook}
-                </ContentText>
+              <ContentText>
+                {this.props.cheriCrook}
+              </ContentText>
             </Col>
           </Row>
           <br/>
@@ -292,9 +270,9 @@ export default class Team extends React.Component {
               />
             </Col>
             <Col md="8">
-                <ContentText>
-                  {this.props.kellyCooper}
-                </ContentText>
+              <ContentText>
+                {this.props.kellyCooper}
+              </ContentText>
             </Col>
           </Row>
           <br/>
@@ -308,9 +286,9 @@ export default class Team extends React.Component {
               />
             </Col>
             <Col md="8">
-                <ContentText>
-                  {this.props.kelliJohnson}
-                </ContentText>
+              <ContentText>
+                {this.props.kelliJohnson}
+              </ContentText>
             </Col>
           </Row>
           <br/>
@@ -332,15 +310,13 @@ export default class Team extends React.Component {
           <hr/>
           <br/>
           <Row>
-            <TitleContainer>
-              <TitleText className="text-center">{textItems[1]}</TitleText>
-            </TitleContainer>
+            <TitleText className="text-center">{textItems[1]}</TitleText>
           </Row>
           <Row>
             <Col md="12">
-                <ContentText>
-                  {this.props.volunteerTeachers}
-                </ContentText>
+              <ContentText>
+                {this.props.volunteerTeachers}
+              </ContentText>
             </Col>
           </Row>
           <Row>
@@ -354,7 +330,7 @@ export default class Team extends React.Component {
 
           <br/>
           <br/>
-        </Container>
+        </div>
       );
     } else {
       return <span />
