@@ -58,17 +58,15 @@ export default class CourseDescription extends React.Component {
 
       const language = this.state.window.localStorage.language;
       if (language === "thai") {
-        textItems = ['คำอธิบายเกี่ยวกับ "โลกทัศน์คริสเตียน"',
-                     'หากคุณต้องการติดต่อเราโปรดใช้ข้อมูลด้านล่างนี้'];
-        explanationOne = data.allContentfulChristianWorldviewExplanationOneThaiTextNode.edges[0].node.explanationOneThai;
-        explanationTwo = data.allContentfulChristianWorldviewExplanationTwoThaiTextNode.edges[0].node.explanationTwoThai;
-        explanationThree = data.allContentfulChristianWorldviewExplanationThreeThaiTextNode.edges[0].node.explanationThreeThai;
+        textItems = ['คำอธิบายหลักสูตร'];
+        explanationOne = data.allContentfulCourseDescriptionExplanationOneThaiTextNode.edges[0].node.explanationOneThai;
+        explanationTwo = data.allContentfulCourseDescriptionExplanationTwoThaiTextNode.edges[0].node.explanationTwoThai;
+        explanationThree = data.allContentfulCourseDescriptionExplanationThreeThaiTextNode.edges[0].node.explanationThreeThai;
       } else {
-        textItems = ['Explanation of the "Christian Worldview"',
-                     'If you would like to contact us, please use the information below.'];
-        explanationOne = data.allContentfulChristianWorldviewExplanationOneTextNode.edges[0].node.explanationOne;
-        explanationTwo = data.allContentfulChristianWorldviewExplanationTwoTextNode.edges[0].node.explanationTwo;
-        explanationThree = data.allContentfulChristianWorldviewExplanationThreeTextNode.edges[0].node.explanationThree;
+        textItems = ['Course Description'];
+        explanationOne = data.allContentfulCourseDescriptionExplanationOneTextNode.edges[0].node.explanationOne;
+        explanationTwo = data.allContentfulCourseDescriptionExplanationTwoTextNode.edges[0].node.explanationTwo;
+        explanationThree = data.allContentfulCourseDescriptionExplanationThreeTextNode.edges[0].node.explanationThree;
       }
 
       return (
@@ -128,55 +126,50 @@ export const christianWorldviewQuery = graphql`
       }
     }
 
-    topImage: imageSharp(id: { regex: "/Top-front/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-
-    allContentfulChristianWorldviewExplanationOneTextNode {
+    allContentfulCourseDescriptionExplanationOneTextNode {
       edges {
         node {
           explanationOne
         }
       }
     }
-    allContentfulChristianWorldviewExplanationTwoTextNode {
+    allContentfulCourseDescriptionExplanationTwoTextNode {
       edges {
         node {
           explanationTwo
         }
       }
     }
-    allContentfulChristianWorldviewExplanationThreeTextNode {
+    allContentfulCourseDescriptionExplanationThreeTextNode {
       edges {
         node {
           explanationThree
         }
       }
     }
-
-    allContentfulChristianWorldviewExplanationOneThaiTextNode {
+  
+    allContentfulCourseDescriptionExplanationOneThaiTextNode {
       edges {
         node {
           explanationOneThai
         }
       }
     }
-    allContentfulChristianWorldviewExplanationTwoThaiTextNode {
+    allContentfulCourseDescriptionExplanationTwoThaiTextNode {
       edges {
         node {
           explanationTwoThai
         }
       }
     }
-    allContentfulChristianWorldviewExplanationThreeThaiTextNode {
+    allContentfulCourseDescriptionExplanationThreeThaiTextNode {
       edges {
         node {
           explanationThreeThai
         }
       }
     }
+
 
   }
 `
