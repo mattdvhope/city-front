@@ -3,23 +3,27 @@ import Link from 'gatsby-link'
 
 const BlogPost = ({node}) => {
   return (
-    <li key={node.id}>
-      <div><Link to={`/${node.slug}`} >{node.title}</Link></div>
+    <li key={node.id} style={{ listStyle: `none`}}>
+      <h2><Link to={`/${node.slug}`} >{node.title}</Link></h2>
       <img src={node.featuredImage.resolutions.src} alt=""/>
       <div>{node.content.childMarkdownRemark.excerpt}</div>
+      <br/>
       <br/>
     </li>
   )
 }
 
 const IndexPage = ({data}) => (
-  <div>
+  <div className="container">
     <br/>
     <br/>
+    <br/>
+    <h1 className="text-center">List of Blogs</h1>
     <br/>
     <ul>
       {data.allContentfulBlog.edges.map((edge) => <BlogPost node={edge.node} />)}
     </ul>
+    <br/>
     
   </div>
 )
@@ -48,7 +52,7 @@ export const pageQuery = graphql`
             }
           }
           featuredImage {
-            resolutions(width: 200, height: 100) {
+            resolutions(width: 340, height: 170) {
               src
               srcSet
             }

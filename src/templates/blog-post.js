@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 
 class BlogPost extends Component {
@@ -16,8 +17,14 @@ class BlogPost extends Component {
 				<h1>{title}</h1>
 			{/* use dangerouslySetInnerHTML b/c 'gatsby-transformer-remark' has transformed the markdown to html; now we're putting the <p> tag inside of a <div> tag. */}
 			{/* React treats the 'content' in graphql as a string, so dangerouslySetInnerHTML tells react to treat it has html rather than as a string. */}
-        <img src={featuredImage.resolutions.src} alt=""/>
+        <br/>
+        <img src={featuredImage.resolutions.src} width={400} alt=""/>
+        <br/>
+        <br/>
 				<div dangerouslySetInnerHTML={{__html: content.childMarkdownRemark.html}} />
+        <br/>
+        <h2><Link to="/blog">Back to Blog page</Link></h2>
+        <br/>
 			</div>
 		);
 	}
@@ -42,7 +49,7 @@ export const pageQuery = graphql`
       }
 
       featuredImage {
-        resolutions {
+        resolutions(width: 700, height: 350) {
           src
           srcSet
         }
