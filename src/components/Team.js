@@ -302,9 +302,9 @@ export default class Team extends React.Component {
               />
             </Col>
             <Col md="8">
-                <ContentText>
-                  {this.props.mattMalone}
-                </ContentText>
+              <ContentText>
+                {this.props.mattMalone}
+              </ContentText>
             </Col>
           </Row>
           <hr/>
