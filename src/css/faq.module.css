@@ -1,0 +1,105 @@
+.titleStyle {
+
+  color: #fff;
+
+  @media (min-width: 1400px) {
+    position: absolute;
+    font-size: 500%;
+    height: 130%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @media (max-width: 1400px) {
+    position: absolute;
+    font-size: 500%;
+    height: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @media (max-width: 1300px) {
+    font-size: 450%;
+    height: 110%;
+  }
+  @media (max-width: 1200px) {
+    height: 100%;
+  }
+  @media (max-width: 1050px) {
+    font-size: 400%;
+    height: 90%;
+  }
+  @media (max-width: 1000px) {
+    height: 80%;
+  }
+  @media (max-width: 900px) {
+    font-size: 350%;
+    height: 75%;
+  }
+  @media (max-width: 850px) {
+    height: 70%;
+  }
+  @media (max-width: 800px) {
+    font-size: 300%;
+    height: 65%;
+  }
+  @media (max-width: 767px) {
+    height: 62%;
+  }
+  @media (max-width: 700px) {
+    height: 55%;
+  }
+  @media (max-width: 650px) {
+    font-size: 250%;
+    height: 50%;
+  }
+  @media (max-width: 580px) {
+    height: 48%;
+  }
+  @media (max-width: 545px) {
+    font-size: 230%;
+    height: 44%;
+  }
+  @media (max-width: 500px) {
+    font-size: 210%;
+    height: 40%;
+  }
+  @media (max-width: 460px) {
+    font-size: 195%;
+    height: 35%;
+  }
+  @media (max-width: 430px) {
+    font-size: 185%;
+    height: 34%;
+  }
+  @media (max-width: 410px) {
+    font-size: 180%;
+    height: 31%;
+  }
+  @media (max-width: 400px) {
+    font-size: 170%;
+    height: 35%;
+  }
+  @media (max-width: 385px) {
+    height: 37%;
+  }
+  @media (max-width: 375px) {
+    height: 33%
+  }
+  @media (max-width: 360px) {
+    font-size: 147%;
+    height: 38%;
+  }
+  @media (max-width: 340px) {
+    font-size: 147%;
+    height: 42%;
+  }
+  @media (max-width: 320px) {
+    font-size: 147%;
+    height: 38%;
+  }
+
+
+
+
+
+}
+
