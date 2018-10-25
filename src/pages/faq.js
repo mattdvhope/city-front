@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 import styles from "../css/faq.module.css";
 import QuestionMarks from '../img/question-marks.jpg'
+import FaqAccordion from '../components/FaqAccordion'
 
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css'; 
@@ -45,7 +46,6 @@ export default class Faq extends React.Component {
     if (this.state.window) {
       const { data } = this.props;
       let textItems;
-      let explanationOne, explanationTwo, explanationThree, explanationOneThai, explanationTwoThai, explanationThreeThai;
 
       const { Container, Row, Col, Input, Button } = this.state.mdbreact;
 
@@ -53,7 +53,7 @@ export default class Faq extends React.Component {
       if (language === "thai") {
         textItems = ['คำถามที่พบบ่อย'];
       } else {
-        textItems = ['Frequently Asked Questions'];
+        textItems = ['FAQ\'s'];
       }
 
       const FaqPost = ({node}) => {
@@ -82,17 +82,10 @@ export default class Faq extends React.Component {
           <br/>
           <img src={QuestionMarks} alt="Questions" className="img-fluid" />
           <div className={styles.titleStyle}>{textItems[0]}</div>
-          <br/>
-          <br/>
-          <Row>
-            <Col md="12">
-              <FontContainer>
-                <ul>
-                  {data.allContentfulFaq.edges.map((edge) => <FaqPost node={edge.node} />)}
-                </ul>
-              </FontContainer>
-            </Col>
-          </Row>
+          
+
+          <FaqAccordion edges={data.allContentfulFaq.edges} />
+
           <br/>
         </div>
       );
