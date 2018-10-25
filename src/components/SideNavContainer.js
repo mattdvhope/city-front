@@ -127,7 +127,6 @@ export default class SideNavContainer extends React.Component {
             </SideNavCat>
             <SideNavCat id="submit-blog-cat" name={navItems[4]} icon="chevron-right" >
               <SideNavLink to="/faq" onClick={this.removeSideNav}>{navItems[5]}</SideNavLink>
-              <SideNavLink to="/christian-worldview" onClick={this.removeSideNav}>{navItems[3]}</SideNavLink>
             </SideNavCat>
           </SideNavNav>
         </SideNav>
