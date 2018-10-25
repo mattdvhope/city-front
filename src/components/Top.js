@@ -102,30 +102,30 @@ const VideoContainer = styled.div`
 `
 
 const TextContainer = styled.div`
-  @media (min-width: 1435px) {
+  @media (min-width: 1430px) {
     margin-top: 27%;
     margin-left: 0%;
     margin-right: 5%;
     margin-bottom: 20%;
-    font-size: 320%;
+    font-size: 285%;
   }
-  @media (max-width: 1435px) {
+  @media (max-width: 1430px) {
     margin-top: 27%;
     margin-left: 0%;
     margin-right: 5%;
     margin-bottom: 20%;
-    font-size: 320%;
+    font-size: 285%;
   }
   @media (max-width: 1199px) {
     margin-top: 30%;
     margin-right: 0%;
     margin-bottom: 15%;
-    font-size: 290%;
+    font-size: 250%;
   }
   @media (max-width: 996px) {
     margin-top: 31%;
     margin-bottom: 16%;
-    font-size: 280%;
+    font-size: 240%;
   }
   @media (max-width: 996px) {
     margin-top: 31%;
@@ -135,39 +135,38 @@ const TextContainer = styled.div`
     margin-left: 10%;
     margin-right: -40%;
     margin-bottom: 20%;
-    font-size: 260%;
+    font-size: 230%;
   }
   @media (max-width: 940px) {
     margin-top: 44%;
     margin-left: -1%;
     margin-right: -35%;
-    font-size: 250%;
+    font-size: 220%;
   }
   @media (max-width: 865px) {
     margin-top: 39%;
     margin-left: -2%;
     margin-right: -30%;
     margin-bottom: 15%;
-    font-size: 245%;
+    font-size: 205%;
   }
   @media (max-width: 845px) {
     margin-left: 2%;
     margin-right: -25%;
-    font-size: 240%;
   }
   @media (max-width: 795px) {
     margin-top: 40%;
     margin-left: 9%;
     margin-right: -20%;
     margin-bottom: 20%;
-    font-size: 230%;
+    font-size: 195%;
   }
   @media (max-width: 780px) {
     margin-top: 42%;
     margin-left: 7%;
     margin-right: -15%;
     margin-bottom: 25%;
-    font-size: 210%;
+    font-size: 185%;
   }
   @media (max-width: 767px) {
     margin-top: 4%;
@@ -209,7 +208,7 @@ export default class Top extends React.Component {
     let textItems = [];
     if (this.state.window) {
       if (this.state.window.localStorage.language === "thai") {
-        textItems = ["ชาวอเมริกันที่สอนภาษาอังกฤษและวัฒนธรรมสำหรับคนไทย"];
+        textItems = ["คนอเมริกันให้การฝึกอบรมคนไทยในการเรียนรู้ภาษาอังกฤษและวัฒนธรรม"];
       } else {
         textItems = ['Americans training Thai people in English and culture'];
       }
