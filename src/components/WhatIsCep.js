@@ -178,7 +178,7 @@ export default class Top extends React.Component {
 
       if (language === "thai") {
         textItems = ['โครงการซิตี้ อิงลิช (City English Project) คืออะไร?',
-                     'คลิกที่นี่เพื่อดูคำอธิบายเกี่ยวกับ "โลกทัศน์คริสเตียน"'];
+                     'คลิกที่นี่เพื่อดูคำอธิบายเกี่ยวกับ “โลกทัศน์คริสเตียน”'];
       } else {
         textItems = ['What is the "City English Project?"',
                      'Click here for an explanation of the "Christian Worldview."'];
