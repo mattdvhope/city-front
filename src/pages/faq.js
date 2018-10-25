@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
 import Img from "gatsby-image";
-import styles from "../css/faq.module.css";
 import QuestionMarks from '../img/question-marks.jpg'
 import FaqAccordion from '../components/FaqAccordion'
 
@@ -9,17 +8,41 @@ import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css'; 
 import 'mdbreact/dist/css/mdb.css';
 
-const FontContainer = styled.div`
+const TitleStyler = styled.div`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
-`
-
-const QuestionTitleContainer = styled.div`
   font-size: 200%;
-`
+  margin-top: 2%
 
-const AnswerContainer = styled.div`
-  font-size: 110%;
-  margin-right: 7%;
+  @media (min-width: 1400px) {
+    margin-bottom: -3%
+  }
+  @media (max-width: 1400px) {
+    margin-bottom: -3%
+  }
+  @media (max-width: 1000px) {
+    margin-bottom: -4%
+  }
+  @media (max-width: 800px) {
+    margin-bottom: -6%
+  }
+  @media (max-width: 680px) {
+    margin-bottom: -7%
+  }
+  @media (max-width: 590px) {
+    margin-bottom: -8%
+  }
+  @media (max-width: 510px) {
+    margin-bottom: -9%
+  }
+  @media (max-width: 470px) {
+    margin-bottom: -10%
+  }
+  @media (max-width: 430px) {
+    margin-bottom: -12%
+  }
+  @media (max-width: 400px) {
+    margin-bottom: -13%
+  }
 `
 
 export default class Faq extends React.Component {
@@ -56,33 +79,12 @@ export default class Faq extends React.Component {
         textItems = ['FAQs'];
       }
 
-      const FaqPost = ({node}) => {
-        if (language === "thai") {
-          return (
-            <li key={node.id} style={{ listStyle: `none`}}>
-              <QuestionTitleContainer>{node.faqQuestionThai}</QuestionTitleContainer>
-              <AnswerContainer>{node.faqAnswerThai.faqAnswerThai}</AnswerContainer>
-              <br/>
-            </li>
-          )
-        } else {
-          return (
-            <li key={node.id} style={{ listStyle: `none`}}>
-              <QuestionTitleContainer>{node.faqQuestion}</QuestionTitleContainer>
-              <AnswerContainer>{node.faqAnswer.faqAnswer}</AnswerContainer>
-              <br/>
-            </li>
-          )
-        }
-      }
-
       return (
         <div>
           <br/>
           <br/>
           <img src={QuestionMarks} alt="Questions" className="img-fluid" />
-          <div className={styles.titleStyle}>{textItems[0]}</div>
-          
+          <TitleStyler className="text-center">{textItems[0]}</TitleStyler>
 
           <FaqAccordion edges={data.allContentfulFaq.edges} />
 
