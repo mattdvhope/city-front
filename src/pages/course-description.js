@@ -91,6 +91,7 @@ export default class CourseDescription extends React.Component {
               <WorldviewContainer>
                 <ParagraphContainer>{explanationOne}</ParagraphContainer>
                 <ParagraphContainer>{explanationTwo}</ParagraphContainer>
+                <img src={data.allContentfulCourseDescription.edges[0].node.courseImage.resolutions.src} alt=""/>
                 <ParagraphContainer>{explanationThree}</ParagraphContainer>
               </WorldviewContainer>
             </Col>
@@ -123,6 +124,19 @@ export const courseDescriptionQuery = graphql`
     courseDescription3Img: imageSharp(id: { regex: "/course-description3/" }) {
       sizes(maxWidth: 1240 ) {
         ...GatsbyImageSharpSizes
+      }
+    }
+
+    allContentfulCourseDescription {
+      edges {
+        node {
+          courseImage {
+            resolutions(width: 240, height: 220) {
+              src
+              srcSet
+            }
+          }
+        }
       }
     }
 
