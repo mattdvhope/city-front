@@ -106,7 +106,11 @@ export const christianWorldviewQuery = graphql`
       }
     }
 
-    allContentfulFaq {
+    allContentfulFaq (
+      sort: {
+        fields: [sequenceOrder], order: ASC
+      }
+    ) {
       edges {
         node {
           faqQuestion
