@@ -229,6 +229,10 @@ export default class Team extends React.Component {
             <TitleText className="text-center">{textItems[0]}</TitleText>
           </Row>
           <br/>
+          <br/>
+
+      {/* 
+
           <Row>
             <Col md="4">
               <Img
@@ -261,6 +265,9 @@ export default class Team extends React.Component {
           </Row>
           <br/>
           <br/>
+
+       */}
+
           <Row>
             <Col md="4">
               <Img
@@ -282,12 +289,12 @@ export default class Team extends React.Component {
               <Img
                 alt="Top picture"
                 className={styles.avatar}
-                sizes={this.props.kelliJohnsonImg.sizes}
+                sizes={this.props.mattMaloneImg.sizes}
               />
             </Col>
             <Col md="8">
               <ContentText>
-                {this.props.kelliJohnson}
+                {this.props.mattMalone}
               </ContentText>
             </Col>
           </Row>
@@ -298,12 +305,12 @@ export default class Team extends React.Component {
               <Img
                 alt="Top picture"
                 className={styles.avatar}
-                sizes={this.props.mattMaloneImg.sizes}
+                sizes={this.props.kelliJohnsonImg.sizes}
               />
             </Col>
             <Col md="8">
               <ContentText>
-                {this.props.mattMalone}
+                {this.props.kelliJohnson}
               </ContentText>
             </Col>
           </Row>
