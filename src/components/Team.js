@@ -209,7 +209,7 @@ export default class Team extends React.Component {
 
       let language = this.state.window.localStorage.language;
       if (language === "thai") {
-        textItems = ['สมาชิกทีมอเมริกันอยู่ที่กรุงเทพฯระยะยาว', 'ครูอาสาสมัคร'];
+        textItems = ['ทีมงานชาวอเมริกันระยะยาวของเรา', 'ผู้สอนที่เป็นอาสาสมัคร'];
       } else {
         textItems = ['Our long-term American team members', 'Volunteer Teachers'];
       }
