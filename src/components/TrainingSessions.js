@@ -168,9 +168,9 @@ export default class Top extends React.Component {
     if (this.state.window) {
       const language = this.state.window.localStorage.language;
       if (language === "thai") {
-        textItems = ['ตารางเวลาของสัมมนา',
-                     'คลิกด้านล่างเพื่อเลือกสัมมนาห้าวัน',
-                     '(สัมมนาห้าวันราคา 999 บาท)'];
+        textItems = ['ตารางเวลาการจัดหลักสูตร',
+                     'คลิกด้านล่างเพื่อเลือกหลักสูตร 5 วัน',
+                     '(หลักสูตร 5 วัน ราคา 999 บาท)'];
       } else {
         textItems = ['Schedule of seminars',
                      'click below to choose a 5-day seminar',
