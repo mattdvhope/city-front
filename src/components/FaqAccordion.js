@@ -5,7 +5,7 @@ const FontContainer = styled.span`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
 `
 
-class CollapsePage extends Component {
+export default class FaqAccordion extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -75,8 +75,8 @@ class CollapsePage extends Component {
 
       return (
         <Container className="md-accordion mt-5">
-
-          {this.props.edges.map((edge) => <CardHolder node={edge.node} />)}
+    
+          {this.props.edges.map((edge) => <CardHolder key={edge.node.faqQuestion} node={edge.node} />)}
 
         </Container>
       );
@@ -87,5 +87,3 @@ class CollapsePage extends Component {
 
   }
 }
-
-export default CollapsePage;
