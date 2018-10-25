@@ -111,7 +111,7 @@ export default class CourseDescription extends React.Component {
   }
 }
 
-export const christianWorldviewQuery = graphql`
+export const courseDescriptionQuery = graphql`
   query CourseDescription {
 
     courseDescription1Img: imageSharp(id: { regex: "/course-description1/" }) {
