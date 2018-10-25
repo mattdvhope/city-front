@@ -67,7 +67,7 @@ export default class SideNavContainer extends React.Component {
                   "Seminar Description",
                   "Course Description",
                   "Christian Worldview",
-                  "FAQ's, etc",
+                  "FAQs, etc",
                   "Frequently Asked Questions",
                   "Who is the City English Project?"];
     }
