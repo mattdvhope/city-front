@@ -53,7 +53,7 @@ export default class Faq extends React.Component {
       if (language === "thai") {
         textItems = ['คำถามที่พบบ่อย'];
       } else {
-        textItems = ['FAQ\'s'];
+        textItems = ['FAQs'];
       }
 
       const FaqPost = ({node}) => {
