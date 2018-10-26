@@ -16,12 +16,12 @@ const TitleContainer = styled.div`
     margin-bottom: 30px;
   }
   @media (max-width: 767px) {
-    font-size: 130%;
+    font-size: 195%;
     margin-bottom: 20px;
   }
   `;
 
-const WorldviewContainer = styled.div`
+const FontContainer = styled.div`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
 `
 
@@ -76,31 +76,23 @@ export default class CourseDescription extends React.Component {
           <br/>
           <Row>
               <TitleContainer className="text-center">
-                <WorldviewContainer>{textItems[0]}</WorldviewContainer>
+                <FontContainer>{textItems[0]}</FontContainer>
               </TitleContainer>
           </Row>
           <Row>
             <Col md="4">
-              <Img
-                alt="Top picture"
-                className={styles.avatar}
-                sizes={data.courseDescription1Img.sizes}
-              />
+              <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/course-description1.jpg" alt=""/>
             </Col>
             <Col md="4">
-              <WorldviewContainer>
+              <FontContainer>
                 <ParagraphContainer>{explanationOne}</ParagraphContainer>
                 <ParagraphContainer>{explanationTwo}</ParagraphContainer>
                 <img src={data.allContentfulCourseDescription.edges[0].node.courseImage.resolutions.src} alt=""/>
                 <ParagraphContainer>{explanationThree}</ParagraphContainer>
-              </WorldviewContainer>
+              </FontContainer>
             </Col>
             <Col md="4">
-              <Img
-                alt="Bottom picture"
-                className={styles.avatar}
-                sizes={data.courseDescription3Img.sizes}
-              />
+              <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/course-description3.jpg" alt=""/>
             </Col>
           </Row>
           <br/>
@@ -114,18 +106,6 @@ export default class CourseDescription extends React.Component {
 
 export const courseDescriptionQuery = graphql`
   query CourseDescription {
-
-    courseDescription1Img: imageSharp(id: { regex: "/course-description1/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-
-    courseDescription3Img: imageSharp(id: { regex: "/course-description3/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
 
     allContentfulCourseDescription {
       edges {
