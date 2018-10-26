@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Img from "gatsby-image";
-import styles from "../css/team.module.css";
 
 export default class CarouselMdb extends Component {
   constructor(props, context) {
@@ -36,38 +35,22 @@ export default class CarouselMdb extends Component {
             <CarouselInner>
               <CarouselItem itemId="1">
                 <View>
-                  <Img
-                    alt="Vol picture 1"
-                    className={styles.volunteerAvatars}
-                    sizes={this.props.picture1}
-                  />
+                  <img style={{maxWidth: `100%`}} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/volunteer-teachers1.jpg" alt=""/>
                 </View>
               </CarouselItem>
               <CarouselItem itemId="2">
                 <View>
-                  <Img
-                    alt="Vol picture 1"
-                    className={styles.volunteerAvatars}
-                    sizes={this.props.picture2}
-                  />
+                  <img style={{maxWidth: `100%`}} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/volunteer-teachers2.jpg" alt=""/>
                 </View>
               </CarouselItem>
               <CarouselItem itemId="3">
                 <View>
-                  <Img
-                    alt="Vol picture 1"
-                    className={styles.volunteerAvatars}
-                    sizes={this.props.picture3}
-                  />
+                  <img style={{maxWidth: `100%`}} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/volunteer-teachers3.jpg" alt=""/>
                 </View>
               </CarouselItem>
               <CarouselItem itemId="4">
                 <View>
-                  <Img
-                    alt="Vol picture 1"
-                    className={styles.volunteerAvatars}
-                    sizes={this.props.picture4}
-                  />
+                  <img style={{maxWidth: `100%`}} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/volunteer-teachers4.jpg" alt=""/>
                 </View>
               </CarouselItem>
             </CarouselInner>
