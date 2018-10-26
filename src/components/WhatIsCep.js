@@ -221,13 +221,6 @@ export default class Top extends React.Component {
           <Row>
             <Col md="6">
               <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/WhatIsCep1.jpg" alt=""/>
-        {/* 
-              <Img
-                alt="Top picture"
-                className={styles.avatar}
-                sizes={this.props.whatIsCepImg1.sizes}
-              />
-         */}
             </Col>
             <Col md="6">
               <ContentText>
@@ -240,13 +233,6 @@ export default class Top extends React.Component {
           <Row>
             <Col md="6">
               <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/WhatIsCep2.jpg" alt=""/>
-        {/* 
-              <Img
-                alt="Top picture"
-                className={styles.avatar}
-                sizes={this.props.whatIsCepImg2.sizes}
-              />
-         */}
             </Col>
             <Col md="6">
               <ContentText>
@@ -259,13 +245,6 @@ export default class Top extends React.Component {
           <Row>
             <Col md="6">
               <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/WhatIsCep3.jpg" alt=""/>
-        {/* 
-              <Img
-                alt="Top picture"
-                className={styles.avatar}
-                sizes={this.props.whatIsCepImg3.sizes}
-              />
-         */}
             </Col>
             <Col md="6">
               <ContentText>
