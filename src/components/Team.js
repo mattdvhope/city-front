@@ -256,6 +256,9 @@ export default class Team extends React.Component {
           <Row>
             <TitleText className="text-center">{textItems[1]}</TitleText>
           </Row>
+
+          <br/>
+
           <Row>
             <Col md="12">
               <ContentText className={styles.volContent}>
