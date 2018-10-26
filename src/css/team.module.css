@@ -39,18 +39,3 @@
     margin-top: -20px;
   }
 }
-
-.volContent {
-  @media (min-width: 1180px) {
-    margin-top: 1%;
-  }
-  @media (max-width: 1180px) {
-    margin-top: 5%;
-  }
-  @media (max-width: 900px) {
-    margin-top: 7%;
-  }
-  @media (max-width: 767px) {
-    margin-top: 4%;
-  }
-}
