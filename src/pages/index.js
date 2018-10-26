@@ -73,11 +73,8 @@ export default class FrontPage extends Component {
           />
  
           <Team
-            kellyCooperImg={data.kellyCooperImg}
             kellyCooper={kellyCooper}
-            mattMaloneImg={data.mattMaloneImg}
             mattMalone={mattMalone}
-            kelliJohnsonImg={data.kelliJohnsonImg}
             kelliJohnson={kelliJohnson}
             volunteerTeachers={volunteerTeachers}
             volunteerTeachersImg1={data.volunteerTeachersImg1}
@@ -142,12 +139,6 @@ export const homePageQuery = graphql`
       }
     }
 
-    kellyCooperImg: imageSharp(id: { regex: "/kelly-cooper/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-
     allContentfulTeamKellyCooperTextNode {
       edges {
         node {
@@ -164,12 +155,6 @@ export const homePageQuery = graphql`
       }
     }
 
-    mattMaloneImg: imageSharp(id: { regex: "/matt-malone/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-
     allContentfulTeamMattMaloneTextNode {
       edges {
         node {
@@ -183,12 +168,6 @@ export const homePageQuery = graphql`
         node {
           mattMalone
         }
-      }
-    }
-
-    kelliJohnsonImg: imageSharp(id: { regex: "/kelli-johnson/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
       }
     }
 

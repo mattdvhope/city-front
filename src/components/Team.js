@@ -1,5 +1,4 @@
 import React from "react";
-import Img from "gatsby-image";
 import styled from "styled-components";
 import styles from "../css/team.module.css";
 
@@ -101,7 +100,7 @@ const ContentText = styled.div`
   color: #555;
   margin-left: 1.5%;
   margin-right: 1.5%;
-  margin-top: -1%;
+  margin-top: -3%;
   margin-bottom: 40px;
   @media (min-width: 1430px) {
     font-size: 220%;
@@ -118,21 +117,20 @@ const ContentText = styled.div`
   }
   @media (max-width: 1180px) {
     font-size: 180%;
-    margin-top: 3%;
+    margin-top: 1%;
   }
   @media (max-width: 1140px) {
     font-size: 180%;
   }
   @media (max-width: 1110px) {
     font-size: 180%;
-    margin-top: 4%;
   }
   @media (max-width: 1000px) {
     font-size: 170%;
   }
   @media (max-width: 991px) {
     font-size: 160%;
-    margin-top: 6%;
+    margin-top: 4%;
   }
   @media (max-width: 900px) {
     font-size: 150%;
@@ -145,6 +143,7 @@ const ContentText = styled.div`
     font-size: 140%;
   }
   @media (max-width: 767px) {
+    margin-top: 5%;
     font-size: 140%;
   }
   @media (max-width: 750px) {
@@ -167,18 +166,6 @@ const ContentText = styled.div`
   }
   @media (max-width: 480px) {
     font-size: 115%;
-  }
-  @media (max-width: 450px) {
-    font-size: 110%;
-  }
-  @media (max-width: 400px) {
-    font-size: 105%;
-  }
-  @media (max-width: 350px) {
-    font-size: 100%;
-  }
-  @media (max-width: 320px) {
-    font-size: 100%;
   }
 `;
 
@@ -230,51 +217,9 @@ export default class Team extends React.Component {
           </Row>
           <br/>
           <br/>
-
-      {/* 
-
           <Row>
             <Col md="4">
-              <Img
-                alt="Top picture"
-                className={styles.avatar}
-                sizes={this.props.davidCrookImg.sizes}
-              />
-            </Col>
-            <Col md="8">
-              <ContentText>
-                {this.props.davidCrook}
-              </ContentText>
-            </Col>
-          </Row>
-          <br/>
-          <br/>
-          <Row>
-            <Col md="4">
-              <Img
-                alt="Top picture"
-                className={styles.avatar}
-                sizes={this.props.cheriCrookImg.sizes}
-              />
-            </Col>
-            <Col md="8">
-              <ContentText>
-                {this.props.cheriCrook}
-              </ContentText>
-            </Col>
-          </Row>
-          <br/>
-          <br/>
-
-       */}
-
-          <Row>
-            <Col md="4">
-              <Img
-                alt="Top picture"
-                className={styles.avatar}
-                sizes={this.props.kellyCooperImg.sizes}
-              />
+              <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/kelly-cooper.jpg" alt=""/>
             </Col>
             <Col md="8">
               <ContentText>
@@ -286,11 +231,7 @@ export default class Team extends React.Component {
           <br/>
           <Row>
             <Col md="4">
-              <Img
-                alt="Top picture"
-                className={styles.avatar}
-                sizes={this.props.mattMaloneImg.sizes}
-              />
+              <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/matt-malone.jpg" alt=""/>
             </Col>
             <Col md="8">
               <ContentText>
@@ -302,11 +243,7 @@ export default class Team extends React.Component {
           <br/>
           <Row>
             <Col md="4">
-              <Img
-                alt="Top picture"
-                className={styles.avatar}
-                sizes={this.props.kelliJohnsonImg.sizes}
-              />
+              <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/kelli-johnson.jpg" alt=""/>
             </Col>
             <Col md="8">
               <ContentText>
