@@ -264,12 +264,7 @@ export default class Team extends React.Component {
             </Col>
           </Row>
           <Row>
-            <CarouselMdb
-              picture1={this.props.volunteerTeachersImg1.sizes}
-              picture2={this.props.volunteerTeachersImg2.sizes}
-              picture3={this.props.volunteerTeachersImg3.sizes}
-              picture4={this.props.volunteerTeachersImg4.sizes}
-            />
+            <CarouselMdb />
           </Row>
 
           <br/>

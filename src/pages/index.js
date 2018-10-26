@@ -77,10 +77,6 @@ export default class FrontPage extends Component {
             mattMalone={mattMalone}
             kelliJohnson={kelliJohnson}
             volunteerTeachers={volunteerTeachers}
-            volunteerTeachersImg1={data.volunteerTeachersImg1}
-            volunteerTeachersImg2={data.volunteerTeachersImg2}
-            volunteerTeachersImg3={data.volunteerTeachersImg3}
-            volunteerTeachersImg4={data.volunteerTeachersImg4}
           />
  
         </div>
@@ -200,30 +196,6 @@ export const homePageQuery = graphql`
         node {
           volunteerTeachers
         }
-      }
-    }
-
-    volunteerTeachersImg1: imageSharp(id: { regex: "/volunteer-teachers1/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-
-    volunteerTeachersImg2: imageSharp(id: { regex: "/volunteer-teachers2/" }) {
-      sizes(maxWidth: 640 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-
-    volunteerTeachersImg3: imageSharp(id: { regex: "/volunteer-teachers3/" }) {
-      sizes(maxWidth: 640 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-
-    volunteerTeachersImg4: imageSharp(id: { regex: "/volunteer-teachers4/" }) {
-      sizes(maxWidth: 640 ) {
-        ...GatsbyImageSharpSizes
       }
     }
 
