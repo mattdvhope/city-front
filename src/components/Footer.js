@@ -6,7 +6,7 @@ import Img from "gatsby-image";
 import styled from "styled-components";
 import styles from "../css/footer.module.css";
 
-import ModalSatornDirections from "./ModalSatornDirections"
+import ModalDirections from "./ModalDirections"
 
 import cityScape from '../img/City-scape.jpg'
 import cityScapeMedium from '../img/City-scape-medium.jpg'
@@ -161,25 +161,8 @@ export default class Footer extends Component {
                   <div>086-696-7821</div>
                   <br/>
 
-                  <ModalSatornDirections getSatorn={
-                    this.renderAddress(
-                      footerItems[2],
-                      footerItems[3],
-                      footerItems[4],
-                      footerItems[5],
-                      footerItems[6]
-                    )}
-                    fromSatorn1={this.props.fromSatorn1}
-                    fromSatorn2={this.props.fromSatorn2}
-                    fromSatorn3={this.props.fromSatorn3}
-                    fromSatorn4={this.props.fromSatorn4}
-                    fromSatorn5={this.props.fromSatorn5}
-                    fromSatorn6={this.props.fromSatorn6}
-                    fromSatorn7={this.props.fromSatorn7}
-                    fromSatorn8={this.props.fromSatorn8}
-                    fromSatorn9={this.props.fromSatorn9}
-                    fromSatorn10={this.props.fromSatorn10}
-                  />
+                  <ModalDirections />
+                  
                   <br/>
                   <ContactInfoTitles>{footerItems[7]}</ContactInfoTitles>
                   <div>info@cityenglishproject.com</div>
