@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
-import Img from "gatsby-image";
 import styles from "../css/christianWorldview.module.css";
-
-import 'font-awesome/css/font-awesome.min.css';
-import 'bootstrap-css-only/css/bootstrap.min.css'; 
-import 'mdbreact/dist/css/mdb.css';
 
 const TitleContainer = styled.div`
   color: #2d3179;
@@ -81,11 +76,7 @@ export default class ChristianWorldview extends React.Component {
           </Row>
           <Row>
             <Col md="4">
-              <Img
-                alt="Top picture"
-                className={styles.avatar}
-                sizes={data.christianWorldview1Img.sizes}
-              />
+              <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/christian-worldview1.jpg" alt=""/>
             </Col>
             <Col md="4">
               <WorldviewContainer>
@@ -95,11 +86,7 @@ export default class ChristianWorldview extends React.Component {
               </WorldviewContainer>
             </Col>
             <Col md="4">
-              <Img
-                alt="Bottom picture"
-                className={styles.avatar}
-                sizes={data.christianWorldview2Img.sizes}
-              />
+              <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/christian-worldview2.jpg" alt=""/>
             </Col>
           </Row>
           <br/>
@@ -113,18 +100,6 @@ export default class ChristianWorldview extends React.Component {
 
 export const christianWorldviewQuery = graphql`
   query ChristianWorldview {
-
-    christianWorldview1Img: imageSharp(id: { regex: "/christian-worldview1/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-
-    christianWorldview2Img: imageSharp(id: { regex: "/christian-worldview2/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
 
     allContentfulChristianWorldviewExplanationOneTextNode {
       edges {
