@@ -77,41 +77,41 @@ const ContentText = styled.div`
   margin-right: 2%;
 
   @media (min-width: 1430px) {
-    font-size: 220%;
+    font-size: 200%;
     margin-top: 12%;
   }
   @media (max-width: 1430px) {
-    font-size: 190%;
+    font-size: 195%;
     margin-top: 12%;
   }
-  @media (max-width: 991px) {
-    font-size: 170%;
-    margin-top: 13%;
-    margin-right: -30%;
+  @media (max-width: 1199px) {
+    font-size: 185%;
+    margin-top: 11%;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 991px) {
     font-size: 150%;
-    margin-right: -20%;
+    margin-top: 10%;
+    margin-right: -15%;
   }
   @media (max-width: 840px) {
     font-size: 135%;
     margin-right: -10%;
   }
   @media (max-width: 830px) {
-    font-size: 125%;
+    font-size: 130%;
     margin-right: 0%;
   }
   @media (max-width: 767px) {
     font-size: 150%;
     margin-top: 4%;
-    margin-left: -10%;
-    margin-right: -10%;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: -5%;
   }
   @media (max-width: 700px) {
     font-size: 140%;
-    margin-left: -5%;
-    margin-right: -5%;
+    margin-left: auto;
+    margin-right: auto;
   }
   @media (max-width: 650px) {
     font-size: 135%;
@@ -119,31 +119,49 @@ const ContentText = styled.div`
   }
   @media (max-width: 600px) {
     font-size: 130%;
-    margin-top: 4%;
-    margin-left: 0%;
-    margin-right: 0%;
+    margin-top: 6%;
+    margin-left: auto;
+    margin-right: auto;
   }
   @media (max-width: 575px) {
-    font-size: 115%;
+    font-size: 130%;
     margin-left: 5%;
     margin-right: 5%;
   }
   @media (max-width: 480px) {
-    font-size: 115%;
+    font-size: 130%;
   }
   @media (max-width: 450px) {
-    font-size: 110%;
+    font-size: 125%;
   }
   @media (max-width: 400px) {
-    font-size: 105%;
+    font-size: 125%;
   }
   @media (max-width: 350px) {
-    font-size: 100%;
+    font-size: 120%;
   }
 `;
 
 const LinkStyler = styled.span`
   color: #8BC34A;
+`
+
+const ImgStyler = styled.img`
+  position: relative;
+
+  @media (min-width: 1430px) {
+    height: 50px;
+    width: 50p;
+  }
+  @media (max-width: 1430px) {
+    height: 50px;
+    width: 50p;
+  }
+  @media (max-width: 991px) {
+    height: 50px;
+    width: 50p;
+  }
+
 `
 
 export default class Top extends React.Component {
@@ -202,11 +220,14 @@ export default class Top extends React.Component {
           <br/>
           <Row>
             <Col md="6">
+              <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/WhatIsCep1.jpg" alt=""/>
+        {/* 
               <Img
                 alt="Top picture"
                 className={styles.avatar}
                 sizes={this.props.whatIsCepImg1.sizes}
               />
+         */}
             </Col>
             <Col md="6">
               <ContentText>
@@ -218,11 +239,14 @@ export default class Top extends React.Component {
           <br/>
           <Row>
             <Col md="6">
+              <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/WhatIsCep2.jpg" alt=""/>
+        {/* 
               <Img
                 alt="Top picture"
                 className={styles.avatar}
                 sizes={this.props.whatIsCepImg2.sizes}
               />
+         */}
             </Col>
             <Col md="6">
               <ContentText>
@@ -234,11 +258,14 @@ export default class Top extends React.Component {
           <br/>
           <Row>
             <Col md="6">
+              <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/WhatIsCep3.jpg" alt=""/>
+        {/* 
               <Img
                 alt="Top picture"
                 className={styles.avatar}
                 sizes={this.props.whatIsCepImg3.sizes}
               />
+         */}
             </Col>
             <Col md="6">
               <ContentText>
