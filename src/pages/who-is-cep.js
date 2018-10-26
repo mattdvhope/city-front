@@ -84,11 +84,7 @@ console.log(data.allContentfulWhoIsCep.edges)
           </Row>
           <Row>
             <Col md="4">
-              <Img
-                alt="Top picture"
-                className={styles.avatar}
-                sizes={data.courseDescription1Img.sizes}
-              />
+              <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/who-is-cep1.jpg" alt=""/>
             </Col>
             <Col md="4">
               <WorldviewContainer>
@@ -106,11 +102,7 @@ console.log(data.allContentfulWhoIsCep.edges)
               </WorldviewContainer>
             </Col>
             <Col md="4">
-              <Img
-                alt="Bottom picture"
-                className={styles.avatar}
-                sizes={data.courseDescription3Img.sizes}
-              />
+              <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/who-is-cep2.jpg" alt=""/>
             </Col>
           </Row>
           <br/>
@@ -124,18 +116,6 @@ console.log(data.allContentfulWhoIsCep.edges)
 
 export const whoIsCepQuery = graphql`
   query WhoIsCep {
-
-    courseDescription1Img: imageSharp(id: { regex: "/who-is-cep1/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-
-    courseDescription3Img: imageSharp(id: { regex: "/who-is-cep2/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
 
     allContentfulWhoIsCep {
       edges {
