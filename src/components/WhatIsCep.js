@@ -1,5 +1,4 @@
 import React from "react";
-import Img from "gatsby-image";
 import Link from "gatsby-link";
 import styled from "styled-components";
 import styles from "../css/whatiscep.module.css";
@@ -144,24 +143,6 @@ const ContentText = styled.div`
 
 const LinkStyler = styled.span`
   color: #8BC34A;
-`
-
-const ImgStyler = styled.img`
-  position: relative;
-
-  @media (min-width: 1430px) {
-    height: 50px;
-    width: 50p;
-  }
-  @media (max-width: 1430px) {
-    height: 50px;
-    width: 50p;
-  }
-  @media (max-width: 991px) {
-    height: 50px;
-    width: 50p;
-  }
-
 `
 
 export default class Top extends React.Component {
