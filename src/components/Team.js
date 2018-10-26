@@ -258,7 +258,7 @@ export default class Team extends React.Component {
           </Row>
           <Row>
             <Col md="12">
-              <ContentText>
+              <ContentText className={styles.volContent}>
                 {this.props.volunteerTeachers}
               </ContentText>
             </Col>
