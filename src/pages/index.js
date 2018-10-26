@@ -67,11 +67,8 @@ export default class FrontPage extends Component {
        */}
 
           <WhatIsCep
-            whatIsCepImg1={data.whatIsCepImg1}
             paragraphContent1={paragraphContent1}
-            whatIsCepImg2={data.whatIsCepImg2}
             paragraphContent2={paragraphContent2}
-            whatIsCepImg3={data.whatIsCepImg3}
             paragraphContent3={paragraphContent3}
           />
  
@@ -100,11 +97,6 @@ export default class FrontPage extends Component {
 export const homePageQuery = graphql`
   query HomePage {
 
-    whatIsCepImg1: imageSharp(id: { regex: "/WhatIsCep1/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
     allContentfulWhatIsCepParagraphOneTextNode {
       edges {
         node {
@@ -120,11 +112,6 @@ export const homePageQuery = graphql`
       }
     }
 
-    whatIsCepImg2: imageSharp(id: { regex: "/WhatIsCep2/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
     allContentfulWhatIsCepParagraphTwoTextNode {
       edges {
         node {
@@ -140,11 +127,6 @@ export const homePageQuery = graphql`
       }
     }
 
-    whatIsCepImg3: imageSharp(id: { regex: "/WhatIsCep3/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
     allContentfulWhatIsCepParagraphThreeTextNode {
       edges {
         node {
