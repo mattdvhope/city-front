@@ -58,9 +58,7 @@ export default class FrontPage extends Component {
       return (
         <div>
 
-          <Top
-            topImage={data.topImage}
-          />
+          <Top />
 
           <TrainingSessions />
 
@@ -101,11 +99,6 @@ export default class FrontPage extends Component {
 
 export const homePageQuery = graphql`
   query HomePage {
-    topImage: imageSharp(id: { regex: "/Top-front/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
 
     whatIsCepImg1: imageSharp(id: { regex: "/WhatIsCep1/" }) {
       sizes(maxWidth: 1240 ) {
