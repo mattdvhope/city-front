@@ -5,7 +5,6 @@ import WhatIsCep from '../components/WhatIsCep'
 import Team from '../components/Team'
 import TrainingSessions from '../components/TrainingSessions'
 import Icons from '../components/Icons'
-import Member from '../components/Member'
 
 export default class FrontPage extends Component {
   constructor(props) {
