@@ -8,9 +8,6 @@ import styles from "../css/footer.module.css";
 
 import ModalDirections from "./ModalDirections"
 
-import cityScape from '../img/City-scape.jpg'
-import cityScapeMedium from '../img/City-scape-medium.jpg'
-import cityScapeSmaller from '../img/City-scape-smaller.jpg'
 import CEPLogo from '../img/CEP-logo.jpg'
 
 const FooterContainer = styled.div`
@@ -67,11 +64,11 @@ const CenterAddress = styled.a`
 
 function imageAccordingToWindowWidth(width) {
   if (width > 1070) {
-    return cityScape;
+    return "https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/City_scape.jpg";
   } else if (width > 767 && width < 1070) {
-    return cityScapeMedium;
+    return "https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/City+scape+medium.jpg";
   } else {
-    return cityScapeSmaller;
+    return "https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/City+scape+smaller.jpg";
   }
 }
 
