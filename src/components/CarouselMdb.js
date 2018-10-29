@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Img from "gatsby-image";
 
 export default class CarouselMdb extends Component {
   constructor(props, context) {
