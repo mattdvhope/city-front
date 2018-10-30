@@ -61,7 +61,7 @@ console.log(data.allContentfulWhoIsCep.edges)
 
       const language = this.state.window.localStorage.language;
       if (language === "thai") {
-        textItems = ['ไครเป็นโครงการซิตี้ อิงลิช?'];
+        textItems = ['โครงการซิตี้ อิงลิช คืออะไร?'];
         explanationOne = node.explanationOneThai.explanationOneThai;
         explanationTwo = node.explanationTwoThai.explanationTwoThai;
         explanationThree = node.explanationThreeThai.explanationThreeThai;
