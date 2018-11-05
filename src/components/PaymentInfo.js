@@ -41,7 +41,7 @@ export default class PaymentInfo extends Component {
                      '(หากคุณไม่เห็นอีเมล กรุณาตรวจดูในกล่องรับอีเมล "Junk" หรือ "Trash" ของคุณ หากคุณไม่ได้รับอีเมล กรุณาแจ้งให้เราทราบที่ "info@cityenglishproject.com".) '];
       } else {
         textItems = ['CEP bank transfer information',
-                     '(Please bring bank tranfer slip to class as proof of payment, or you can pay on the first day.)',
+                     '(Please bring bank transfer slip to class as proof of payment, or you can pay on the first day.)',
                      '999 baht (includes cost of book)',
                      'Bank: Siam Commercial Bank',
                      'Contact Person: "Mrs. Erin Alayne Malone"',
