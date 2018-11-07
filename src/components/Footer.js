@@ -155,7 +155,7 @@ export default class Footer extends Component {
                 <ContactInfoColumn>
                   <br />
                   <ContactInfoTitles>{footerItems[1]}</ContactInfoTitles>
-                  <div>086-696-7821</div>
+                  <div>096-732-2317</div>
                   <br/>
 
                   <ModalDirections />
