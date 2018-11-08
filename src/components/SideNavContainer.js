@@ -61,7 +61,9 @@ export default class SideNavContainer extends React.Component {
                   "โลกทัศน์คริสเตียน",
                   "คำถามที่พบบ่อย และข้อมูลอื่นๆ",
                   "คำถามที่พบบ่อย",
-                  "ไครเป็นโครงการซิตี้ อิงลิช?"]
+                  "ไครเป็นโครงการซิตี้ อิงลิช?",
+                  "วิดีโอ",
+                  "การฝึกภาษาอังกฤษ"]
     } else {
       navItems = ["Choose a language",
                   "Seminar Description",
@@ -69,7 +71,9 @@ export default class SideNavContainer extends React.Component {
                   "Christian Worldview",
                   "FAQs, etc",
                   "Frequently Asked Questions",
-                  "Who is the City English Project?"];
+                  "Who is the City English Project?",
+                  "Videos",
+                  "English Practice"];
     }
 
     return (
@@ -130,6 +134,9 @@ export default class SideNavContainer extends React.Component {
             <SideNavCat id="submit-blog-cat" name={navItems[4]} icon="chevron-right" >
               <SideNavLink to="/faq" onClick={this.removeSideNav}>{navItems[5]}</SideNavLink>
               <SideNavLink to="/who-is-cep" onClick={this.removeSideNav}>{navItems[6]}</SideNavLink>
+            </SideNavCat>
+            <SideNavCat id="submit-blog-cat" name={navItems[7]} icon="chevron-right" >
+              <SideNavLink to="/english-practice" onClick={this.removeSideNav}>{navItems[8]}</SideNavLink>
             </SideNavCat>
           </SideNavNav>
         </SideNav>
