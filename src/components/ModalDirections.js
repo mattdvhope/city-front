@@ -58,7 +58,7 @@ export default class ModalDirections extends React.Component {
       let addressItems;
       const language = this.state.window.localStorage.language;
       if (language === "thai") {
-        addressItems = ["ที่อยู",
+        addressItems = ["ที่อยู่",
                         "(คลิกเพื่อดูเส้นทาง)",
                         "66 ถนน ปั้น",
                         "แขวงสีลม เขตบางรัก",
