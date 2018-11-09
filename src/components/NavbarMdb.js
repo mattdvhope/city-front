@@ -129,7 +129,7 @@ export default class NavbarMdb extends React.Component {
             <Navbar expand="md" dark fixed="top" style={{ backgroundColor: `#EFEFEF` }}>
 
               <NavbarNav left>
-                <SideNavPage handleChangeToThai={this.props.handleChangeToThai} handleChangeToEnglish={this.props.handleChangeToEnglish} />
+                <SideNavPage handleChangeToThai={this.props.handleChangeToThai} handleChangeToEnglish={this.props.handleChangeToEnglish} lineIcon={this.props.lineIcon} />
               </NavbarNav>
 
               <NavbarNav right>

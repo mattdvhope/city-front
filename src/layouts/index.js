@@ -70,6 +70,7 @@ export default class Layout extends Component {
         <NavbarMdb
           handleChangeToThai={e => this.handleChangeToThai(e)}
           handleChangeToEnglish={e => this.handleChangeToEnglish(e)}
+          lineIcon={data.lineIcon}
         />
 
         {this.props.children()}
@@ -91,6 +92,12 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+
+    lineIcon: imageSharp(id: { regex: "/LINE-logo/" }) {
+      sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes
       }
     }
 

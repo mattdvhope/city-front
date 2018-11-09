@@ -1,7 +1,9 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import Img from "gatsby-image";
 import styles from "../css/sideNavPage.module.css";
 import styled from "styled-components";
+import LineLogo from '../img/LINE-logo.png'
 
 const ChooseStyler = styled.div`
   margin-top: 10px;
@@ -78,6 +80,8 @@ export default class SideNavContainer extends React.Component {
                   "Register"];
     }
 
+console.log(this.props);
+
     return (
       <Container>
 
@@ -147,6 +151,18 @@ export default class SideNavContainer extends React.Component {
             <ul className="social" style={{borderColor: `rgba(0, 0, 0, .12)`, borderTopStyle: `solid`, borderWidth: `thin`}}>
               <li><a href="https://www.facebook.com/City-English-Project-1745393602361714/?notif_t=page_fan&notif_id=1462353525485104" target="_blank"><Fa icon="facebook"></Fa></a></li>
               <li><a href="https://www.instagram.com/cityenglishproject/?hl=en" target="_blank"><Fa icon="instagram"></Fa></a></li>
+            </ul>
+          </li>
+          <li>
+            <ul className="social">
+              <Link to="/">
+                <Img
+                  sizes={this.props.lineIcon.sizes}
+                  className={styles.CEPLogoImg}
+                  alt="LINE logo"
+                />
+              </Link>
+
             </ul>
           </li>
         </SideNav>

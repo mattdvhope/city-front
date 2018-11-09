@@ -31,6 +31,7 @@ export default class SideNavPage extends React.Component {
           mdbreact={this.state.mdbreact}
           handleChangeToThai={this.props.handleChangeToThai}
           handleChangeToEnglish={this.props.handleChangeToEnglish}
+          lineIcon={this.props.lineIcon}
         />
       );
 
