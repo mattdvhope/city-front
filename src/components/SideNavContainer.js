@@ -63,7 +63,8 @@ export default class SideNavContainer extends React.Component {
                   "คำถามที่พบบ่อย",
                   "ไครเป็นโครงการซิตี้ อิงลิช?",
                   "วิดีโอ",
-                  "การฝึกภาษาอังกฤษ"]
+                  "การฝึกภาษาอังกฤษ",
+                  "สมัครเรียน"]
     } else {
       navItems = ["Choose a language",
                   "Seminar Description",
@@ -73,7 +74,8 @@ export default class SideNavContainer extends React.Component {
                   "Frequently Asked Questions",
                   "Who is the City English Project?",
                   "Videos",
-                  "English Practice"];
+                  "English Practice",
+                  "Register"];
     }
 
     return (
@@ -104,7 +106,6 @@ export default class SideNavContainer extends React.Component {
               </Link>
             </div>
           </li>
-
           <li>
             <ChooseStyler className="text-center">{navItems[0]}</ChooseStyler>
             <ul className="social">
@@ -130,15 +131,24 @@ export default class SideNavContainer extends React.Component {
             <SideNavCat id="submit-blog-cat" name={navItems[1]} icon="chevron-right" >
               <SideNavLink to="/course-description" onClick={this.removeSideNav}>{navItems[2]}</SideNavLink>
               <SideNavLink to="/christian-worldview" onClick={this.removeSideNav}>{navItems[3]}</SideNavLink>
+              <SideNavLink to="/register" onClick={this.removeSideNav}>{navItems[9]}</SideNavLink>
             </SideNavCat>
             <SideNavCat id="submit-blog-cat" name={navItems[4]} icon="chevron-right" >
               <SideNavLink to="/faq" onClick={this.removeSideNav}>{navItems[5]}</SideNavLink>
               <SideNavLink to="/who-is-cep" onClick={this.removeSideNav}>{navItems[6]}</SideNavLink>
+              <SideNavLink to="/register" onClick={this.removeSideNav}>{navItems[9]}</SideNavLink>
             </SideNavCat>
             <SideNavCat id="submit-blog-cat" name={navItems[7]} icon="chevron-right" >
               <SideNavLink to="/english-practice" onClick={this.removeSideNav}>{navItems[8]}</SideNavLink>
+              <SideNavLink to="/register" onClick={this.removeSideNav}>{navItems[9]}</SideNavLink>
             </SideNavCat>
           </SideNavNav>
+          <li>
+            <ul className="social" style={{borderColor: `rgba(0, 0, 0, .12)`, borderTopStyle: `solid`, borderWidth: `thin`}}>
+              <li><a href="https://www.facebook.com/City-English-Project-1745393602361714/?notif_t=page_fan&notif_id=1462353525485104" target="_blank"><Fa icon="facebook"></Fa></a></li>
+              <li><a href="https://www.instagram.com/cityenglishproject/?hl=en" target="_blank"><Fa icon="instagram"></Fa></a></li>
+            </ul>
+          </li>
         </SideNav>
       </Container>
     );

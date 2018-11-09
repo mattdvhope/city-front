@@ -1,6 +1,6 @@
 import React from "react";
+import Link from 'gatsby-link'
 import styled from "styled-components";
-import styles from "../css/top.module.css";
 
 const EPContainer = styled.div`
   color: #555;
@@ -188,6 +188,20 @@ const TextContainer = styled.div`
   }
 `
 
+const RegisterStyler = styled.div`
+  color: #8BC34A;
+
+  @media (min-width: 767px) {
+    font-size: 200%;
+  }
+  @media (max-width: 767px) {
+    font-size: 170%;
+  }
+  @media (max-width: 350px) {
+    font-size: 150%;
+  }
+`
+
 export default class EnglishPractice extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -206,11 +220,13 @@ export default class EnglishPractice extends React.Component {
       if (this.state.window.localStorage.language === "thai") {
         textItems = ["การฝึกภาษาอังกฤษ",
                      "วีดีโอนี้สอนวิธีการถามในภาษาอังกฤษว่า 'คุณมาจากไหน?'",
-                     "วิดีโอที่สองวิดีโอที่สองวิดีโอที่สองวิดีโอที่สองวิดีโอที่สองวิดีโอที่สองวิดีโอที่สองวิดีโอที่สองวิดีโอที่สอง"];
+                     "วิดีโอที่สองวิดีโอที่สองวิดีโอที่สองวิดีโอที่สองวิดีโอที่สองวิดีโอที่สองวิดีโอที่สองวิดีโอที่สองวิดีโอที่สอง",
+                     "ลงทะเบียนสำหรับการสัมมนา"];
       } else {
         textItems = ["English Practice",
                      "Here is a video that teaches you how to say 'Where are you from?' in English.",
-                     "2nd Video 2nd Video 2nd Video 2nd Video 2nd Video 2nd Video 2nd Video 2nd Video 2nd Video"];
+                     "2nd Video 2nd Video 2nd Video 2nd Video 2nd Video 2nd Video 2nd Video 2nd Video 2nd Video",
+                     "Register for a Seminar"];
       }
 
       return (
@@ -232,20 +248,23 @@ export default class EnglishPractice extends React.Component {
             </div>
           </div>
           <br/>
+          <Link className="text-center" to="register"><RegisterStyler>{textItems[3]}</RegisterStyler></Link>
           <hr/>
 
       {/* 
           <div className="row">
             <div className="col-md-8">
-              <VideoContainer className="wistia_embed wistia_async_aohl3i2jj7" >&nbsp;</VideoContainer>
+              <VideoContainer className="wistia_embed wistia_async_ty23os5uue" >&nbsp;</VideoContainer>
             </div>
             <div className="col-md-4">
               <TextContainer className="text-center">{textItems[2]}</TextContainer>
             </div>
           </div>
           <br/>
+          <Link className="text-center" to="register"><RegisterStyler>{textItems[3]}</RegisterStyler></Link>
           <hr/>
        */}
+
 
         </EPContainer>
       );
