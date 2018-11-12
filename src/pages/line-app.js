@@ -62,8 +62,6 @@ export default class LineApp extends React.Component {
                      '@cityenglishproject'];
       }
 
-console.log(this.props.data.lineIcon);
-
       return (
         <Container>
           <br/>
