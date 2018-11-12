@@ -152,7 +152,7 @@ export default class SideNavContainer extends React.Component {
           </li>
           <li>
             <ul className="social">
-              <Link to="/" onClick={this.removeSideNav}>
+              <Link to="/line-app" onClick={this.removeSideNav}>
                 <Img
                   sizes={this.props.lineIcon.sizes}
                   className={styles.lineIconImg}
