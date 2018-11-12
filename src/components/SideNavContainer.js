@@ -145,12 +145,6 @@ export default class SideNavContainer extends React.Component {
           </SideNavNav>
           <li>
             <ul className="social" style={{borderColor: `rgba(0, 0, 0, .12)`, borderTopStyle: `solid`, borderWidth: `thin`}}>
-              <li><a href="https://www.facebook.com/City-English-Project-1745393602361714/?notif_t=page_fan&notif_id=1462353525485104" target="_blank"><Fa icon="facebook"></Fa></a></li>
-              <li><a href="https://www.instagram.com/cityenglishproject/?hl=en" target="_blank"><Fa icon="instagram"></Fa></a></li>
-            </ul>
-          </li>
-          <li>
-            <ul className="social">
               <Link to="/line-app" onClick={this.removeSideNav}>
                 <Img
                   sizes={this.props.lineIcon.sizes}
@@ -159,6 +153,12 @@ export default class SideNavContainer extends React.Component {
                 />
               </Link>
 
+            </ul>
+          </li>
+          <li>
+            <ul className="social">
+              <li><a href="https://www.facebook.com/City-English-Project-1745393602361714/?notif_t=page_fan&notif_id=1462353525485104" target="_blank"><Fa icon="facebook"></Fa></a></li>
+              <li><a href="https://www.instagram.com/cityenglishproject/?hl=en" target="_blank"><Fa icon="instagram"></Fa></a></li>
             </ul>
           </li>
         </SideNav>
