@@ -155,7 +155,7 @@ export default class SideNavContainer extends React.Component {
               <Link to="/" onClick={this.removeSideNav}>
                 <Img
                   sizes={this.props.lineIcon.sizes}
-                  className={styles.CEPLogoImg}
+                  className={styles.lineIconImg}
                   alt="LINE logo"
                 />
               </Link>
