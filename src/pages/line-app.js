@@ -17,11 +17,11 @@ const LineAppText = styled.div`
     margin-bottom: 30px;
   }
   @media (max-width: 767px) {
-    font-size: 180%;
+    font-size: 150%;
     margin-bottom: 20px;
   }
   @media (max-width: 360px) {
-    font-size: 150%;
+    font-size: 130%;
     margin-bottom: 20px;
   }
 `
@@ -68,7 +68,6 @@ console.log(this.props.data.lineIcon);
 
       return (
         <Container>
-          <br/>
           <br/>
           <br/>
           <Row>
