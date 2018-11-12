@@ -53,15 +53,13 @@ export default class LineApp extends React.Component {
 
       const language = this.state.window.localStorage.language;
       if (language === "thai") {
-        textItems = ['กรุณาติดต่อกับเราผ่านทางไลน์...',
-                     '@cityenglishproject',
-                     '...เพียงคัดลอก วางแล้วค้นหาได้เลย...',
-                     '...หรือง่ายๆเพียงสแกนคิวอาร์โค้ดนี้...'];
+        textItems = ['กรุณาติดต่อกับเราผ่านทางไลน์โดยการสแกนคิวอาร์โค้ด...',
+                     '...หรือคัดลอก วาง แล้วค้นหาได้เลย...',
+                     '@cityenglishproject'];
       } else {
-        textItems = ['Please contact us on LINE by copying and pasting this address...',
-                     '@cityenglishproject',
-                     '...in your LINE app...',
-                     '...or please scan this QR code...'];
+        textItems = ['Please contact us on LINE by scanning this QR code...',
+                     '...or by copying and pasting this address...',
+                     '@cityenglishproject'];
       }
 
 console.log(this.props.data.lineIcon);
@@ -84,9 +82,6 @@ console.log(this.props.data.lineIcon);
             <Col md="12">
               <br/>
               <LineAppText className="text-center">{textItems[0]}</LineAppText>
-              <LineAppText className="text-center" style={{ color: `#8BC34A`}}>{textItems[1]}</LineAppText>
-              <LineAppText className="text-center">{textItems[2]}</LineAppText>
-              <LineAppText className="text-center">{textItems[3]}</LineAppText>
             </Col>
           </Row>
 
@@ -97,6 +92,14 @@ console.log(this.props.data.lineIcon);
                 className={styles.lineQrImg}
                 alt="LINE logo"
               />
+            </Col>
+          </Row>
+
+          <Row>
+            <Col md="12">
+              <LineAppText className="text-center">{textItems[1]}</LineAppText>
+              <LineAppText className="text-center" style={{ color: `#8BC34A`}}>{textItems[2]}</LineAppText>
+              <br/>
             </Col>
           </Row>
 
