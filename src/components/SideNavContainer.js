@@ -79,9 +79,6 @@ export default class SideNavContainer extends React.Component {
                   "English Practice",
                   "Register"];
     }
-
-console.log(this.props);
-
     return (
       <Container>
 
@@ -155,7 +152,7 @@ console.log(this.props);
           </li>
           <li>
             <ul className="social">
-              <Link to="/">
+              <Link to="/" onClick={this.removeSideNav}>
                 <Img
                   sizes={this.props.lineIcon.sizes}
                   className={styles.CEPLogoImg}
