@@ -220,12 +220,12 @@ export default class EnglishPractice extends React.Component {
       if (this.state.window.localStorage.language === "thai") {
         textItems = ["การฝึกภาษาอังกฤษ",
                      "วีดีโอนี้สอนวิธีการถามในภาษาอังกฤษว่า 'คุณมาจากไหน?'",
-                     "วิดีโอที่สองวิดีโอที่สองวิดีโอที่สองวิดีโอที่สองวิดีโอที่สองวิดีโอที่สองวิดีโอที่สองวิดีโอที่สองวิดีโอที่สอง",
+                     "วิดีโอนี้เกี่ยวกับสำนวน 'Miss the boat'",
                      "ลงทะเบียนสำหรับการสัมมนา"];
       } else {
         textItems = ["English Practice",
                      "Here is a video that teaches you how to say 'Where are you from?' in English.",
-                     "2nd Video 2nd Video 2nd Video 2nd Video 2nd Video 2nd Video 2nd Video 2nd Video 2nd Video",
+                     "This video is about the idiom, 'Miss the boat.'",
                      "Register for a Seminar"];
       }
 
@@ -250,6 +250,19 @@ export default class EnglishPractice extends React.Component {
           <br/>
           <Link className="text-center" to="register"><RegisterStyler>{textItems[3]}</RegisterStyler></Link>
           <hr/>
+
+          <div className="row">
+            <div className="col-md-8">
+              <VideoContainer className="wistia_embed wistia_async_5w6pwfkeda" >&nbsp;</VideoContainer>
+            </div>
+            <div className="col-md-4">
+              <TextContainer className="text-center">{textItems[2]}</TextContainer>
+            </div>
+          </div>
+          <br/>
+          <Link className="text-center" to="register"><RegisterStyler>{textItems[3]}</RegisterStyler></Link>
+          <hr/>
+
 
       {/* 
           <div className="row">

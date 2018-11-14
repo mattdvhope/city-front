@@ -56,9 +56,12 @@ export default class Layout extends Component {
           <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/278cd7f5-226e-4ad9-83fb-59e4a7eb4131.css"/>
          */}
 
+          {/* Promo video on front-top page */}
           <script src="https://mattagape.wistia.com/medias/98jbnzwejf" async></script>
 
+          {/* English Practice videos... */}
           <script src="https://mattagape.wistia.com/medias/ty23os5uue" async></script>
+          <script src="https://mattagape.wistia.com/medias/5w6pwfkeda" async></script>
 
           <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 
