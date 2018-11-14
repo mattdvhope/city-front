@@ -220,8 +220,8 @@ export default class EnglishPractice extends React.Component {
       if (this.state.window.localStorage.language === "thai") {
         textItems = ["การฝึกภาษาอังกฤษ",
                      "วีดีโอนี้สอนวิธีการถามในภาษาอังกฤษว่า 'คุณมาจากไหน?'",
-                     "วิดีโอนี้เกี่ยวกับสำนวน 'Miss the boat'",
-                     "ลงทะเบียนสำหรับการสัมมนา"];
+                     "วิดีโอนี้พูดถึงเรื่องของสำนวนในภาษาอังกฤษ 'Miss the boat'",
+                     "ลงทะเบียนเพื่อรับการอบรม"];
       } else {
         textItems = ["English Practice",
                      "Here is a video that teaches you how to say 'Where are you from?' in English.",
