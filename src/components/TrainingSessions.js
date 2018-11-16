@@ -154,7 +154,9 @@ export default class Top extends React.Component {
   filterSortClassTimes(class_times) {
     var class_times_part_1 = [];
     class_times.forEach(function(class_time) {
-      class_time.part === "one" ? class_times_part_1.push(class_time) : null;
+      if (class_time.part === "one" && class_time.completed === false) {
+        class_times_part_1.push(class_time)
+      }
     });
 
     return class_times_part_1.sort(function(a, b) {
