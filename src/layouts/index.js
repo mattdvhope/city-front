@@ -60,8 +60,9 @@ export default class Layout extends Component {
           <script src="https://mattagape.wistia.com/medias/98jbnzwejf" async></script>
 
           {/* English Practice videos... */}
-          <script src="https://mattagape.wistia.com/medias/ty23os5uue" async></script>
+          <script src="https://mattagape.wistia.com/medias/qwsjobwwcz" async></script>
           <script src="https://mattagape.wistia.com/medias/5w6pwfkeda" async></script>
+          <script src="https://mattagape.wistia.com/medias/ty23os5uue" async></script>
 
           <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 

@@ -219,14 +219,16 @@ export default class EnglishPractice extends React.Component {
     if (this.state.window) {
       if (this.state.window.localStorage.language === "thai") {
         textItems = ["การฝึกภาษาอังกฤษ",
+                     "ลงทะเบียนเพื่อรับการอบรม",
                      "วีดีโอนี้สอนวิธีการถามในภาษาอังกฤษว่า 'คุณมาจากไหน?'",
                      "วิดีโอนี้พูดถึงเรื่องของสำนวนในภาษาอังกฤษ 'Miss the boat'",
-                     "ลงทะเบียนเพื่อรับการอบรม"];
+                     "วีดีโอนี้พูดถึงการบอกทาง"];
       } else {
         textItems = ["English Practice",
+                     "Register for a Seminar",
                      "Here is a video that teaches you how to say 'Where are you from?' in English.",
                      "This video is about the idiom, 'Miss the boat.'",
-                     "Register for a Seminar"];
+                     "This video is about giving directions"];
       }
 
       return (
@@ -241,14 +243,14 @@ export default class EnglishPractice extends React.Component {
 
           <div className="row">
             <div className="col-md-8">
-              <VideoContainer className="wistia_embed wistia_async_ty23os5uue" >&nbsp;</VideoContainer>
+              <VideoContainer className="wistia_embed wistia_async_qwsjobwwcz" >&nbsp;</VideoContainer>
             </div>
             <div className="col-md-4">
-              <TextContainer className="text-center">{textItems[1]}</TextContainer>
+              <TextContainer className="text-center">{textItems[3]}</TextContainer>
             </div>
           </div>
           <br/>
-          <Link className="text-center" to="register"><RegisterStyler>{textItems[3]}</RegisterStyler></Link>
+          <Link className="text-center" to="register"><RegisterStyler>{textItems[1]}</RegisterStyler></Link>
           <hr/>
 
           <div className="row">
@@ -256,11 +258,23 @@ export default class EnglishPractice extends React.Component {
               <VideoContainer className="wistia_embed wistia_async_5w6pwfkeda" >&nbsp;</VideoContainer>
             </div>
             <div className="col-md-4">
+              <TextContainer className="text-center">{textItems[3]}</TextContainer>
+            </div>
+          </div>
+          <br/>
+          <Link className="text-center" to="register"><RegisterStyler>{textItems[1]}</RegisterStyler></Link>
+          <hr/>
+
+          <div className="row">
+            <div className="col-md-8">
+              <VideoContainer className="wistia_embed wistia_async_ty23os5uue" >&nbsp;</VideoContainer>
+            </div>
+            <div className="col-md-4">
               <TextContainer className="text-center">{textItems[2]}</TextContainer>
             </div>
           </div>
           <br/>
-          <Link className="text-center" to="register"><RegisterStyler>{textItems[3]}</RegisterStyler></Link>
+          <Link className="text-center" to="register"><RegisterStyler>{textItems[1]}</RegisterStyler></Link>
           <hr/>
 
 
