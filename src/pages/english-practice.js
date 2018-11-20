@@ -246,7 +246,7 @@ export default class EnglishPractice extends React.Component {
               <VideoContainer className="wistia_embed wistia_async_qwsjobwwcz" >&nbsp;</VideoContainer>
             </div>
             <div className="col-md-4">
-              <TextContainer className="text-center">{textItems[3]}</TextContainer>
+              <TextContainer className="text-center">{textItems[4]}</TextContainer>
             </div>
           </div>
           <br/>
