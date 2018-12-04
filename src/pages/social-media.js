@@ -61,6 +61,7 @@ export default class SocialMedia extends React.Component {
               <TrainingContainer>
                 <p>{textItems[0]}</p>
                 <p>{textItems[1]}</p>
+                <p><a href="https://line.me/R/ti/p/%40cityenglishproject"><img height="36" border="0" alt="เพิ่มเพื่อน" src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png" /></a></p>
               </TrainingContainer>
             </Col>
           </Row>
