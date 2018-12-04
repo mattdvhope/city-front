@@ -81,6 +81,19 @@ export default class SideNavContainer extends React.Component {
                   "Register",
                   "https://scdn.line-apps.com/n/line_add_friends/btn/en.png"];
     }
+
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(this.props.window.navigator.userAgent);
+
+    var facebookLink;
+    var instagramLink;
+    if (isMobile) {
+      facebookLink = "fb://page/?id=1745393602361714";
+      instagramLink = "instagram://user?username=cityenglishproject&hl=en";
+    } else {
+      facebookLink = "https://www.facebook.com/pg/cityenglishproject/";
+      instagramLink = "https://www.instagram.com/cityenglishproject/?hl=en";
+    }
+
     return (
       <Container>
 
@@ -145,25 +158,6 @@ export default class SideNavContainer extends React.Component {
               <SideNavLink to="/english-practice" onClick={this.removeSideNav}>{navItems[8]}</SideNavLink>
             </SideNavCat>
           </SideNavNav>
-          {/* 
-          <li>
-            <ul className="social" style={{borderColor: `rgba(0, 0, 0, .12)`, borderTopStyle: `solid`, borderWidth: `thin`}}>
-              <Link to="/line-app" onClick={this.removeSideNav}>
-                <Img
-                  sizes={this.props.lineIcon.sizes}
-                  className={styles.lineIconImg}
-                  alt="LINE logo"
-                />
-              </Link>
-            </ul>
-          </li>
-
-          <li>
-            <ul className="social" style={{borderColor: `rgba(0, 0, 0, .12)`, borderTopStyle: `solid`, borderWidth: `thin`}}>
-            <a href="fb://page/?id=1745393602361714" class="small-screen">Facebook</a>
-            </ul>
-          </li>
-           */}
 
           <li>
             <ul className="social" style={{borderColor: `rgba(0, 0, 0, .12)`, borderTopStyle: `solid`, borderWidth: `thin`}}>
@@ -172,10 +166,11 @@ export default class SideNavContainer extends React.Component {
           </li>
           <li>
             <ul className="social">
-              <li><a href="fb://page/?id=1745393602361714"><Fa icon="facebook"></Fa></a></li>
-              <li><a href="instagram://user?username=cityenglishproject&hl=en"><Fa icon="instagram"></Fa></a></li>
+              <li><a href={facebookLink} target="_blank"><Fa icon="facebook"></Fa></a></li>
+              <li><a href={instagramLink} target="_blank"><Fa icon="instagram"></Fa></a></li>
             </ul>
           </li>
+
         </SideNav>
       </Container>
     );
