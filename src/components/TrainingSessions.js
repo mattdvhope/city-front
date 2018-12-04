@@ -93,13 +93,17 @@ const NoBulletsInList = styled.ul`
 
 const SpacedListItem = styled.li`
   margin-top: 20px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #8BC34A;
 
   @media (min-width: 1200px) {
     font-size: 330%;
+    margin-left: 1%;
   }
   @media (max-width: 1200px) {
     font-size: 300%;
+    margin-left: 1%;
   }
   @media (max-width: 1180px) {
     font-size: 290%;
@@ -121,9 +125,11 @@ const SpacedListItem = styled.li`
   }
   @media (max-width: 480px) {
     font-size: 120%;
+    margin-left: 2%;
   }
   @media (max-width: 430px) {
     font-size: 100%;
+    margin-left: 3%;
   }
   @media (max-width: 375px) {
     font-size: 90%;
@@ -149,6 +155,13 @@ export default class Top extends React.Component {
         this.setState({ class_times });
       });
     this.setState({ window: window });
+
+    try {
+      const mdbreact = require("mdbreact");
+      this.setState({ mdbreact: mdbreact });
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   filterSortClassTimes(class_times) {
@@ -172,12 +185,16 @@ export default class Top extends React.Component {
       if (language === "thai") {
         textItems = ['ตารางเวลาการจัดหลักสูตร',
                      'คลิกด้านล่างเพื่อเลือกหลักสูตร 5 วัน',
-                     '(หลักสูตร 5 วัน ราคา 999 บาท)'];
+                     '(หลักสูตร 5 วัน ราคา 999 บาท)',
+                     'สมัครเรียน'];
       } else {
         textItems = ['Schedule of seminars',
                      'click below to choose a 5-day seminar',
-                     '(a 5-day seminar costs 999 baht)'];
+                     '(a 5-day seminar costs 999 baht)',
+                     'Register'];
       }
+
+      const { MDBBtn } = this.state.mdbreact;
 
       return (
         <TrainingContainer className="container-fluid">
@@ -191,7 +208,11 @@ export default class Top extends React.Component {
                   this.state.class_times.map((e, key) => {
                     language === "thai" ? period = e.period_thai : period = e.period;
                     return  <SpacedListItem className="text-center" key={e.period} value={e.id} >
-                              <Link style={{color: `#8BC34A`}} to={`/app/register/${e.id}`}>{period}</Link>
+                              <Link style={{color: `#2D3179`, fontSize: `140%`}} to={`/app/register/${e.id}`}>
+                                {period}
+                                <br/>
+                                <MDBBtn color="indigo" style={{fontSize: `120%`}}>{textItems[3]}</MDBBtn>
+                              </Link>
                             </SpacedListItem>;
                   })
                 }
