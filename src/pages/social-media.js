@@ -45,10 +45,12 @@ export default class SocialMedia extends React.Component {
       const language = this.state.window.localStorage.language;
       if (language === "thai") {
         textItems = ['ขอขอบคุณที่ลงทะเบียนกับโครงการ City English Project!',
-                     'หากคุณต้องการติดต่อเราโปรดใช้ข้อมูลด้านล่างนี้'];
+                     'หากคุณต้องการติดต่อเราโปรดใช้ข้อมูลด้านล่างนี้',
+                     'https://scdn.line-apps.com/n/line_add_friends/btn/th.png'];
       } else {
         textItems = ['Thank you for registering with the City English Project!',
-                     'If you would like to contact us, please use the information below.'];
+                     'If you would like to contact us, please use the information below.',
+                     'https://scdn.line-apps.com/n/line_add_friends/btn/en.png'];
       }
 
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(this.state.window.navigator.userAgent);
@@ -79,7 +81,7 @@ export default class SocialMedia extends React.Component {
           </Row>
           <Row>
             <Col xs="6">
-              <p className="text-center" style={{padding: `10px`}}><a href="https://line.me/R/ti/p/%40cityenglishproject"><img height="36" border="0" alt="เพิ่มเพื่อน" src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png" /></a></p>
+              <p className="text-center" style={{padding: `10px`}}><a href="https://line.me/R/ti/p/%40cityenglishproject"><img height="36" border="0" alt="เพิ่มเพื่อน" src={textItems[2]} /></a></p>
             </Col>
             <Col xs="6">
               <p className="text-center" style={{padding: `10px`}}><a href={facebookLink}><img height="36" width="116" border="0" alt="เพิ่มเพื่อน" src="https://duckduckgo.com/i/8fef8f06.png" /></a></p>
