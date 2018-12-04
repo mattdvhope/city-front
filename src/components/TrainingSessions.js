@@ -208,10 +208,10 @@ export default class Top extends React.Component {
                   this.state.class_times.map((e, key) => {
                     language === "thai" ? period = e.period_thai : period = e.period;
                     return  <SpacedListItem className="text-center" key={e.period} value={e.id} >
-                              <Link style={{color: `#2D3179`, fontSize: `140%`}} to={`/app/register/${e.id}`}>
+                              <Link style={{color: `#2D3179`, fontSize: `130%`}} to={`/app/register/${e.id}`}>
                                 {period}
                                 <br/>
-                                <MDBBtn color="indigo" style={{fontSize: `120%`}}>{textItems[3]}</MDBBtn>
+                                <MDBBtn color="indigo" style={{fontSize: `115%`}}>{textItems[3]}</MDBBtn>
                               </Link>
                             </SpacedListItem>;
                   })
