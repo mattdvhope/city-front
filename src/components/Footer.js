@@ -130,6 +130,18 @@ export default class Footer extends Component {
         footerItems = ["Contact Us", "Telephone", "Address:", "66 Pan Road", "Silom, Bangrak", "Bangkok 10500", "(click to see directions)", "Email:"];
       }
 
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(this.state.window.navigator.userAgent);
+
+      var facebookLink;
+      var instagramLink;
+      if (isMobile) {
+        facebookLink = "fb://page/?id=1745393602361714";
+        instagramLink = "instagram://user?username=cityenglishproject&hl=en";
+      } else {
+        facebookLink = "https://www.facebook.com/pg/cityenglishproject/";
+        instagramLink = "https://www.instagram.com/cityenglishproject/?hl=en";
+      }
+
       return (
         <FooterContainer style={{backgroundImage: `url('${this.state.imageChosen}')`, backgroundSize: `cover`}}>
           <Grid fluid>
@@ -165,8 +177,8 @@ export default class Footer extends Component {
                   <div>info@cityenglishproject.com</div>
                   <br/>
                   <div>
-                    <a href="https://www.facebook.com/City-English-Project-1745393602361714/?notif_t=page_fan&notif_id=1462353525485104" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/Icon-Facebook.jpg" className={styles.socialMediaIcon} /></a>
-                    <a href="https://www.instagram.com/cityenglishproject/?hl=en" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/Icon-Instagram.jpg" className={styles.socialMediaIcon} /></a>
+                    <a href={facebookLink} target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/Icon-Facebook.jpg" className={styles.socialMediaIcon} /></a>
+                    <a href={instagramLink} target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/Icon-Instagram.jpg" className={styles.socialMediaIcon} /></a>
 
                 {/* 
                     <a href="https://www.youtube.com/channel/UCcqBmxAGOstDdFbRImmnVWg" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/ccmcoversbsc/Icon-Youtube.jpg" className={styles.socialMediaIcon} /></a>
