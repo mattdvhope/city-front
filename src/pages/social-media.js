@@ -97,7 +97,7 @@ export default class SocialMedia extends React.Component {
           </Row>
           <Row>
             <Col xs="12">
-              <p className="text-center"><Button><Link to="english-practice" style={{color: `white`}}>{textItems[3]}</Link></Button></p>
+              <p className="text-center"><Button><Link to="/english-practice" style={{color: `white`}}>{textItems[3]}</Link></Button></p>
             </Col>
           </Row>
         </Container>
