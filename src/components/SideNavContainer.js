@@ -66,7 +66,8 @@ export default class SideNavContainer extends React.Component {
                   "ไครเป็นโครงการซิตี้ อิงลิช?",
                   "วิดีโอ",
                   "การฝึกภาษาอังกฤษ",
-                  "สมัครเรียน"]
+                  "สมัครเรียน",
+                  "https://scdn.line-apps.com/n/line_add_friends/btn/th.png"]
     } else {
       navItems = ["Choose a language",
                   "Seminar Description",
@@ -77,7 +78,8 @@ export default class SideNavContainer extends React.Component {
                   "Who is the City English Project?",
                   "Videos",
                   "English Practice",
-                  "Register"];
+                  "Register",
+                  "https://scdn.line-apps.com/n/line_add_friends/btn/en.png"];
     }
     return (
       <Container>
@@ -143,6 +145,7 @@ export default class SideNavContainer extends React.Component {
               <SideNavLink to="/english-practice" onClick={this.removeSideNav}>{navItems[8]}</SideNavLink>
             </SideNavCat>
           </SideNavNav>
+          {/* 
           <li>
             <ul className="social" style={{borderColor: `rgba(0, 0, 0, .12)`, borderTopStyle: `solid`, borderWidth: `thin`}}>
               <Link to="/line-app" onClick={this.removeSideNav}>
@@ -152,7 +155,12 @@ export default class SideNavContainer extends React.Component {
                   alt="LINE logo"
                 />
               </Link>
-
+            </ul>
+          </li>
+           */}
+          <li>
+            <ul className="social" style={{borderColor: `rgba(0, 0, 0, .12)`, borderTopStyle: `solid`, borderWidth: `thin`}}>
+              <a href="https://line.me/R/ti/p/%40cityenglishproject" className="text-center"><img height="36" border="0" alt="เพิ่มเพื่อน" src={navItems[10]} /></a>
             </ul>
           </li>
           <li>
