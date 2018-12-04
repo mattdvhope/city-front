@@ -75,10 +75,9 @@ export default class SocialMedia extends React.Component {
           <br/>
           <Row>
             <Col md="12">
-              <TrainingContainer>
+              <TrainingContainer className="text-center">
                 <p>{textItems[0]}</p>
                 <p>{textItems[1]}</p>
-                <p></p>
               </TrainingContainer>
             </Col>
           </Row>
@@ -95,11 +94,14 @@ export default class SocialMedia extends React.Component {
               <p className="text-center"><a href={instagramLink}><img height="60" width="60" border="0" alt="เพิ่มเพื่อน" src="https://duckduckgo.com/i/180c8ad1.png" /></a></p>
             </Col>
           </Row>
+          <hr/>
+          <br/>
           <Row>
             <Col xs="12">
-              <p className="text-center"><Button><Link to="/english-practice" style={{color: `white`}}>{textItems[3]}</Link></Button></p>
+              <p className="text-center"><Button><Link to="/english-practice" style={{color: `white`, fontSize: `160%`}}>{textItems[3]}</Link></Button></p>
             </Col>
           </Row>
+          <hr/>
         </Container>
       );
     } else {
