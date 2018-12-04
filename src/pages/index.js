@@ -61,10 +61,6 @@ export default class FrontPage extends Component {
 
           <TrainingSessions />
 
-      {/* 
-          <Icons />
-       */}
-
           <WhatIsCep
             paragraphContent1={paragraphContent1}
             paragraphContent2={paragraphContent2}
