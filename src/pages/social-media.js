@@ -51,6 +51,18 @@ export default class SocialMedia extends React.Component {
                      'If you would like to contact us, please use the information below.'];
       }
 
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(this.state.window.navigator.userAgent);
+
+      var facebookLink;
+      var instagramLink;
+      if (isMobile) {
+        facebookLink = "fb://page/?id=1745393602361714";
+        instagramLink = "instagram://user?username=cityenglishproject&hl=en";
+      } else {
+        facebookLink = "https://www.facebook.com/pg/cityenglishproject/";
+        instagramLink = "https://www.instagram.com/cityenglishproject/?hl=en";
+      }
+
       return (
         <Container>
           <br/>
@@ -61,8 +73,21 @@ export default class SocialMedia extends React.Component {
               <TrainingContainer>
                 <p>{textItems[0]}</p>
                 <p>{textItems[1]}</p>
-                <p><a href="https://line.me/R/ti/p/%40cityenglishproject"><img height="36" border="0" alt="เพิ่มเพื่อน" src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png" /></a></p>
+                <p></p>
               </TrainingContainer>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs="6">
+              <p className="text-center" style={{padding: `10px`}}><a href="https://line.me/R/ti/p/%40cityenglishproject"><img height="36" border="0" alt="เพิ่มเพื่อน" src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png" /></a></p>
+            </Col>
+            <Col xs="6">
+              <p className="text-center" style={{padding: `10px`}}><a href={facebookLink}><img height="36" width="116" border="0" alt="เพิ่มเพื่อน" src="https://duckduckgo.com/i/8fef8f06.png" /></a></p>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs="12">
+              <p className="text-center"><a href={instagramLink}><img height="60" width="60" border="0" alt="เพิ่มเพื่อน" src="https://duckduckgo.com/i/180c8ad1.png" /></a></p>
             </Col>
           </Row>
         </Container>
