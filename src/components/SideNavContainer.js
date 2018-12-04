@@ -161,7 +161,7 @@ export default class SideNavContainer extends React.Component {
 
           <li>
             <ul className="social" style={{borderColor: `rgba(0, 0, 0, .12)`, borderTopStyle: `solid`, borderWidth: `thin`}}>
-              <a href="fb://page/cityenglishproject" class="small-screen">Facebook</a>
+            <a href="fb://cityenglishproject" class="small-screen">Facebook</a>
             </ul>
           </li>
 
