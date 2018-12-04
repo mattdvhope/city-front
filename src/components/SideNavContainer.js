@@ -157,13 +157,13 @@ export default class SideNavContainer extends React.Component {
               </Link>
             </ul>
           </li>
-           */}
 
           <li>
             <ul className="social" style={{borderColor: `rgba(0, 0, 0, .12)`, borderTopStyle: `solid`, borderWidth: `thin`}}>
             <a href="fb://page/?id=1745393602361714" class="small-screen">Facebook</a>
             </ul>
           </li>
+           */}
 
           <li>
             <ul className="social" style={{borderColor: `rgba(0, 0, 0, .12)`, borderTopStyle: `solid`, borderWidth: `thin`}}>
@@ -172,8 +172,8 @@ export default class SideNavContainer extends React.Component {
           </li>
           <li>
             <ul className="social">
-              <li><a href="https://www.facebook.com/City-English-Project-1745393602361714/?notif_t=page_fan&notif_id=1462353525485104" target="_blank"><Fa icon="facebook"></Fa></a></li>
-              <li><a href="https://www.instagram.com/cityenglishproject/?hl=en" target="_blank"><Fa icon="instagram"></Fa></a></li>
+              <li><a href="fb://page/?id=1745393602361714"><Fa icon="facebook"></Fa></a></li>
+              <li><a href="instagram://user?username=cityenglishproject&hl=en"><Fa icon="instagram"></Fa></a></li>
             </ul>
           </li>
         </SideNav>
