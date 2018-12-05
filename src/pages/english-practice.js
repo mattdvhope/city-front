@@ -222,13 +222,15 @@ export default class EnglishPractice extends React.Component {
                      "ลงทะเบียนเพื่อรับการอบรม",
                      "วีดีโอนี้สอนวิธีการถามในภาษาอังกฤษว่า 'คุณมาจากไหน?'",
                      "วิดีโอนี้พูดถึงเรื่องของสำนวนในภาษาอังกฤษ 'Miss the boat'",
-                     "วีดีโอนี้พูดถึงการบอกทาง"];
+                     "วีดีโอนี้พูดถึงการบอกทาง",
+                     "การสนทนาทางโทรศัพท์"];
       } else {
         textItems = ["English Practice",
                      "Register for a Seminar",
                      "Here is a video that teaches you how to say 'Where are you from?' in English.",
                      "This video is about the idiom, 'Miss the boat.'",
-                     "This video is about giving directions"];
+                     "This video is about giving directions",
+                     "Telephone conversation practice"];
       }
 
       return (
@@ -239,6 +241,18 @@ export default class EnglishPractice extends React.Component {
           <div className="row">
             <TitleCon>{textItems[0]}</TitleCon>
           </div>
+          <hr/>
+
+          <div className="row">
+            <div className="col-md-8">
+              <VideoContainer className="wistia_embed wistia_async_qdzcrt4u1f" >&nbsp;</VideoContainer>
+            </div>
+            <div className="col-md-4">
+              <TextContainer className="text-center">{textItems[5]}</TextContainer>
+            </div>
+          </div>
+          <br/>
+          <Link className="text-center" to="register"><RegisterStyler>{textItems[1]}</RegisterStyler></Link>
           <hr/>
 
           <div className="row">
