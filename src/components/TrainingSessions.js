@@ -16,34 +16,69 @@ const TitleText = styled.p`
   font-family: "Neue Frutiger W31 Modern Light", "Athiti";
 
   @media (min-width: 1180px) {
-    font-size: 470%;
-  }
-  @media (max-width: 1180px) {
-    font-size: 460%;
-  }
-  @media (max-width: 1100px) {
     font-size: 450%;
   }
-  @media (max-width: 990px) {
+  @media (max-width: 1180px) {
     font-size: 440%;
   }
+  @media (max-width: 1100px) {
+    font-size: 430%;
+  }
+  @media (max-width: 990px) {
+    font-size: 420%;
+  }
   @media (max-width: 767px) {
-    font-size: 400%;
+    font-size: 380%;
   }
   @media (max-width: 600px) {
-    font-size: 370%;
+    font-size: 350%;
   }
   @media (max-width: 480px) {
-    font-size: 320%;
+    font-size: 290%;
   }
   @media (max-width: 430px) {
-    font-size: 270%;
+    font-size: 230%;
   }
   @media (max-width: 375px) {
-    font-size: 220%;
+    font-size: 200%;
   }
   @media (max-width: 330px) {
-    font-size: 200%;
+    font-size: 180%;
+  }
+`
+
+const DescriptionText = styled.p`
+  font-family: "Neue Frutiger W31 Modern Light", "Athiti";
+
+  @media (min-width: 1180px) {
+    font-size: 250%;
+  }
+  @media (max-width: 1180px) {
+    font-size: 240%;
+  }
+  @media (max-width: 1100px) {
+    font-size: 230%;
+  }
+  @media (max-width: 990px) {
+    font-size: 220%;
+  }
+  @media (max-width: 767px) {
+    font-size: 180%;
+  }
+  @media (max-width: 600px) {
+    font-size: 150%;
+  }
+  @media (max-width: 480px) {
+    font-size: 100%;
+  }
+  @media (max-width: 430px) {
+    font-size: 90%;
+  }
+  @media (max-width: 375px) {
+    font-size: 88%;
+  }
+  @media (max-width: 330px) {
+    font-size: 85%;
   }
 `
 
@@ -183,12 +218,14 @@ export default class Top extends React.Component {
     if (this.state.window) {
       const language = this.state.window.localStorage.language;
       if (language === "thai") {
-        textItems = ['ตารางเวลาการจัดหลักสูตร',
+        textItems = ['พัฒนาภาษาอังกฤษของคุณ',
+                     'เราเข้าใจว่าคนไทยต้องการพัฒนาภาษาอังกฤษและพัฒนาทักษะความสามารถในการสื่อสารกับคนตะวันตก หลักสูตร 5 วัน ของโครงการซิตี้ อิงลิช ที่คนไทยสามารถกลายเป็นคนที่มีความมั่นใจในการพูดและการฟังภาษาอังกฤษของพวกเขา โดยผ่านทางการฝึกสนทนา, กิจกรรมที่สนุกสนาน และการเรียนรู้จากเกมส์',
                      'คลิกด้านล่างเพื่อเลือกหลักสูตร 5 วัน',
                      '(หลักสูตร 5 วัน ราคา 999 บาท)',
                      'สมัครเรียน'];
       } else {
-        textItems = ['Schedule of seminars',
+        textItems = ['Improve Your English',
+                     'We understand Thai people want to improve their English and develop their abilities to communicate with Western people. City English Project offers a 5 day training in which Thai people can become more confident in their English speaking and listening through practicing conversation, fun activities and learning games.',
                      'click below to choose a 5-day seminar',
                      '(a 5-day seminar costs 999 baht)',
                      'Register'];
@@ -199,8 +236,9 @@ export default class Top extends React.Component {
       return (
         <TrainingContainer className="container-fluid">
           <TitleText className="text-center">{textItems[0]}</TitleText>
-          <SubtitleText className="text-center">{textItems[1]}</SubtitleText>
-          <SubtitleTextTwo className="text-center">{textItems[2]}</SubtitleTextTwo>
+          <DescriptionText className="text-center">{textItems[1]}</DescriptionText>
+          <SubtitleText className="text-center">{textItems[2]}</SubtitleText>
+          <SubtitleTextTwo className="text-center">{textItems[3]}</SubtitleTextTwo>
           <div className="row">
             <div className="col">
               <NoBulletsInList>
@@ -211,7 +249,7 @@ export default class Top extends React.Component {
                               <Link style={{color: `#2D3179`, fontSize: `130%`}} to={`/app/register/${e.id}`}>
                                 {period}
                                 <br/>
-                                <MDBBtn color="indigo" style={{fontSize: `115%`}}>{textItems[3]}</MDBBtn>
+                                <MDBBtn color="indigo" style={{fontSize: `115%`}}>{textItems[4]}</MDBBtn>
                               </Link>
                             </SpacedListItem>;
                   })
