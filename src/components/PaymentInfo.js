@@ -34,7 +34,7 @@ export default class PaymentInfo extends Component {
       if (this.state.window.localStorage.language === "thai") {
         textItems = ["ข้อมูลสำหรับการโอนเงินโครงการซิตี้ อิงลิช",
                      "(กรุณานำสลิปหลักฐานการโอนเงินมาแสดงในชั้นเรียนครั้งแรกหรือชำระเงินในชั้นเรียนครั้งแรกก็ได้ค่ะ)",
-                     '999 บาท (รวมค่าหนังสือ)',
+                     '699 บาท (รวมค่าหนังสือ)',
                      "ธนาคาร: ธนาคารไทยพาณิชย์",
                      "บุคคลที่ติดต่อ: \"Mrs. Erin Alayne Malone\"",
                      "หมายเลขบัญชี: 227-210027-2",
@@ -42,7 +42,7 @@ export default class PaymentInfo extends Component {
       } else {
         textItems = ['CEP bank transfer information',
                      '(Please bring bank transfer slip to class as proof of payment, or you can pay on the first day.)',
-                     '999 baht (includes cost of book)',
+                     '699 baht (includes cost of book)',
                      'Bank: Siam Commercial Bank',
                      'Contact Person: "Mrs. Erin Alayne Malone"',
                      'Acct Number: 227-210027-2',
