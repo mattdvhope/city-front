@@ -221,13 +221,13 @@ export default class Top extends React.Component {
         textItems = ['พัฒนาภาษาอังกฤษของคุณ',
                      'เราเข้าใจว่าคนไทยต้องการพัฒนาภาษาอังกฤษและพัฒนาทักษะความสามารถในการสื่อสารกับคนตะวันตก หลักสูตร 5 วัน ของโครงการซิตี้ อิงลิช ที่คนไทยสามารถกลายเป็นคนที่มีความมั่นใจในการพูดและการฟังภาษาอังกฤษของพวกเขา โดยผ่านทางการฝึกสนทนา, กิจกรรมที่สนุกสนาน และการเรียนรู้จากเกมส์',
                      'คลิกด้านล่างเพื่อเลือกหลักสูตร 5 วัน',
-                     '(หลักสูตร 5 วัน ราคา 699 บาท)',
+                     '(หลักสูตร 5 วัน ราคา 699 บาท -- ราคาโปรโมชั่นพิเศษ - 599 บาท)',
                      'สมัครเรียน'];
       } else {
         textItems = ['Improve Your English',
                      'We understand Thai people want to improve their English and develop their abilities to communicate with Western people. City English Project offers a 5 day training in which Thai people can become more confident in their English speaking and listening through practicing conversation, fun activities and learning games.',
                      'click below to choose a 5-day seminar',
-                     '(a 5-day seminar costs 699 baht)',
+                     '(a 5-day seminar costs 699 baht -- Special promotion price - 599 baht)',
                      'Register'];
       }
 
