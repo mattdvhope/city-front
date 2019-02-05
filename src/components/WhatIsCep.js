@@ -201,11 +201,11 @@ export default class Top extends React.Component {
           <br/>
           <Row>
             <Col md="6">
-              <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/WhatIsCep1.jpg" alt=""/>
+              <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/WhatIsCep2.jpg" alt=""/>
             </Col>
             <Col md="6">
               <ContentText>
-                {this.props.paragraphContent1}
+                {this.props.paragraphContent2} <Link to="christian-worldview"><LinkStyler>{textItems[1]}</LinkStyler></Link>
               </ContentText>
             </Col>
           </Row>
@@ -213,11 +213,11 @@ export default class Top extends React.Component {
           <br/>
           <Row>
             <Col md="6">
-              <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/WhatIsCep2.jpg" alt=""/>
+              <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/WhatIsCep1.jpg" alt=""/>
             </Col>
             <Col md="6">
               <ContentText>
-                {this.props.paragraphContent2} <Link to="christian-worldview"><LinkStyler>{textItems[1]}</LinkStyler></Link>
+                {this.props.paragraphContent1}
               </ContentText>
             </Col>
           </Row>
