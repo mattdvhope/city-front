@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import Helmet from 'react-helmet'
 // import { navigateTo } from "gatsby-link"
 
@@ -50,6 +51,10 @@ export default class Layout extends Component {
 
     return (
       <FontStyler>
+        <OutboundLink href="https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/">
+          Visit the Google Analytics plugin page!
+        </OutboundLink>
+
         <Helmet title={data.site.siteMetadata.title} >
 
           {/* 
