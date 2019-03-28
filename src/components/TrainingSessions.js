@@ -200,14 +200,14 @@ export default class Top extends React.Component {
   }
 
   filterSortClassTimes(class_times) {
-    var class_times_part_1 = [];
+    var class_times_part = [];
     class_times.forEach(function(class_time) {
-      if (class_time.part === "one" && class_time.completed === false) {
-        class_times_part_1.push(class_time)
+      if ((class_time.part === "one" || "two") && class_time.completed === false) {
+        class_times_part.push(class_time)
       }
     });
 
-    return class_times_part_1.sort(function(a, b) {
+    return class_times_part.sort(function(a, b) {
       return a.order_no - b.order_no;
     });
   }
