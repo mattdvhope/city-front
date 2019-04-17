@@ -51,9 +51,7 @@ export default class Layout extends Component {
 
     return (
       <FontStyler>
-        <OutboundLink href="https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/">
-          Visit the Google Analytics plugin page!
-        </OutboundLink>
+        <OutboundLink href="https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/"></OutboundLink>
 
         <Helmet title={data.site.siteMetadata.title} >
 
