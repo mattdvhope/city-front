@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import FormMdb from "../components/FormMdb.js";
-import FormMdbTwo from "../components/FormMdbTwo.js";
 
 export default class Register extends React.Component {
   constructor(props, context) {
@@ -27,29 +26,15 @@ export default class Register extends React.Component {
     const id = this.state.id;
     const title = this.state.title
     const part = this.state.part
-
-    if (part === "one") {
-      return (
-        <div>
-          <br/>
-          <br/>
-          <FormMdb trainingPeriodId={id} title={title} part={part} />
-          <br/>
-          <br/>
-        </div>
-      )
-    } else {
-      return (
-        <div>
-          <br/>
-          <br/>
-          <FormMdbTwo trainingPeriodId={id} title={title} part={part} />
-          <br/>
-          <br/>
-        </div>
-      )
-    }
-
+    return (
+      <div>
+        <br/>
+        <br/>
+        <FormMdb trainingPeriodId={id} title={title} part={part} />
+        <br/>
+        <br/>
+      </div>
+    )
   }
 }
 

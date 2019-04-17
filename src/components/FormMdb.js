@@ -120,8 +120,6 @@ export default class FormsPage extends React.Component  {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log("in handleSubmit");
-
     const user = {
       guest: true,
       nickname: this.state.nickname,
@@ -186,7 +184,7 @@ export default class FormsPage extends React.Component  {
       return response.data.message;
     })
     .then(message => {
-      if (message === "Successful creation of new user!!") {
+      if (message === "Successful creation of new user!!" || "Successful update of existing user!!") {
         console.log("SUCCESS!!!");
         // this.props.toggle();
         navigateTo('/social-media');
