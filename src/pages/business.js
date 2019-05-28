@@ -89,7 +89,7 @@ export default class BusinessApplication extends React.Component {
         />
         <hr/>
         <TopSentences>
-          To request a course or for more information, call us at 096-732-2317 or 086-696-7821, send a message to our LINE ID (@cityenglishproject), or fill in your information in the form below for someone to respond to you.
+          To request a course or for more information, call us at 096-732-2317, send a message to our LINE ID (@cityenglishproject), or fill in your information in the form below for someone to respond to you.
         </TopSentences>
         <hr/>
 
