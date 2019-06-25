@@ -36,7 +36,7 @@ export default class PaymentInfo extends Component {
                      "(กรุณานำสลิปหลักฐานการโอนเงินมาแสดงในชั้นเรียนครั้งแรกหรือชำระเงินในชั้นเรียนครั้งแรกก็ได้ค่ะ)",
                      '699 บาท (รวมค่าหนังสือ) -- ราคาโปรโมชั่นพิเศษ - 599 บาท',
                      "ธนาคาร: ธนาคารไทยพาณิชย์",
-                     "บุคคลที่ติดต่อ: \"Mrs. Erin Alayne Malone\"",
+                     "บุคคลที่ติดต่อ: \"Mr. Matthew James Malone\"",
                      "หมายเลขบัญชี: 227-210027-2",
                      '(หากคุณไม่เห็นอีเมล กรุณาตรวจดูในกล่องรับอีเมล "Junk" หรือ "Trash" ของคุณ หากคุณไม่ได้รับอีเมล กรุณาแจ้งให้เราทราบที่ "info@cityenglishproject.com".) '];
       } else {
@@ -44,7 +44,7 @@ export default class PaymentInfo extends Component {
                      '(Please bring bank transfer slip to class as proof of payment, or you can pay on the first day.)',
                      '699 baht (includes cost of book) -- Special promotion price - 599 baht',
                      'Bank: Siam Commercial Bank',
-                     'Contact Person: "Mrs. Erin Alayne Malone"',
+                     'Contact Person: "Mr. Matthew James Malone"',
                      'Acct Number: 227-210027-2',
                      '(If you do not see an email, please look in your "Junk" or "Trash" mailbox. If you do not receive an email, please write to us at "info@cityenglishproject.com".) '];
       }
