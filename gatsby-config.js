@@ -10,16 +10,6 @@ module.exports = {
         accessToken: `6c53fde463ad5d48aab03eee27122a9110e69440b68ae704dd808d1286d8395f`
       }
     },
-
-    {
-      resolve: "gatsby-source-pg",
-      options: {
-        connectionString: "postgres://oiuvawkulajypl:g1Frr3PYNH7rVobbJeHLxu98ay@ec2-107-21-224-11.compute-1.amazonaws.com:5432/d7cpuitubs9jmd?ssl=1",
-        schema: "public",
-        refetchInterval: 60, // Refetch data every 60 seconds
-      },
-    },
-
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
