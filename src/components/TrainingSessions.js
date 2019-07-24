@@ -272,15 +272,13 @@ export default class Top extends React.Component {
           :
             <div className="row">
               <div className="col">
-
-            <NoBulletsInList>
-              <SpacedListItem className="text-center">
-                <div style={{fontSize: `120%`, marginBottom: `1%`, fontWeight: `bold`}}>{textItems[5]}</div>
-                <div style={{fontSize: `110%`, marginBottom: `2%`}}>{textItems[6]}</div>
-                <div style={{fontSize: `110%`, marginBottom: `2%`}}>{textItems[7]}</div>
-              </SpacedListItem>
-            </NoBulletsInList>
-
+                <NoBulletsInList>
+                  <SpacedListItem className="text-center">
+                    <div style={{fontSize: `120%`, marginBottom: `1%`, fontWeight: `bold`}}>{textItems[5]}</div>
+                    <div style={{fontSize: `110%`, marginBottom: `2%`}}>{textItems[6]}</div>
+                    <div style={{fontSize: `110%`, marginBottom: `2%`}}>{textItems[7]}</div>
+                  </SpacedListItem>
+                </NoBulletsInList>
               </div>
             </div>
 
