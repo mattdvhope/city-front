@@ -5,7 +5,7 @@ import ViewClassTimes from "../components/ViewClassTimes"
 import ClassesAtCenter from "../components/ClassesAtCenter"
 import OffSiteLocations from "../components/OffSiteLocations"
 import Register from "../components/Register"
-import Login from "../components/Login"
+// import Login from "../components/Login"
 import PrivateRoute from "../components/PrivateRoute"
 import Status from "../components/Status"
 
