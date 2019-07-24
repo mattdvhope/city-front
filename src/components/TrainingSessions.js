@@ -127,6 +127,7 @@ const NoBulletsInList = styled.ul`
 `
 
 const SpacedListItem = styled.li`
+  font-family: "Neue Frutiger W31 Modern Light", "Athiti";
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 20px;
@@ -187,9 +188,8 @@ export default class Top extends React.Component {
     axios.get(`${process.env.GATSBY_API_URL}/class_times.json`)
       .then((response) => {
         const class_times = this.filterSortClassTimes(response.data);
-        this.setState({ class_times });
+        this.setState({ class_times, window: window });
       });
-    this.setState({ window: window });
 
     try {
       const mdbreact = require("mdbreact");
@@ -216,19 +216,27 @@ export default class Top extends React.Component {
     let textItems = [];
     let period;
     if (this.state.window) {
+    console.log(this.state.class_times)
       const language = this.state.window.localStorage.language;
       if (language === "thai") {
         textItems = ['พัฒนาภาษาอังกฤษของคุณ',
                      'เราเข้าใจว่าคนไทยต้องการพัฒนาภาษาอังกฤษและพัฒนาทักษะความสามารถในการสื่อสารกับคนตะวันตก หลักสูตร 5 วัน ของโครงการซิตี้ อิงลิช ที่คนไทยสามารถกลายเป็นคนที่มีความมั่นใจในการพูดและการฟังภาษาอังกฤษของพวกเขา โดยผ่านทางการฝึกสนทนา, กิจกรรมที่สนุกสนาน และการเรียนรู้จากเกมส์',
                      'คลิกด้านล่างเพื่อเลือกหลักสูตร 5 วัน',
                      '(หลักสูตร 5 วัน ราคา 699 บาท -- ราคาโปรโมชั่นพิเศษ - 599 บาท)',
-                     'สมัครเรียน'];
+                     'สมัครเรียน',
+                     'ประกาศ',
+                     'ศูนย์ City English Project จะปิดทำการเรียนการสอนในระหว่างวันที่ 29 กรกฎาคม ถึง วันที่ 26 สิงหาคม 2019 โดยจะเปิดชั้นเรียนรอบถัดในวันที่ 27 สิงหาคม 2019',
+                     '*แต่ทางศูนย์จะเปิดให้นักเรียนและผู้ที่สนใจสามารถเข้ามาเล่นบอร์ดเกมส์ได้ ทุกคืนวันอังคารและวันพฤหัส เวลา 18:30-20:30 น. เริ่มตั้งแต่วันอังคารที่ 6 สิงหาคม ค่ะ เรายินดีต้อนรับทุกคนค่ะ'
+                     ];
       } else {
         textItems = ['Improve Your English',
                      'We understand Thai people want to improve their English and develop their abilities to communicate with Western people. City English Project offers a 5 day training in which Thai people can become more confident in their English speaking and listening through practicing conversation, fun activities and learning games.',
                      'click below to choose a 5-day seminar',
                      '(a 5-day seminar costs 699 baht -- Special promotion price - 599 baht)',
-                     'Register'];
+                     'Register',
+                     'Announcement',
+                     'The City English Project will close the term from 29 July to 23 August for classes. Our next City Talk classes will start again 27 August.',
+                     'However, even though we will not have classes, we will be open every Tuesday and Thursday night for conversation and games from 6:30 pm to 8:30 pm beginning 6 August. We would love for all of you to join us!'];
       }
 
       const { MDBBtn } = this.state.mdbreact;
@@ -237,26 +245,47 @@ export default class Top extends React.Component {
         <TrainingContainer className="container-fluid">
           <TitleText className="text-center">{textItems[0]}</TitleText>
           <DescriptionText className="text-center">{textItems[1]}</DescriptionText>
-          <SubtitleText className="text-center">{textItems[2]}</SubtitleText>
-          <SubtitleTextTwo className="text-center">{textItems[3]}</SubtitleTextTwo>
-          <div className="row">
-            <div className="col">
-              <NoBulletsInList>
-                {
-                  this.state.class_times.map((e, key) => {
-                    language === "thai" ? period = e.period_thai : period = e.period;
-                    return  <SpacedListItem className="text-center" key={e.period} value={e.id} >
-                              <Link style={{color: `#2D3179`, fontSize: `130%`}} to={`/app/register/${e.id}`}>
-                                {period}
-                                <br/>
-                                <MDBBtn color="indigo" style={{fontSize: `115%`}}>{textItems[4]}</MDBBtn>
-                              </Link>
-                            </SpacedListItem>;
-                  })
-                }
-              </NoBulletsInList>
+
+          {(this.state.class_times.length !== 0) ? 
+            <div>
+              <SubtitleText className="text-center">{textItems[2]}</SubtitleText>
+              <SubtitleTextTwo className="text-center">{textItems[3]}</SubtitleTextTwo>
+              <div className="row">
+                <div className="col">
+                    <NoBulletsInList>
+                      {
+                        this.state.class_times.map((e, key) => {
+                          language === "thai" ? period = e.period_thai : period = e.period;
+                          return  <SpacedListItem className="text-center" key={e.period} value={e.id} >
+                                    <Link style={{color: `#2D3179`, fontSize: `130%`}} to={`/app/register/${e.id}`}>
+                                      {period}
+                                      <br/>
+                                      <MDBBtn color="indigo" style={{fontSize: `115%`}}>{textItems[4]}</MDBBtn>
+                                    </Link>
+                                  </SpacedListItem>;
+                        })
+                      }
+                    </NoBulletsInList>
+                </div>
+              </div>
             </div>
-          </div>
+          :
+            <div className="row">
+              <div className="col">
+
+            <NoBulletsInList>
+              <SpacedListItem className="text-center">
+                <div style={{fontSize: `120%`, marginBottom: `1%`, fontWeight: `bold`}}>{textItems[5]}</div>
+                <div style={{fontSize: `110%`, marginBottom: `2%`}}>{textItems[6]}</div>
+                <div style={{fontSize: `110%`, marginBottom: `2%`}}>{textItems[7]}</div>
+              </SpacedListItem>
+            </NoBulletsInList>
+
+              </div>
+            </div>
+
+          }
+
         </TrainingContainer>
       );
     } else {
