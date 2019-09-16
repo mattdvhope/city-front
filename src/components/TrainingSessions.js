@@ -226,7 +226,7 @@ export default class Top extends React.Component {
                      'สมัครเรียน',
                      'ประกาศ',
                      'ศูนย์ City English Project จะปิดทำการเรียนการสอนในระหว่างวันที่ 16-27 กันยายน 2019 โดยจะเปิดชั้นเรียนรอบถัดในเดือนหน้า',
-                     '*แต่ทางศูนย์จะเปิดให้นักเรียนและผู้ที่สนใจสามารถเข้ามาเล่นบอร์ดเกมส์ได้ ทุกคืนวันอังคารและวันพฤหัส เวลา 18:30-20:30 น. เริ่มตั้งแต่วันอังคารที่ 19 กันยายน (วันพฤหัสบดี) ค่ะ เรายินดีต้อนรับทุกคนค่ะ'
+                     '*แต่ทางศูนย์จะเปิดให้นักเรียนและผู้ที่สนใจสามารถเข้ามาเล่นบอร์ดเกมส์ได้ ในคืนวันอังคารนี้ (17 กันยายน, 18:30-20:30น) และวันพฤหัส (19 กันยายน, 18:30-20:00น -- กิจกรรมที่สวนลุมพินีไม่ใช่อยู่ที่ศูนย์) ค่ะ เรายินดีต้อนรับทุกคนค่ะ'
                      ];
       } else {
         textItems = ['Improve Your English',
@@ -236,7 +236,7 @@ export default class Top extends React.Component {
                      'Register',
                      'Announcement',
                      'The City English Project will close the term from 16 to 27 September for classes. Our next City Talk classes will start again next month.',
-                     'However, even though we will not have classes, we will be open every Tuesday and Thursday night for conversation and games from 6:30 pm to 8:30 pm beginning 19 September (Thursday). We would love for all of you to join us!'];
+                     'However, even though we will not have classes, we will be open at our center this Tuesday (17 Sept, 18:30-20:30) and Thursday (19 Sept, 18:30-20:00 at Lumphini park, not the Center) for conversation and games. We would love for all of you to join us!'];
       }
 
       const { MDBBtn } = this.state.mdbreact;
