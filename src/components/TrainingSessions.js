@@ -225,8 +225,8 @@ export default class Top extends React.Component {
                      '(หลักสูตร 5 วัน ราคา 699 บาท -- ราคาโปรโมชั่นพิเศษ - 599 บาท)',
                      'สมัครเรียน',
                      'ประกาศ',
-                     'ศูนย์ City English Project จะปิดทำการเรียนการสอนในระหว่างวันที่ 29 กรกฎาคม ถึง วันที่ 26 สิงหาคม 2019 โดยจะเปิดชั้นเรียนรอบถัดในวันที่ 27 สิงหาคม 2019',
-                     '*แต่ทางศูนย์จะเปิดให้นักเรียนและผู้ที่สนใจสามารถเข้ามาเล่นบอร์ดเกมส์ได้ ทุกคืนวันอังคารและวันพฤหัส เวลา 18:30-20:30 น. เริ่มตั้งแต่วันอังคารที่ 6 สิงหาคม ค่ะ เรายินดีต้อนรับทุกคนค่ะ'
+                     'ศูนย์ City English Project จะปิดทำการเรียนการสอนในระหว่างวันที่ 16-27 กันยายน 2019 โดยจะเปิดชั้นเรียนรอบถัดในเดือนหน้า',
+                     '*แต่ทางศูนย์จะเปิดให้นักเรียนและผู้ที่สนใจสามารถเข้ามาเล่นบอร์ดเกมส์ได้ ทุกคืนวันอังคารและวันพฤหัส เวลา 18:30-20:30 น. เริ่มตั้งแต่วันอังคารที่ 19 กันยายน (วันพฤหัสบดี) ค่ะ เรายินดีต้อนรับทุกคนค่ะ'
                      ];
       } else {
         textItems = ['Improve Your English',
@@ -235,8 +235,8 @@ export default class Top extends React.Component {
                      '(a 5-day seminar costs 699 baht -- Special promotion price - 599 baht)',
                      'Register',
                      'Announcement',
-                     'The City English Project will close the term from 29 July to 23 August for classes. Our next City Talk classes will start again 27 August.',
-                     'However, even though we will not have classes, we will be open every Tuesday and Thursday night for conversation and games from 6:30 pm to 8:30 pm beginning 6 August. We would love for all of you to join us!'];
+                     'The City English Project will close the term from 16 to 27 September for classes. Our next City Talk classes will start again next month.',
+                     'However, even though we will not have classes, we will be open every Tuesday and Thursday night for conversation and games from 6:30 pm to 8:30 pm beginning 19 September (Thursday). We would love for all of you to join us!'];
       }
 
       const { MDBBtn } = this.state.mdbreact;
