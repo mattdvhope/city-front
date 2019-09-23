@@ -3,6 +3,9 @@ The default Gatsby starter.
 
 For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
 
+# Note
+Make sure to use mdbreact, version "4.8.2" -- not later versions!!
+
 ## Install
 
 Make sure that you have the Gatsby CLI program installed:
