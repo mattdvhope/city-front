@@ -225,8 +225,8 @@ export default class Top extends React.Component {
                      '(หลักสูตร 5 วัน ราคา 699 บาท -- ราคาโปรโมชั่นพิเศษ - 599 บาท)',
                      'สมัครเรียน',
                      'ประกาศ',
-                     'ศูนย์ City English Project จะปิดทำการเรียนการสอนในระหว่างวันที่ 16-27 กันยายน 2019 โดยจะเปิดชั้นเรียนรอบถัดในเดือนหน้า',
-                     '*แต่ทางศูนย์จะเปิดให้นักเรียนและผู้ที่สนใจสามารถเข้ามาเล่นบอร์ดเกมส์ได้ ในคืนวันอังคารนี้ (17 กันยายน, 18:30-20:30น) และวันพฤหัส (19 กันยายน, 18:00-20:00น -- กิจกรรมที่สวนลุมพินีไม่ใช่อยู่ที่ศูนย์) ค่ะ เรายินดีต้อนรับทุกคนค่ะ'
+                     'ศูนย์ City English Project จะปิดทำการเรียนการสอนในระหว่างวันที่ 1-30 พฤศจิกายน 2019 โดยจะเปิดชั้นเรียนรอบถัดในเดือนหน้า',
+                     '*แต่ทางศูนย์จะเปิดให้นักเรียนและผู้ที่สนใจสามารถเข้ามาเล่นบอร์ดเกมส์ได้ ในคืนวันวันพฤหัสนี้ (7 พฤศจิกายน, 19:00-21:00น) ค่ะ เรายินดีต้อนรับทุกคนค่ะ'
                      ];
       } else {
         textItems = ['Improve Your English',
@@ -235,8 +235,8 @@ export default class Top extends React.Component {
                      '(a 5-day seminar costs 699 baht -- Special promotion price - 599 baht)',
                      'Register',
                      'Announcement',
-                     'The City English Project will close the term from 16 to 27 September for classes. Our next City Talk classes will start again next month.',
-                     'However, even though we will not have classes, we will be open at our center this Tuesday (17 Sept, 18:30-20:30) and Thursday (19 Sept, 18:30-20:00 at Lumphini park, not the Center) for conversation and games. We would love for all of you to join us!'];
+                     'The City English Project will close the term from 1 to 30 November for classes. Our next City Talk classes will start again next month.',
+                     'However, even though we will not have classes, we will be open at our center this Thursday (7 November, 19:00-21:00) for conversation and games. We would love for all of you to join us!'];
       }
 
       const { MDBBtn } = this.state.mdbreact;
