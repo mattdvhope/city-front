@@ -2,6 +2,7 @@ import React from "react";
 import Link from 'gatsby-link';
 import axios from 'axios'
 import styled from "styled-components";
+import styles from "../css/trainingSessions.module.css";
 
 const TrainingContainer = styled.div`
   color: #555;
@@ -236,7 +237,7 @@ export default class Top extends React.Component {
                      'Register',
                      'Announcement',
                      'The City English Project will close the term from 1 to 31 December for classes. Our next City Talk classes will start again after that.',
-                     'However, even though we will not have classes, we will have a Christmas part at our center this Wednesday (11 December, 19:00-21:00) for conversation and games. We would love for all of you to join us!'];
+                     'However, even though we will not have classes, we will have a Christmas party at our center this Wednesday (11 December, 19:00-21:00) for conversation and games. We would love for all of you to join us!'];
       }
 
       const { MDBBtn } = this.state.mdbreact;
@@ -276,6 +277,7 @@ export default class Top extends React.Component {
                   <SpacedListItem className="text-center">
                     <div style={{fontSize: `120%`, marginBottom: `1%`, fontWeight: `bold`}}>{textItems[5]}</div>
                     <div style={{fontSize: `110%`, marginBottom: `2%`}}>{textItems[6]}</div>
+                    <img className={styles.avatar} src="https://cep-pictures.s3-ap-southeast-1.amazonaws.com/Screen+Shot+2019-12-06+at+2.38.01+PM.png" alt=""/>
                     <div style={{fontSize: `110%`, marginBottom: `2%`}}>{textItems[7]}</div>
                   </SpacedListItem>
                 </NoBulletsInList>
