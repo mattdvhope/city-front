@@ -225,8 +225,8 @@ export default class Top extends React.Component {
                      '(หลักสูตร 5 วัน ราคา 699 บาท -- ราคาโปรโมชั่นพิเศษ - 599 บาท)',
                      'สมัครเรียน',
                      'ประกาศ',
-                     'ศูนย์ City English Project จะปิดทำการเรียนการสอนในระหว่างวันที่ 1-30 พฤศจิกายน 2019 โดยจะเปิดชั้นเรียนรอบถัดในเดือนหน้า',
-                     '*แต่ทางศูนย์จะเปิดให้นักเรียนและผู้ที่สนใจสามารถเข้ามาเล่นบอร์ดเกมส์ได้ ในคืนวันวันพฤหัสนี้ (7 พฤศจิกายน, 19:00-21:00น) ค่ะ เรายินดีต้อนรับทุกคนค่ะ'
+                     'ศูนย์ City English Project จะปิดทำการเรียนการสอนในระหว่างวันที่ 1-30 ธันวาคม 2019 โดยจะเปิดชั้นเรียนรอบถัดในเดือนหน้า',
+                     'แต่ทางศูนย์จะเปิดให้นักเรียนและผู้ที่สนใจสามารถเข้ามางานเลี้ยงคริสต์มาสได้ ในคืนวันวันพฤหัสนี้ (11 ธันวาคม, 19:00-21:00น) ค่ะ เรายินดีต้อนรับทุกคนค่ะ'
                      ];
       } else {
         textItems = ['Improve Your English',
@@ -235,8 +235,8 @@ export default class Top extends React.Component {
                      '(a 5-day seminar costs 699 baht -- Special promotion price - 599 baht)',
                      'Register',
                      'Announcement',
-                     'The City English Project will close the term from 1 to 30 November for classes. Our next City Talk classes will start again next month.',
-                     'However, even though we will not have classes, we will be open at our center this Thursday (7 November, 19:00-21:00) for conversation and games. We would love for all of you to join us!'];
+                     'The City English Project will close the term from 1 to 31 December for classes. Our next City Talk classes will start again after that.',
+                     'However, even though we will not have classes, we will have a Christmas part at our center this Wednesday (11 December, 19:00-21:00) for conversation and games. We would love for all of you to join us!'];
       }
 
       const { MDBBtn } = this.state.mdbreact;
