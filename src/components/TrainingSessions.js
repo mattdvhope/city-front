@@ -260,7 +260,7 @@ export default class Top extends React.Component {
           {(this.state.class_times.length !== 0) ? 
             <div>
               <SubtitleText className="text-center">{textItems[2]}</SubtitleText>
-              <SubtitleTextTwo className="text-center">{textItems[3]}</SubtitleTextTwo>
+          {/* <SubtitleTextTwo className="text-center">{textItems[3]}</SubtitleTextTwo> */}
               <div className="row">
                 <div className="col">
                     <NoBulletsInList>
