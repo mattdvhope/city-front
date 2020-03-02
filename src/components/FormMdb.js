@@ -246,7 +246,7 @@ export default class FormsPage extends React.Component  {
                   </div>
                   <div id="invalidGender" style={{marginBottom: `25px`, marginTop: `0px`, display: `none`, color: `red`}}>Please provide a gender.</div>
 
-                  <PaymentInfo />
+              {/* <PaymentInfo />  */}
 
                   <Button color="primary" type="submit">สมัครเรียน</Button>
                 </div>
