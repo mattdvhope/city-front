@@ -4,8 +4,13 @@ import styled from "styled-components";
 import { navigateTo } from "gatsby-link"
 import PaymentInfo from './PaymentInfo';
 
-var FormTitle = styled.p`
+var CategoryTitle = styled.p`
   font-size: 180%;
+`
+
+var TitleTitle = styled.p`
+  font-size: 140%;
+  margin-top: -5%
 `
 
 var MaleStyler = styled.span`
@@ -217,7 +222,8 @@ export default class FormsPage extends React.Component  {
             <Col md="12">
 
               <form onSubmit={this.handleSubmit} className='needs-validation' noValidate>
-                <FormTitle className="text-center mb-4">{this.props.title}</FormTitle>
+                <CategoryTitle className="text-center mb-4">{this.props.category}</CategoryTitle>
+                <TitleTitle className="text-center mb-4">{this.props.title}</TitleTitle>
                 <div className="grey-text">
 
                   <Input group type="hidden" name="gender" value={this.state.gender}/>
@@ -246,7 +252,15 @@ export default class FormsPage extends React.Component  {
                   </div>
                   <div id="invalidGender" style={{marginBottom: `25px`, marginTop: `0px`, display: `none`, color: `red`}}>Please provide a gender.</div>
 
-              {/* <PaymentInfo />  */}
+                  {(this.props.category === "คอร์ส - City Talk") ? 
+
+                    <PaymentInfo />
+
+                  :
+
+                    <span></span>
+
+                  }
 
                   <Button color="primary" type="submit">สมัครเรียน</Button>
                 </div>

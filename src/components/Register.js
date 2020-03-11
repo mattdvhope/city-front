@@ -8,7 +8,8 @@ export default class Register extends React.Component {
     this.state = {
       id: /\d+/g.exec(this.props.id.location.pathname)[0],
       title: undefined,
-      part: undefined
+      part: undefined,
+      category: undefined
     };
   }
 
@@ -17,7 +18,8 @@ export default class Register extends React.Component {
       .then((response) => {
         this.setState({
           title: response.data.period_thai,
-          part: response.data.part
+          part: response.data.part,
+          category: response.data.category
         });
       });
   }
@@ -26,11 +28,12 @@ export default class Register extends React.Component {
     const id = this.state.id;
     const title = this.state.title
     const part = this.state.part
+    const category = this.state.category
     return (
       <div>
         <br/>
         <br/>
-        <FormMdb trainingPeriodId={id} title={title} part={part} />
+        <FormMdb trainingPeriodId={id} title={title} part={part} category={category} />
         <br/>
         <br/>
       </div>
