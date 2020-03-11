@@ -216,7 +216,6 @@ export default class Top extends React.Component {
   render() {
     let textItems = [];
     let period;
-    let course_name;
     if (this.state.window) {
     console.log(this.state.class_times)
       const language = this.state.window.localStorage.language;
@@ -228,9 +227,7 @@ export default class Top extends React.Component {
                      'สมัครเรียน',
                      'ประกาศ',
                      'เราหวังว่า คุณจะสามารถมาเข้าร่วมเรียนภาษาอังกฤษด้วยกันกับเรา',
-                     'กรุณาคลิกเข้าไปตรงกล่องสีเขียว  เพื่อลงทะเบียนเรียนกับทางเรา',
-                     'คอร์ส - \"โลกทัศน์คริสเตียน\" - ฟรี!!',
-                     'คอร์ส - \"City Life\" - ฟรี!!'
+                     'กรุณาคลิกเข้าไปตรงกล่องสีเขียว  เพื่อลงทะเบียนเรียนกับทางเรา'
                      ];
                 {/*  'ศูนย์ City English Project จะปิดทำการเรียนการสอนในระหว่างวันที่ 1-30 ธันวาคม 2019 โดยจะเปิดชั้นเรียนรอบถัดในเดือนหน้า',  */}
                 {/*  'แต่ทางศูนย์จะเปิดให้นักเรียนและผู้ที่สนใจสามารถเข้ามางานเลี้ยงคริสต์มาสได้ ในคืนวันวันพฤหัสนี้ (11 ธันวาคม, 19:00-21:00น) ค่ะ เรายินดีต้อนรับทุกคนค่ะ'  */}
@@ -242,9 +239,7 @@ export default class Top extends React.Component {
                      'Register',
                      'Announcement',
                      'We hope you can join us for our English classes!',
-                     'Please click on one of the green boxes below to register for a class!',
-                     'Christian Worldview - FREE!!',
-                     'City Life - FREE!!'
+                     'Please click on one of the green boxes below to register for a class!'
                      ];
                 {/*  'The City English Project will close the term from 1 to 31 December for classes. Our next City Talk classes will start again after that.', */}
                 {/*  'However, even though we will not have classes, we will have a Christmas party at our center this Wednesday (11 December, 19:00-21:00) for conversation and games. We would love for all of you to join us!' */}
@@ -267,10 +262,9 @@ export default class Top extends React.Component {
                       {
                         this.state.class_times.map((e, key) => {
                           language === "thai" ? period = e.period_thai : period = e.period;
-                          e.period === "9-12 March, 6:30-8:00pm" ? course_name = textItems[8] : course_name = textItems[9];
                           return  <SpacedListItem className="text-center" key={e.period} value={e.id} >
                                     <Link style={{color: `#2D3179`, fontSize: `130%`}} to={`/app/register/${e.id}`}>
-                                      <h1>{course_name}</h1>
+                                      <p style={{fontSize: `120%`}}>{e.category}</p>
                                       {period}
                                       <br/>
                                       <MDBBtn color="indigo" style={{fontSize: `115%`}}>{textItems[4]}</MDBBtn>
