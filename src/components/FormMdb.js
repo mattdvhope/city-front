@@ -252,7 +252,7 @@ export default class FormsPage extends React.Component  {
                   </div>
                   <div id="invalidGender" style={{marginBottom: `25px`, marginTop: `0px`, display: `none`, color: `red`}}>Please provide a gender.</div>
 
-                  {(this.props.category === "คอร์ส - City Talk") ? 
+                  {(this.props.category === "คอร์ส - City Talk, ส่วนหนึ่ง" || this.props.category === "คอร์ส - City Talk, ส่วนสอง") ? 
 
                     <PaymentInfo />
 
