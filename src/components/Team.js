@@ -231,7 +231,7 @@ export default class Team extends React.Component {
           <br/>
           <Row>
             <Col md="4">
-              <img className={styles.avatar} src="https://s3-ap-southeast-1.amazonaws.com/cityfront/matt-malone.jpg" alt=""/>
+              <img className={styles.avatar} src="https://cep-pictures.s3-ap-southeast-1.amazonaws.com/Matt+CEP+picture.jpg" alt=""/>
             </Col>
             <Col md="8">
               <ContentText>
