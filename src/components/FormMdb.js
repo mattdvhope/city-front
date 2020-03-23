@@ -10,7 +10,7 @@ var CategoryTitle = styled.p`
 
 var TitleTitle = styled.p`
   font-size: 140%;
-  margin-top: -5%
+  margin-top: -2%
 `
 
 var MaleStyler = styled.span`

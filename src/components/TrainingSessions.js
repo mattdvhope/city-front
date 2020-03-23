@@ -242,7 +242,7 @@ export default class Top extends React.Component {
       } else {
         textItems = ['Improve Your English',
                      'We understand Thai people want to improve their English and develop their abilities to communicate with Western people. City English Project offers a 4 or 5 day training in which Thai people can become more confident in their English speaking and listening through practicing conversation, fun activities and learning games.',
-                     'click below to choose a 5-day seminar',
+                     'Click below to choose a 5-day seminar',
                      '(a 5-day seminar costs 699 baht -- Special promotion price - 599 baht)',
                      'Register',
                      'Announcement!  ...for the classes in the upcoming weeks',
