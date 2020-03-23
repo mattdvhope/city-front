@@ -227,12 +227,13 @@ export default class Top extends React.Component {
                      '(หลักสูตร 5 วัน ราคา 699 บาท -- ราคาโปรโมชั่นพิเศษ - 599 บาท)',
                      'สมัครเรียน',
                      'ประกาศ!! สำหรับชั้นเรียนในสัปดาห์หน้าและต่อๆ ไป',
-                     'เนื่องจากสถานการณ์ไวรัสโคโรน่ามีความน่าเป็นห่วงมากขึ้นทั่วโลก รัฐบาลสหรัฐฯ ประกาศไม่อนมัติให้ชาวต่างชาติจากยุโรปเข้าประเทศชั่วคราวเป็นเวลาอย่างน้อย 1 เดือน',
-                     'ทำให้อาสาสมัครทั้ง 6 คน จำต้องยกเลิกการเดินทางมาสอนที่ CEP เพราะเหตุว่าอาจจะมีการเเบนจากประเทศอื่นๆ รวมถึงประเทศไทยด้วยในอนาคต',
-                     'CEP จะมีการสอนเพียง 2 วันต่อสัปดาห์',
-                     '1.ในวันอังคาร City Talk 1 สอนโดยคุณแม๊ตต์ (5 สัปดาห์)',
-                     '2.วันพฤหัสบดี City Life Book 4 สอนโดยคุณมิเคล่า (5 สัปดาห์)',
-                     'แล้วพบกันอาทิตย์หน้าที่ CEP!',
+
+                     'เนื่องจากรัฐบาลไทยได้ขอความร่วมมือให้ผู้คนหยุดพบปะกันหรือรวมตัวกันเป็นกลุ่ม โครงการซิตี้ อิงลิช เราจึงได้ตัดสินใจในการเริ่มสอนภาษาอังกฤษออนไลน์ทันทีครับ',
+                     'ถ้าคุณได้ลงทะเบียนเรียนภาษาอังกฤษกับเราแล้ว กรุณาดาวน์โหลดแอป Zoom เพื่อให้คุณสามารถเข้าร่วมชั้นเรียนภาษาอังกฤษออนไลน์ของเราได้ครับ',
+                     'CEP จะสอนตอนเย็นวันอังคารและวันพฤหัสบดีครับ',
+
+                     '1.ในวันอังคาร City Talk 1 (5 สัปดาห์)',
+                     '2.วันพฤหัสบดี City Life Book 4 (5 สัปดาห์)',
                      ];
                 {/* 'เราหวังว่า คุณจะสามารถมาเข้าร่วมเรียนภาษาอังกฤษด้วยกันกับเรา', */}
                 {/* 'กรุณาคลิกเข้าไปตรงกล่องสีเขียว  เพื่อลงทะเบียนเรียนกับทางเรา' */}
@@ -245,12 +246,13 @@ export default class Top extends React.Component {
                      '(a 5-day seminar costs 699 baht -- Special promotion price - 599 baht)',
                      'Register',
                      'Announcement!  ...for the classes in the upcoming weeks',
-                     'As the corona virus is becoming more of a concern around the world, the US government has announced that foreigners from Europe are being denied entrance into the country for at least 1 month.',
-                     'This has caused all 6 of our volunteers to cancel the trip to teach at the CEP because of the possibility of transferring from other countries, including Thailand in the future',
-                     'CEP will teach only 2 days a week.',
-                     '1. On Tuesday, City Talk 1, taught by Matt (5 weeks).',
-                     '2. Thursday, City Life Book 4, taught by Mikayla (5 weeks).',
-                     'See you next week at CEP!',
+
+                     'Since the Thai government wants people to no longer meet in groups, CEP has decided to start teaching English online immediately.',
+                     'If you have registered in English with us Then please download the Zoom app so you can join our online English classes',
+                     'CEP will teach Tuesday and Thursday evenings.',
+
+                     '1. On Tuesday, City Talk 1 (5 weeks).',
+                     '2. Thursday, City Life Book 4 (5 weeks).',
                      ];
                 {/* 'We hope you can join us for our English classes!',  */}
                 {/* 'Please click on one of the green boxes below to register for a class!'  */}     
@@ -276,7 +278,6 @@ export default class Top extends React.Component {
                 <div style={{fontSize: `110%`, marginBottom: `2%`}}>{textItems[8]}</div>
                 <div style={{fontSize: `110%`, marginBottom: `2%`}}>{textItems[9]}</div>
                 <div style={{fontSize: `110%`, marginBottom: `2%`}}>{textItems[10]}</div>
-                <div style={{fontSize: `110%`, marginBottom: `2%`}}>{textItems[11]}</div>
               </SpacedListItem>
           {/* <SubtitleTextTwo className="text-center">{textItems[3]}</SubtitleTextTwo> */}
               <div className="row">
