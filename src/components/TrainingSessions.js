@@ -84,7 +84,8 @@ const DescriptionText = styled.p`
 `
 
 const SubtitleText = styled.p`
-  margin-top: -1em;
+  font-family: "Neue Frutiger W31 Modern Light", "Athiti";
+  margin-top: -0.5em;
   margin-bottom: -0.3em;
   @media (min-width: 1180px) {
     font-size: 170%;
