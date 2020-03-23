@@ -252,8 +252,8 @@ export default class Top extends React.Component {
                      '1. On Tuesday, City Talk 1 (5 weeks).',
                      '2. Thursday, City Life Book 4 (5 weeks).',
                      ];
-                {/* 'We hope you can join us for our English classes!',  */}
-                {/* 'Please click on one of the green boxes below to register for a class!'  */}     
+                {/* 'We hope you can join us for our English classes!',*/}
+                {/* 'Please click on one of the green boxes below to register for a class!'*/}     
                 {/*  'The City English Project will close the term from 1 to 31 December for classes. Our next City Talk classes will start again after that.', */}
                 {/*  'However, even though we will not have classes, we will have a Christmas party at our center this Wednesday (11 December, 19:00-21:00) for conversation and games. We would love for all of you to join us!' */}
       }
