@@ -227,11 +227,10 @@ export default class Top extends React.Component {
                      '(หลักสูตร 5 วัน ราคา 699 บาท -- ราคาโปรโมชั่นพิเศษ - 599 บาท)',
                      'สมัครเรียน',
                      'ประกาศ!! สำหรับชั้นเรียนในสัปดาห์หน้าและต่อๆ ไป',
-
                      'เนื่องจากรัฐบาลไทยได้ขอความร่วมมือให้ผู้คนหยุดพบปะกันหรือรวมตัวกันเป็นกลุ่ม โครงการซิตี้ อิงลิช เราจึงได้ตัดสินใจในการเริ่มสอนภาษาอังกฤษออนไลน์ทันทีครับ',
-                     'ถ้าคุณได้ลงทะเบียนเรียนภาษาอังกฤษกับเราแล้ว กรุณาดาวน์โหลดแอป Zoom เพื่อให้คุณสามารถเข้าร่วมชั้นเรียนภาษาอังกฤษออนไลน์ของเราได้ครับ',
+                     'ถ้าคุณได้ลงทะเบียนเรียนภาษาอังกฤษกับเราแล้ว กรุณาดาวน์โหลดแอป',
+                     'เพื่อให้คุณสามารถเข้าร่วมชั้นเรียนภาษาอังกฤษออนไลน์ของเราได้ครับ',
                      'CEP จะสอนตอนเย็นวันอังคารและวันพฤหัสบดีครับ',
-
                      '1.ในวันอังคาร City Talk 1 (5 สัปดาห์)',
                      '2.วันพฤหัสบดี City Life Book 4 (5 สัปดาห์)',
                      ];
@@ -246,11 +245,10 @@ export default class Top extends React.Component {
                      '(a 5-day seminar costs 699 baht -- Special promotion price - 599 baht)',
                      'Register',
                      'Announcement!  ...for the classes in the upcoming weeks',
-
                      'Since the Thai government wants people to no longer meet in groups, CEP has decided to start teaching English online immediately.',
-                     'If you have registered in English with us Then please download the Zoom app so you can join our online English classes',
+                     'If you have registered in English with us then please download the',
+                     'app so you can join our online English classes',
                      'CEP will teach Tuesday and Thursday evenings.',
-
                      '1. On Tuesday, City Talk 1 (5 weeks).',
                      '2. Thursday, City Life Book 4 (5 weeks).',
                      ];
@@ -274,10 +272,10 @@ export default class Top extends React.Component {
                 <div style={{fontSize: `120%`, marginBottom: `1%`, fontWeight: `bold`}}>{textItems[5]}</div>
                 <img className={styles.avatar} src="https://cep-pictures.s3-ap-southeast-1.amazonaws.com/Corona+Virus+CEP.png" alt=""/>
                 <div style={{fontSize: `110%`, marginBottom: `2%`}}>{textItems[6]}</div>
-                <div style={{fontSize: `110%`, marginBottom: `2%`}}>{textItems[7]}</div>
-                <div style={{fontSize: `110%`, marginBottom: `2%`}}>{textItems[8]}</div>
+                <div style={{fontSize: `110%`, marginBottom: `2%`}}>{textItems[7]}<a href="https://zoom.us/" target="_blank" >&nbsp;Zoom&nbsp;</a>{textItems[8]}</div>
                 <div style={{fontSize: `110%`, marginBottom: `2%`}}>{textItems[9]}</div>
                 <div style={{fontSize: `110%`, marginBottom: `2%`}}>{textItems[10]}</div>
+                <div style={{fontSize: `110%`, marginBottom: `2%`}}>{textItems[11]}</div>
               </SpacedListItem>
           {/* <SubtitleTextTwo className="text-center">{textItems[3]}</SubtitleTextTwo> */}
               <div className="row">
