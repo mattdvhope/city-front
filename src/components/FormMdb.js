@@ -263,6 +263,7 @@ export default class FormsPage extends React.Component  {
                   }
 
                   <Button color="primary" type="submit">สมัครเรียน</Button>
+
                 </div>
               </form>
             </Col>
