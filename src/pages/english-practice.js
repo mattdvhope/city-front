@@ -291,18 +291,6 @@ export default class EnglishPractice extends React.Component {
           <Link className="text-center" to="register"><RegisterStyler>{textItems[1]}</RegisterStyler></Link>
           <hr/>
 
-
-          <div className="row">
-            <div className="col-md-12">
-              <div id="web-login-button" className="center-block area-margin">
-                <a className="center-block" href="https://cep-login.herokuapp.com/gotoauthpage"><h2>Log in via LINE</h2></a>
-              </div>
-            </div>
-          </div>
-
-
-
-
       {/* 
           <div className="row">
             <div className="col-md-8">
